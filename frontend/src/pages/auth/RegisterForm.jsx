@@ -1,22 +1,34 @@
 // NPM Packages
 import React, { useState } from "react";
 
-export default function LoginForm({ onSubmit }) {
+export default function RegisterForm({ onSubmit }) {
+    const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
     return (
-        <div className="card-body">
-                <h4 className="card-title">Login</h4>
+            <div className="card-body">
+                <h4 className="card-title">Sign up</h4>
                 <div>
+                    <div className="form-group">
+                        <label>Name:</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            placeholder="Name"
+                        />
+                    </div>
+
                     <div className="form-group">
                         <label>Email:</label>
                         <input
                             type="email"
-                            className="form-control"
-                            placeholder="Email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
+                            className="form-control"
+                            placeholder="Email"
                         />
                     </div>
 
@@ -33,10 +45,10 @@ export default function LoginForm({ onSubmit }) {
 
                     <div className="form-group">
                         <button
-                            className="btn btn-info"
-                            onClick={() => onSubmit({ email, password })}
+                            className="btn btn-success"
+                            onClick={(e) => onSubmit({ name, email, password })}
                         >
-                            Login
+                            Create account
                         </button>
                     </div>
                 </div>
