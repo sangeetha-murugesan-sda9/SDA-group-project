@@ -1,4 +1,4 @@
-package backend.home;
+package backend.picture;
 
 /*
     @TODO Implement service methods.

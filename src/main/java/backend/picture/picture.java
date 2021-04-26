@@ -1,3 +1,3 @@
-package backend.home;
+package backend.picture;
 
 // @TODO add Hibernate annotations

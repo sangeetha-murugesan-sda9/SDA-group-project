@@ -1,4 +1,4 @@
-package backend.home;
+package backend.picture;
 
 /*
     @TODO create the methods needed to implement the API.
