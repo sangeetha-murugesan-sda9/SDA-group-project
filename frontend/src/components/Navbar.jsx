@@ -1,17 +1,22 @@
-import React from "react";
+import {React,useState} from "react";
 import { Link } from "react-router-dom";
 
-import logo from"../assets/img/logo/instyle_logo.png"
+
 
 
 export default function Navbar({ onLogout }) {
+   
+   const [state, setState] = useState(false); 
+
+  
     return (
       <nav>
-        <Link className="navbar-brand" to="/">
-          <img src={logo}/>
-        </Link>
+            
+           
+  
+      <div>MENU </div>
 
-        <ul className="nav-menu">
+          <ul className="nav-menu">
           <li className="nav-item">
             <Link to="/Profile" className="nav-link">
               Profile
@@ -36,6 +41,12 @@ export default function Navbar({ onLogout }) {
             </Link>
           </li>
         </ul>
+
+       
+      
+              
+
+        
 
         <button
           className="btn-logout"

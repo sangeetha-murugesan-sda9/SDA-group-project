@@ -1,6 +1,7 @@
 .profilepage-content{
-    background: rgb(254,212,40);
-    background: linear-gradient(0deg, rgba(254,212,40,1) 0%, rgba(255,255,255,1) 100%);
+    /* background: rgb(254,212,40);
+    background: linear-gradient(0deg, rgba(254,212,40,1) 0%, rgba(255,255,255,1) 100%); */
+    background-color: white;
 }
 
 .profilepage-submit-container{
