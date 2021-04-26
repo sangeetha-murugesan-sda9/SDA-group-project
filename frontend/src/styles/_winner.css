@@ -1,0 +1,14 @@
+.winner-content{
+        
+        background-color: var(--lemonYellow);
+        height: 100%;     
+
+        display: grid;
+        grid-auto-rows: 50px 40px 1fr 100px ;
+        width: 100%;
+            
+}
+
+#main-img{
+        border-radius: 30px;
+}

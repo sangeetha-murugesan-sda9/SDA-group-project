@@ -1,0 +1,13 @@
+.vote-container{
+    width: 80%;
+    height: auto;
+
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+justify-items: center;
+
+}
+
+.vote-container p {
+    font-size: 35px;
+}

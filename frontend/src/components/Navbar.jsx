@@ -38,7 +38,7 @@ export default function Navbar({ onLogout }) {
         </ul>
 
         <button
-          className="btn btn-outline-info my-2 my-sm-0"
+          className="btn-logout"
           onClick={onLogout}
         >
           Logout

@@ -1,0 +1,20 @@
+.general-container {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: var(--header-height) 1fr var(--footer-height);
+}
+
+header{
+    background-color: var(--lagoonBlue);  
+}
+
+main {
+  min-height: calc(100vh - 110px);
+}
+
+
+footer{
+    background-color: var(--deepBlue);
+    color: white;
+    text-align: center;
+}

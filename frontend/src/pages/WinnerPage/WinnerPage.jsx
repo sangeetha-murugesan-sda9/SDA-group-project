@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 
 import "../../styles/base.css"
 import NavBar from "../../components/Navbar"
+import UserMeta from "../../components/UserMeta"
 import winnerImg from "../../assets/img/mockup/winner.jpeg"
+import Auth from "../../services/Auth";
 
 
 
@@ -12,17 +14,19 @@ export default function WinnerPage() {
     return (
       <div className="general-container">
         <header>
-          <NavBar />
+        <NavBar onLogout={() => Auth.logout()}/>
         </header>
 
         <main>
+            <div className ="winner-content">
           <h1>Current idol</h1>
-          <p> picture + username + instagram link</p>
-          <img src={winnerImg} />
+          <UserMeta/>
+          <img id = "main-img" src={winnerImg} />
           <div className="under-img-container">
-            <button className="btn-follow">Follow "username" </button>
+            <button className="btn-follow">Follow Me </button>
           </div>
-          
+            </div>
+
         </main>
 
         <footer> Follow us | about SDA | About us </footer>

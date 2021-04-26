@@ -11,7 +11,7 @@ import LoginPage from "./pages/auth/AuthPage";
 import HomePage from "./pages/HomePage/HomePage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import WinnerPage from "./pages/WinnerPage/WinnerPage";
-
+import VotingPage from "./pages/VotingPage/VotingPage";
 
 
 
@@ -39,6 +39,10 @@ export default function App() {
 
                     <Route path="/home">
                         <HomePage />
+                    </Route>
+
+                    <Route path="/vote">
+                        <VotingPage/>
                     </Route>
 
                     <Route path="/winner">

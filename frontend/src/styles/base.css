@@ -1,4 +1,24 @@
 
 /* style imports*/ 
 @import url("App.css");
+@import url("_structure.css");
 @import url("_layout.css");
+@import url("_buttons.css");
+@import url("_user_meta.css");
+@import url("_winner.css");
+@import url("_vote_component.css");
+
+/* variables*/ 
+:root {
+    --header-height: 60px;
+    --footer-height: 30px;
+    
+
+    --lagoonBlue: rgb(130, 221, 228);
+    --deepBlue: rgb(50, 167, 173);
+
+    --lemonYellow: rgb(247, 245, 176);
+
+
+    
+  }
