@@ -23,7 +23,7 @@ export default function WinnerPage() {
           <UserMeta/>
           <img id = "main-img" src={winnerImg} />
           <div className="under-img-container">
-            <button className="btn-follow">Follow Me </button>
+            <button className="btn-blue">Follow Me </button>
           </div>
             </div>
 

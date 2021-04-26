@@ -1,10 +1,11 @@
-.btn-follow {
+.btn-blue{
+
   flex: 1 1 auto;
-  margin: 10px;
-  padding: 30px;
+  margin: 5px;
+  padding: 20px;
   text-align: center;
   
-  text-transform: uppercase;
+  text-transform: capitalize;
   transition: 0.5s;
   background-size: 200% auto;
   color: white;
@@ -14,20 +15,46 @@
 
   background-image: linear-gradient(
     to right,
-    #82e4e4 0%,
+    #44dfdf 0%,
     #c2e9fb 51%,
     #a1c4fd 100%
   );
   border: none;
-
-  height: 40px;
-  width: 90px;
-
 }
 
-.btn-follow:hover {
+.btn-blue:hover {
   background-position: right center;
 }
+
+.btn-white{
+
+  flex: 1 1 auto;
+  margin: 5px;
+  padding: 20px;
+  text-align: center;
+  
+  text-transform: capitalize;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: grey;
+ 
+  border-radius: 30px;
+   background-image: linear-gradient(
+    to right,
+    #ffffff 0%,
+    #dfeef8 51%,
+    #ffffff 100%
+  );
+ 
+  border: 2px solid var(--lagoonBlue);
+}
+
+.btn-white:hover {
+  background-position: right center;
+}
+
+
+
 
 .btn-logout {
   background: var(--deepBlue);
