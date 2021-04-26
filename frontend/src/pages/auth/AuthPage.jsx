@@ -1,18 +1,26 @@
 // NPM Packages
 import React from "react";
 
+
 // Project files
 import LoginForm from "./LoginForm";
 import RegisterForm from "./RegisterForm";
 import Auth from "../../services/Auth";
 
 export default function LoginPage() {
+    
+    //constants
+    
     // Methods
     async function login(loginData) {
         const loginSuccess = await Auth.login(loginData);
+        
         if (!loginSuccess) {
-            alert("Invalid credentials");
+            alert("Invalid credentials");           
         }
+        
+
+        
     }
 
     async function register(registrationData) {

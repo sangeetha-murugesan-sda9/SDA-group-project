@@ -6,15 +6,15 @@ import { Link } from "react-router-dom";
 
 export default function Navbar({ onLogout }) {
    
-   const [state, setState] = useState(false); 
-
+   
+   
   
     return (
       <nav>
             
-           
+           <div>Menu</div>
   
-      <div>MENU </div>
+           
 
           <ul className="nav-menu">
           <li className="nav-item">

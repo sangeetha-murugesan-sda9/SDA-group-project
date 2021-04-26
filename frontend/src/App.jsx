@@ -4,7 +4,6 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 // Project files
 import Auth from "./services/Auth";
-import Navbar from "./components/Navbar";
 import AuthPage from "./pages/auth/AuthPage";
 import "./styles/App.css";
 import LoginPage from "./pages/auth/AuthPage";
@@ -26,7 +25,6 @@ export default function App() {
     const loggedInRouter = (
         <BrowserRouter>
             
-
             <div >
                 <Switch>
                     <Route path="/login">

@@ -21,7 +21,7 @@ export default function HomePage() {
 
           <div className="homepage-submit-container" > 
           <img src={homeImg} alt="img" />
-            <button className="btn-submit-picture">Submit a style</button>
+            <button className="btn-blue">Submit a style</button>
           </div>
 
           <div>
