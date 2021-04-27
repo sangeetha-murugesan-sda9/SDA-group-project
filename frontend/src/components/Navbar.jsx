@@ -13,17 +13,17 @@ export default function Navbar({ onLogout }) {
             return (
               <div className="nav-dropdown">
 
-                <Link to="/Home" className="nav-link">
-                  Home
+                <Link to="/discover" className="nav-link">
+                  Discover
                 </Link>
-                <Link to="/Profile" className="nav-link">
+                <Link to="/profile" className="nav-link">
                   Profile
                 </Link>
-                <Link to="/Vote" className="nav-link">
+                <Link to="/vote" className="nav-link">
                   Vote
                 </Link>
 
-                <Link to="/Winner" className="nav-link">
+                <Link to="/winner" className="nav-link">
                   Winner
                 </Link>
                 <button className="btn-menu-dropdown" onClick={onLogout}>

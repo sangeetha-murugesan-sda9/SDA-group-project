@@ -7,7 +7,7 @@ import Auth from "./services/Auth";
 import AuthPage from "./pages/auth/AuthPage";
 import "./styles/App.css";
 import LoginPage from "./pages/auth/AuthPage";
-import HomePage from "./pages/HomePage/HomePage";
+import DiscoverPage from "./pages/DiscoverPage/DiscoverPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import WinnerPage from "./pages/WinnerPage/WinnerPage";
 import VotingPage from "./pages/VotingPage/VotingPage";
@@ -35,8 +35,8 @@ export default function App() {
                         <ProfilePage />
                     </Route>
 
-                    <Route path="/home">
-                        <HomePage />
+                    <Route path="/discover">
+                        <DiscoverPage />
                     </Route>
 
                     <Route path="/vote">
