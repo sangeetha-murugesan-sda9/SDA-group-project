@@ -3,6 +3,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import backend.user.ResourceNotFoundException;
+import backend.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -18,6 +19,13 @@ public class FileController {
 
     @Autowired
     private FileStorageService storageService;
+    FileDBRepository fileDBRepository;
+
+    @Autowired
+    public FileController(FileDBRepository fileDBRepository) {
+        this.fileDBRepository= fileDBRepository;
+    }
+
 
     @PostMapping("/upload")
     public ResponseEntity<ResponseMessage> uploadFile(@RequestParam("file") MultipartFile file) {
@@ -33,13 +41,13 @@ public class FileController {
         }
     }
 
-   /* @GetMapping("/files")
+    @GetMapping("/files")
     public ResponseEntity<List<ResponseFile>> getListFiles() {
         List<ResponseFile> files = storageService.getAllFiles().map(dbFile -> {
             String fileDownloadUri = ServletUriComponentsBuilder
                     .fromCurrentContextPath()
                     .path("/files/")
-                    .path(dbFile.getId())
+                   // .path(dbFile.getId())
                     .toUriString();
 
             return new ResponseFile(
@@ -51,20 +59,20 @@ public class FileController {
 
         return ResponseEntity.status(HttpStatus.OK).body(files);
     }
-*/
+
     @GetMapping("/files/{id}")
     public ResponseEntity<byte[]> getFile(@PathVariable Long id) {
         FileDB fileDB = storageService.getFile(id);
-
         return ResponseEntity.ok()
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + fileDB.getName() + "\"")
                 .body(fileDB.getData());
     }
 
- /*  @DeleteMapping("/files/{id}")
-    public ResponseEntity<FileDB> delete(@PathVariable Long id) {
-        FileDB fileDB = FileDBRepository.findById(id).orElseThrow(ResourceNotFoundException::new);
-       FileDBRepository.delete(fileDB);
-       return new ResponseEntity<FileDB>(HttpStatus.OK);
-    }*/
+    @DeleteMapping("/files/{id}")
+    public ResponseEntity<FileDB> deleteFile(@PathVariable Long id) {
+        FileDB fileDB = fileDBRepository.findById(id)
+                .orElseThrow(ResourceNotFoundException::new);
+        fileDBRepository.delete(fileDB);
+        return ResponseEntity.ok(fileDB);
+    }
 }

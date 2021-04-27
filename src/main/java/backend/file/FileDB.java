@@ -19,7 +19,7 @@ public class FileDB {
 
     @OneToOne(targetEntity= User.class,cascade=CascadeType.ALL)
        private User fileOwner;
-    
+
 
     public User getFileOwner() {
         return fileOwner;
@@ -41,6 +41,9 @@ public class FileDB {
             this.data = data;
         }
 
+    public Long getId() {
+        return id;
+    }
 
     public void setId(long id) {
         this.id = id;
