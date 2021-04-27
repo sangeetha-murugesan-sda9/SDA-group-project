@@ -71,3 +71,8 @@
 
   border: 0px ;
   }
+
+  .btn-vote{
+    background-color: inherit;
+    border: 0px;
+  }

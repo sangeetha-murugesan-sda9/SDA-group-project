@@ -4,6 +4,10 @@ import userThumbnail from "../assets/img/mockup/user-thumbnail.png"
 
 
 export default function UserMeta() {
+
+  const randomUser = Math.floor(Math.random() * 10);
+
+
     return (
       <div className="user-meta">
         <img src = {userThumbnail} alt="thumb"/>

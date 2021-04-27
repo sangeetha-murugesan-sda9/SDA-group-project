@@ -1,19 +1,44 @@
 import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 
 import "../../styles/base.css";
 import NavBar from "../../components/Navbar";
-import winnerImg from "../../assets/img/mockup/winner.jpeg";
 import Card from "../../components/Card";
 import homeImg from "../../assets/img/home-img.png";
-import VoteComponent from "../../components/VoteComponent";
 import Auth from "../../services/Auth";
+
+
 
 export default function DiscoverPage() {
  // Constants
  const photos = require("../../api/api_photos.json");
  const users = require("../../api/api_users.json");
+ const [fetchedPhotos,setFetchedPhotos] = useState([]);
+ const [fetchedUsers,setFetchedUsers] = useState([]);
 
  const randomUser = Math.floor(Math.random() * 10);
+
+
+
+ // Methods
+ //fetch photos  
+ useEffect(() => {
+  fetch("https://picsum.photos/v2/list?page=2&limit=3")
+    .then((response) => response.json())
+    .then((json) => setFetchedPhotos(json));
+    /* console.log(fetchedPhotos[0].download_url) */
+}, []);
+
+ //fetch users 
+ useEffect(() => {
+  fetch("https://gorest.co.in/public-api/users")
+    .then((response) => response.json())
+    .then((json) => setFetchedUsers(json));
+    console.log(fetchedUsers) ;
+}, []);
+
+
   
   return (
     <div className="general-container">
@@ -34,9 +59,9 @@ export default function DiscoverPage() {
             <div className="card-small-container">
 
             <React.Fragment>
-                {photos.map((item) => (
+                {fetchedPhotos.map((item) => (
                   <React.Fragment key={item.id}>
-                    <Card item ={item} score = {false} votes = {true} />                                                  
+                    <Card item ={item} score = {false} votes = {true}  meta = {true} users={users}/>                                                  
                   </React.Fragment>
                 ))}
               </React.Fragment>

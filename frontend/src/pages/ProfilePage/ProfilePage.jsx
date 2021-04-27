@@ -4,9 +4,7 @@ import { useEffect, useState } from "react";
 import "../../styles/base.css";
 import NavBar from "../../components/Navbar";
 import Card from "../../components/Card";
-import winnerImg from "../../assets/img/mockup/winner.jpeg";
 import janeImg from "../../assets/img/mockup/jane-thumbnail.png";
-import VoteComponent from "../../components/VoteComponent";
 import Auth from "../../services/Auth";
 
 export default function ProfilePage() {
@@ -73,12 +71,11 @@ export default function ProfilePage() {
               <React.Fragment>
                 {photos.map((item) => (
                   <React.Fragment key={item.id}>
-                    <Card item ={item}  score = {true} votes = {false}/>                                                  
+                    <Card item ={item}  score = {true} votes = {false} meta = {false}/>                                                  
                   </React.Fragment>
                 ))}
               </React.Fragment>
-
-              );
+              
             </div>
           </div>
         </div>
