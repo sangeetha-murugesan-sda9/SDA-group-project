@@ -3,11 +3,18 @@ import React from "react";
 import "../../styles/base.css";
 import NavBar from "../../components/Navbar";
 import winnerImg from "../../assets/img/mockup/winner.jpeg";
+import Card from "../../components/Card";
 import homeImg from "../../assets/img/home-img.png";
 import VoteComponent from "../../components/VoteComponent";
 import Auth from "../../services/Auth";
 
 export default function DiscoverPage() {
+ // Constants
+ const photos = require("../../api/api_photos.json");
+ const users = require("../../api/api_users.json");
+
+ const randomUser = Math.floor(Math.random() * 10);
+  
   return (
     <div className="general-container">
       <header>
@@ -25,38 +32,15 @@ export default function DiscoverPage() {
           <div>
             <h2>Discover more styles ...</h2>
             <div className="card-small-container">
-              <div className="card-small">
-                <img src={winnerImg} alt="img" />
-                <VoteComponent/>
-              </div>
-              <div className="card-small">
-                <img src={winnerImg} alt="img" />
-                <VoteComponent/>
-              </div>
-              <div className="card-small">
-                <img src={winnerImg} alt="img" />
-                <VoteComponent/>
-              </div>
-              <div className="card-small">
-                <img src={winnerImg} alt="img" />
-                <VoteComponent/>
-              </div>
-              <div className="card-small">
-                <img src={winnerImg} alt="img" />
-                <VoteComponent/>
-              </div>
-              <div className="card-small">
-                <img src={winnerImg} alt="img" />
-                <VoteComponent/>
-              </div>
-              <div className="card-small">
-                <img src={winnerImg} alt="img" />
-                <VoteComponent/>
-              </div>
-              <div className="card-small">
-                <img src={winnerImg} alt="img" />
-                <VoteComponent/>
-              </div>
+
+            <React.Fragment>
+                {photos.map((item) => (
+                  <React.Fragment key={item.id}>
+                    <Card item ={item} score = {false} votes = {true} />                                                  
+                  </React.Fragment>
+                ))}
+              </React.Fragment>
+             
             </div>
           </div>
         </div>

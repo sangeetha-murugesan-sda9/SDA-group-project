@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import "../../styles/base.css"
 import NavBar from "../../components/Navbar"
@@ -21,7 +20,7 @@ export default function WinnerPage() {
             <div className ="winner-content">
           <h1>Current idol</h1>
           <UserMeta/>
-          <img id = "main-img" src={winnerImg} />
+          <img id = "main-img" src={winnerImg} alt="main-img"/>
           <div className="under-img-container">
             <button className="btn-blue">Follow Me </button>
           </div>

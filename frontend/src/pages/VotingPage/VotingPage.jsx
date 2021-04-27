@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import "../../styles/base.css"
 import NavBar from "../../components/Navbar"
@@ -22,7 +21,7 @@ export default function VotingPage() {
             <div className ="winner-content">
           <h1>Vote for this style ...</h1>
           <UserMeta/>
-          <img id = "main-img" src={winnerImg} />
+          <img id = "main-img" src={winnerImg} alt="main-logo" />
 
           <div className="under-img-container">
            <VoteComponent />

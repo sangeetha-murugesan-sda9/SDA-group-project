@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React} from "react";
 import { Link } from "react-router-dom";
 import { Popover } from "@varld/popover";
 
@@ -33,7 +33,7 @@ export default function Navbar({ onLogout }) {
             );
           }}
         >
-          <button className="btn-menu" ><img src= {homeButton}/></button>
+          <button className="btn-menu" ><img src= {homeButton} alt="menu"/></button>
         </Popover>
       </div>
 <div id ="nav-main-title">[ In ] Style</div>

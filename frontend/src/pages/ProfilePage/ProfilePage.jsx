@@ -67,17 +67,17 @@ export default function ProfilePage() {
           </div>
 
           <div>
-            <h2>Tove styles ...</h2>
+            <h2>{users[randomUser].username} styles ...</h2>
             <div className="card-small-container">
 
               <React.Fragment>
                 {photos.map((item) => (
                   <React.Fragment key={item.id}>
-                    <Card item ={item} />
-                    {/* <img src={item.download_url}/>  */}                                       
+                    <Card item ={item}  score = {true} votes = {false}/>                                                  
                   </React.Fragment>
                 ))}
               </React.Fragment>
+
               );
             </div>
           </div>
