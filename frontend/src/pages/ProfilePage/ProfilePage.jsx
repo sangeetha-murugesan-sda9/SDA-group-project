@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 import "../../styles/base.css";
 import NavBar from "../../components/Navbar";
@@ -10,6 +11,22 @@ import VoteComponent from "../../components/VoteComponent";
 import Auth from "../../services/Auth";
 
 export default function ProfilePage() {
+  
+  // Constants
+  const API_URL_photos = 'https://picsum.photos/v2/list';
+  const [photos, setPhotos] = useState([]); // result of API fetch
+
+
+  //Methods
+  useEffect(() => {
+    fetch(API_URL_photos)
+      .then((response) => response.json())
+      .then((json) => setPhotos(json));
+
+      console.log(photos );
+  }, []);
+
+
   return (
     <div className="general-container">
       <header>
