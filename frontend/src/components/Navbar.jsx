@@ -1,7 +1,7 @@
 import {React,useState} from "react";
 import { Link } from "react-router-dom";
 
-
+import { Popover } from '@varld/popover';
 
 
 export default function Navbar({ onLogout }) {
@@ -11,12 +11,23 @@ export default function Navbar({ onLogout }) {
   
     return (
       <nav>
-            
-           <div>Menu</div>
-  
-           
+        <div>
+          <Popover
+            popover={({ visible, open, close }) => {
+              return (
+                <div>
+                  I am a popover and i am {visible ? "visible" : "not visible"}{" "}
+                  and {open ? "open" : "not open"}
+                  <button onClick={() => close()}>Close me</button>
+                </div>
+              );
+            }}
+          >
+            <button>I have a popover</button>
+          </Popover>
+        </div>
 
-          <ul className="nav-menu">
+        <ul className="nav-menu">
           <li className="nav-item">
             <Link to="/Profile" className="nav-link">
               Profile
@@ -42,16 +53,7 @@ export default function Navbar({ onLogout }) {
           </li>
         </ul>
 
-       
-      
-              
-
-        
-
-        <button
-          className="btn-logout"
-          onClick={onLogout}
-        >
+        <button className="btn-logout" onClick={onLogout}>
           Logout
         </button>
       </nav>
