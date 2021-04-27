@@ -36,7 +36,10 @@ export default function Navbar({ onLogout }) {
           <button className="btn-menu" ><img src= {homeButton} alt="menu"/></button>
         </Popover>
       </div>
-<div id ="nav-main-title">[ In ] Style</div>
+<div id ="nav-main-title">
+  <strong>[In]Style</strong>
+  <p> Be the one</p>
+  </div>
 
       
     </nav>

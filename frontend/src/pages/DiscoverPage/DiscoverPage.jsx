@@ -5,9 +5,8 @@ import { useState } from "react";
 import "../../styles/base.css";
 import NavBar from "../../components/Navbar";
 import Card from "../../components/Card";
-import homeImg from "../../assets/img/home-img.png";
 import Auth from "../../services/Auth";
-
+import cat from "../../assets/img/cat.png";
 
 
 export default function DiscoverPage() {
@@ -49,8 +48,11 @@ export default function DiscoverPage() {
         <div className="homepage-content">
 
           <div className="homepage-submit-container" > 
-          <img src={homeImg} alt="img" />
-            <button className="btn-blue">Submit a style</button>
+          <img src={cat} alt="img" />
+
+            <button className="btn-float"> + </button>
+
+
           </div>
 
           <div>

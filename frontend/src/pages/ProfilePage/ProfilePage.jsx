@@ -9,7 +9,7 @@ import Auth from "../../services/Auth";
 
 export default function ProfilePage() {
   // Constants
-  //const photos = require("../../api/api_photos.json");
+  const photos = require("../../api/api_photos.json");
   const users = require("../../api/api_users.json");
   const [fetchedPhotos,setFetchedPhotos] = useState([]);
 
@@ -55,9 +55,9 @@ export default function ProfilePage() {
             <div className="card-small-container">
 
               <React.Fragment>
-                {fetchedPhotos.map((item) => (
+                {photos.map((item) => (
                   <React.Fragment key={item.id}>
-                    <Card item ={item}  score = {true} votes = {false} meta = {false} />                                                  
+                    <Card item ={item} score = {true} votes = {false} meta = {false}  users = {users}/>                                                  
                   </React.Fragment>
                 ))}
               </React.Fragment>

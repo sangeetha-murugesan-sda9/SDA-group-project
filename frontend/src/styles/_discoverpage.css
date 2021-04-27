@@ -1,9 +1,15 @@
-
+.homepage-content{
+    margin:9px;
+}
 
 .homepage-submit-container{
        
     display: grid;
-    grid-template-columns: 0.7fr 1fr;
-       align-items: center;
+    justify-items: center;
 }
+.homepage-submit-container img{
+    z-index: 1;
+    width :0%;
+}
+
 

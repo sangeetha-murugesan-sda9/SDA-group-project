@@ -2,6 +2,7 @@
     /* background: rgb(254,212,40);
     background: linear-gradient(0deg, rgba(254,212,40,1) 0%, rgba(255,255,255,1) 100%); */
     background-color: white;
+    margin: 9px;
 }
 
 .profilepage-submit-container{
@@ -13,7 +14,8 @@
 }
 
 .profilepage-submit-container img{
-       width: 150px;
+    z-index: 1;
+    width: 150px;
 
 }
 .profilepage-submit-container p{

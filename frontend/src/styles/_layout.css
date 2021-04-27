@@ -1,5 +1,11 @@
+
+
 html{
     font-family: var(--font-classy);
+}
+
+body{
+    margin: 0;
 }
 
 a{
@@ -23,60 +29,10 @@ h1{
 
 
 
-nav{
-    display: grid ;
-    grid-template-columns: 60px 1fr ;
-    align-content: center;
-   justify-items: center;
-   align-items: center;
-   align-content: center;
-}
-
-
-.nav-menu{
-       
-    color: white;
-    display: flex ;
-    justify-content: center;
-   
-        
-}
-
-.nav-dropdown{
-    background-color: var(--color-background-menu);
-    color: var(--color-text-menu);
-    font-size: var(--font-dropdown-menu);
-
-    display: flex;
-    flex-direction: column;
-}
-.nav-link{
-
-    margin :0px 3px;
-    
-}
-
-.nav-item{
-    list-style-type: none;
-      margin: 0 2px;  
-}
-
-#nav-main-title{
-    align-self: center;
-    font-size:var(--font-big) ;
-    font-family: var(--font-funny);
-    
-}
-
 img{
 width: 100%;
 }
 
-.under-img-container{
-display: flex;
-justify-content: center;
-align-items: center;
-}
 
 
 

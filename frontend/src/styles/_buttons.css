@@ -59,20 +59,36 @@
 }
 
 .btn-menu{
-  background-color: var(--lagoonBlue);
+  background-color: transparent;
   border-radius: 40px;
-  border: 0px ;
+  border: 0px ;  
 }
 
 .btn-menu-dropdown{
   background-color: var(--color-background-menu);
   color: var(--color-text-menu);
   font-size: var(--font-dropdown-menu);
-
   border: 0px ;
+  text-align: left;
   }
 
   .btn-vote{
     background-color: inherit;
     border: 0px;
+  }
+
+  .btn-float{
+  border: 0px;
+  font-size: 25px;
+  position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#0C9;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+  margin-top:22px;
   }
