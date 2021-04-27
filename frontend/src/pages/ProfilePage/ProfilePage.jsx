@@ -1,31 +1,50 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import "../../styles/base.css";
 import NavBar from "../../components/Navbar";
-import UserMeta from "../../components/UserMeta";
+import Card from "../../components/Card";
 import winnerImg from "../../assets/img/mockup/winner.jpeg";
 import janeImg from "../../assets/img/mockup/jane-thumbnail.png";
 import VoteComponent from "../../components/VoteComponent";
 import Auth from "../../services/Auth";
 
 export default function ProfilePage() {
-  
   // Constants
-  const API_URL_photos = 'https://picsum.photos/v2/list';
-  const [photos, setPhotos] = useState([]); // result of API fetch
+  const photos = require("../../api/api_photos.json");
+  const users = require("../../api/api_users.json");
 
+  const randomUser = Math.floor(Math.random() * 10);
+  
+  /*   const [photos, setPhotos] = useState([]); // result of API fetch for photos
+  const [users, setUsers] = useState([]); // result of API fetch for users
+   */
 
   //Methods
-  useEffect(() => {
+  console.log(photos);
+  console.log(users);
+  console.log(randomUser);
+
+  /*   useEffect(() => {
     fetch(API_URL_photos)
       .then((response) => response.json())
-      .then((json) => setPhotos(json));
+      .then((json) => setPhotos(json)); 
+    setPhotos(API_URL_photos)
 
-      console.log(photos );
+    console.log(photos);
+
+  }, []);*/
+
+  /*
+  useEffect(() => {
+    fetch(API_URL_users)
+       .then((response) => response.json())
+      .then((json) => setUsers(json)); 
+
+    console.log(users);
   }, []);
 
+  */
 
   return (
     <div className="general-container">
@@ -35,54 +54,31 @@ export default function ProfilePage() {
 
       <main>
         <div className="profilepage-content">
+          <div className="profilepage-submit-container">
+            <img src={janeImg} alt="img" />
+            <h1>{users[randomUser].username}</h1>
+            <p>{users[randomUser].address.city} </p>
+            <p>
+              You have XXX <em>FIRES</em>
+            </p>
 
-          <div className="profilepage-submit-container" > 
-          
-          <img src={janeImg} alt="img" />
-          <h1>Tove </h1>
-          <p>Luleå, SWE </p>
-          <p>You have XXX <em>FIRES</em></p>
-          
             <button className="btn-blue">Submit a style</button>
             <button className="btn-white">Edit your profile</button>
-
           </div>
 
           <div>
-            <h2>Discover more styles ...</h2>
+            <h2>Tove styles ...</h2>
             <div className="card-small-container">
-              <div className="card-small">
-                <img src={winnerImg} alt="img" />
-                <button className="btn-submit-picture">Delete</button>
-              </div>
-              <div className="card-small">
-                <img src={winnerImg} alt="img" />
-                <VoteComponent/>
-              </div>
-              <div className="card-small">
-                <img src={winnerImg} alt="img" />
-                <VoteComponent/>
-              </div>
-              <div className="card-small">
-                <img src={winnerImg} alt="img" />
-                <VoteComponent/>
-              </div>
-              <div className="card-small">
-                <img src={winnerImg} alt="img" />
-                <VoteComponent/>
-              </div>
-              <div className="card-small">
-                <img src={winnerImg} alt="img" />
-                <VoteComponent/>
-              </div>
-              <div className="card-small">
-                <img src={winnerImg} alt="img" />
-                <VoteComponent/>
-              </div>
-              <div className="card-small">
-                <img src={winnerImg} alt="img" />
-                <VoteComponent/>
-              </div>
+
+              <React.Fragment>
+                {photos.map((item) => (
+                  <React.Fragment key={item.id}>
+                    <Card item ={item} />
+                    {/* <img src={item.download_url}/>  */}                                       
+                  </React.Fragment>
+                ))}
+              </React.Fragment>
+              );
             </div>
           </div>
         </div>
