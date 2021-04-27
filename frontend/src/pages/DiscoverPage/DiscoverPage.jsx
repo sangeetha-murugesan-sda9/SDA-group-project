@@ -1,15 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import "../../styles/base.css";
 import NavBar from "../../components/Navbar";
-import UserMeta from "../../components/UserMeta";
 import winnerImg from "../../assets/img/mockup/winner.jpeg";
 import homeImg from "../../assets/img/home-img.png";
 import VoteComponent from "../../components/VoteComponent";
 import Auth from "../../services/Auth";
 
-export default function HomePage() {
+export default function DiscoverPage() {
   return (
     <div className="general-container">
       <header>

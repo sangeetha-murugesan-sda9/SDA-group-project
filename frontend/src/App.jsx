@@ -1,5 +1,5 @@
 // NPM Packages
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 // Project files
@@ -20,6 +20,11 @@ export default function App() {
 
     // Constants
     Auth.bindLoggedInStateSetter(setLoggedIn);
+
+    //Methods
+    useEffect(() => {
+        document.title = "[in]Style "
+     }, []);
 
     // Components
     const loggedInRouter = (
