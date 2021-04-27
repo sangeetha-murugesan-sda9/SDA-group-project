@@ -54,8 +54,20 @@
 }
 
 
-
-
 .btn-logout {
   background: var(--deepBlue);
 }
+
+.btn-menu{
+  background-color: var(--lagoonBlue);
+  border-radius: 40px;
+  border: 0px ;
+}
+
+.btn-menu-dropdown{
+  background-color: var(--color-background-menu);
+  color: var(--color-text-menu);
+  font-size: var(--font-dropdown-menu);
+
+  border: 0px ;
+  }

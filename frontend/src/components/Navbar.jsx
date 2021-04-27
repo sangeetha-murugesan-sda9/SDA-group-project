@@ -1,61 +1,44 @@
-import {React,useState} from "react";
+import { React, useState } from "react";
 import { Link } from "react-router-dom";
+import { Popover } from "@varld/popover";
 
-import { Popover } from '@varld/popover';
-
+import homeButton from "../assets/img/homeButton.png"
 
 export default function Navbar({ onLogout }) {
-   
-   
-   
-  
-    return (
-      <nav>
-        <div>
-          <Popover
-            popover={({ visible, open, close }) => {
-              return (
-                <div>
-                  I am a popover and i am {visible ? "visible" : "not visible"}{" "}
-                  and {open ? "open" : "not open"}
-                  <button onClick={() => close()}>Close me</button>
-                </div>
-              );
-            }}
-          >
-            <button>I have a popover</button>
-          </Popover>
-        </div>
+  return (
+    <nav>
+      <div>
+        <Popover
+          popover={({ visible, open, close }) => {
+            return (
+              <div className="nav-dropdown">
 
-        <ul className="nav-menu">
-          <li className="nav-item">
-            <Link to="/Profile" className="nav-link">
-              Profile
-            </Link>
-          </li>
+                <Link to="/Home" className="nav-link">
+                  Home
+                </Link>
+                <Link to="/Profile" className="nav-link">
+                  Profile
+                </Link>
+                <Link to="/Vote" className="nav-link">
+                  Vote
+                </Link>
 
-          <li className="nav-item">
-            <Link to="/Home" className="nav-link">
-              Home
-            </Link>
-          </li>
+                <Link to="/Winner" className="nav-link">
+                  Winner
+                </Link>
+                <button className="btn-menu-dropdown" onClick={onLogout}>
+                  Logout
+                </button>
+              </div>
+            );
+          }}
+        >
+          <button className="btn-menu" ><img src= {homeButton}/></button>
+        </Popover>
+      </div>
+<div id ="nav-main-title">[ In ] Style</div>
 
-          <li className="nav-item">
-            <Link to="/Vote" className="nav-link">
-              Vote
-            </Link>
-          </li>
-
-          <li className="nav-item">
-            <Link to="/Winner" className="nav-link">
-              Winner
-            </Link>
-          </li>
-        </ul>
-
-        <button className="btn-logout" onClick={onLogout}>
-          Logout
-        </button>
-      </nav>
-    );
+      
+    </nav>
+  );
 }

@@ -24,15 +24,25 @@
 
     --lemonYellow: rgb(247, 245, 176);
     --gradientYellow : linear-gradient(0deg, rgba(254,212,40,1) 100%, rgba(255,255,255,1) 100%);
+
+    --color-background-menu:white;
+    --color-text-menu:grey;
   
       /*fonts type*/
     --font-funny : 'Bangers', cursive;
     --font-classy : 'Ubuntu', sans-serif ; 
     --font-code : 'Source Code Pro', monospace;
     
+    /*font-size*/
+
+    --font-big:40px;
+    --font-dropdown-menu:20px;
+
     /*spaces*/
 
     --bigspace:60px;
     --mediumspace:30px;
     --smallspace:10px;
+
+  
   }
