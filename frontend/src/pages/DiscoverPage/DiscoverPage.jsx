@@ -12,31 +12,30 @@ import Auth from "../../services/Auth";
 
 export default function DiscoverPage() {
  // Constants
- const photos = require("../../api/api_photos.json");
- const users = require("../../api/api_users.json");
+ //const photos = require("../../api/api_photos.json");
+ //const users = require("../../api/api_users.json");
  const [fetchedPhotos,setFetchedPhotos] = useState([]);
  const [fetchedUsers,setFetchedUsers] = useState([]);
 
- const randomUser = Math.floor(Math.random() * 10);
+ //const randomUser = Math.floor(Math.random() * 10);
 
 
 
  // Methods
  //fetch photos  
  useEffect(() => {
-  fetch("https://picsum.photos/v2/list?page=2&limit=3")
+  fetch("https://picsum.photos/v2/list?page=2&limit=7")
     .then((response) => response.json())
     .then((json) => setFetchedPhotos(json));
-    /* console.log(fetchedPhotos[0].download_url) */
+    
 }, []);
 
  //fetch users 
  useEffect(() => {
-  fetch("https://gorest.co.in/public-api/users")
+  fetch("https://mocki.io/v1/d4867d8b-b5d5-4a48-a4ab-79131b5809b8")
     .then((response) => response.json())
     .then((json) => setFetchedUsers(json));
-    console.log(fetchedUsers) ;
-}, []);
+    }, [fetchedPhotos]);
 
 
   
@@ -61,7 +60,7 @@ export default function DiscoverPage() {
             <React.Fragment>
                 {fetchedPhotos.map((item) => (
                   <React.Fragment key={item.id}>
-                    <Card item ={item} score = {false} votes = {true}  meta = {true} users={users}/>                                                  
+                    <Card item ={item} score = {false} votes = {true}  meta = {true} users={fetchedUsers}/>                                                  
                   </React.Fragment>
                 ))}
               </React.Fragment>

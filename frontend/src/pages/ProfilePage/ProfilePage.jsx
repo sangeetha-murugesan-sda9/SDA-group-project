@@ -9,8 +9,9 @@ import Auth from "../../services/Auth";
 
 export default function ProfilePage() {
   // Constants
-  const photos = require("../../api/api_photos.json");
+  //const photos = require("../../api/api_photos.json");
   const users = require("../../api/api_users.json");
+  const [fetchedPhotos,setFetchedPhotos] = useState([]);
 
   const randomUser = Math.floor(Math.random() * 10);
   
@@ -19,30 +20,15 @@ export default function ProfilePage() {
    */
 
   //Methods
-  console.log(photos);
-  console.log(users);
-  console.log(randomUser);
-
-  /*   useEffect(() => {
-    fetch(API_URL_photos)
-      .then((response) => response.json())
-      .then((json) => setPhotos(json)); 
-    setPhotos(API_URL_photos)
-
-    console.log(photos);
-
-  }, []);*/
-
-  /*
+  //fetch photos  
   useEffect(() => {
-    fetch(API_URL_users)
-       .then((response) => response.json())
-      .then((json) => setUsers(json)); 
+    fetch("https://picsum.photos/v2/list?page=2&limit=7")
+      .then((response) => response.json())
+      .then((json) => setFetchedPhotos(json));
+      
+  }, []);  
 
-    console.log(users);
-  }, []);
-
-  */
+  
 
   return (
     <div className="general-container">
@@ -69,9 +55,9 @@ export default function ProfilePage() {
             <div className="card-small-container">
 
               <React.Fragment>
-                {photos.map((item) => (
+                {fetchedPhotos.map((item) => (
                   <React.Fragment key={item.id}>
-                    <Card item ={item}  score = {true} votes = {false} meta = {false}/>                                                  
+                    <Card item ={item}  score = {true} votes = {false} meta = {false} />                                                  
                   </React.Fragment>
                 ))}
               </React.Fragment>
