@@ -1,0 +1,15 @@
+.homepage-content{
+    margin:9px;
+}
+
+.homepage-submit-container{
+       
+    display: grid;
+    justify-items: center;
+}
+.homepage-submit-container img{
+    z-index: 1;
+    width :0%;
+}
+
+

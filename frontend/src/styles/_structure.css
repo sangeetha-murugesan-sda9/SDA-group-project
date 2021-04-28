@@ -1,0 +1,33 @@
+
+.general-container {
+    min-height: 100%;
+  display: grid;
+  grid-template-rows: var(--header-height) 1fr var(--footer-height);
+}
+
+header{
+  position: relative;
+  height: var(--header-height);
+  background-image: linear-gradient(var(--lagoonBlue), #d6e1e2);
+  border-bottom-left-radius: 0% 30%;
+  border-bottom-right-radius: 70% 60%;
+
+  box-shadow: 1px 1px 4px  rgb(201, 199, 199);
+
+  display: flex;
+  flex-direction: column;
+ justify-content: center;
+  
+
+}
+
+main {
+  min-height: calc(100vh - 110px);
+}
+
+
+footer{
+    background-color: var(--deepBlue);
+    color: white;
+    text-align: center;
+}

@@ -1,0 +1,38 @@
+
+
+html{
+    font-family: var(--font-classy);
+}
+
+body{
+    margin: 0;
+}
+
+a{
+    color: inherit;
+    font-style: unset;
+    text-decoration: unset;
+}
+
+ul{
+    padding: 0;
+}
+
+p{
+    margin:0;
+}
+
+h1{
+    text-align: center;
+    margin: 0;
+}
+
+
+
+img{
+width: 100%;
+}
+
+
+
+

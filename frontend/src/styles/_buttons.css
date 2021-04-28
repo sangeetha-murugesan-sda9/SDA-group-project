@@ -1,0 +1,94 @@
+.btn-blue{
+
+  flex: 1 1 auto;
+  margin: 5px;
+  padding: 20px;
+  text-align: center;
+  
+  text-transform: capitalize;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  text-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 0 20px #eee;
+  border-radius: 30px;
+
+  background-image: linear-gradient(
+    to right,
+    #44dfdf 0%,
+    #c2e9fb 51%,
+    #a1c4fd 100%
+  );
+  border: none;
+}
+
+.btn-blue:hover {
+  background-position: right center;
+}
+
+.btn-white{
+
+  flex: 1 1 auto;
+  margin: 5px;
+  padding: 20px;
+  text-align: center;
+  
+  text-transform: capitalize;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: grey;
+ 
+  border-radius: 30px;
+   background-image: linear-gradient(
+    to right,
+    #ffffff 0%,
+    #dfeef8 51%,
+    #ffffff 100%
+  );
+ 
+  border: 2px solid var(--lagoonBlue);
+}
+
+.btn-white:hover {
+  background-position: right center;
+}
+
+
+.btn-logout {
+  background: var(--deepBlue);
+}
+
+.btn-menu{
+  background-color: transparent;
+  border-radius: 40px;
+  border: 0px ;  
+}
+
+.btn-menu-dropdown{
+  background-color: var(--color-background-menu);
+  color: var(--color-text-menu);
+  font-size: var(--font-dropdown-menu);
+  border: 0px ;
+  text-align: left;
+  }
+
+  .btn-vote{
+    background-color: inherit;
+    border: 0px;
+  }
+
+  .btn-float{
+  border: 0px;
+  font-size: 25px;
+  position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#0C9;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+  margin-top:22px;
+  }

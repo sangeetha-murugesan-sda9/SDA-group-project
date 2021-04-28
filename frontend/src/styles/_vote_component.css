@@ -1,0 +1,15 @@
+.vote-container{
+    font-family: var(--font-funny);
+    width: 100%;
+    height: auto;
+
+display: flex;
+justify-content: space-around;
+
+}
+
+.vote-container p {
+       font-size: 18px;
+    text-align: center;
+}
+
