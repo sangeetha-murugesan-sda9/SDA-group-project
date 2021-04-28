@@ -34,12 +34,7 @@ import org.springframework.web.multipart.MultipartFile;
     public FileDB findById(Long id) {
         return fileDBRepository.findById(id).get();
     }
-/*
 
-    public FileDB delete(String id) {
-        return fileDBRepository.findById(id).delete();
-    }
-*/
 
 
 }

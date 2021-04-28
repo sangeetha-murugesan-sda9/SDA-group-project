@@ -3,19 +3,25 @@ package backend.file;
 import backend.user.User;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import java.util.List;
 
 @Entity
 @Table(name = "files")
 public class FileDB {
 
-        @Id
-        @GeneratedValue(strategy = GenerationType.SEQUENCE)
-        @Column(name = "id")
-        private long id;
+     @Id
+     @GeneratedValue(strategy = GenerationType.SEQUENCE)
+     @Column(name = "id")
+     private long id;
 
-        private String name;
+     @NotBlank
+     @Column(nullable = false)
+     private String name;
 
-        private String type;
+     @NotBlank
+     @Column(nullable = false)
+     private String type;
 
     @OneToOne(targetEntity= User.class,cascade=CascadeType.ALL)
        private User fileOwner;
@@ -74,7 +80,8 @@ public class FileDB {
         }
 
 
-    }
+
+}
 
 
 
