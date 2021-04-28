@@ -1,45 +1,23 @@
 // NPM Packages
 import React, { useState } from "react";
+import Popup from "../../components/Popup";
+
+
 
 export default function LoginForm({ onSubmit }) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    console.log("email",email);
+    console.log("pass",password);
+
+
+    //Methods
 
     return (
         <div className="card-body">
-                <h4 className="card-title">Login</h4>
-                <div>
-                    <div className="form-group">
-                        <label>Email:</label>
-                        <input
-                            type="email"
-                            className="form-control"
-                            placeholder="Email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                        />
-                    </div>
-
-                    <div className="form-group">
-                        <label>Password:</label>
-                        <input
-                            type="password"
-                            placeholder="Password"
-                            className="form-control"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                        />
-                    </div>
-
-                    <div className="form-group">
-                        <button
-                            className="btn btn-info"
-                            onClick={() => onSubmit({ email, password })}
-                        >
-                            Login
-                        </button>
-                    </div>
-                </div>
+            <Popup onSubmit={onSubmit} signIn={true} />
+            <Popup onSubmit={onSubmit} signIn={false}/>
+                
             </div>
 
     );
