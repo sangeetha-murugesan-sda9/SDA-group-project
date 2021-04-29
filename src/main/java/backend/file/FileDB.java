@@ -4,12 +4,13 @@ import backend.user.User;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import java.util.List;
 
 @Entity
 @Table(name = "files")
 public class FileDB {
 
+
+    //fields
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id")
@@ -30,14 +31,13 @@ public class FileDB {
     @OneToOne(targetEntity = User.class, cascade = CascadeType.ALL)
     private User fileOwner;
 
-
-    //constructor
     @Lob
     private byte[] data;
 
+    //constructors
+
     public FileDB() {
     }
-
 
     public FileDB(@NotBlank String name, @NotBlank String type, byte[] data, String like) {
         this.name = name;
@@ -46,6 +46,8 @@ public class FileDB {
         this.likes = like;
     }
 
+    //getters and setters
+
     public User getFileOwner() {
         return fileOwner;
     }
@@ -53,7 +55,6 @@ public class FileDB {
     public void setFileOwner(User fileOwner) {
         this.fileOwner = fileOwner;
     }
-
 
     public Long getId() {
         return id;

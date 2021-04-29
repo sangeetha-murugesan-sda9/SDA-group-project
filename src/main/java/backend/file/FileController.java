@@ -26,7 +26,7 @@ public class FileController {
         this.fileDBRepository = fileDBRepository;
     }
 
-
+// TODO - upload a file by a specific user (the file should have a owner)
     @PostMapping("/upload")
     public ResponseEntity<ResponseMessage> uploadFile(@RequestParam("file") MultipartFile file) {
         String message = "";
@@ -94,6 +94,11 @@ public class FileController {
         return ResponseEntity.ok(fileDB);
     }
 
+    /**
+     * Add a dislike to a picture providing the file/picture id
+     * @param fileId: the id of the file
+     * @return - status of process
+     */
     @PostMapping("/dislikes/{fileId}")
     public ResponseEntity<FileDB> addDisLike(@PathVariable Long fileId) {
 
