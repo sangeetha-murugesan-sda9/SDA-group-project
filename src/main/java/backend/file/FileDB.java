@@ -6,14 +6,14 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-@Table(name = "files")
+@Table
 public class FileDB {
 
 
     //fields
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "id")
+    @Column
     private long id;
 
     @NotBlank
