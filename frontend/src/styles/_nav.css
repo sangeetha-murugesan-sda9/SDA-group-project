@@ -1,13 +1,15 @@
 
 
 nav{
+    
     width:80%;
     display: grid ;
-    grid-template-columns: 60px 1fr ;
+    grid-template-columns: 60px 60px 60px 1fr ;
     align-content: center;
    justify-items: center;
    align-items: center;
    align-content: center;
+  
 }
 
 
@@ -37,7 +39,7 @@ nav{
 
 #nav-main-title{
     align-self: center;
-    text-align: center;
+    text-align: left;
     font-size:var(--font-XS) ;
     font-family: var(--font-classy);
     color: rgb(48, 47, 47);
@@ -48,3 +50,11 @@ nav{
        font-size:var(--font-L) ;
         
 }
+ #nav-logo{
+     height: 60px;
+     padding: 10px;
+     width: auto;    
+     background-color: rgb(255, 234, 43);
+     box-shadow: 2px 2px 2px rgb(204, 202, 202);
+     border-radius: 50px;
+ }

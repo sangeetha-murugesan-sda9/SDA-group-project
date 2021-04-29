@@ -24,6 +24,8 @@ p{
 
 h1{
     text-align: center;
+    font-size: var(--font-M);
+    background-color: yellow;
     margin: 0;
 }
 
