@@ -6,6 +6,7 @@ import NavBar from "../../components/Navbar";
 import Card from "../../components/Card";
 import janeImg from "../../assets/img/mockup/jane-thumbnail.png";
 import Auth from "../../services/Auth";
+import UploadButton from "../../components/UploadButton";
 
 export default function ProfilePage() {
   // Constants
@@ -39,6 +40,7 @@ export default function ProfilePage() {
       <main>
         <div className="profilepage-content">
           <div className="profilepage-submit-container">
+          < UploadButton/>
             <img src={janeImg} alt="img" />
             <h1>{users[randomUser].username}</h1>
             <p>{users[randomUser].address.city} </p>
