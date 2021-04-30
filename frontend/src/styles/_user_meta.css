@@ -1,0 +1,25 @@
+.user-meta {
+  z-index: 1;
+  width: 50%;
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  margin-top: 5px;
+  margin-bottom: 2px;
+}
+
+.user-meta img {
+  width: 40px;
+}
+.user-meta-legend {
+  height: 20px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  
+}
+.user-username {
+  font-weight: 700;
+}
+.user-instagram {
+  font-size: 0.8em;
+  font-weight: 300;
+}

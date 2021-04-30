@@ -1,0 +1,19 @@
+.winner-content{
+        z-index: 1;      
+        height: 100%;     
+
+        display: grid;
+        grid-auto-rows: 30px min-content min-content 100px ;
+        justify-content: center;
+      
+        width: 100%;
+
+
+            
+}
+
+#main-img{
+       height: auto;
+        width: 80vw;
+        border-radius: 30px;
+}

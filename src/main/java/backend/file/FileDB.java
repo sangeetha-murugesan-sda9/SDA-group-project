@@ -4,28 +4,49 @@ import backend.user.User;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import java.util.List;
 
 @Entity
-@Table(name = "files")
+@Table
 public class FileDB {
 
-     @Id
-     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-     @Column(name = "id")
-     private long id;
 
-     @NotBlank
-     @Column(nullable = false)
-     private String name;
+    //fields
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column
+    private long id;
 
-     @NotBlank
-     @Column(nullable = false)
-     private String type;
+    @NotBlank
+    @Column(nullable = false)
+    private String name;
 
-    @OneToOne(targetEntity= User.class,cascade=CascadeType.ALL)
-       private User fileOwner;
+    @NotBlank
+    @Column(nullable = false)
+    private String type;
+    @NotBlank
+    @Column(nullable = false)
+    private String likes;
 
+
+    @OneToOne(targetEntity = User.class, cascade = CascadeType.ALL)
+    private User fileOwner;
+
+    @Lob
+    private byte[] data;
+
+    //constructors
+
+    public FileDB() {
+    }
+
+    public FileDB(@NotBlank String name, @NotBlank String type, byte[] data, String like) {
+        this.name = name;
+        this.type = type;
+        this.data = data;
+        this.likes = like;
+    }
+
+    //getters and setters
 
     public User getFileOwner() {
         return fileOwner;
@@ -34,18 +55,6 @@ public class FileDB {
     public void setFileOwner(User fileOwner) {
         this.fileOwner = fileOwner;
     }
-
-    @Lob
-        private byte[] data;
-
-        public FileDB() {
-        }
-
-        public FileDB(String name, String type, byte[] data) {
-            this.name = name;
-            this.type = type;
-            this.data = data;
-        }
 
     public Long getId() {
         return id;
@@ -56,32 +65,39 @@ public class FileDB {
     }
 
     public String getName() {
-            return name;
-        }
+        return name;
+    }
 
-        public void setName(String name) {
-            this.name = name;
-        }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-        public String getType() {
-            return type;
-        }
+    public String getType() {
+        return type;
+    }
 
-        public void setType(String type) {
-            this.type = type;
-        }
+    public void setType(String type) {
+        this.type = type;
+    }
 
-        public byte[] getData() {
-            return data;
-        }
+    public byte[] getData() {
+        return data;
+    }
 
-        public void setData(byte[] data) {
-            this.data = data;
-        }
+    public void setData(byte[] data) {
+        this.data = data;
+    }
 
+    public String getLikes() {
+        return likes;
+    }
 
-
+    public void setLikes(String likes) {
+        this.likes = likes;
+    }
 }
+
+
 
 
 
