@@ -7,6 +7,7 @@ import NavBar from "../../components/Navbar";
 import Card from "../../components/Card";
 import Auth from "../../services/Auth";
 import cat from "../../assets/img/cat.png";
+import UploadButton from "../../components/UploadButton";
 
 
 export default function DiscoverPage() {
@@ -49,14 +50,11 @@ export default function DiscoverPage() {
 
           <div className="homepage-submit-container" > 
           <img src={cat} alt="img" />
-
-            <button className="btn-float"> + </button>
-
-
           </div>
 
           <div>
             <h2>Discover more styles ...</h2>
+            < UploadButton/>
             <div className="card-small-container">
 
             <React.Fragment>
