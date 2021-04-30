@@ -1,19 +1,22 @@
 .winner-content{
+        
         z-index: 1;      
         height: 100%;     
 
         display: grid;
-        grid-auto-rows: 30px min-content min-content 100px ;
+        grid-template-rows: 30px min-content min-content 80px ;
         justify-content: center;
       
         width: 100%;
-
-
             
 }
+.wrapper-img-square{
+        width: 90vw;
+        height: 80vw;
+        overflow: hidden;
+        
+} 
 
 #main-img{
-       height: auto;
-        width: 80vw;
-        border-radius: 30px;
-}
+    border-radius: 30px;
+  }

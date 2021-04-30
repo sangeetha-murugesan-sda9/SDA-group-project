@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Popover } from "@varld/popover";
 
 import homeButton from "../assets/img/homeButton.png"
+import navLogo from "../assets/img/logo/instyle.svg"
 
 export default function Navbar({ onLogout }) {
   return (
@@ -36,6 +37,10 @@ export default function Navbar({ onLogout }) {
           <button className="btn-menu" ><img src= {homeButton} alt="menu"/></button>
         </Popover>
       </div>
+      
+      <div></div> 
+<img id ="nav-logo" src ={navLogo}></img> 
+  
 <div id ="nav-main-title">
   <strong>[In]Style</strong>
   <p> Be the one</p>
