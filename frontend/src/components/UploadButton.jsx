@@ -3,6 +3,9 @@ import PictureApi from "../api/PictureApi"
 import axios from "axios";
 import Auth from "../services/Auth";
 import { useEffect } from "react";
+import Overlay from "react-overlay-component";
+
+
 
 
 /**
@@ -14,13 +17,20 @@ import { useEffect } from "react";
  export default function UploadButton() {
 
   //constants
-  
+  const [isOpen, setOverlay] = useState(false);
+
+  const closeOverlay = () => setOverlay(false);
 
   // State to store uploaded file
   
   const [file, setFile] = useState();
   const [pic, setPic] = useState("");
- 
+  const configs = {
+    animate: true,
+    // clickDismiss: false,
+    // escapeDismiss: false,
+    // focusOutline: false,
+};
 
 
   //HandleFile
@@ -51,7 +61,7 @@ import { useEffect } from "react";
           "Authorization": Auth.getAuthorizationHeader() }
       }
     );
-
+    closeOverlay();
   }
 
 
@@ -79,23 +89,35 @@ useEffect(() => {
   //console.log(pic);
 },[]);
 
-
-
-
   return (
-    <div>
-    <form>
-    <div id="upload-box">
-        <label htmlFor="files" className="btn">Select file</label>
-      <input id="filez" type="file" onChange={handleFile} />
-           {/* {file && <ImageThumb image={file} />} */}          
-    </div>
-    <button type ="button" onClick={  handleUpload } >Upload</button>
-    </form>
-
-    <img src= {pic} alt= "upPic" /> {/* test */}
     
-    </div>
+   <div>
+            <button
+                className="btn-submit-float"
+                onClick={() => {
+                    setOverlay(true);
+                }}
+            >
+                +
+            </button>
+
+            <Overlay configs={configs} isOpen={isOpen} closeOverlay={closeOverlay}>
+                <h2>Upload a picture</h2>
+
+                <div className="upload-box">
+               
+                <input type="file" onChange={handleFile} />                             
+                <button className="btn-grey" type="button" onClick={handleUpload}>
+                Upload
+              </button>
+              </div>
+              
+            </Overlay>
+        </div>
+ 
+     
+            
+    
   );
 }
 

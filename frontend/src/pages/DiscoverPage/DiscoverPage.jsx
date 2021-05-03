@@ -32,6 +32,9 @@ export default function DiscoverPage() {
         <NavBar onLogout={() => Auth.logout()} />
       </header>
 
+      { users === [0] && <p>Loading Data ...</p>}
+    { users != [0] && 
+
       <main>
         <div className="homepage-content">
 
@@ -41,7 +44,7 @@ export default function DiscoverPage() {
 
           <div>
             <h2>Discover more styles ...</h2>
-            {/* < UploadButton/> */}
+            < UploadButton/>
             <div className="card-small-container">
 
             <React.Fragment>
@@ -56,8 +59,10 @@ export default function DiscoverPage() {
           </div>
         </div>
       </main>
+}
 
       <footer> Follow us | about SDA | About us </footer>
     </div>
+                
   );
 }

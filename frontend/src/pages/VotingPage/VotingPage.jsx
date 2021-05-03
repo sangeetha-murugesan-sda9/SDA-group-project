@@ -10,22 +10,26 @@ import PictureApi from "../../api/PictureApi"
 
 
 export default function VotingPage() {
-    
-  const [pictures, setPictures] = useState([]);
+   // Constants
+ const API_URL ='https://my.api.mockaroo.com/user.json?key=ae007e80';
 
-  //methods
+ //states
+  const [users,setUsers] = useState([0]);
+  const randomId = Math.floor(Math.random() * 25) ;
+  const randomUser = users[randomId];
+  
 
-  async function loadPictures(){
-    PictureApi.getAllpictures()
-        .then(({ data }) => setPictures(data))
-        .catch((err) => console.error(err));
-  }
 
+  // Methods
+  //fetch data 
   useEffect(() => {
-    loadPictures();
-    console.log(pictures);
-  }, []);
+   fetch(API_URL)
+     .then((response) => response.json())
+     .then((json) => setUsers(json));  
+ }, []);
 
+
+ console.log(randomUser);
 
     return (
       <div className="general-container">
@@ -33,18 +37,28 @@ export default function VotingPage() {
           <NavBar onLogout={() => Auth.logout()}/>
         </header>
 
+
+        { randomUser  === undefined && <p>Loading Data ...</p>}
+
+        { randomUser !== undefined && 
+
         <main>
             <div className ="winner-content">
           <h1>Vote for this style ...</h1>
-          <UserMeta/>
-          <img id = "main-img" src={winnerImg} alt="main-logo" />
+          <UserMeta users = {randomUser} /> 
 
+          <div className="wrapper-img-square">
+          <img id = "main-img" src={randomUser.pictures[0].url} alt="main-logo" />
+        </div>
           <div className="under-img-container">
            <VoteComponent />
           </div>
             </div>
             
         </main>
+        
+    }
+
 
         <footer> Follow us | about SDA | About us </footer>
       </div>

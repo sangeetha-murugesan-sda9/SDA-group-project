@@ -47,6 +47,18 @@
   border: 2px solid var(--lagoonBlue);
 }
 
+
+.btn-grey{
+ 
+  border: 2px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
 .btn-white:hover {
   background-position: right center;
 }
@@ -94,6 +106,7 @@
   margin-top: 22px;
 }
 
-#files {
+.invisible {
   visibility: hidden;
 }
+

@@ -16,6 +16,10 @@ export default function ProfilePage() {
   //states
    const [users,setUsers] = useState([0]);
    const [dataLoaded,setDataLoaded] = useState(false);
+
+  /*  const pics = users[0].map((item) => (item.pictures));
+   console.log("PICS",pics); */
+   
  
    // Methods
    //fetch data 
@@ -26,15 +30,14 @@ export default function ProfilePage() {
     .then((response) => response.json())
     .then((json) => setUsers(json));  
     setDataLoaded(true);
-    console.log("USER",users[0])
+    
 }, []);
 
-console.log("USER",users[0])
+console.log("USER",users)
   
   
   return (
     
-
     
     <div className="general-container">
       
@@ -45,18 +48,18 @@ console.log("USER",users[0])
       </header>
 
     { users === [0] && <p>Loading Data ...</p>}
-    { users != [0] && 
+    { users !== [0]  && 
 
       <main>
         <div className="profilepage-content">
           <div className="profilepage-submit-container">
           {/* < UploadButton/> */}
-            <img src={users[0].avatar} alt="img" />
+       {/*      <img src={users[0].avatar} alt="img" />
             <h1>{users[0].firstname} {users[0].lastname}</h1>
             <p>@ {users[0].instagram} </p>
             <p>
-              You have XXX <em>FIRES</em>
-            </p>
+              You have {users[0].likes} <em> FIRES</em>
+            </p> */}
 
             <button className="btn-blue">Submit a style</button>
             <button className="btn-white">Edit your profile</button>
@@ -66,13 +69,13 @@ console.log("USER",users[0])
             {/* <h2>{users[0].username} styles ...</h2> */}
             <div className="card-small-container">
 
-              {/* <React.Fragment>
-                {userPictures.map((item) => (
+              <React.Fragment>
+             {/*  {users.pictures.map((item) => (
                   <React.Fragment key={item.id}>
-                    <Card item ={item} score = {true} votes = {false} meta = {false}  users = {users}/>                                                  
+                    <Card item = {item} score = {false} votes = {true}  meta = {true} />                                                  
                   </React.Fragment>
-                ))}
-              </React.Fragment> */}
+                ))} */}
+              </React.Fragment>
               
             </div>
           </div>

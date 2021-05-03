@@ -9,6 +9,8 @@
 
 .user-meta img {
   width: 40px;
+  background-color: yellow;
+  border-radius: 50%;
 }
 .user-meta-legend {
   height: 20px;
