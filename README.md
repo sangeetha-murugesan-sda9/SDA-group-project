@@ -252,7 +252,7 @@ View number of disLikes for specfic picture.
 
 ![DataBase1](ScreenShots/DataBase1.png)
 
-## To view all the rows in the particular table (account,post,comment)
+## To view all the rows in the particular table (account,filedb)
 
 ![DataBase2](ScreenShots/DataBase2.png)
 
