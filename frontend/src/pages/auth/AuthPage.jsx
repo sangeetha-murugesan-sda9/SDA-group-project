@@ -32,8 +32,8 @@ export default function LoginPage() {
     return (
         <div className="wrapper">
                     <div className="col-md-6 " style={{ color: "white" }}>
-                        <h1>InStyle</h1>
-                        <p></p>
+                        {/*<h1>InStyle</h1>*/}
+                        {/*<p></p>*/}
                     </div>
 
                     <div className="col-md-6">

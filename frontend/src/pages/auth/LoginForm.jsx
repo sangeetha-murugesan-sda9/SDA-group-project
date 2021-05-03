@@ -1,6 +1,9 @@
 // NPM Packages
 import React, { useState } from "react";
 import Popup from "../../components/Popup";
+import logo from "../../assets/img/logo/instyle_logo.png";
+import Auth from "../../services/Auth";
+import ParticlesBg from 'particles-bg';
 
 
 
@@ -14,11 +17,28 @@ export default function LoginForm({ onSubmit }) {
     //Methods
 
     return (
-        <div className="card-body">
-            <Popup onSubmit={onSubmit} signIn={true} />
-            <Popup onSubmit={onSubmit} signIn={false}/>
-                
-            </div>
+        <div className="general-container">
 
+
+            <header>
+                {/*<NavBar onLogout={() => Auth.logout()}/>*/}
+            </header>
+            <img className="Landing-logo" src={logo} alt="Logo"/>;
+            <main>
+
+                <div className="popovergroup">
+                    <ParticlesBg num={3} type="square" bg={true} />
+                    <Popup className="signInbtn" onSubmit={onSubmit} signIn={true}/>
+
+                </div>
+                <div className="popovergroup">
+
+                    <Popup  className="registerbtn" onSubmit={onSubmit} signIn={false}/>
+
+                </div>
+            </main>
+
+
+        </div>
     );
 }
