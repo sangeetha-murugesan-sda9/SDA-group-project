@@ -6,17 +6,19 @@
    grid-gap: 10px;
  
    justify-items: center;
-
+   margin: 0px 8px;
    margin-bottom: 10px;
    
  }
  .card-small-container img{
     border-radius: 25px 25px 0px 0px ;
+    
  
  }
 
  .card-small{
      display: flex;
+     width:100%;
      flex-direction: column;
     justify-content: flex-start;
 

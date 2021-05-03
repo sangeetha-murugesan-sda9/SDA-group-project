@@ -10,40 +10,50 @@ import UploadButton from "../../components/UploadButton";
 
 export default function ProfilePage() {
   // Constants
-  const photos = require("../../api/api_photos.json");
-  const users = require("../../api/api_users.json");
-  const [fetchedPhotos,setFetchedPhotos] = useState([]);
-
-  const randomUser = Math.floor(Math.random() * 10);
   
-  /*   const [photos, setPhotos] = useState([]); // result of API fetch for photos
-  const [users, setUsers] = useState([]); // result of API fetch for users
-   */
+  const API_URL ='https://my.api.mockaroo.com/user.json?key=ae007e80';
 
-  //Methods
-  //fetch photos  
-  useEffect(() => {
-    fetch("https://picsum.photos/v2/list?page=2&limit=7")
-      .then((response) => response.json())
-      .then((json) => setFetchedPhotos(json));
-      
-  }, []);  
+  //states
+   const [users,setUsers] = useState([0]);
+   const [dataLoaded,setDataLoaded] = useState(false);
+ 
+   // Methods
+   //fetch data 
+// useEffect.
+ //fetch data 
+ useEffect(() => {
+  fetch(API_URL)
+    .then((response) => response.json())
+    .then((json) => setUsers(json));  
+    setDataLoaded(true);
+    console.log("USER",users[0])
+}, []);
 
+console.log("USER",users[0])
   
-
+  
   return (
+    
+
+    
     <div className="general-container">
+      
+    
+    
       <header>
         <NavBar onLogout={() => Auth.logout()} />
       </header>
 
+    { users === [0] && <p>Loading Data ...</p>}
+    { users != [0] && 
+
       <main>
         <div className="profilepage-content">
           <div className="profilepage-submit-container">
-          < UploadButton/>
-            <img src={janeImg} alt="img" />
-            <h1>{users[randomUser].username}</h1>
-            <p>{users[randomUser].address.city} </p>
+          {/* < UploadButton/> */}
+            <img src={users[0].avatar} alt="img" />
+            <h1>{users[0].firstname} {users[0].lastname}</h1>
+            <p>@ {users[0].instagram} </p>
             <p>
               You have XXX <em>FIRES</em>
             </p>
@@ -53,21 +63,24 @@ export default function ProfilePage() {
           </div>
 
           <div>
-            <h2>{users[randomUser].username} styles ...</h2>
+            {/* <h2>{users[0].username} styles ...</h2> */}
             <div className="card-small-container">
 
-              <React.Fragment>
-                {photos.map((item) => (
+              {/* <React.Fragment>
+                {userPictures.map((item) => (
                   <React.Fragment key={item.id}>
                     <Card item ={item} score = {true} votes = {false} meta = {false}  users = {users}/>                                                  
                   </React.Fragment>
                 ))}
-              </React.Fragment>
+              </React.Fragment> */}
               
             </div>
           </div>
         </div>
       </main>
+
+}
+
 
       <footer> Follow us | about SDA | About us </footer>
     </div>

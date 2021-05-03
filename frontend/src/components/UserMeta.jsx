@@ -8,10 +8,10 @@ export default function UserMeta({users}) {
 
     return (
       <div className="user-meta">
-        <img src = {userThumbnail} alt="thumb"/>
+        <img src = {users.avatar} alt="thumb"/>
         <div className = "user-meta-legend">
-          <p className="user-username">username</p>
-          <p className="user-instagram">@instagram</p>
+          <p className="user-username">{users.firstname} {users.lastname}</p>
+          <p className="user-instagram">@{users.instagram}</p>
 
         </div>
 

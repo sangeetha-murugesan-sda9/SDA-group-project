@@ -12,31 +12,18 @@ import UploadButton from "../../components/UploadButton";
 
 export default function DiscoverPage() {
  // Constants
- //const photos = require("../../api/api_photos.json");
- //const users = require("../../api/api_users.json");
- const [fetchedPhotos,setFetchedPhotos] = useState([]);
- const [fetchedUsers,setFetchedUsers] = useState([]);
+ const API_URL ='https://my.api.mockaroo.com/user.json?key=ae007e80';
 
- //const randomUser = Math.floor(Math.random() * 10);
-
-
+//states
+ const [users,setUsers] = useState([]);
 
  // Methods
- //fetch photos  
+ //fetch data 
  useEffect(() => {
-  fetch("https://picsum.photos/v2/list?page=2&limit=7")
+  fetch(API_URL)
     .then((response) => response.json())
-    .then((json) => setFetchedPhotos(json));
-    
+    .then((json) => setUsers(json));  
 }, []);
-
- //fetch users 
- useEffect(() => {
-  fetch("https://mocki.io/v1/d4867d8b-b5d5-4a48-a4ab-79131b5809b8")
-    .then((response) => response.json())
-    .then((json) => setFetchedUsers(json));
-    }, [fetchedPhotos]);
-
 
   
   return (
@@ -49,18 +36,18 @@ export default function DiscoverPage() {
         <div className="homepage-content">
 
           <div className="homepage-submit-container" > 
-          <img src={cat} alt="img" />
+          
           </div>
 
           <div>
             <h2>Discover more styles ...</h2>
-            < UploadButton/>
+            {/* < UploadButton/> */}
             <div className="card-small-container">
 
             <React.Fragment>
-                {fetchedPhotos.map((item) => (
+                {users.map((item) => (
                   <React.Fragment key={item.id}>
-                    <Card item ={item} score = {false} votes = {true}  meta = {true} users={fetchedUsers}/>                                                  
+                    <Card item = {item} score = {false} votes = {true}  meta = {true} />                                                  
                   </React.Fragment>
                 ))}
               </React.Fragment>

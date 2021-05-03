@@ -1,5 +1,9 @@
 import {React,useState} from "react";
 import PictureApi from "../api/PictureApi"
+import axios from "axios";
+import Auth from "../services/Auth";
+import { useEffect } from "react";
+
 
 /**
  * Component to handle file upload.
@@ -10,60 +14,87 @@ import PictureApi from "../api/PictureApi"
  export default function UploadButton() {
 
   //constants
-  const URL='http://localhost:8080/upload';
+  
 
   // State to store uploaded file
-  const [file, setFile] = useState();
-
-/*  function uploadFile(file) {
-    fetch({URL}, {
-      // content-type header should not be specified!
-      mode: 'no-cors',
-      method: 'POST',
-      body: file,
-    })
-      .then(response => response.json())
-      .then(success => {
-        // Do something with the successful response
-      })
-      .catch(error => console.log(error)
-    );
-  }  */
-
-/*   function uploadFile(file){
-    PictureApi.upload(file);
-  } */
-
-  // Handles file upload event and updates state
-  function handleUpload(event) {
-    setFile(event.target.files[0]);
-    console.log(file);
-
- /**
- * Component to display thumbnail of image.
- */   
-    const ImageThumb = ({ image }) => {
-        return <img src={URL.createObjectURL(image)} alt={image.name} />;
-      };
-
-
-
-
-    // TODO - Add code here to upload file to server
-    // ...
   
-    /* uploadFile(file); */
+  const [file, setFile] = useState();
+  const [pic, setPic] = useState("");
+ 
 
-   
+
+  //HandleFile
+  function handleFile(event) {
+    setFile(event.target.files[0]);   
+   }
+
+
+
+  // Handle the upload to dB //
+  function handleUpload() {
+
+    console.log(file,"state file");
+             
+    const formdata = new FormData()
+    formdata.append('file',file);
+    formdata.append('user',file);      
+
+    console.log(formdata,"formdata");
+
+    console.log("token" ,Auth.getAuthorizationHeader() );
+
+    axios.post(
+      "http://localhost:8080/upload",
+      formdata,
+      {
+        headers: { 
+          "Authorization": Auth.getAuthorizationHeader() }
+      }
+    );
 
   }
 
+
+/// return image at id 1 - from db
+
+function getPicOne(){
+  axios.get(
+    "http://localhost:8080/files/1",   
+    {
+      headers: { 
+        "Authorization": Auth.getAuthorizationHeader() },
+    }
+  )
+  .then((res) => {
+    console.log(res.data)          
+  })
+  .catch((error) => {
+    console.error(error)
+  });
+}
+
+
+useEffect(() => {
+  getPicOne();  
+  //console.log(pic);
+},[]);
+
+
+
+
   return (
+    <div>
+    <form>
     <div id="upload-box">
-        <label htmlFor="files" className="btn-submit-float">+</label>
-      <input id="files" type="file" onChange={handleUpload} />
-           {/* {file && <ImageThumb image={file} />} */}
-           
+        <label htmlFor="files" className="btn">Select file</label>
+      <input id="filez" type="file" onChange={handleFile} />
+           {/* {file && <ImageThumb image={file} />} */}          
+    </div>
+    <button type ="button" onClick={  handleUpload } >Upload</button>
+    </form>
+
+    <img src= {pic} alt= "upPic" /> {/* test */}
+    
     </div>
   );
 }

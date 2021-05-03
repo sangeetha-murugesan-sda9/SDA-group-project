@@ -1,10 +1,10 @@
 import Api from "./Api";
+import axios from "axios";
 
 class PictureApi {
 
-upload(file) {
-    return Api.post("/upload", file);
-  }
+
+//https://my.api.mockaroo.com/user.json?key=ae007e80
 
   getAllpictures() {
     return Api.get("/files");
@@ -21,6 +21,16 @@ upload(file) {
   deletePost(id) {
     return Api.delete("/posts/" + id);
   } */
+
+
+
+
+
+
+
+
+
+  
 }
 
 export default new PictureApi();
