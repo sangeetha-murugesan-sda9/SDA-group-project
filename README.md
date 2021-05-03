@@ -30,7 +30,7 @@ Front-end for this application is built with Create React App.
 ```sh
 npx create-react-app my-app
 cd frontend
-npm install --save particles-bg
+npm install 
 npm start 
 
 ```
