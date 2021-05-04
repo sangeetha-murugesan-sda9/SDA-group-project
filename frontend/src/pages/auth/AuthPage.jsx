@@ -3,9 +3,10 @@ import React from "react";
 
 
 // Project files
-import LoginForm from "./LoginForm";
-import RegisterForm from "./RegisterForm";
+
 import Auth from "../../services/Auth";
+//git import BackGround from "../../assets/img/BackGround/581znc.gif";
+import Popup from "../../components/Popup";
 
 export default function LoginPage() {
     
@@ -19,8 +20,6 @@ export default function LoginPage() {
             alert("Invalid credentials");           
         }
         
-
-        
     }
 
     async function register(registrationData) {
@@ -30,23 +29,23 @@ export default function LoginPage() {
         }
     }
     return (
-        <div className="wrapper">
-                    <div className="col-md-6 " style={{ color: "white" }}>
-                        <h1>InStyle</h1>
-                        <p></p>
-                    </div>
+        <div className="wrapper"  >
 
-                    <div className="col-md-6">
-                            <div className="col-12">
-                                <LoginForm onSubmit={login} />
-                            </div>
+            <main>
+                <h2  className="center">
+                    In style
+                </h2>
+                <p className="center"> Be the one </p>
 
-                            <div className="col-12 mt-4">
-                                <RegisterForm onSubmit={register} />
-                            </div>
-                        </div>
+                <div className="container">
+
+                    <div className="center">
+                        <Popup className="signInbtn" onSubmit={login} signIn={true}/>
+                        <Popup  className="registerbtn" onSubmit={register} signIn={false}/>
                     </div>
+                </div>
+            </main>
+        </div>
 
     );
-
 }
