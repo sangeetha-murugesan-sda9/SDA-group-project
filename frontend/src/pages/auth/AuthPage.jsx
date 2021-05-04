@@ -1,12 +1,12 @@
 // NPM Packages
 import React from "react";
 
-
 // Project files
-
+import "../../styles/base.css";
 import Auth from "../../services/Auth";
-//git import BackGround from "../../assets/img/BackGround/581znc.gif";
+import background from "../../assets/img/landingBackground.gif";
 import Popup from "../../components/Popup";
+
 
 export default function LoginPage() {
     
@@ -29,23 +29,30 @@ export default function LoginPage() {
         }
     }
     return (
-        <div className="wrapper"  >
+      <div className="wrapper">
+        <img src={background} alt="landBack" id="background" />
 
-            <main>
-                <h2  className="center">
-                    In style
-                </h2>
-                <p className="center"> Be the one </p>
+        <main>
+          <div className="centered-container">
+            <div className="title">
+           
+            <p> [In]style</p>
+            <h1> Be the one </h1>
+             </div>
 
-                <div className="container">
+            <div className="popup-container">
+              <Popup className="signInbtn" onSubmit={login} signIn={true} />
+              <Popup
+                className="registerbtn"
+                onSubmit={register}
+                signIn={false}
+              />
+            </div>
 
-                    <div className="center">
-                        <Popup className="signInbtn" onSubmit={login} signIn={true}/>
-                        <Popup  className="registerbtn" onSubmit={register} signIn={false}/>
-                    </div>
-                </div>
-            </main>
-        </div>
 
+
+          </div>
+        </main>
+      </div>
     );
 }

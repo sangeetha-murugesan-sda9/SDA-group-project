@@ -73,7 +73,7 @@ export default function Popup({ onSubmit, signIn }) {
 
     return (
         <div className="card-body">
-            <h4 className="card-title">Sign up</h4>
+            <h4 className="card-title">Register</h4>
             <div>
                 <div className="form-group">
                     <label>Name:</label>
