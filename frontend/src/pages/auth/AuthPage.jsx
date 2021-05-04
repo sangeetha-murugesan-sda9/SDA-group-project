@@ -1,12 +1,12 @@
 // NPM Packages
 import React from "react";
 
-
 // Project files
 
 import Auth from "../../services/Auth";
-//git import BackGround from "../../assets/img/BackGround/581znc.gif";
+import "../../assets/img/BackGround/581znc.gif";
 import Popup from "../../components/Popup";
+import "../../styles/auth.css";
 
 export default function LoginPage() {
     
@@ -29,13 +29,13 @@ export default function LoginPage() {
         }
     }
     return (
-        <div className="wrapper"  >
+        <div className="wrapper" >
 
             <main>
-                <h2  className="center">
+                <h2  className="heading">
                     In style
                 </h2>
-                <p className="center"> Be the one </p>
+                <p className="head"> Be the one </p>
 
                 <div className="container">
 

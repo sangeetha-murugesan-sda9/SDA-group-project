@@ -1,6 +1,9 @@
 .wrapper{
-
-
+    background-image: url("./../assets/img/BackGround/5820a3.gif");
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
 }
 .form-body{
     text-align: center;
@@ -20,8 +23,32 @@
 .center {
     margin: 0;
     position: absolute;
-    top: 50%;
+    top: 75%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
+
+.heading {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.head{
+    margin: 0;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color: white;
+
+}
+
+
+
