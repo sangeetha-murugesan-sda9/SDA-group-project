@@ -10,7 +10,7 @@ export default function Card({ item, score, votes, meta}) {
     <div className="card-small">
       {meta === true && <UserMeta users={item}/>}
 
-      <img src={item.pictures[0].url}  alt="items"/>
+      <img src={item.pictures[0].url} alt="items"/>
 
       {votes === true && <VoteComponent />}
 

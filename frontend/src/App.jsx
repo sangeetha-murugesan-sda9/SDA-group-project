@@ -37,7 +37,7 @@ export default function App() {
                     </Route>
 
                     <Route path="/profile">
-                        <ProfilePage />
+                        <ProfilePage owner={true} />
                     </Route>
 
                     <Route path="/discover">

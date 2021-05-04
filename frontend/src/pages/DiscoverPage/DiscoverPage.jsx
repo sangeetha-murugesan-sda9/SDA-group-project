@@ -7,23 +7,39 @@ import NavBar from "../../components/Navbar";
 import Card from "../../components/Card";
 import Auth from "../../services/Auth";
 import cat from "../../assets/img/cat.png";
+import AuthApi from "../../api/AuthApi";
 import UploadButton from "../../components/UploadButton";
 
 
 export default function DiscoverPage() {
  // Constants
- const API_URL ='https://my.api.mockaroo.com/user.json?key=ae007e80';
+ 
+ const currentUser = AuthApi.getCurrentUser();
+
+ const API_URL = "https://my.api.mockaroo.com/user.json?key=ae007e80";
+ const JSON_MOCKUP = require("../../api/api_users.json");
+ const JSON_MOCKUP_URL = "../../api/api_users.json";
 
 //states
  const [users,setUsers] = useState([]);
 
  // Methods
- //fetch data 
- useEffect(() => {
-  fetch(API_URL)
-    .then((response) => response.json())
-    .then((json) => setUsers(json));  
-}, []);
+   //fetch data distant API
+   function fetchdataURL() {
+    fetch(API_URL)
+      .then((response) => response.json())
+      .then((json) => setUsers(json));    
+  }
+
+  //fetch data distant API
+  function fetchdataMOCKUP() {
+    setUsers(JSON_MOCKUP);   
+  }
+
+  //use Effect
+  useEffect(() => {
+    fetchdataMOCKUP();
+  }, []);
 
   
   return (
@@ -33,7 +49,7 @@ export default function DiscoverPage() {
       </header>
 
       { users === [0] && <p>Loading Data ...</p>}
-    { users != [0] && 
+    { users !== [0] && 
 
       <main>
         <div className="homepage-content">

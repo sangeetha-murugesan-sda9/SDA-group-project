@@ -18,7 +18,7 @@ export default function Navbar({ onLogout }) {
                   Discover
                 </Link>
                 <Link to="/profile" className="nav-link">
-                  Profile
+                  My profile
                 </Link>
                 <Link to="/vote" className="nav-link">
                   Vote

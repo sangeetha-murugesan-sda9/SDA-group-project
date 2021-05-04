@@ -17,8 +17,9 @@ import Overlay from "react-overlay-component";
  export default function UploadButton() {
 
   //constants
+  
+  //Manage the overlay
   const [isOpen, setOverlay] = useState(false);
-
   const closeOverlay = () => setOverlay(false);
 
   // State to store uploaded file
@@ -84,10 +85,10 @@ function getPicOne(){
 }
 
 
-useEffect(() => {
+/* useEffect(() => {
   getPicOne();  
   //console.log(pic);
-},[]);
+},[]); */
 
   return (
     
