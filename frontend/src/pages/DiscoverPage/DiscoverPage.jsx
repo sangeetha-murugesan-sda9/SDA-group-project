@@ -9,6 +9,7 @@ import Auth from "../../services/Auth";
 import cat from "../../assets/img/cat.png";
 import AuthApi from "../../api/AuthApi";
 import UploadButton from "../../components/UploadButton";
+import SlidingMenu from "../../components/SlidingMenu";
 
 
 export default function DiscoverPage() {
@@ -44,8 +45,13 @@ export default function DiscoverPage() {
   
   return (
     <div className="general-container">
-      <header>
+       <header>
+         
+      <SlidingMenu />
+      <div className="nav-container">
         <NavBar onLogout={() => Auth.logout()} />
+      </div>
+      
       </header>
 
       { users === [0] && <p>Loading Data ...</p>}

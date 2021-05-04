@@ -30,22 +30,24 @@ export default function LoginPage() {
     }
     return (
       <div className="wrapper">
-        <img src={background} alt="landBack" id="background" />
+        {/* <img src={background} alt="landBack" id="background" /> */}
 
         <main>
           <div className="centered-container">
             <div className="title">
            
-            <p> [In]style</p>
+            <h3><strong>In</strong>style</h3>
             <h1> Be the one </h1>
              </div>
 
             <div className="popup-container">
+              
               <Popup className="signInbtn" onSubmit={login} signIn={true} />
               <Popup
                 className="registerbtn"
                 onSubmit={register}
                 signIn={false}
+                
               />
             </div>
 

@@ -8,6 +8,7 @@ import VoteComponent from "../../components/VoteComponent";
 import Auth from "../../services/Auth";
 import PictureApi from "../../api/PictureApi"
 import AuthApi from "../../api/AuthApi";
+import SlidingMenu from "../../components/SlidingMenu";
 
 
 export default function VotingPage() {
@@ -24,8 +25,6 @@ export default function VotingPage() {
   const randomId = Math.floor(Math.random() * 25) ;
   const randomUser = users[randomId];
   
-
-
   // Methods
    //fetch data distant API
    function fetchdataURL() {
@@ -50,8 +49,13 @@ export default function VotingPage() {
     return (
       <div className="general-container">
         <header>
-          <NavBar onLogout={() => Auth.logout()}/>
-        </header>
+         
+         <SlidingMenu />
+         <div className="nav-container">
+           <NavBar onLogout={() => Auth.logout()} />
+         </div>
+         
+         </header>
 
 
         { randomUser  === undefined && <p>Loading Data ...</p>}

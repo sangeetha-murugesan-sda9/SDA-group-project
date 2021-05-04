@@ -13,13 +13,6 @@ header{
   border-bottom-right-radius: 70% 60%;
 
   box-shadow: 1px 1px 4px  rgb(201, 199, 199);
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
- 
-  
-
 }
 
 main {

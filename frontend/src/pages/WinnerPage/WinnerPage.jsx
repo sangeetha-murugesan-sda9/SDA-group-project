@@ -8,6 +8,7 @@ import UserMeta from "../../components/UserMeta";
 import winnerImg from "../../assets/img/mockup/PowerRangers/power_rainbow.jpg";
 import Auth from "../../services/Auth";
 import AuthApi from "../../api/AuthApi";
+import SlidingMenu from "../../components/SlidingMenu";
 
 export default function WinnerPage() {
   // Constants
@@ -46,7 +47,11 @@ export default function WinnerPage() {
   return (
     <div className="general-container">
       <header>
+      <SlidingMenu />
+      <div className="nav-container">
         <NavBar onLogout={() => Auth.logout()} />
+      </div>
+      
       </header>
 
       {randomUser === undefined && <p>Loading Data ...</p>}

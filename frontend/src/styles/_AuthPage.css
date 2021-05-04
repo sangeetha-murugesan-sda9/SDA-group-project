@@ -1,7 +1,9 @@
 .wrapper{
-    height:100vh;
-    width: 100vw; 
-
+  height:100vh;
+  width: 100vw;
+  background-image: url(../assets/img/landingBackground.gif);
+  background-size: cover;
+  background-color: tomato;
 }
 .form-body{
     text-align: center;
@@ -13,7 +15,6 @@
 }
 
 .centered-container{
-    
     margin: 0;
     position: absolute;
     top: 50%;
@@ -22,7 +23,6 @@
     transform: translate(-50%, -50%);
 }
 .title{
-    /* background-color: rgba(22, 22, 22, 0.13); */
     
     font-size: var(--font-XL);
     color: white;
@@ -30,14 +30,7 @@
     flex-direction: column;
     align-items: center;     
     
-
-    padding:20px;
+    margin-bottom: 30px;
 }
 
 
-#background{
-z-index: -1;
-position: relative; 
-height: 100%;
-opacity: 1;
-}
