@@ -8,6 +8,7 @@ import Auth from "../../services/Auth";
 import AuthApi from "../../api/AuthApi";
 import UploadButton from "../../components/UploadButton";
 import like from "../../assets/img/logo/flame.png";
+import dislike from "../../assets/img/logo/oops.png";
 
 export default function ProfilePageContent({owner}) {
   // Constants
@@ -19,8 +20,9 @@ export default function ProfilePageContent({owner}) {
   const JSON_MOCKUP_URL = "../../api/api_users.json";
 
   //states
-  const [users, setUsers] = useState([-1]);
-  
+  const [users, setUsers] = useState([]);
+  const randomId = 0 ;
+  const randomUser = users[randomId];
 
   // Methods
   //fetch data distant API
@@ -40,33 +42,34 @@ export default function ProfilePageContent({owner}) {
     fetchdataMOCKUP();
   }, []);
 
-  console.log("USER", users);
+  console.log("USER", users[0]);
   
 
   return (
     <div className="profilepage-content">
-      {users === [-1] && <p> Loading Data ...</p>}
-      {users !== [-1] && (
+      {randomUser === undefined && <p> Loading Data ...</p>}
+      {randomUser !== undefined && (
         <div>
           {owner === true && (
             <div>
               <div className="profilepage-submit-container">
                 <UploadButton />
 
-                <img src={users[0].avatar} alt="img" />
+                <img src={users[0].avatar} className = "img-profile-100" alt="img" />
                 <h1>
                   {currentUser}
                 </h1>
                 <p>@ {users[0].instagram} </p>
                 <p>
-                  You have {users[0].pictures[0].likes} <img className = "img-30" src={like} alt="logo-like"/>
+                  You have {users[0].pictures[0].likes} <img className = "img-20" src={like} alt="logo-like"/>
+                  and {users[0].pictures[0].dislikes} <img className = "img-20" src={dislike} alt="logo-like"/>
                 </p>
 
                 <button className="btn-white">Edit your profile</button>
               </div>
 
               <div>
-                <h2>Your style ...</h2>
+                <h2>Your current style ...</h2>
                 <div className="card-small-container">
                   <img src={users[0].pictures[0].url} alt="picOfTheDay" />
 

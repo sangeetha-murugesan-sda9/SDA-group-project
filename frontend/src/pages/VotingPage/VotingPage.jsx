@@ -7,11 +7,17 @@ import winnerImg from "../../assets/img/mockup/winner.jpeg"
 import VoteComponent from "../../components/VoteComponent";
 import Auth from "../../services/Auth";
 import PictureApi from "../../api/PictureApi"
+import AuthApi from "../../api/AuthApi";
 
 
 export default function VotingPage() {
    // Constants
- const API_URL ='https://my.api.mockaroo.com/user.json?key=ae007e80';
+   const currentUser = AuthApi.getCurrentUser();
+
+   const API_URL = "https://my.api.mockaroo.com/user.json?key=ae007e80";
+   const JSON_MOCKUP = require("../../api/api_users.json");
+   const JSON_MOCKUP_URL = "../../api/api_users.json";
+  
 
  //states
   const [users,setUsers] = useState([0]);
@@ -21,12 +27,22 @@ export default function VotingPage() {
 
 
   // Methods
-  //fetch data 
+   //fetch data distant API
+   function fetchdataURL() {
+    fetch(API_URL)
+      .then((response) => response.json())
+      .then((json) => setUsers(json));    
+  }
+
+  //fetch data distant API
+  function fetchdataMOCKUP() {
+    setUsers(JSON_MOCKUP);   
+  }
+
+  //use Effect
   useEffect(() => {
-   fetch(API_URL)
-     .then((response) => response.json())
-     .then((json) => setUsers(json));  
- }, []);
+    fetchdataMOCKUP();
+  }, []);
 
 
  console.log(randomUser);
