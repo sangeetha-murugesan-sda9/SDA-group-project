@@ -4,7 +4,6 @@ import React from "react";
 // Project files
 
 import Auth from "../../services/Auth";
-import "../../assets/img/BackGround/581znc.gif";
 import Popup from "../../components/Popup";
 import "../../styles/auth.css";
 
