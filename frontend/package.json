@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^12.8.3",
     "@varld/popover": "^0.1.0",
     "cors": "^2.8.5",
+    "particles-bg": "^2.5.5",
     "react": "^17.0.2",
     "react-awesome-popover": "^6.1.1",
     "react-dom": "^17.0.2",

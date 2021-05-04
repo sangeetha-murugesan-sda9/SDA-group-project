@@ -48,7 +48,7 @@ export default function App() {
                         <VotingPage/>
                     </Route>
 
-                    <Route path="/winner">
+                    <Route path="/">
                         <WinnerPage />
                     </Route>
                 </Switch>
