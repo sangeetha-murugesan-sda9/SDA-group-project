@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=function(e,t,n){if("undefined"==typeof window)return function(){};var r=Array.isArray(e)?e:[e],i=function(e){if("function"!=typeof n||n()){var i=e.target;do{if(-1!=r.indexOf(i))return;i=i.parentNode}while(i);t(e)}};return document.addEventListener("click",i),function(){return document.removeEventListener("click",i)}};
+//# sourceMappingURL=outside-click.cjs.production.min.js.map
