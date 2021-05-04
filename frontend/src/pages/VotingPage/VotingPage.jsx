@@ -9,6 +9,7 @@ import Auth from "../../services/Auth";
 import PictureApi from "../../api/PictureApi"
 import AuthApi from "../../api/AuthApi";
 import SlidingMenu from "../../components/SlidingMenu";
+import Footer from "../../components/Footer"
 
 
 export default function VotingPage() {
@@ -49,6 +50,10 @@ export default function VotingPage() {
     return (
       <div className="general-container">
         <header>
+
+<div className="header-deco-sub"></div>
+      <div className="header-deco-mid"></div>
+      <div className="header-deco-top"></div>
          
          <SlidingMenu />
          <div className="nav-container">
@@ -79,8 +84,7 @@ export default function VotingPage() {
         
     }
 
-
-        <footer> Follow us | about SDA | About us </footer>
+        <footer> <Footer /> </footer>
       </div>
     );
       

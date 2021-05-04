@@ -1,0 +1,56 @@
+
+.header-deco-top{
+    position: absolute;
+    top:-68px;
+    right:-20px;
+
+    height: calc(var(--header-height)) ;
+    width:100%; 
+    
+    background-image: linear-gradient(var(--lagoonBlue), #5b90d671);
+   
+   border-radius: 0 0 50% 50%; 
+
+   opacity: 0.3;
+      
+    z-index: -98;
+} 
+
+.header-deco-mid{
+    position: absolute;
+    top:-40px;
+    left:-10%;
+
+    height: calc(var(--header-height) ) ;
+    width:100%; 
+
+    background-image: linear-gradient(var(--lagoonBlue), #52bbbb41);
+    
+   
+     border-radius: 0 0 50% 30%;
+
+    opacity: 0.6;
+      
+    z-index: -99;
+}
+
+
+.header-deco-sub{
+    position: absolute;
+
+    height: calc(var(--header-height) ) ;
+    width:100%; 
+
+    background-image: linear-gradient(var(--lagoonBlue), #ffffff);
+    
+    border-radius: 0 0 30% 30%;
+
+    opacity: 0.9;
+      
+    z-index: -100;
+}
+
+
+
+
+

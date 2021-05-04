@@ -6,7 +6,8 @@ import Card from "../../components/Card";
 import janeImg from "../../assets/img/mockup/jane-thumbnail.png";
 import Auth from "../../services/Auth";
 import AuthApi from "../../api/AuthApi";
-import UploadButton from "../../components/UploadButton";
+import EditProfileButton from "../../components/EditProfileButton";
+
 import like from "../../assets/img/logo/flame.png";
 import dislike from "../../assets/img/logo/oops.png";
 
@@ -53,9 +54,7 @@ export default function ProfilePageContent({owner}) {
           {owner === true && (
             <div>
               <div className="profilepage-submit-container">
-                <UploadButton />
-
-                <img src={users[0].avatar} className = "img-profile-100" alt="img" />
+               <img src={users[0].avatar} className = "img-profile-100" alt="img" />
                 <h1>
                   {currentUser}
                 </h1>
@@ -64,8 +63,8 @@ export default function ProfilePageContent({owner}) {
                   You have {users[0].pictures[0].likes} <img className = "img-20" src={like} alt="logo-like"/>
                   and {users[0].pictures[0].dislikes} <img className = "img-20" src={dislike} alt="logo-like"/>
                 </p>
-
-                <button className="btn-white">Edit your profile</button>
+                <EditProfileButton/>
+                
               </div>
 
               <div>
@@ -91,7 +90,7 @@ export default function ProfilePageContent({owner}) {
 {owner === false && (
             <div>
               <div className="profilepage-submit-container">
-                <UploadButton />
+              
 
                 <img src={users[0].avatar} alt="img" />
                 <h1>

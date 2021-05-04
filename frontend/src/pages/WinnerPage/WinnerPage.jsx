@@ -9,6 +9,7 @@ import winnerImg from "../../assets/img/mockup/PowerRangers/power_rainbow.jpg";
 import Auth from "../../services/Auth";
 import AuthApi from "../../api/AuthApi";
 import SlidingMenu from "../../components/SlidingMenu";
+import Footer from "../../components/Footer"
 
 export default function WinnerPage() {
   // Constants
@@ -46,6 +47,11 @@ export default function WinnerPage() {
 
   return (
     <div className="general-container">
+
+<div className="header-deco-sub"></div>
+      <div className="header-deco-mid"></div>
+      <div className="header-deco-top"></div>
+
       <header>
       <SlidingMenu />
       <div className="nav-container">
@@ -72,7 +78,7 @@ export default function WinnerPage() {
         </main>
       )}
 
-      <footer> Follow us | about SDA | About us </footer>
+<footer> <Footer /> </footer>
     </div>
   );
 }

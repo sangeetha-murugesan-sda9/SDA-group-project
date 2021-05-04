@@ -6,13 +6,7 @@
 }
 
 header{
-  position: relative;
-  height: var(--header-height);
-  background-image: linear-gradient(var(--lagoonBlue), #d6e1e2);
-  border-bottom-left-radius: 0% 30%;
-  border-bottom-right-radius: 70% 60%;
-
-  box-shadow: 1px 1px 4px  rgb(201, 199, 199);
+  height: var(--header-height);  
 }
 
 main {
@@ -21,7 +15,13 @@ main {
 
 
 footer{
-    background-color: var(--deepBlue);
-    color: white;
-    text-align: center;
+   position: fixed; 
+    bottom:0;
+
+   width: 100%;
+  
+   display: grid;
+   align-items: center;
+
+   z-index: 2;
 }

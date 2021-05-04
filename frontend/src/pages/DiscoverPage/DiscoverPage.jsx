@@ -10,6 +10,7 @@ import cat from "../../assets/img/cat.png";
 import AuthApi from "../../api/AuthApi";
 import UploadButton from "../../components/UploadButton";
 import SlidingMenu from "../../components/SlidingMenu";
+import Footer from "../../components/Footer"
 
 
 export default function DiscoverPage() {
@@ -45,6 +46,11 @@ export default function DiscoverPage() {
   
   return (
     <div className="general-container">
+
+<div className="header-deco-sub"></div>
+      <div className="header-deco-mid"></div>
+      <div className="header-deco-top"></div>
+
        <header>
          
       <SlidingMenu />
@@ -63,10 +69,9 @@ export default function DiscoverPage() {
           <div className="homepage-submit-container" > 
           
           </div>
-
           <div>
             <h2>Discover more styles ...</h2>
-            < UploadButton/>
+           
             <div className="card-small-container">
 
             <React.Fragment>
@@ -83,7 +88,7 @@ export default function DiscoverPage() {
       </main>
 }
 
-      <footer> Follow us | about SDA | About us </footer>
+<footer> <Footer /> </footer>
     </div>
                 
   );

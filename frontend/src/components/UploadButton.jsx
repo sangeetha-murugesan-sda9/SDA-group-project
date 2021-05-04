@@ -94,7 +94,7 @@ function getPicOne(){
     
    <div>
             <button
-                className="btn-submit-float"
+                className="btn-submit-green"
                 onClick={() => {
                     setOverlay(true);
                 }}

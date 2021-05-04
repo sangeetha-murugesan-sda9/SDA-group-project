@@ -1,6 +1,6 @@
 .btn-blue{
   width: 300px;
-  flex: 1 1 auto;
+ 
   margin: 5px;
   padding: 20px;
   text-align: center;
@@ -97,22 +97,23 @@
   border: 0px;
 }
 
-.btn-submit-float {
-  display: grid;
+.btn-submit-green {
+  display: grid;  
   align-items: center;
+
   border: 0px;
-  font-size: 25px;
-  position: fixed;
+  font-size: 25px; 
+
   width: 60px;
   height: 60px;
-  bottom: 40px;
-  right: 40px;
+    
   background-color: #0c9;
-  color: #fff;
+  color: white;
   border-radius: 50px;
+
   text-align: center;
   box-shadow: 2px 2px 3px #999;
-  margin-top: 22px;
+  
 }
 
 .invisible {

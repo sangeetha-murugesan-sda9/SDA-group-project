@@ -14,12 +14,16 @@
 @import url("_nav.css");
 @import url("_AuthPage.css");
 @import url("_burger.css");
+@import url("_footer.css");
+@import url("_overlay.css");
+@import url("_header.css");
+
 
 @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Source+Code+Pro:wght@200;300;400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
 
 /* variables*/ 
 :root {
-    --header-height: 130px;
+    --header-height: 160px;
     --footer-height: 30px;
     
       /*colors*/
