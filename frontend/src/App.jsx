@@ -59,6 +59,7 @@ export default function App() {
                     </Route>
 
                 </Switch>
+                <FooterSangeetha />
             </div>
         </BrowserRouter>
     );

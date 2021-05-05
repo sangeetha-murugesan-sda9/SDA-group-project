@@ -119,25 +119,12 @@ export default function Popup({ onSubmit, signIn }) {
             </div>
         </div>
 
-    
     );      
     
 }}
 >
   <button className="btn-white">Register</button>
 </Popover>
-
-
- )
-
-    
-
-
-
-
-
-
-
-
+    )
   );
 }
