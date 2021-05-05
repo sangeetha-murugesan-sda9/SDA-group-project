@@ -103,8 +103,8 @@ function getPicOne(){
             </button>
 
             <Overlay configs={configs} isOpen={isOpen} closeOverlay={closeOverlay}>
-                <h2>Upload a picture</h2>
 
+                <h2>Upload a picture</h2>
                 <div className="upload-box">
                
                 <input type="file" onChange={handleFile} />                             

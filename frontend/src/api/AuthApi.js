@@ -2,8 +2,7 @@ import Api from "./Api";
 
 class AuthApi {
   authenticate({ email, password }) {
-    
-    sessionStorage.setItem("loggedUser", email);    
+      sessionStorage.setItem("loggedUser", email);    
     return Api.post("/authenticate", { email, password });
       }
 
@@ -17,7 +16,6 @@ class AuthApi {
   } 
 
 // TODO - getCurrentUserName by fetching the API
-
 
 }
 

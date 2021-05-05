@@ -50,13 +50,14 @@ export default function App() {
                         <VotingPage/>
                     </Route>
 
-                    <Route path="/">
+                    <Route  exact  path="/">
                         <WinnerPage />
                     </Route>
 
-                    <Route path="/test">
+                    <Route path="/xxx">
                         <TestPage />
                     </Route>
+
                 </Switch>
             </div>
         </BrowserRouter>
