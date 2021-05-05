@@ -12,6 +12,8 @@ import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import WinnerPage from "./pages/WinnerPage/WinnerPage";
 import VotingPage from "./pages/VotingPage/VotingPage";
 
+//Test page
+import TestPage from "./pages//TestPage/TestPage";
 
 
 export default function App() {
@@ -50,6 +52,10 @@ export default function App() {
 
                     <Route path="/">
                         <WinnerPage />
+                    </Route>
+
+                    <Route path="/test">
+                        <TestPage />
                     </Route>
                 </Switch>
             </div>
