@@ -12,6 +12,8 @@ import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import WinnerPage from "./pages/WinnerPage/WinnerPage";
 import VotingPage from "./pages/VotingPage/VotingPage";
 
+//Test page
+import TestPage from "./pages//TestPage/TestPage";
 
 
 export default function App() {
@@ -37,7 +39,7 @@ export default function App() {
                     </Route>
 
                     <Route path="/profile">
-                        <ProfilePage />
+                        <ProfilePage owner={true} />
                     </Route>
 
                     <Route path="/discover">
@@ -48,9 +50,14 @@ export default function App() {
                         <VotingPage/>
                     </Route>
 
-                    <Route path="/">
+                    <Route  exact  path="/">
                         <WinnerPage />
                     </Route>
+
+                    <Route path="/xxx">
+                        <TestPage />
+                    </Route>
+
                 </Switch>
             </div>
         </BrowserRouter>

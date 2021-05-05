@@ -1,16 +1,20 @@
-.vote-container{
-    
-    font-family: var(--font-funny);
-    width: 100%;
-    height: auto;
+.vote-container {
+  font-family: var(--font-funny);
+  width: 100%;
+  height: auto;
 
-display: flex;
-justify-content: space-around;
-
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .vote-container p {
-       font-size: 18px;
-    text-align: center;
+  font-size: 18px;
+  text-align: center;
 }
 
+#vote-separator {
+  background-color: grey;
+  width: 1px;
+  height: 40px;
+}

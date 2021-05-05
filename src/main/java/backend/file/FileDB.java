@@ -23,6 +23,7 @@ public class FileDB {
     @NotBlank
     @Column(nullable = false)
     private String type;
+
     @NotBlank
     @Column(nullable = false)
     private String likes;

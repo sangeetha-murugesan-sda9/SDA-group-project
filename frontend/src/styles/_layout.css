@@ -23,16 +23,54 @@ p{
 }
 
 h1{
-    text-align: center;
-    font-size: var(--font-M);
-    background-color: yellow;
+    text-align: right;
+    font-size: var(--font-S);
     margin: 0;
+
+}
+h3{
+      margin: 0 0 10px 0;
+      padding: 0;
+      font-weight: 300;
 }
 
+strong{
+  
+    padding:5px;
+    border: 3px solid white ;
+    margin-right: 2px;
+    
+}
 
 
 img{
 width: 100%;
+}
+
+.img-20{
+   height: 20px;
+    width:auto;    
+}
+.img-30{
+    height: 30px;
+     width:auto;    
+ }
+ .img-40{
+    height: 40px;
+     width:auto;    
+ }
+ .img-50{
+    height: 50px;
+     width:auto;    
+ }
+ 
+.img-profile-100{
+   
+    height: 100px;
+    background-color: yellow;
+    border-radius: 50%;
+    border: 1px solid rgb(216, 215, 215);
+    width:auto;    
 }
 
 

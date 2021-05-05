@@ -1,6 +1,6 @@
 .user-meta {
   z-index: 1;
-  width: 50%;
+  width: 100%;
   display: grid;
   grid-template-columns: 50px 1fr;
   margin-top: 5px;
@@ -9,6 +9,8 @@
 
 .user-meta img {
   width: 40px;
+  background-color: yellow;
+  border-radius: 50%;
 }
 .user-meta-legend {
   height: 20px;

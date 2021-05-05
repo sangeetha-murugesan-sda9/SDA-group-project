@@ -6,6 +6,9 @@
 .idea
 .idea/
 
+### node modules ###
+node_modules/
+
 ### Eclipse ###
 .metadata
 bin/
