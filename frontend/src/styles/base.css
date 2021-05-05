@@ -25,7 +25,7 @@
 /* variables*/ 
 :root {
     --header-height: 160px;
-    --footer-height: 30px;
+    --footer-height: 80px;
     
       /*colors*/
     --lagoonBlue: rgb(130, 221, 228);
@@ -36,6 +36,8 @@
 
     --color-background-menu:white;
     --color-text-menu:grey;
+
+    --color-footer-structure:linear-gradient(rgb(223, 223, 223), #d6d6d6);;
   
       /*fonts type*/
     --font-funny : 'Bangers', cursive;

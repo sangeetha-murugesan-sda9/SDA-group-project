@@ -6,7 +6,6 @@ import "../../styles/base.css";
 import Auth from "../../services/Auth";
 import background from "../../assets/img/landingBackground.gif";
 import Popup from "../../components/Popup";
-import "../../styles/auth.css";
 
 
 export default function LoginPage() {

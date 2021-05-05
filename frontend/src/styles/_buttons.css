@@ -98,6 +98,14 @@
 }
 
 .btn-submit-green {
+
+  position: fixed;
+
+  bottom:5px ;
+  left: 50%;
+  transform: translateX(-50%);
+  
+
   display: grid;  
   align-items: center;
 

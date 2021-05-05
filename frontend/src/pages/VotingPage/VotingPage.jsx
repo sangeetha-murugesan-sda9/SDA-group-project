@@ -50,11 +50,6 @@ export default function VotingPage() {
     return (
       <div className="general-container">
         <header>
-
-<div className="header-deco-sub"></div>
-      <div className="header-deco-mid"></div>
-      <div className="header-deco-top"></div>
-         
          <SlidingMenu />
          <div className="nav-container">
            <NavBar onLogout={() => Auth.logout()} />
@@ -83,9 +78,7 @@ export default function VotingPage() {
         </main>
         
     }
-
-        <footer> <Footer /> </footer>
-      </div>
+             </div>
     );
       
 }

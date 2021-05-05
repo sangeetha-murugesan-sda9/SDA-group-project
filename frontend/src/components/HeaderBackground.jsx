@@ -17,9 +17,9 @@ export default function HeaderBackground() {
   return (
     
       <div className="header-wrapper">
-      <div className="header-deco-sub">DECO SUB</div>
-      <div className="header-deco-mid">DECO MID</div>
-      <div className="header-deco-top">DECO TOP</div>
+      <div className="header-deco-sub"></div>
+      <div className="header-deco-mid"></div>
+      <div className="header-deco-top"></div>
       </div>
 
         

@@ -11,9 +11,11 @@ import DiscoverPage from "./pages/DiscoverPage/DiscoverPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import WinnerPage from "./pages/WinnerPage/WinnerPage";
 import VotingPage from "./pages/VotingPage/VotingPage";
+import FooterSangeetha from "./components/FooterSangeetha";
 
 //Test page
-import TestPage from "./pages//TestPage/TestPage";
+import TestPage from "./pages/TestPage/TestPage";
+import HeaderBackground from "./components/HeaderBackground";
 
 
 export default function App() {
@@ -33,6 +35,7 @@ export default function App() {
         <BrowserRouter>
             
             <div >
+            <HeaderBackground />
                 <Switch>
                     <Route path="/login">
                         <LoginPage />
@@ -59,7 +62,9 @@ export default function App() {
                     </Route>
 
                 </Switch>
+
                 <FooterSangeetha />
+                
             </div>
         </BrowserRouter>
     );

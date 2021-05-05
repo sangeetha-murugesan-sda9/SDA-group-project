@@ -46,14 +46,9 @@ export default function DiscoverPage() {
   
   return (
     <div className="general-container">
-
-<div className="header-deco-sub"></div>
-      <div className="header-deco-mid"></div>
-      <div className="header-deco-top"></div>
-
+     
        <header>
-         
-      <SlidingMenu />
+       <SlidingMenu />
       <div className="nav-container">
         <NavBar onLogout={() => Auth.logout()} />
       </div>
@@ -87,8 +82,6 @@ export default function DiscoverPage() {
         </div>
       </main>
 }
-
-<footer> <Footer /> </footer>
     </div>
                 
   );

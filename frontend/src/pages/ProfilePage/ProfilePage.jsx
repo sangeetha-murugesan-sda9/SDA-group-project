@@ -14,11 +14,6 @@ import Footer from "../../components/Footer"
 export default function ProfilePage({ owner }) {
   return (
     <div className="general-container">
-
-      <div className="header-deco-sub"></div>
-      <div className="header-deco-mid"></div>
-      <div className="header-deco-top"></div>
-
       <header>
         <SlidingMenu />
         <div className="nav-container">

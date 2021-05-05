@@ -2,8 +2,9 @@
   height:100vh;
   width: 100vw;
   background-image: url(../assets/img/landingBackground.gif);
+  background-blend-mode: darken;
   background-size: cover;
-  background-color: tomato;
+  background-color: rgba(0, 0, 0, 0.336);  
 }
 .form-body{
     text-align: center;

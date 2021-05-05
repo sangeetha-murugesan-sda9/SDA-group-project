@@ -6,8 +6,20 @@
 .idea
 .idea/
 
-### node modules ###
-node_modules/
+### react ###
+.DS_*
+logs
+**/*.backup.*
+**/*.back.*
+
+node_modules
+bower_components
+
+*.sublime*
+
+psd
+thumb
+sketch
 
 ### Eclipse ###
 .metadata
