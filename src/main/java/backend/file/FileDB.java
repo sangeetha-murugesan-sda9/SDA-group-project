@@ -28,6 +28,9 @@ public class FileDB {
     @Column(nullable = false)
     private String likes;
 
+    @NotBlank
+    @Column(nullable = false)
+    private String Dislikes;
 
     @OneToOne(targetEntity = User.class, cascade = CascadeType.ALL)
     private User fileOwner;
@@ -95,6 +98,14 @@ public class FileDB {
 
     public void setLikes(String likes) {
         this.likes = likes;
+    }
+
+    public String getDislikes() {
+        return Dislikes;
+    }
+
+    public void setDislikes(String dislikes) {
+        Dislikes = dislikes;
     }
 }
 

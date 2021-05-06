@@ -120,4 +120,17 @@ public class FileController {
         return ResponseEntity.ok(count);
     }
 
+    /**
+     * Return Dislikes from a specific file/picture
+     * @param fileId: the id of the file
+     * @return an int - number of Dislikes
+     */
+    @GetMapping("/Dislikes/{fileId}")
+    public ResponseEntity<Integer> getDisLike(@PathVariable Long fileId) {
+
+        FileDB fileDB = fileDBRepository.findById(fileId).orElseThrow(ResourceNotFoundException::new);
+        int count = Integer.parseInt(fileDB.getDislikes());
+        return ResponseEntity.ok(count);
+    }
+
 }
