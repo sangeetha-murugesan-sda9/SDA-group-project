@@ -2,7 +2,7 @@ import { React, useState, useEffect } from "react";
 import axios from "axios";
 import "../../styles/base.css";
 import Auth from "../../services/Auth";
-import AuthApi from "../../api/ApiCalls";
+import AuthApi from "../../api/AuthApi";
 
 export default function TestPage() {
   // Constants
