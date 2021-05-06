@@ -15,7 +15,7 @@
 
 .header-deco-top{
 
-    position: fixed;
+    position: absolute;
     
     top:-68px;
     right:-20px;
@@ -34,7 +34,7 @@
 
 .header-deco-mid{
 
-    position: fixed;
+    position: absolute;;
     top:-40px;
     left:-10%;
 
@@ -54,7 +54,7 @@
 
 .header-deco-sub{
    
-position: fixed;
+position: absolute;
 
     height: calc(var(--header-height) ) ;
     width:100%; 

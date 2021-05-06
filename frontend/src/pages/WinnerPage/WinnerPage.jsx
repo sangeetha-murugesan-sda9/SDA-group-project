@@ -9,8 +9,7 @@ import winnerImg from "../../assets/img/mockup/PowerRangers/power_rainbow.jpg";
 import Auth from "../../services/Auth";
 import AuthApi from "../../api/AuthApi";
 import SlidingMenu from "../../components/SlidingMenu";
-import Footer from "../../components/Footer"
-import FooterSangeetha from "../../components/FooterSangeetha"
+
 
 export default function WinnerPage() {
   // Constants

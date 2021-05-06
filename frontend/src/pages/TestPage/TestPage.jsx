@@ -90,8 +90,7 @@ export default function TestPage() {
       setLikes(res.data);
     }
     );   
-  }
-   
+  }   
 
 // request to get dislikes for picture at id 1 //
   function getDislikes(pictureId){

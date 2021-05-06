@@ -11,7 +11,7 @@ import DiscoverPage from "./pages/DiscoverPage/DiscoverPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import WinnerPage from "./pages/WinnerPage/WinnerPage";
 import VotingPage from "./pages/VotingPage/VotingPage";
-import FooterSangeetha from "./components/FooterSangeetha";
+import Footer from "./components/Footer";
 
 //Test page
 import TestPage from "./pages/TestPage/TestPage";
@@ -63,7 +63,7 @@ export default function App() {
 
                 </Switch>
 
-                <FooterSangeetha />
+                <Footer />
                 
             </div>
         </BrowserRouter>
