@@ -55,23 +55,17 @@ export default function TestPage() {
 
 // request to post likes for picture at id 1 - WORKING ON REFRESH //
   function addLike(){
-    
-    axios.post("http://localhost:8080/likes/1" ,likes,{
-      headers: {
-      Authorization: Auth.getAuthorizationHeader()
-      }
-    }).then((response) => {
+
+    ApiCalls.addLike(1)
+    .then((response) => {
       console.log(response);
     }, (error) => {
       console.log(error);
     })    
     ;
-   
-  }
+   }
 
-
-
-// request to get likes for picture at id 1
+// request to get likes for picture at id 1 //
   function getLikes(pictureId){
 
     ApiCalls.getLikes(pictureId)
@@ -81,9 +75,9 @@ export default function TestPage() {
     }
     );   
   }
-    //use Effect triggered when components mounts ( page refresh)
+    //use Effect triggered when components mounts ( page refresh) //
       useEffect(() => {
-        getLikes(1);
+      getLikes(1);
       }, []);
 
 

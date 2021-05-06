@@ -18,7 +18,16 @@ axios.post("http://localhost:8080/upload", item, {
 
 }
 
-async getLikes(pictureId){
+addLike(pictureId){
+
+    return axios.post("http://localhost:8080/likes/"+ pictureId ,"",{
+        headers: {
+        Authorization: Auth.getAuthorizationHeader()
+        }
+      })
+}
+
+getLikes(pictureId){
     
    return axios.get("http://localhost:8080/likes/"+ pictureId ,{
       headers: {
