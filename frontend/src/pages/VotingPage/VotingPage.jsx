@@ -3,13 +3,11 @@ import {React,useState,useEffect} from "react";
 import "../../styles/base.css"
 import NavBar from "../../components/Navbar"
 import UserMeta from "../../components/UserMeta"
-import winnerImg from "../../assets/img/mockup/winner.jpeg"
 import VoteComponent from "../../components/VoteComponent";
 import Auth from "../../services/Auth";
-import PictureApi from "../../api/PictureApi"
 import AuthApi from "../../api/AuthApi";
 import SlidingMenu from "../../components/SlidingMenu";
-import Footer from "../../components/Footer"
+
 
 
 export default function VotingPage() {

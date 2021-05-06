@@ -6,11 +6,9 @@ import "../../styles/base.css";
 import NavBar from "../../components/Navbar";
 import Card from "../../components/Card";
 import Auth from "../../services/Auth";
-import cat from "../../assets/img/cat.png";
 import AuthApi from "../../api/AuthApi";
-import UploadButton from "../../components/UploadButton";
 import SlidingMenu from "../../components/SlidingMenu";
-import Footer from "../../components/Footer"
+
 
 
 export default function DiscoverPage() {

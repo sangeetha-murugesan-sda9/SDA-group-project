@@ -1,4 +1,4 @@
-import AuthApi from "../api/AuthApi";
+import AuthApi from "../api/ApiCalls";
 
 const tokenKey = "_token";
 

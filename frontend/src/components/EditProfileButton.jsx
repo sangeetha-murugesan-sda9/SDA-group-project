@@ -1,8 +1,6 @@
-import {React,useState} from "react";
-import PictureApi from "../api/PictureApi"
+import {React,useState,useEffect} from "react";
 import axios from "axios";
 import Auth from "../services/Auth";
-import { useEffect } from "react";
 import Overlay from "react-overlay-component";
 
 
