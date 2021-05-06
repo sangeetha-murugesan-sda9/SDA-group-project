@@ -3,6 +3,7 @@ import axios from "axios";
 import "../../styles/base.css";
 import Auth from "../../services/Auth";
 import AuthApi from "../../api/AuthApi";
+import ApiCalls from "../../api/ApiCalls";
 
 export default function TestPage() {
   // Constants
@@ -17,51 +18,42 @@ export default function TestPage() {
   const [users, setUsers] = useState([]);
   const [file, setFile] = useState();
   const [likes, setLikes] = useState(0);
+    
+  // Methods //
 
-  // Methods
-  //fetch data distant API
+  //fetch data distant API //
   function fetchdataURL() {
     fetch(API_URL)
       .then((response) => response.json())
       .then((json) => setUsers(json));
   }
 
-  //fetch data distant API
+  // fetch data local MOCKUP //
   function fetchdataMOCKUP() {
     setUsers(JSON_MOCKUP);
   }
 
-  //use Effect
+  // use Effect to fetch the data //
   useEffect(() => {
     fetchdataMOCKUP();
   }, []);
 
-  //HandleFile
+  // handle the file submitted by client //
   function handleFile(event) {
     setFile(event.target.files[0]);
   }
 
-  // Handle the upload to dB //
+  // handle the upload to dB //
   function handleUpload() {
     console.log(file, "state file");
-
     const formdata = new FormData();
     formdata.append("file", file);
     formdata.append("user", file);
 
-
-    axios.post("http://localhost:8080/upload", formdata, {
-      headers: {
-      Authorization: Auth.getAuthorizationHeader()
-      }
-    });
-   alert("request send to localhost:8080/upload");
+    ApiCalls.uploadPicture(formdata);
   }
 
-
-
-
-// request to post likes for picture at id 1- WORKING ON REFRESH
+// request to post likes for picture at id 1 - WORKING ON REFRESH //
   function addLike(){
     
     axios.post("http://localhost:8080/likes/1" ,likes,{
@@ -72,54 +64,44 @@ export default function TestPage() {
       console.log(response);
     }, (error) => {
       console.log(error);
-    })
-    
+    })    
     ;
    
   }
 
 
 
-
 // request to get likes for picture at id 1
-  function getLikes(){
-      axios.get("http://localhost:8080/likes/1" ,{
-      headers: {
-      Authorization: Auth.getAuthorizationHeader()
-      }
-    })
+  function getLikes(pictureId){
+
+    ApiCalls.getLikes(pictureId)
     .then((res) => {
       console.log("data received" ,res.data);
       setLikes(res.data);
     }
-    );    
+    );   
   }
     //use Effect triggered when components mounts ( page refresh)
       useEffect(() => {
-        getLikes();
+        getLikes(1);
       }, []);
-
-
-
-
-
-
 
 
   function addDislike(){
     
   }
 
-
-
-
   return (
     <div className="general-container">
       
-
-
       <div className = "test-wrapper">
         <h2>TEST PAGE:</h2>
+
+{/* Test get currentUser name */}
+      <div className="upload-box-test">
+      <h3>Current user :</h3>
+      <h4>{AuthApi.getCurrentUser()}</h4>        
+      </div>
 
 {/* Test upload a picture */}
       <div className="upload-box-test">
@@ -142,7 +124,7 @@ export default function TestPage() {
 
 {/* Test adding a like / adding a dislike */}
       <div className="upload-box-test">
-      <h3>Like and Dislike the picture at id=1</h3>
+      <h3>Like and Dislike the picture at id=1 (refresh)</h3>
       
         <button  onClick={addLike} > Like  </button>
         <button  onClick={addDislike} > Dislike </button>
@@ -152,12 +134,15 @@ export default function TestPage() {
 
 {/* Test getting the likes / dislikes for picture at id=1 */}
       <div className="upload-box-test">
-      <h3>GET likes and dislikes  of picture with id=1</h3>
-      
+      <h3>GET likes and dislikes  of picture with id=1</h3>      
         <p>Likes : {likes}  </p>
         <p>Dislikes :</p>
        
       </div>
+
+
+
+
       </div>
       
 
