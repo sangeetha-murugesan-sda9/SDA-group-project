@@ -14,6 +14,8 @@ class ApiCalls {
     });
   }
 
+
+  // POST //
   addLike(pictureId) {
     return axios.post("http://localhost:8080/likes/" + pictureId, "", {
       headers: {
@@ -21,7 +23,6 @@ class ApiCalls {
       },
     });
   }
-
   addDislike(pictureId) {
     return axios.post("http://localhost:8080/dislikes/" + pictureId, "", {
       headers: {
@@ -30,7 +31,7 @@ class ApiCalls {
     });
   }
 
-
+// GET  //
   getLikes(pictureId) {
     return axios.get("http://localhost:8080/likes/" + pictureId, {
       headers: {
@@ -38,7 +39,6 @@ class ApiCalls {
       },
     });
   }
-
   getDislikes(pictureId) {
     return axios.get("http://localhost:8080/dislikes/" + pictureId, {
       headers: {
