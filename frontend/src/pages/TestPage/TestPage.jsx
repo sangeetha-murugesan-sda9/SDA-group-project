@@ -18,6 +18,7 @@ export default function TestPage() {
   const [users, setUsers] = useState([]);
   const [file, setFile] = useState();
   const [likes, setLikes] = useState(0);
+  const [dislikes, setDislikes] = useState(0);
     
   // Methods //
 
@@ -53,6 +54,7 @@ export default function TestPage() {
     ApiCalls.uploadPicture(formdata);
   }
 
+
 // request to post likes for picture at id 1 - WORKING ON REFRESH //
   function addLike(){
 
@@ -65,25 +67,47 @@ export default function TestPage() {
     ;
    }
 
+
+   // request to post likes for picture at id 1 - WORKING ON REFRESH //
+  function addDislike(pictureId){
+
+    ApiCalls.addDislike(1)
+    .then((response) => {
+      console.log(response);
+    }, (error) => {
+      console.log(error);
+    })    
+    ;
+   }
+
+
 // request to get likes for picture at id 1 //
   function getLikes(pictureId){
 
     ApiCalls.getLikes(pictureId)
     .then((res) => {
-      console.log("data received" ,res.data);
+      console.log("likes :" ,res.data);
       setLikes(res.data);
     }
     );   
   }
-    //use Effect triggered when components mounts ( page refresh) //
-      useEffect(() => {
-      getLikes(1);
-      }, []);
+   
 
-
-  function addDislike(){
-    
+// request to get dislikes for picture at id 1 //
+  function getDislikes(pictureId){
+    ApiCalls.getDislikes(pictureId)
+    .then((res) => {
+      console.log("dislikes" ,res.data);
+      setDislikes(res.data);
+    }
+    );   
   }
+
+  //use Effect triggered when components mounts ( page refresh) //
+  useEffect(() => {
+    getLikes(1);
+    getDislikes(1);
+    }, []);
 
   return (
     <div className="general-container">
@@ -120,8 +144,8 @@ export default function TestPage() {
       <div className="upload-box-test">
       <h3>Like and Dislike the picture at id=1 (refresh)</h3>
       
-        <button  onClick={addLike} > Like  </button>
-        <button  onClick={addDislike} > Dislike </button>
+        <button  onClick={() => addLike(1)} > Like  </button>
+        <button  onClick={() => addDislike(1)} > Dislike </button>
        
       </div>
 
@@ -130,11 +154,8 @@ export default function TestPage() {
       <div className="upload-box-test">
       <h3>GET likes and dislikes  of picture with id=1</h3>      
         <p>Likes : {likes}  </p>
-        <p>Dislikes :</p>
-       
-      </div>
-
-
+        <p>Dislikes : {dislikes}</p>
+         </div>
 
 
       </div>

@@ -101,11 +101,12 @@ public class FileController {
     public ResponseEntity<FileDB> addDisLike(@PathVariable Long fileId) {
 
         FileDB fileDB = fileDBRepository.findById(fileId).orElseThrow(ResourceNotFoundException::new);
-        int count = Integer.parseInt(fileDB.getLikes()) - 1;
-        fileDB.setLikes(Integer.toString(count));
+        int count = Integer.parseInt(fileDB.getDislikes()) + 1;
+        fileDB.setDislikes(Integer.toString(count));
         fileDBRepository.save(fileDB);
         return ResponseEntity.ok(fileDB);
     }
+
 
     /**
      * Return likes from a specific file/picture
@@ -125,7 +126,7 @@ public class FileController {
      * @param fileId: the id of the file
      * @return an int - number of Dislikes
      */
-    @GetMapping("/Dislikes/{fileId}")
+    @GetMapping("/dislikes/{fileId}")
     public ResponseEntity<Integer> getDisLike(@PathVariable Long fileId) {
 
         FileDB fileDB = fileDBRepository.findById(fileId).orElseThrow(ResourceNotFoundException::new);
