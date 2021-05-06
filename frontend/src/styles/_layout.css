@@ -28,6 +28,11 @@ h1{
     margin: 0;
 
 }
+h2{
+    margin: 5px 8px;
+    font-size: var(--font-S);
+}
+
 h3{
       margin: 0 0 10px 0;
       padding: 0;

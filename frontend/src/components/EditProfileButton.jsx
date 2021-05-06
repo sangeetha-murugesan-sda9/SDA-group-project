@@ -1,7 +1,10 @@
 import {React,useState,useEffect} from "react";
 import axios from "axios";
+
 import Auth from "../services/Auth";
 import Overlay from "react-overlay-component";
+import edit from "../assets/img/icons/pen.svg"
+
 
 
 /**
@@ -60,16 +63,16 @@ import Overlay from "react-overlay-component";
    return (
      <div>
        <button
-         className="btn-blue"
+         className="btn-edit"
          onClick={() => {
            setOverlay(true);
          }}
        >
-         Edit profile
+         <img src={edit}/>
        </button>
 
        <Overlay configs={configs} isOpen={isOpen} closeOverlay={closeOverlay}>
-         <h2>Edit profile</h2>
+         <h3>Edit profile</h3>
 
          <div className="overlay-form-group">
            <label>Change username</label>

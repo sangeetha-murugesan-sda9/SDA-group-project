@@ -13,10 +13,10 @@
 .header-deco-top{
 
     position: absolute;
-    top:-70px;
+    top:-100px;
     right:0px;
-
-    height: calc(var(--header-height) ) ;
+  
+    height: 200px;
     width:100%; 
 
     background-image: linear-gradient(rgb(124, 96, 190), #52bbbb23);
@@ -32,10 +32,11 @@
 .header-deco-mid{
 
     position: absolute;
-    top:-40px;
+    top:-80px;
     left:-10%;
 
-    height: calc(var(--header-height) ) ;
+    /*  height: calc(var(--header-height) ) ; */
+   height: 200px;
     width:100%; 
 
     background-image: linear-gradient(var(--lagoonBlue), #52bbbb27);
@@ -53,7 +54,8 @@
    
     position: absolute;
 
-    height: calc(var(--header-height) ) ;
+    /*  height: calc(var(--header-height) ) ; */
+   height: 200px;
     width:100%; 
 
     background-image: linear-gradient(var(--lagoonBlue), #ffffff);

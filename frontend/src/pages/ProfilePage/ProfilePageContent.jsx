@@ -2,9 +2,6 @@ import React from "react";
 import { useEffect, useState } from "react";
 
 import "../../styles/base.css";
-import Card from "../../components/Card";
-import janeImg from "../../assets/img/mockup/jane-thumbnail.png";
-import Auth from "../../services/Auth";
 import AuthApi from "../../api/AuthApi";
 import EditProfileButton from "../../components/EditProfileButton";
 
@@ -51,19 +48,28 @@ export default function ProfilePageContent({owner}) {
       {randomUser === undefined && <p> Loading Data ...</p>}
       {randomUser !== undefined && (
         <div>
-          {owner === true && (
+          {owner === currentUser && (
             <div>
-              <div className="profilepage-submit-container">
-               <img src={users[0].avatar} className = "img-profile-100" alt="img" />
-                <h1>
-                  {currentUser}
-                </h1>
-                <p>@ {users[0].instagram} </p>
-                <p>
-                  You have {users[0].pictures[0].likes} <img className = "img-20" src={like} alt="logo-like"/>
-                  and {users[0].pictures[0].dislikes} <img className = "img-20" src={dislike} alt="logo-like"/>
-                </p>
-                <EditProfileButton/>
+
+<div className="profilepage-container">
+<div className = "profilepage-subcontainer">
+<div className = "profilepage-box-left">
+<h2>{currentUser}</h2>
+
+<img src={users[0].avatar} className = "img-profile-100" alt="img" />
+<EditProfileButton/>
+<a href ="http://www.instagram.com" target= "blank" >@{users[0].instagram} </a>
+</div>
+
+<div className = "profilepage-box-right" >
+
+<p className = "item-score">{users[0].pictures[0].likes}<img className = "img-30" src={like} alt="logo-like"/>
+ </p>
+<p className = "item-score">{users[0].pictures[0].dislikes}<img className = "img-30" src={dislike} alt="logo-like"/>
+</p>
+</div>
+</div>              
+
                 
               </div>
 

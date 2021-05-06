@@ -1,7 +1,8 @@
 .nav-container{   
-        height: var(--header-height);
+    height: var(--header-height);
     display: grid;
     align-items: center;
+    justify-content: center;
     z-index: 1;
 }
 
@@ -14,8 +15,7 @@ nav{
    justify-items: center;
    align-items: center;
    align-content: center;
-   
-  
+     
 }
 
 

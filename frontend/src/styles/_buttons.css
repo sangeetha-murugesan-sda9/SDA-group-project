@@ -127,4 +127,24 @@
 .invisible {
   visibility: hidden;
 }
+.btn-edit img{
+  height: 25px;
+  width: 25px;
+}
+
+.btn-edit{
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(212, 212, 212);
+  border-radius: 50%;
+  cursor: pointer; 
+
+  height: 50px;
+  width: 50px;
+
+  z-index: 10;
+
+}.btn-edit:hover{
+opacity: 100%;
+
+}
 

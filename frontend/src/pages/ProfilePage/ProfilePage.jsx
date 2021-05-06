@@ -3,15 +3,16 @@ import { useEffect, useState } from "react";
 
 import "../../styles/base.css";
 import NavBar from "../../components/Navbar";
-import Card from "../../components/Card";
-import janeImg from "../../assets/img/mockup/jane-thumbnail.png";
 import Auth from "../../services/Auth";
-import UploadButton from "../../components/UploadButton";
 import ProfilePageContent from "./ProfilePageContent";
 import SlidingMenu from "../../components/SlidingMenu";
 import Footer from "../../components/Footer"
+import AuthApi from "../../api/AuthApi";
 
 export default function ProfilePage({ owner }) {
+
+  const currentUser = AuthApi.getCurrentUser();
+
   return (
     <div className="general-container">
       <header>
@@ -22,7 +23,7 @@ export default function ProfilePage({ owner }) {
       </header>
 
       <main>
-        <ProfilePageContent owner={owner} />
+        <ProfilePageContent owner={currentUser} />
       </main>
 
       <footer> <Footer /> </footer>
