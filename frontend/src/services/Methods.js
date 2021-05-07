@@ -1,18 +1,27 @@
-import AuthApi from "../api/ApiCalls";
-import Auth from "./Auth";
-
-
-//const tokenKey = "_token";
-const currentUserEmail = AuthApi.getCurrentUser();
 
 
 class Methods {
 
+  getEmailById(array, userId) {
+    const data = array[userId-1].email;    
+    return data;
 
-// TODO - implements methods here
+    //return array[userId].email;
+  }
 
+  // getting a user providing email
+ getUsernameByEmail(array,userMail){
 
-/*
+   var user = array.filter(function (item){
+return item.email === userMail
+   })      
+   return user[0].username
+
+}
+
+  // TODO - implements methods here
+
+  /*
     EASY:
  getPictures( arrayOfUsers , email) that returns only the pictures of a specific "user"
 to implement with json mockup provided .
@@ -34,8 +43,6 @@ getUsername (email);
 getInsta (email);  -> returns the instagram with an @ before
 getAvatar (email);
 */
-
-   
 }
 
 export default new Methods();

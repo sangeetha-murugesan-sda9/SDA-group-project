@@ -15,6 +15,7 @@ import Footer from "./components/Footer";
 
 //Test page
 import TestPage from "./pages/TestPage/TestPage";
+import TestMethods from "./services/TestMethods";
 import HeaderBackground from "./components/HeaderBackground";
 
 
@@ -57,8 +58,12 @@ export default function App() {
                         <WinnerPage />
                     </Route>
 
-                    <Route path="/xxx">
+                    <Route path="/test">
                         <TestPage />
+                    </Route>
+
+                    <Route path="/testmethods">
+                        <TestMethods />
                     </Route>
 
                 </Switch>
