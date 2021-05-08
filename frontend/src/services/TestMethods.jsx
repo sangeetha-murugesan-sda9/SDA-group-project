@@ -18,8 +18,12 @@ export default function TestMethods() {
  const userId = 2 ;
  const emailById = Methods.getEmailById(users,userId);
   
- const email = "gyellop2@google.pl" ;
+ const email = "dmartindale3@newyorker.com" ;
  const usernameByEmail = Methods.getUsernameByEmail(users,email);
+
+const LikesByEmail = Methods.getTotalLikesByEmail(users,email);
+
+console.log(Methods.getPicturesByEmail(users,email));
 
 
   return (
@@ -36,9 +40,25 @@ export default function TestMethods() {
 
       {/* Test get currentUser name */}
       <div className="upload-box-test"> 
-      <h5>email : {email } => email : {usernameByEmail}</h5>    
+      <h5>email : {email } => username: {usernameByEmail}</h5>    
           
       </div>
+
+
+      {/* Test getLikes by email */}
+      <div className="upload-box-test"> 
+      <h5>email : {email} => likes : {LikesByEmail}</h5>    
+          
+      </div>
+
+
+
+        {/* Test get pictures url by email */}
+        <div className="upload-box-test"> 
+      <h5>email : {email} => likes : {LikesByEmail}</h5>    
+          
+      </div>
+
 
 
 

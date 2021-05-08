@@ -14,7 +14,7 @@ import SlidingMenu from "../../components/SlidingMenu";
 export default function DiscoverPage() {
  // Constants
  
- const currentUser = AuthApi.getCurrentUser();
+ const currentUserEmail = AuthApi.getCurrentUser();
 
  const API_URL = "https://my.api.mockaroo.com/user.json?key=ae007e80";
  const JSON_MOCKUP = require("../../api/api_users.json");
@@ -44,43 +44,43 @@ export default function DiscoverPage() {
   
   return (
     <div className="general-container">
-     
-       <header>
-       <SlidingMenu />
-      <div className="nav-container">
-        <NavBar onLogout={() => Auth.logout()} />
-      </div>
-      
+      <header>
+        <SlidingMenu />
+        <div className="nav-container">
+          <NavBar onLogout={() => Auth.logout()} />
+        </div>
       </header>
 
-      { users === [0] && <p>Loading Data ...</p>}
-    { users !== [0] && 
+      {users === [0] && <p>Loading Data ...</p>}
+      {users !== [0] && (
+        <main>
+          <div className="homepage-content">
+            <div className="homepage-submit-container"></div>
+            <div>
+              <h2>Discover more styles ...</h2>
 
-      <main>
-        <div className="homepage-content">
-
-          <div className="homepage-submit-container" > 
-          
-          </div>
-          <div>
-            <h2>Discover more styles ...</h2>
-           
-            <div className="card-small-container">
-
-            <React.Fragment>
-                {users.map((item) => (
-                  <React.Fragment key={item.id}>
-                    <Card item = {item} score = {false} votes = {true}  meta = {true} />                                                  
-                  </React.Fragment>
-                ))}
-              </React.Fragment>
-             
+              <div className="card-small-container">
+                <React.Fragment>
+                  {users
+                    .filter(function (item) {
+                      return item.email !== currentUserEmail;
+                    })
+                    .map((item) => (
+                      <React.Fragment key={item.id}>
+                        <Card
+                          item={item}
+                          score={false}
+                          votes={true}
+                          meta={true}
+                        />
+                      </React.Fragment>
+                    ))}
+                </React.Fragment>
+              </div>
             </div>
           </div>
-        </div>
-      </main>
-}
+        </main>
+      )}
     </div>
-                
   );
 }
