@@ -4,14 +4,16 @@ import { useEffect, useState } from "react";
 import "../../styles/base.css";
 import NavBar from "../../components/Navbar";
 import Auth from "../../services/Auth";
-import ProfilePageContent from "./ProfilePageContent";
+import ProfilePageContent from "../ProfilePage/ProfilePageContent";
 import SlidingMenu from "../../components/SlidingMenu";
 import Footer from "../../components/Footer"
 import AuthApi from "../../api/AuthApi";
 
-export default function ProfilePage({ userToDisplay }) {
+export default function DetailsPage({ match }) {
 const currentUserEmail = AuthApi.getCurrentUser();
-
+const {
+  params: { userEmail },
+} = match;
 
 
 
@@ -26,7 +28,7 @@ const currentUserEmail = AuthApi.getCurrentUser();
 
       <main>
      
-        <ProfilePageContent userToDisplay={userToDisplay} />
+        <ProfilePageContent userToDisplay={userEmail} />
 
       </main>
 

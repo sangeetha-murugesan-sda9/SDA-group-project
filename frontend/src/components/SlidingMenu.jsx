@@ -30,7 +30,7 @@ export default function SlidingMenu({ onLogout }) {
 
           <div className="menu-item">
           <img className="img-30" src={profile} />
-          <a id="home" className="menu-item-text" href="/profile">My Profile</a>
+          <a id="home" className="menu-item-text" href="/myprofile">My Profile</a>
           </div>
           
           <div className="menu-item">

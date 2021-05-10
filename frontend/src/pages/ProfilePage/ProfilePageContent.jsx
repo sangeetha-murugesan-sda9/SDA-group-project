@@ -10,16 +10,12 @@ import Methods from '../../services/Methods'
 import like from "../../assets/img/logo/flame.png";
 import dislike from "../../assets/img/logo/oops.png";
 
-export default function ProfilePageContent({owner}) {
+export default function ProfilePageContent({userToDisplay}) {
   // Constants
-
-  const currentUserEmail = AuthApi.getCurrentUser();
- 
-
   const API_URL = "https://my.api.mockaroo.com/user.json?key=ae007e80";
   const JSON_MOCKUP = require("../../api/api_users.json");
   const JSON_MOCKUP_URL = "../../api/api_users.json";
-
+  const currentUserEmail = AuthApi.getCurrentUser();
   //states
   const [users, setUsers] = useState([]);
   const randomId = 0 ;
@@ -43,11 +39,12 @@ export default function ProfilePageContent({owner}) {
     fetchdataMOCKUP();
   }, []);
  
-  const likes = Methods.getTotalLikesByEmail(JSON_MOCKUP,currentUserEmail);
-  const dislikes = Methods.getTotalDislikesByEmail(JSON_MOCKUP,currentUserEmail);
-  const username = Methods.getUsernameByEmail(JSON_MOCKUP,currentUserEmail);
-  const avatar = Methods.getAvatarByEmail(JSON_MOCKUP,currentUserEmail); 
-  const pics = Methods.getPicturesByEmail(JSON_MOCKUP,currentUserEmail)
+    // Constants afer fetch - to refactor
+  const likes = Methods.getTotalLikesByEmail(JSON_MOCKUP,userToDisplay);
+  const dislikes = Methods.getTotalDislikesByEmail(JSON_MOCKUP,userToDisplay);
+  const username = Methods.getUsernameByEmail(JSON_MOCKUP,userToDisplay);
+  const avatar = Methods.getAvatarByEmail(JSON_MOCKUP,userToDisplay); 
+  const pics = Methods.getPicturesByEmail(JSON_MOCKUP,userToDisplay)
 
   console.log(pics)
   
@@ -56,7 +53,8 @@ export default function ProfilePageContent({owner}) {
       {randomUser === undefined && <p> Loading Data ...</p>}
       {randomUser !== undefined && (
         <div>
-          {owner === currentUserEmail && (
+
+          
             <div>
               <div className="profilepage-container">
                 <div className="profilepage-subcontainer">
@@ -64,12 +62,12 @@ export default function ProfilePageContent({owner}) {
                     <h2>{username}</h2>
 
                     <img src={avatar} className="img-profile-100" alt="img" />
-                    <EditProfileButton />
-                    {/* <a href ="http://www.instagram.com" target= "blank" >@{users[0].instagram} </a> */}
+                    {userToDisplay === currentUserEmail &&
+                    <EditProfileButton />}
                   </div>
 
                   <div className="profilepage-box-right">
-                    <p>Your total score :</p>
+                    <p>Overall score :</p>
                     <p className="item-score">
                       {likes}
                       <img className="img-30" src={like} alt="logo-like" />
@@ -83,7 +81,7 @@ export default function ProfilePageContent({owner}) {
               </div>
 
               <div>
-                <h2>Your current style ...</h2>
+                <h2>Styles submitted ...</h2>
                 <div className="card-small-container">
                 <React.Fragment  >
                     {pics[0].map(item => (
@@ -98,33 +96,9 @@ export default function ProfilePageContent({owner}) {
                 </div>
               </div>
             </div>
-          )}
+         
 
-          {/* TODO - if displaying other person profile */}
-
-          {owner === false && (
-            <div>
-              <div className="profilepage-submit-container">
-                <img src={users[0].avatar} alt="img" />
-                <h1>
-                  {users[0].firstname} {users[0].lastname}
-                </h1>
-                <p>@ {users[0].instagram} </p>
-                <p>
-                  You have {users[0].likes} <em> FIRES</em>
-                </p>
-
-                <button className="btn-white">Edit your profile</button>
-              </div>
-
-              <div>
-                {/* <h2>{users[0].username} styles ...</h2> */}
-                <div className="card-small-container">
-                  <img src={users[0].pictures[0].url} alt="picOfTheDay" />
-                </div>
-              </div>
-            </div>
-          )}
+         
         </div>
       )}
     </div>
