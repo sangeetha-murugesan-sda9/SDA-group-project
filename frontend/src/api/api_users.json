@@ -10,14 +10,21 @@
     "pictures": [
       {
         "id": 1,
-        "url": "http://dummyimage.com/180x153.png/5fa2dd/ffffff",
+        "url": "http://clecardona.com/sda/pictures/sara/01.jpg",
         "likes": 39,
         "dislikes": 31,
         "timestamp": "2021-04-18T15:22:24Z"
       },
       {
         "id": 2,
-        "url": "http://dummyimage.com/182x115.png/ff4444/ffffff",
+        "url": "http://clecardona.com/sda/pictures/sara/02.jpg",
+        "likes": 15,
+        "dislikes": 49,
+        "timestamp": "2020-12-30T12:50:37Z"
+      },
+      {
+        "id": 3,
+        "url": "http://clecardona.com/sda/pictures/sara/03.jpg",
         "likes": 15,
         "dislikes": 49,
         "timestamp": "2020-12-30T12:50:37Z"
@@ -31,7 +38,7 @@
     "firstname": "Clement",
     "lastname": "Cardona",
     "instagram": "clecardona",
-    "avatar": "http://clecardona.com/sda/profile-clecardona.png",
+    "avatar": "http://clecardona.com/sda/profile/clement/clecardona.png",
     "pictures": [
       {
         "id": 1,
