@@ -9,21 +9,22 @@ export default function ProfileCard({ item }) {
 
 
     <div className="card-small">
-      <img src={item.url} alt="items"/>
 
-        <div className="card-footer">
-          <p id="img-score" >{item.likes} </p>
+      <div className="profilecard-header">
+
+        <div className="profilecard-left">
+          <p className="score" >{item.likes} </p>
           <img src={like} alt="score-logo"/>
           
         </div>
 
-        <div className="card-footer">
-          <p id="img-score" >{item.dislikes} </p>
+        <div className="profilecard-right">
+          <p className="score" >{item.dislikes} </p>
           <img src={dislike} alt="score-logo"/>
-          
         </div>
         
-      
+        </div>
+      <img className="profilecard-img"src={item.url} alt="items"/>
     </div>
   );
 }
