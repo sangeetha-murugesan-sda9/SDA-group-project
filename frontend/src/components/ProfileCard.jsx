@@ -1,9 +1,11 @@
 import like from "../assets/img/logo/flame.png";
-import dislike from "../assets/img/logo/oops.png";;
+import AuthApi from "../api/AuthApi";
+import dislike from "../assets/img/logo/oops.png";
+import VoteComponent from "./VoteComponent";
 
-export default function ProfileCard({ item }) {
+export default function ProfileCard({ item, userToDisplay }) {
 
-
+  const currentUserEmail = AuthApi.getCurrentUser();
 
   return (
 
@@ -25,6 +27,12 @@ export default function ProfileCard({ item }) {
         
         </div>
       <img className="profilecard-img"src={item.url} alt="items"/>
+
+{userToDisplay !== currentUserEmail &&
+  <VoteComponent />
+}
+
+
     </div>
   );
 }

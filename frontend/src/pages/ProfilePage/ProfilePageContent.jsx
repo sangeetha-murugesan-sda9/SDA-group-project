@@ -88,6 +88,7 @@ export default function ProfilePageContent({userToDisplay}) {
                       <React.Fragment key={item.id} >
                         <ProfileCard 
                         item = {item}
+                        userToDisplay ={userToDisplay}
                         />
                       
                       </React.Fragment>
