@@ -14,8 +14,11 @@ export default function VoteComponent() {
 
         <p>Fire</p>
       </div>
-          
+
+      <div id="vote-separator"></div>
+        
       <div>
+
        <button className="btn-vote" >
                   <img src={dislike} alt="logo-dislike"/>
                 </button>

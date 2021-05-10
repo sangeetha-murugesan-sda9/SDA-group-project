@@ -2,6 +2,7 @@
 
 ## Introduction
 This application is a Social Media Application for Stylists built with gradle.
+
 The social media era is well and truly underway and photo sharing app is one
 of the biggest hot topic social platforms.This application is for Style Competition.Every user in our app is a stylist.
 Every user can submit their styles (photo) and they can vote for other user's styles.Everyday we have a

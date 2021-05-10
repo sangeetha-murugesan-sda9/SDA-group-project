@@ -11,12 +11,20 @@ import DiscoverPage from "./pages/DiscoverPage/DiscoverPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import WinnerPage from "./pages/WinnerPage/WinnerPage";
 import VotingPage from "./pages/VotingPage/VotingPage";
+import Footer from "./components/Footer";
+import AuthApi from "./api/AuthApi";
 
+//Test page
+import TestPage from "./pages/TestPage/TestPage";
+import DetailsPage from "./pages/TestPage/DetailsPage";
+import TestMethods from "./services/TestMethods";
+import HeaderBackground from "./components/HeaderBackground";
 
 
 export default function App() {
     // State
     const [loggedIn, setLoggedIn] = useState(Auth.isLoggedIn());
+    const currentUserEmail = AuthApi.getCurrentUser();
 
     // Constants
     Auth.bindLoggedInStateSetter(setLoggedIn);
@@ -28,32 +36,44 @@ export default function App() {
 
     // Components
     const loggedInRouter = (
-        <BrowserRouter>
-            
-            <div >
-                <Switch>
-                    <Route path="/login">
-                        <LoginPage />
-                    </Route>
+      <BrowserRouter>
+        <div>
+          <HeaderBackground />
+          <Switch>
+            <Route path="/login">
+              <LoginPage />
+            </Route>
 
-                    <Route path="/profile">
-                        <ProfilePage />
-                    </Route>
+            {/* <Route path="/myprofile">
+              <ProfilePage userToDisplay={currentUserEmail} />
+            </Route> */}
 
-                    <Route path="/discover">
-                        <DiscoverPage />
-                    </Route>
+            <Route path="/profile/:userEmail" component={ProfilePage}/>
 
-                    <Route path="/vote">
-                        <VotingPage/>
-                    </Route>
+            <Route path="/discover">
+              <DiscoverPage />
+            </Route>
 
-                    <Route path="/">
-                        <WinnerPage />
-                    </Route>
-                </Switch>
-            </div>
-        </BrowserRouter>
+            <Route path="/vote">
+              <VotingPage />
+            </Route>
+
+            <Route exact path="/">
+              <WinnerPage />
+            </Route>
+
+            <Route path="/test">
+              <TestPage />
+            </Route>
+
+            <Route path="/testmethods">
+              <TestMethods />
+            </Route>
+          </Switch>
+
+          <Footer />
+        </div>
+      </BrowserRouter>
     );
 
     return loggedIn ? loggedInRouter : <AuthPage />;

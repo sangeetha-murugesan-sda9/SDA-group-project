@@ -1,15 +1,21 @@
-
+.nav-container{   
+    height: var(--header-height);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
 
 nav{
     
-    width:80%;
+    width:100%;
     display: grid ;
-    grid-template-columns: 60px 60px 60px 1fr ;
+    grid-template-columns: 30px  1fr ;
     align-content: center;
    justify-items: center;
    align-items: center;
    align-content: center;
-  
+     
 }
 
 
@@ -42,7 +48,7 @@ nav{
     text-align: left;
     font-size:var(--font-XS) ;
     font-family: var(--font-classy);
-    color: rgb(48, 47, 47);
+    color: white;
     
 }
 #nav-main-title strong{

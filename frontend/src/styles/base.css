@@ -5,22 +5,28 @@
 @import url("_layout.css");
 @import url("_buttons.css");
 @import url("_user_meta.css");
-@import url("_winner.css");
+@import url("_winner_voting.css");
 @import url("_vote_component.css");
 @import url("_discoverpage.css");
 @import url("_profilepage.css");
 @import url("_popover.css");
 @import url("_card.css");
+@import url("_profilecard.css");
 @import url("_nav.css");
-@import url("_votingpage.css");
-@import url("auth.css");
+@import url("_AuthPage.css");
+@import url("_burger.css");
+@import url("_footer.css");
+@import url("_overlay.css");
+@import url("_header.css");
+@import url("_test.css");
+
 
 @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Source+Code+Pro:wght@200;300;400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
 
 /* variables*/ 
 :root {
-    --header-height: 130px;
-    --footer-height: 30px;
+    --header-height: 110px;
+    --footer-height: 80px;
     
       /*colors*/
     --lagoonBlue: rgb(130, 221, 228);
@@ -31,6 +37,8 @@
 
     --color-background-menu:white;
     --color-text-menu:grey;
+
+    --color-footer-structure:linear-gradient(rgb(223, 223, 223), #d6d6d6);;
   
       /*fonts type*/
     --font-funny : 'Bangers', cursive;

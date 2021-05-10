@@ -1,0 +1,31 @@
+.overlay-form-group{
+    
+    width: 100%;
+    margin: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    gap: 3px;
+}
+
+label,.form-control{
+    width: 100%;
+}
+
+.form-control{
+    
+    border:0px;
+    border-radius: 7px;
+}
+
+::placeholder{
+   
+    padding:7px 10px;    
+}
+
+input{
+    cursor: pointer;
+    background-color: rgb(238, 238, 238);
+    border:0px;
+    border-radius: 7px;
+}
