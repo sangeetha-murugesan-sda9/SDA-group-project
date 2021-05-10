@@ -20,7 +20,7 @@ return item.email === userMail
 }
 
 
-  // getting avatar providing email
+  // getting avatar by email
   getAvatarByEmail(array,userMail){
 
     var user = array.filter(function (item){
@@ -45,7 +45,7 @@ return sum
 };
 
 
-// get total dilLikes by user email//
+// get total disLikes by user email//
 
 getTotalDislikesByEmail(array, userMail ){
   var user = array.filter(function (item){
@@ -59,7 +59,7 @@ return sum
 
 // get all pictures JSON by user email//
 
-getPicturesByEmail(array, userMail ){
+getPicturesByEmail(array, userMail){
   var user = array.filter(function (item){
     return item.email === userMail
        })  
@@ -69,39 +69,53 @@ var pics = user.map(i => i.pictures);
 return pics
 };
 
+getMaxLikes(array){
+const picsArray = array.map(i=> i.pictures)
+const pics = picsArray.flat()
+const likes = pics.map(i=> i.likes)
+const maxValue = Math.max.apply(Math, likes);
 
-/*
-getDislikes (arrayOfPictures , pictureId);
-getTimestamp(arrayOfPictures , pictureId)  -> formated DD-MM HH:mm
-*/
+return maxValue;
 
-
-
-
-  // TODO - implements methods here
-
-  /*
-    EASY:
- getPictures( arrayOfUsers , email) that returns only the pictures of a specific "user"
-to implement with json mockup provided .
-
-MODERATE:
-getLikes (arrayOfPictures , pictureId );
-getDislikes (arrayOfPictures , pictureId);
-getTimestamp(arrayOfPictures , pictureId)  -> formated DD-MM HH:mm
-
-EASY:
-getUser (arrayOfUsers , email);
-
-ADVANCED:
-getTotalOfLikes (email);
-getTotalOfDislikes (email);
-
-EASY:
-getUsername (email);
-getInsta (email);  -> returns the instagram with an @ before
-getAvatar (email);
-*/
 }
+
+
+
+  getWinner(array){
+  
+    var maxValue = this.getMaxLikes(array)
+    //console.log(maxValue);
+    
+    let winnerId = -1;
+    let winnerImgId = -1;
+
+    for (let i = 0; i < array.length; i++) {
+  
+      for (let j = 0; j < array[i].pictures.length; j++) {
+      
+        if (array[i].pictures[j].likes === maxValue){
+          
+          //console.log("image ",j);
+          winnerId = i;
+          winnerImgId = j;
+        }
+      }
+    }
+
+    return [winnerId,winnerImgId]
+    }
+
+
+
+
+}
+
+
+
+
+
+
+
+
 
 export default new Methods();
