@@ -16,7 +16,7 @@ import AuthApi from "./api/AuthApi";
 
 //Test page
 import TestPage from "./pages/TestPage/TestPage";
-import DetailsPage from "./pages/TestPage/DetailsPage";
+
 import TestMethods from "./services/TestMethods";
 import HeaderBackground from "./components/HeaderBackground";
 
