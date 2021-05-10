@@ -1,0 +1,18 @@
+.test-wrapper{
+
+    
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap:20px;
+
+    
+}
+
+.upload-box-test{
+
+background-color: #FAFAFA;
+font-size: 15px;
+}
+

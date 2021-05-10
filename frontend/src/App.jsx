@@ -11,7 +11,11 @@ import DiscoverPage from "./pages/DiscoverPage/DiscoverPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import WinnerPage from "./pages/WinnerPage/WinnerPage";
 import VotingPage from "./pages/VotingPage/VotingPage";
+import Footer from "./components/Footer";
 
+//Test page
+import TestPage from "./pages/TestPage/TestPage";
+import HeaderBackground from "./components/HeaderBackground";
 
 
 export default function App() {
@@ -31,13 +35,14 @@ export default function App() {
         <BrowserRouter>
             
             <div >
+            <HeaderBackground />
                 <Switch>
                     <Route path="/login">
                         <LoginPage />
                     </Route>
 
                     <Route path="/profile">
-                        <ProfilePage />
+                        <ProfilePage owner={true} />
                     </Route>
 
                     <Route path="/discover">
@@ -48,10 +53,18 @@ export default function App() {
                         <VotingPage/>
                     </Route>
 
-                    <Route path="/">
+                    <Route  exact  path="/">
                         <WinnerPage />
                     </Route>
+
+                    <Route path="/xxx">
+                        <TestPage />
+                    </Route>
+
                 </Switch>
+
+                <Footer />
+                
             </div>
         </BrowserRouter>
     );

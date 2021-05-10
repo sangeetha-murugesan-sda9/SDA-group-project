@@ -5,14 +5,14 @@ const BASE_URL = "http://localhost:8080";
 
 const Api = axios.create({
     baseURL: BASE_URL,
-});
+    });
 
 Api.interceptors.request.use((config) => {
     if (Auth.isLoggedIn()) {
         const authHeader = Auth.getAuthorizationHeader();
         config.headers['common']['authorization'] = authHeader;
     }
-
+    
     return config;
 });
 

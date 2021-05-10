@@ -23,10 +23,14 @@ public class FileDB {
     @NotBlank
     @Column(nullable = false)
     private String type;
+
     @NotBlank
     @Column(nullable = false)
     private String likes;
 
+    @NotBlank
+    @Column(nullable = false)
+    private String dislikes;
 
     @OneToOne(targetEntity = User.class, cascade = CascadeType.ALL)
     private User fileOwner;
@@ -39,11 +43,12 @@ public class FileDB {
     public FileDB() {
     }
 
-    public FileDB(@NotBlank String name, @NotBlank String type, byte[] data, String like) {
+    public FileDB(@NotBlank String name, @NotBlank String type, byte[] data, String likeInit) {
         this.name = name;
         this.type = type;
         this.data = data;
-        this.likes = like;
+        this.likes = likeInit;
+        this.dislikes = likeInit;
     }
 
     //getters and setters
@@ -94,6 +99,14 @@ public class FileDB {
 
     public void setLikes(String likes) {
         this.likes = likes;
+    }
+
+    public String getDislikes() {
+        return dislikes;
+    }
+
+    public void setDislikes(String dislikes) {
+        this.dislikes = dislikes;
     }
 }
 

@@ -1,33 +1,86 @@
 .profilepage-content{
-    /* background: rgb(254,212,40);
-    background: linear-gradient(0deg, rgba(254,212,40,1) 0%, rgba(255,255,255,1) 100%); */
-    background-color: white;
-    margin: 9px;
+ 
+    margin: 9px ;
+    margin-bottom: calc(var(--footer-height) + 9px);
+    
 }
 
-.profilepage-submit-container{
-    margin-top: var(--mediumspace);
+.profilepage-container{  
+
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: flex-end;
     align-items: center;
+    margin:0 25px ;
+   
 }
 
-.profilepage-submit-container img{
-    z-index: 1;
-    width: 150px;
-
-}
-.profilepage-submit-container p{
-    font-weight: 500;
-    text-align: center;
-}
-.profilepage-submit-container button{
-   width: 80%;
-   height: 30px;
-   display: flex;
-   align-items: center;
-   justify-content: center;
+.profilepage-subcontainer{   
+  
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 1fr;      
+    
 }
 
+.profilepage-box-left{
+       position: relative;
+       text-align: left;
+}
 
+.profilepage-box-left .btn-edit{
+    position: absolute; 
+    bottom:0px;
+    left:75px;
+    
+}
+
+.profilepage-box-left h2,.profilepage-box-left a{
+    position: absolute; 
+
+    margin: 0;
+    background-color: white;
+    border-radius: 15px;
+    border: solid 1px rgb(212, 212, 212);
+    padding: 2px 12px; 
+    font-size: var(--font-XS);
+    box-shadow: 2px 2px 7px rgba(41, 40, 40, 0.082);
+
+}
+
+.profilepage-box-left h2{
+top:-20px;
+left:-10px;
+}  
+
+.profilepage-box-left a{
+font-size: 0.8em;    
+top:3px;
+left:-10px;
+}  
+
+.profilepage-box-right{
+    
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.item-score{
+    width: 80%;
+    text-align:center;
+    
+    background-image: linear-gradient(90deg,rgb(90, 190, 76), #65c93796);
+    font-family: var(--font-code);
+    font-size:var(--font-L) ;
+    color: white;
+    border-radius: 10px;
+    padding: 4px;
+    box-shadow: 3px 3px 6px rgba(41, 40, 40, 0.164);
+
+}
+.item-score img{
+    margin-left: 15px ;
+}

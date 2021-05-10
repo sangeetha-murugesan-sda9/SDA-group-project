@@ -6,63 +6,71 @@ import "../../styles/base.css";
 import NavBar from "../../components/Navbar";
 import Card from "../../components/Card";
 import Auth from "../../services/Auth";
-import cat from "../../assets/img/cat.png";
+import AuthApi from "../../api/AuthApi";
+import SlidingMenu from "../../components/SlidingMenu";
+
 
 
 export default function DiscoverPage() {
  // Constants
- //const photos = require("../../api/api_photos.json");
- //const users = require("../../api/api_users.json");
- const [fetchedPhotos,setFetchedPhotos] = useState([]);
- const [fetchedUsers,setFetchedUsers] = useState([]);
+ 
+ const currentUser = AuthApi.getCurrentUser();
 
- //const randomUser = Math.floor(Math.random() * 10);
+ const API_URL = "https://my.api.mockaroo.com/user.json?key=ae007e80";
+ const JSON_MOCKUP = require("../../api/api_users.json");
+ const JSON_MOCKUP_URL = "../../api/api_users.json";
 
-
+//states
+ const [users,setUsers] = useState([]);
 
  // Methods
- //fetch photos  
- useEffect(() => {
-  fetch("https://picsum.photos/v2/list?page=2&limit=7")
-    .then((response) => response.json())
-    .then((json) => setFetchedPhotos(json));
-    
-}, []);
+   //fetch data distant API
+   function fetchdataURL() {
+    fetch(API_URL)
+      .then((response) => response.json())
+      .then((json) => setUsers(json));    
+  }
 
- //fetch users 
- useEffect(() => {
-  fetch("https://mocki.io/v1/d4867d8b-b5d5-4a48-a4ab-79131b5809b8")
-    .then((response) => response.json())
-    .then((json) => setFetchedUsers(json));
-    }, [fetchedPhotos]);
+  //fetch data distant API
+  function fetchdataMOCKUP() {
+    setUsers(JSON_MOCKUP);   
+  }
 
+  //use Effect
+  useEffect(() => {
+    fetchdataMOCKUP();
+  }, []);
 
   
   return (
     <div className="general-container">
-      <header>
+     
+       <header>
+       <SlidingMenu />
+      <div className="nav-container">
         <NavBar onLogout={() => Auth.logout()} />
+      </div>
+      
       </header>
+
+      { users === [0] && <p>Loading Data ...</p>}
+    { users !== [0] && 
 
       <main>
         <div className="homepage-content">
 
           <div className="homepage-submit-container" > 
-          <img src={cat} alt="img" />
-
-            <button className="btn-float"> + </button>
-
-
+          
           </div>
-
           <div>
             <h2>Discover more styles ...</h2>
+           
             <div className="card-small-container">
 
             <React.Fragment>
-                {fetchedPhotos.map((item) => (
+                {users.map((item) => (
                   <React.Fragment key={item.id}>
-                    <Card item ={item} score = {false} votes = {true}  meta = {true} users={fetchedUsers}/>                                                  
+                    <Card item = {item} score = {false} votes = {true}  meta = {true} />                                                  
                   </React.Fragment>
                 ))}
               </React.Fragment>
@@ -71,8 +79,8 @@ export default function DiscoverPage() {
           </div>
         </div>
       </main>
-
-      <footer> Follow us | about SDA | About us </footer>
+}
     </div>
+                
   );
 }
