@@ -39,15 +39,6 @@ export default function WinnerPage() {
   const winner = users[winnerObj[0]]
 
  
-
-  if(winner !== 0){
-    const winnerPic = winner.pictures[winnerObj[1]]
-    console.log("Obj",winnerObj)
-    console.log("Winner",winner)
-    console.log("pic url",winner.pictures[winnerObj[1]].url)
-   
-  }
- 
   
 
   return (
@@ -60,9 +51,9 @@ export default function WinnerPage() {
       
       </header>
 
-      {winner === 0 && <p>Loading Data ...</p>}
+      {winner === undefined && <p>Loading Data ...</p>}
 
-      {winner !== 0 && (
+      {winner !== undefined && (
         <main>
           <div className="winner-content">
             <h1> <img className="img-30" src={king} /> Current idol </h1>
