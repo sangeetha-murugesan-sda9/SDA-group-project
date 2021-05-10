@@ -7,10 +7,12 @@ import discover from "../assets/img/icons/telescope.svg"
 import vote from "../assets/img/icons/vote.svg"
 import profile from "../assets/img/icons/woman.svg"
 
-
+import AuthApi from "../api/AuthApi";
 
 export default function SlidingMenu({ onLogout }) {
  
+  const currentUserEmail = AuthApi.getCurrentUser();
+
 
   function onLogout(){
     Auth.logout();
@@ -30,7 +32,7 @@ export default function SlidingMenu({ onLogout }) {
 
           <div className="menu-item">
           <img className="img-30" src={profile} />
-          <a id="home" className="menu-item-text" href="/myprofile">My Profile</a>
+          <a id="home" className="menu-item-text" href={"/profile/"+currentUserEmail}>My Profile</a>
           </div>
           
           <div className="menu-item">

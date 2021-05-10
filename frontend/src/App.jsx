@@ -44,11 +44,11 @@ export default function App() {
               <LoginPage />
             </Route>
 
-            <Route path="/myprofile">
+            {/* <Route path="/myprofile">
               <ProfilePage userToDisplay={currentUserEmail} />
-            </Route>
+            </Route> */}
 
-            <Route path="/profile/:userEmail" component={DetailsPage}/>
+            <Route path="/profile/:userEmail" component={ProfilePage}/>
 
             <Route path="/discover">
               <DiscoverPage />
