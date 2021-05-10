@@ -12,7 +12,7 @@ console.log(item)
 
     <div className="card-small">
       {meta === true && <UserMeta users={item}/>}
-
+{/* 1.generate a random id number    2. retieve*/} 
       <img src={item.pictures[0].url} alt="items"/>
 
       {votes === true && <VoteComponent />}

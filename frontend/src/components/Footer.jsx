@@ -8,13 +8,21 @@ import { faChessKing, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 
 
 import UploadButton from "./UploadButton"
+import Auth from "../services/Auth";
 
-const Footer = () => {
+//const Footer = () => {
+
+export default function Footer({ onLogout }) {
+
+function onLogout(){
+    Auth.logout();
+}
     return (
         <div className="footer">
             <UploadButton />
             <div className="footer-shape"> </div>
             <div className="footer-container">
+
                 
                 <a
                     href="https://github.com/clecardona/SDA-group-project"
@@ -44,22 +52,13 @@ const Footer = () => {
                     <FontAwesomeIcon icon={faChessKing} />
                 </a>
 
-                <a
-                    /* TODO - fix logout button */ 
-                    /* href="http://localhost:3000/login" */
-                    className="item"
-                >
-                    <FontAwesomeIcon icon={faSignOutAlt} />
-                </a>
-
-
-                
-
-
+                <button
+                    className="item" onClick={onLogout}>
+                    <FontAwesomeIcon icon={faSignOutAlt}/>
+                </button>
                
 
             </div>
         </div>
     );
 };
-export default Footer;
