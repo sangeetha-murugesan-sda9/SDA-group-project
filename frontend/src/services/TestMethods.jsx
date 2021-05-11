@@ -11,7 +11,7 @@ const userId = 2 ;
 const emailById = Methods.getEmailById(users,2);
 const email = "dmartindale3@newyorker.com" ;
 //const usernameByEmail = Methods.getUsernameByEmail(users,email);
-const LikesByEmail = Methods.getTotalLikesByEmail(users,email);
+/* const LikesByEmail = Methods.getTotalLikesByEmail(users,email); */
 
 console.log(users)
 
