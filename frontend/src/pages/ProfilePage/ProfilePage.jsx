@@ -9,11 +9,12 @@ import SlidingMenu from "../../components/SlidingMenu";
 import Footer from "../../components/Footer"
 import AuthApi from "../../api/AuthApi";
 
-export default function DetailsPage({ match }) {
+export default function ProfilePage({ match }) {
 const currentUserEmail = AuthApi.getCurrentUser();
 const {
   params: { userEmail },
 } = match;
+
 
 
 

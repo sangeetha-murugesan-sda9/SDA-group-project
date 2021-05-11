@@ -1,5 +1,4 @@
 
-
 class Methods {
 
   getEmailById(array, userId) {
@@ -9,7 +8,7 @@ class Methods {
     //return array[userId].email;
   }
 
-  // getting a username providing email
+// getting a username providing email
  getUsernameByEmail(array,userMail){
 
    var user = array.filter(function (item){
@@ -19,8 +18,7 @@ return item.email === userMail
 
 }
 
-
-  // getting avatar by email
+// getting avatar by email
   getAvatarByEmail(array,userMail){
 
     var user = array.filter(function (item){
@@ -29,7 +27,6 @@ return item.email === userMail
     return user[0].avatar
  
  }
-
 
 
 // get total Likes by user email//
@@ -43,7 +40,6 @@ var sum = likes.reduce((a, b) => a + b, 0)
 
 return sum
 };
-
 
 // get total disLikes by user email//
 
@@ -69,6 +65,7 @@ var pics = user.map(i => i.pictures);
 return pics
 };
 
+// get the max value of likes of the all JSON 
 getMaxLikes(array){
 const picsArray = array.map(i=> i.pictures)
 const pics = picsArray.flat()
@@ -79,9 +76,10 @@ return maxValue;
 
 }
 
-
-
-  getWinner(array){
+// get the winner and the winner picture of the all JSON
+// -> return an array [ winningUserId , winningPictureId ]
+  
+getWinner(array){
   
     var maxValue = this.getMaxLikes(array)
     //console.log(maxValue);
@@ -104,8 +102,6 @@ return maxValue;
 
     return [winnerId,winnerImgId]
     }
-
-
 
 
 }
