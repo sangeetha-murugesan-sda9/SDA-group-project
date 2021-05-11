@@ -10,8 +10,14 @@ export default function UserMeta({users}) {
       <div className="user-meta">
         <img src = {users.avatar} alt="thumb"/>
         <div className = "user-meta-legend">
-          <p className="user-username">{users.firstname} {users.lastname}</p>
+          <a href={"/profile/"+users.email} >
+         <p className="user-username">{users.firstname} {users.lastname}</p>
+        </a>
+
+          <a href= {"http://www.instagram.com/" + users.instagram} target="blank" >
           <p className="user-instagram">@{users.instagram}</p>
+
+           </a>
 
         </div>
 

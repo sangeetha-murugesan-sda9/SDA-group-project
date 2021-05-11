@@ -4,14 +4,19 @@ import { useEffect, useState } from "react";
 import "../../styles/base.css";
 import NavBar from "../../components/Navbar";
 import Auth from "../../services/Auth";
-import ProfilePageContent from "./ProfilePageContent";
+import ProfilePageContent from "../ProfilePage/ProfilePageContent";
 import SlidingMenu from "../../components/SlidingMenu";
 import Footer from "../../components/Footer"
 import AuthApi from "../../api/AuthApi";
 
-export default function ProfilePage({ owner }) {
+export default function ProfilePage({ match }) {
+const currentUserEmail = AuthApi.getCurrentUser();
+const {
+  params: { userEmail },
+} = match;
 
-  const currentUser = AuthApi.getCurrentUser();
+
+
 
   return (
     <div className="general-container">
@@ -23,7 +28,9 @@ export default function ProfilePage({ owner }) {
       </header>
 
       <main>
-        <ProfilePageContent owner={currentUser} />
+     
+        <ProfilePageContent userToDisplay={userEmail} />
+
       </main>
 
       <footer> <Footer /> </footer>

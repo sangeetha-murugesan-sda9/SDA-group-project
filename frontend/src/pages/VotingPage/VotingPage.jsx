@@ -13,24 +13,22 @@ import SlidingMenu from "../../components/SlidingMenu";
 export default function VotingPage() {
    // Constants
    const currentUser = AuthApi.getCurrentUser();
-
-   const API_URL = "https://my.api.mockaroo.com/user.json?key=ae007e80";
    const JSON_MOCKUP = require("../../api/api_users.json");
-   const JSON_MOCKUP_URL = "../../api/api_users.json";
+  
   
 
  //states
   const [users,setUsers] = useState([0]);
-  const randomId = Math.floor(Math.random() * 25) ;
-  const randomUser = users[randomId];
+  
+
   
   // Methods
    //fetch data distant API
-   function fetchdataURL() {
+/*    function fetchdataURL() {
     fetch(API_URL)
       .then((response) => response.json())
       .then((json) => setUsers(json));    
-  }
+  } */
 
   //fetch data distant API
   function fetchdataMOCKUP() {
@@ -43,7 +41,9 @@ export default function VotingPage() {
   }, []);
 
 
- console.log(randomUser);
+  const randomId = Math.floor(Math.random() * JSON_MOCKUP.length) ;
+  const randomUser = users[randomId]; 
+  
 
     return (
       <div className="general-container">
@@ -66,7 +66,9 @@ export default function VotingPage() {
           <UserMeta users = {randomUser} /> 
 
           <div className="wrapper-img-square">
+           {/* TODO  implement logic to render a random picture from random user */}
           <img id = "main-img" src={randomUser.pictures[0].url} alt="main-logo" />
+
         </div>
           <div className="under-img-container">
            <VoteComponent />

@@ -100,7 +100,7 @@
 .btn-submit-green {
 
   position: fixed;
-
+  cursor: pointer;
   bottom:5px ;
   left: 50%;
   transform: translateX(-50%);
@@ -118,6 +118,7 @@
   background-color: #0c9;
   color: white;
   border-radius: 50px;
+  cursor: pointer;
 
   text-align: center;
   box-shadow: 2px 2px 3px #999;

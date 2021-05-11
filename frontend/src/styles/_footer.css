@@ -14,7 +14,7 @@ a {
  
     z-index: 2;
 
-  width: 100vw;
+    width: 100vw;
     height: var(--footer-height);
 
     margin:0;
@@ -64,7 +64,9 @@ a {
 
 
 .item {
-    
+    background-color: transparent;
+    border:0;
+    cursor: pointer;
     color: white;
     font-size: 20px;  
    

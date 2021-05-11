@@ -24,40 +24,39 @@
 }
 
 .profilepage-box-left{
+       
        position: relative;
        text-align: left;
 }
 
 .profilepage-box-left .btn-edit{
     position: absolute; 
-    bottom:0px;
+    bottom:15px;
     left:75px;
     
 }
+.profilepage-box-left-header{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+}
+
 
 .profilepage-box-left h2,.profilepage-box-left a{
-    position: absolute; 
 
     margin: 0;
     background-color: white;
     border-radius: 15px;
     border: solid 1px rgb(212, 212, 212);
     padding: 2px 12px; 
-    font-size: var(--font-XS);
+    font-size: var(--font-S);
     box-shadow: 2px 2px 7px rgba(41, 40, 40, 0.082);
 
 }
 
-.profilepage-box-left h2{
-top:-20px;
-left:-10px;
-}  
 
-.profilepage-box-left a{
-font-size: 0.8em;    
-top:3px;
-left:-10px;
-}  
+
 
 .profilepage-box-right{
     
@@ -69,14 +68,15 @@ left:-10px;
 }
 
 .item-score{
-    width: 80%;
+    width: 60%;
     text-align:center;
     
-    background-image: linear-gradient(90deg,rgb(90, 190, 76), #65c93796);
-    font-family: var(--font-code);
-    font-size:var(--font-L) ;
-    color: white;
-    border-radius: 10px;
+    /* background-image: linear-gradient(90deg,rgb(90, 190, 76), #65c93796); */
+    background-color: #fafafa;
+    font-family: var(--font-classy);
+    font-size:var(--font-M) ;
+   
+    border: 1px solid rgb(192, 192, 192);
     padding: 4px;
     box-shadow: 3px 3px 6px rgba(41, 40, 40, 0.164);
 
@@ -84,3 +84,5 @@ left:-10px;
 .item-score img{
     margin-left: 15px ;
 }
+
+

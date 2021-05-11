@@ -1,0 +1,45 @@
+.profilecard-header {
+  position: relative;
+  width: 30%;
+  height: 0;
+
+  top: 30px;
+  left: 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 12px;
+
+  z-index: 2;
+}
+
+.profilecard-img {
+  position: relative;
+}
+
+.score {
+  color: white;
+  text-align: center;
+  font-style: var(--font-classy);
+  font-size: var(--font-L);
+}
+
+.profilecard-left,
+.profilecard-right {
+  background-color: rgba(228, 228, 228, 0.247);
+
+  display: flex;
+  align-items: center;
+
+  width: minmax(min-content, 50%);
+
+  display: flex;
+  justify-content: center;
+}
+
+.profilecard-left img,
+.profilecard-right img {
+  width: 30px;
+  padding-left: 12px;
+}

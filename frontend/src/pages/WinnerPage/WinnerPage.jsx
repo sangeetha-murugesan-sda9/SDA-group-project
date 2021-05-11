@@ -5,33 +5,25 @@ import { useState } from "react";
 import "../../styles/base.css";
 import NavBar from "../../components/Navbar";
 import UserMeta from "../../components/UserMeta";
-import winnerImg from "../../assets/img/mockup/PowerRangers/power_rainbow.jpg";
+import king from "../../assets/img/icons/crown.svg"
 import Auth from "../../services/Auth";
+import Methods from "../../services/Methods";
 import AuthApi from "../../api/AuthApi";
 import SlidingMenu from "../../components/SlidingMenu";
+import like from "../../assets/img/logo/flame.png";
 
 
 export default function WinnerPage() {
   // Constants
 
   const currentUser = AuthApi.getCurrentUser();
+  
 
-  const API_URL = "https://my.api.mockaroo.com/user.json?key=ae007e80";
   const JSON_MOCKUP = require("../../api/api_users.json");
-  const JSON_MOCKUP_URL = "../../api/api_users.json";
+  
 
   //states
   const [users, setUsers] = useState([0]);
-  const randomId = Math.floor(Math.random() * 25);
-  const randomUser = users[randomId];
-
-  // Methods
-  //fetch data distant API
-  function fetchdataURL() {
-    fetch(API_URL)
-      .then((response) => response.json())
-      .then((json) => setUsers(json));
-  }
 
   //fetch data distant API
   function fetchdataMOCKUP() {
@@ -43,7 +35,11 @@ export default function WinnerPage() {
     fetchdataMOCKUP();
   }, []);
 
-  console.log(randomUser);
+  const winnerObj = Methods.getWinner(JSON_MOCKUP);
+  const winner = users[winnerObj[0]]
+
+ 
+  
 
   return (
     <div className="general-container">
@@ -55,19 +51,22 @@ export default function WinnerPage() {
       
       </header>
 
-      {randomUser === undefined && <p>Loading Data ...</p>}
+      {winner === undefined && <p>Loading Data ...</p>}
 
-      {randomUser !== undefined && (
+      {winner !== undefined && (
         <main>
           <div className="winner-content">
-            <h1>Current idol</h1>
-            <UserMeta users={randomUser} />
+            <h1> <img className="img-30" src={king} /> Current idol </h1>
+            <UserMeta users={winner} />
+            <div>
             <div className="wrapper-img-square">
-              <img id="main-img" src={winnerImg} alt="main-img" />
+              <img id="main-img" src={winner.pictures[winnerObj[1]].url} alt="main-img" />
+            </div>
+            <p className = "winner-score">{winner.pictures[winnerObj[1]].likes} <img className="img-30" src={like} alt="logo-like" /></p>
             </div>
 
             <div className="under-img-container">
-              <button className="btn-blue">Follow Me </button>
+              <a href= {"http://www.instagram.com/" + winner.instagram} target="blank" className="btn-blue">Follow Me </a>
             </div>
           </div>
         </main>
