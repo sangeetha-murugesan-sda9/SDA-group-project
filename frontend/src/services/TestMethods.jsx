@@ -3,27 +3,19 @@ import Methods from './Methods'
 import AuthApi from "../api/AuthApi";
 
 
-export default function TestMethods() {
+export default function TestMethods({users}) {
+
   // Constants
-  const currentUser = AuthApi.getCurrentUser(); 
-  const users = require("../api/api_users.json");
+  const currentUser = AuthApi.getCurrentUser();
 
+    const userId = 2 ;
+    const emailById = Methods.getEmailById(users,2);
+    const email = "dmartindale3@newyorker.com" ;
+/*const usernameByEmail = Methods.getUsernameByEmail(users,email);
+    const LikesByEmail = Methods.getTotalLikesByEmail(users,email);*/
 
-  //states
-  const [file, setFile] = useState();
-  const [likes, setLikes] = useState(0);
-  const [dislikes, setDislikes] = useState(0);
-    
-  
- const userId = 2 ;
- const emailById = Methods.getEmailById(users,userId);
-  
- const email = "dmartindale3@newyorker.com" ;
- const usernameByEmail = Methods.getUsernameByEmail(users,email);
+    console.log(users)
 
-const LikesByEmail = Methods.getTotalLikesByEmail(users,email);
-
-console.log(Methods.getPicturesByEmail(users,email));
    const pictureId=1;
 const TimeStampbyEmail = Methods.getTimestamp(users,email,pictureId);
 
@@ -42,14 +34,14 @@ const TimeStampbyEmail = Methods.getTimestamp(users,email,pictureId);
 
       {/* Test get currentUser name */}
       <div className="upload-box-test"> 
-      <h5>email : {email } => username: {usernameByEmail}</h5>    
+      {/*<h5>email : {email } => username: {usernameByEmail}</h5>    */}
           
       </div>
 
 
       {/* Test getLikes by email */}
       <div className="upload-box-test"> 
-      <h5>email : {email} => likes : {LikesByEmail}</h5>    
+      {/*<h5>email : {email} => likes : {LikesByEmail}</h5>    */}
           
       </div>
 
@@ -57,7 +49,7 @@ const TimeStampbyEmail = Methods.getTimestamp(users,email,pictureId);
 
         {/* Test get pictures url by email */}
         <div className="upload-box-test"> 
-      <h5>email : {email} => likes : {LikesByEmail}</h5>    
+      {/*<h5>email : {email} => likes : {LikesByEmail}</h5>    */}
           
       </div>
 

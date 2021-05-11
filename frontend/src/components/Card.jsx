@@ -5,26 +5,26 @@ import UserMeta from "./UserMeta";
 
 export default function Card({ item, score, votes, meta}) {
 
-console.log(item)
+    console.log(item)
 
-  return (
+    return (
 
 
-    <div className="card-small">
-      {meta === true && <UserMeta users={item}/>}
-{/* 1.generate a random id number    2. retieve*/} 
-      <img src={item.pictures[0].url} alt="items"/>
+        <div className="card-small">
+            {meta === true && <UserMeta user={item}/>}
 
-      {votes === true && <VoteComponent />}
+            <img src={item.pictures[0].url} alt="items"/>
 
-      {score === true && (
-        <div className="card-footer">
+            {votes === true && <VoteComponent />}
 
-          <p id="img-score" >Score : {item.likes} </p>
+            {score === true && (
+                <div className="card-footer">
 
-          <img src={like} alt="score-logo"/>
+                    <p id="img-score" >Score : {item.likes} </p>
+
+                    <img src={like} alt="score-logo"/>
+                </div>
+            )}
         </div>
-      )}
-    </div>
-  );
+    );
 }
