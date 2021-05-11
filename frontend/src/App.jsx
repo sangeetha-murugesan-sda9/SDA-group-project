@@ -19,6 +19,7 @@ import AuthApi from "./api/AuthApi";
 import TestPage from "./pages/TestPage/TestPage";
 import TestMethods from "./services/TestMethods";
 import HeaderBackground from "./components/HeaderBackground";
+import ToggleLanguage from "./components/ToggleLanguage";
 
 
 export default function App() {
@@ -27,7 +28,7 @@ export default function App() {
     const [status, setStatus] = useState(0); // 0 = loading data, 1 = data loaded, 2 = error;
     const [users, setUsers] = useState([]);
    
-    const MOCKUP_URL = "https://api.jsonbin.io/b/609a7407e0aabd6e191b79d7"
+    const MOCKUP_URL = "https://api.jsonbin.io/b/609a7407e0aabd6e191b79d7/1"
     const url = MOCKUP_URL
 
     // Constants
@@ -71,7 +72,9 @@ export default function App() {
     const loggedInRouter = (
       <BrowserRouter>
         <div>
+          
           <HeaderBackground />
+          <ToggleLanguage />
           {status === 0 && <p className="informative-box" >🕓 Loading...</p>}
           {status === 2 && <p className="informative-box" >🚨 Please check your connection</p>}
           {status === 1 && 

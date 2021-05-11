@@ -4,6 +4,7 @@ import "../../styles/base.css";
 import Auth from "../../services/Auth";
 import AuthApi from "../../api/AuthApi";
 import ApiCalls from "../../api/ApiCalls";
+import ToggleLanguage from "../../components/ToggleLanguage";
 
 export default function TestPage() {
   // Constants
@@ -109,60 +110,56 @@ export default function TestPage() {
     }, []);
 
   return (
+    
     <div className="general-container">
-      
-      <div className = "test-wrapper">
+
+<div className="test-wrapper">
+        <ToggleLanguage />
+      </div>
+
+      <div className="test-wrapper">
         <h2>TEST PAGE:</h2>
 
-{/* Test get currentUser name */}
-      <div className="upload-box-test">
-      <h3>Current user :</h3>
-      <h4>{AuthApi.getCurrentUser()}</h4>        
+        {/* Test get currentUser name */}
+        <div className="upload-box-test">
+          <h3>Current user :</h3>
+          <h4>{AuthApi.getCurrentUser()}</h4>
+        </div>
+
+        {/* Test upload a picture */}
+        <div className="upload-box-test">
+          <h3>Upload a picture</h3>
+          <input type="file" onChange={handleFile} />
+          <button type="button" onClick={handleUpload}>
+            Upload
+          </button>
+        </div>
+
+        {/* Test display picture at id=1 */}
+        <div className="upload-box-test">
+          <h3>Display picture with id=1</h3>
+
+          <h4>Picture at id:1 - not possible to display yet</h4>
+        </div>
+
+        {/* Test adding a like / adding a dislike */}
+        <div className="upload-box-test">
+          <h3>Like and Dislike the picture at id=1 (refresh)</h3>
+
+          <button onClick={() => addLike(1)}> Like </button>
+          <button onClick={() => addDislike(1)}> Dislike </button>
+        </div>
+
+        {/* Test getting the likes / dislikes for picture at id=1 */}
+        <div className="upload-box-test">
+          <h3>GET likes and dislikes of picture with id=1</h3>
+          <p>Likes : {likes} </p>
+          <p>Dislikes : {dislikes}</p>
+        </div>
       </div>
-
-{/* Test upload a picture */}
-      <div className="upload-box-test">
-      <h3>Upload a picture</h3>
-        <input type="file" onChange={handleFile} />
-        <button  type="button" onClick={handleUpload}>
-          Upload
-        </button>
-      </div>
-
-
-{/* Test display picture at id=1 */}
-      <div className="upload-box-test">
-      <h3>Display picture with id=1</h3>
-
-      <h4>Picture at id:1 - not possible to display yet</h4>
-       
-      </div>
-
-
-{/* Test adding a like / adding a dislike */}
-      <div className="upload-box-test">
-      <h3>Like and Dislike the picture at id=1 (refresh)</h3>
-      
-        <button  onClick={() => addLike(1)} > Like  </button>
-        <button  onClick={() => addDislike(1)} > Dislike </button>
-       
-      </div>
-
-
-{/* Test getting the likes / dislikes for picture at id=1 */}
-      <div className="upload-box-test">
-      <h3>GET likes and dislikes  of picture with id=1</h3>      
-        <p>Likes : {likes}  </p>
-        <p>Dislikes : {dislikes}</p>
-         </div>
-
-
-      </div>      
 
 
       
-
-
     </div>
   );
 }

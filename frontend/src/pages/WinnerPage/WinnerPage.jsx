@@ -1,6 +1,5 @@
 import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import "../../styles/base.css";
 import NavBar from "../../components/Navbar";
@@ -20,6 +19,7 @@ export default function WinnerPage({users}) {
   const winner = users[Methods.getWinner(users)[0]]
   const winnerPicId = Methods.getWinner(users)[1]
 console.log(winnerPicId)
+const [t, i18n] = useTranslation('common');
 
   return (
     <div className="general-container">
@@ -33,7 +33,7 @@ console.log(winnerPicId)
 
         <main>
           <div className="winner-content">
-            <h1> <img className="img-30" src={king} /> Current idol </h1>
+            <h1> <img className="img-title img-30 " src={king} /> {t("winner.title")}</h1>
             <UserMeta user={winner} />
             <div>
             <div className="wrapper-img-square">
@@ -43,7 +43,7 @@ console.log(winnerPicId)
             </div>
 
             <div className="under-img-container">
-              <a href= {"http://www.instagram.com/" + winner.instagram} target="blank" className="btn-blue">Follow Me </a>
+              <a href= {"http://www.instagram.com/" + winner.instagram} target="blank" className="btn-blue">{t("winner.button")} </a>
             </div>
           </div>
         </main>

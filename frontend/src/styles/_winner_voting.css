@@ -47,3 +47,7 @@
         align-items: center;
         }
         
+.img-title{
+  position: relative;
+  top:7px;
+}        
