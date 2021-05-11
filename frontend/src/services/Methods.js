@@ -34,15 +34,16 @@ return item.email === userMail
 
 // get total Likes by user email//
 
-getTotalLikesByEmail(array, userMail ){
-  var user = array.filter(function (item){
-    return item.email === userMail
-       })  
-var likes = user[0].pictures.map(i => i.likes);
-var sum = likes.reduce((a, b) => a + b, 0)
+    getTotalLikesByEmail(array, userMail ){
+        var user = array.filter(function (item){
+            return item.email === userMail
+        })
+        var likes = user[0].pictures.map(i => i.likes);
+        var sum = likes.reduce((a, b) => a + b, 0)
 
-return sum
-};
+        return sum
+    };
+
 
 
 // get total dilLikes by user email//
