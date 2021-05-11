@@ -1,6 +1,6 @@
 .btn-blue{
   width: 300px;
- 
+
   margin: 5px;
   padding: 20px;
   text-align: center;
@@ -14,10 +14,10 @@
   border-radius: 30px;
 
   background-image: linear-gradient(
-    to right,
-    #44dfdf 0%,
-    #c2e9fb 51%,
-    #a1c4fd 100%
+          to right,
+          #44dfdf 0%,
+          #c2e9fb 51%,
+          #a1c4fd 100%
   );
   border: none;
 }
@@ -46,7 +46,7 @@
 
 
 .btn-grey{
- 
+
   border: 2px solid gray;
   color: gray;
   background-color: white;
@@ -57,7 +57,7 @@
 }
 
 .btn-lightgrey{
- 
+
   border: 2px solid grey;
   color: gray;
   background-color: transparent;
@@ -100,28 +100,29 @@
 .btn-submit-green {
 
   position: fixed;
-
+  cursor: pointer;
   bottom:5px ;
   left: 50%;
   transform: translateX(-50%);
-  
 
-  display: grid;  
+
+  display: grid;
   align-items: center;
 
   border: 0px;
-  font-size: 25px; 
+  font-size: 25px;
 
   width: 60px;
   height: 60px;
-    
+
   background-color: #0c9;
   color: white;
   border-radius: 50px;
+  cursor: pointer;
 
   text-align: center;
   box-shadow: 2px 2px 3px #999;
-  
+
 }
 
 .invisible {
@@ -136,7 +137,7 @@
   background-color: rgb(255, 255, 255);
   border: 1px solid rgb(212, 212, 212);
   border-radius: 50%;
-  cursor: pointer; 
+  cursor: pointer;
 
   height: 50px;
   width: 50px;
@@ -144,7 +145,6 @@
   z-index: 10;
 
 }.btn-edit:hover{
-opacity: 100%;
+   opacity: 100%;
 
-}
-
+ }

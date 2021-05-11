@@ -2,6 +2,7 @@ import like from "../assets/img/logo/flame.png";
 import AuthApi from "../api/AuthApi";
 import dislike from "../assets/img/logo/oops.png";
 import VoteComponent from "./VoteComponent";
+import "../styles/_profilecard.css";
 
 export default function ProfileCard({ item, userToDisplay }) {
 
@@ -17,6 +18,7 @@ export default function ProfileCard({ item, userToDisplay }) {
         <div className="profilecard-left">
           <p className="score" >{item.likes} </p>
           <img src={like} alt="score-logo"/>
+
           
         </div>
 
@@ -26,7 +28,10 @@ export default function ProfileCard({ item, userToDisplay }) {
         </div>
         
         </div>
+
+
       <img className="profilecard-img"src={item.url} alt="items"/>
+      <p className="score-timestamp" >TimeStamp:{item.timestamp} </p>
 
 {userToDisplay !== currentUserEmail &&
   <VoteComponent />

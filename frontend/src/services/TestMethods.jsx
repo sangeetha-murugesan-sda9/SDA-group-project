@@ -24,6 +24,8 @@ export default function TestMethods() {
 const LikesByEmail = Methods.getTotalLikesByEmail(users,email);
 
 console.log(Methods.getPicturesByEmail(users,email));
+   const pictureId=1;
+const TimeStampbyEmail = Methods.getTimestamp(users,email,pictureId);
 
 
   return (
@@ -60,6 +62,10 @@ console.log(Methods.getPicturesByEmail(users,email));
       </div>
 
 
+          <div className="upload-box-test">
+              <h5>email : {email} => TimeStamp : {TimeStampbyEmail}</h5>
+
+          </div>
 
 
       </div>    

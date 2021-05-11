@@ -1,16 +1,16 @@
 // NPM Packages
-import React from "react";
+import React, {useState} from "react";
 
 // Project files
 import "../../styles/base.css";
 import Auth from "../../services/Auth";
 import background from "../../assets/img/landingBackground.gif";
 import Popup from "../../components/Popup";
+import Overlay from "react-overlay-component";
 
 
 export default function LoginPage() {
-    
-    //constants
+
     
     // Methods
     async function login(loginData) {

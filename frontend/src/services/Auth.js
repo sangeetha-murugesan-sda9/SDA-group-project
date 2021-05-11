@@ -57,6 +57,7 @@ class Auth {
     _clearToken() {
         window.sessionStorage.removeItem(tokenKey);
     }
+
 }
 
 export default new Auth();

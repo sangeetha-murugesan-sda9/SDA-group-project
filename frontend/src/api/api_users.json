@@ -11,14 +11,14 @@
       {
         "id": 1,
         "url": "http://clecardona.com/sda/pictures/sara/01.jpg",
-        "likes": 4039,
+        "likes": 2439,
         "dislikes": 0,
         "timestamp": "2021-04-18T15:22:24Z"
       },
       {
         "id": 2,
         "url": "http://clecardona.com/sda/pictures/sara/02.jpg",
-        "likes": 1500,
+        "likes": 2500,
         "dislikes": 0,
         "timestamp": "2020-12-30T12:50:37Z"
       },
@@ -37,13 +37,13 @@
     "username": "clecardona",
     "firstname": "Clement",
     "lastname": "Cardona",
-    "instagram": "clecardona",
+    "instagram": "clekardo",
     "avatar": "http://clecardona.com/sda/profile/clement/clecardona.png",
     "pictures": [
       {
         "id": 1,
         "url": "http://clecardona.com/sda/pictures/clement/01.JPG",
-        "likes": 66,
+        "likes": 566,
         "dislikes": 15,
         "timestamp": "2020-05-06T11:41:32Z"
       },
@@ -64,14 +64,14 @@
       {
         "id": 4,
         "url": "http://clecardona.com/sda/pictures/clement/04.JPG",
-        "likes": 18,
+        "likes": 98,
         "dislikes": 90,
         "timestamp": "2021-04-05T18:17:18Z"
       },
       {
         "id": 5,
         "url": "http://clecardona.com/sda/pictures/clement/05.JPG",
-        "likes": 13,
+        "likes": 4000,
         "dislikes": 28,
         "timestamp": "2020-12-03T20:36:27Z"
       }
@@ -79,48 +79,35 @@
   },
   {
     "id": 3,
-    "email": "gyellop2@google.pl",
-    "username": "gyellop2",
-    "firstname": "Gill",
-    "lastname": "Yellop",
-    "instagram": "MISSHA M PERFECT COVER BB",
-    "avatar": "https://robohash.org/estadvelit.png?size=100x100&set=set1",
+    "email": "sangeetha@gmail.com",
+    "username": "Sang_eetha",
+    "firstname": "Sangeetha",
+    "lastname": "Murugesan",
+    "instagram": "s_murugesan",
+    "avatar": "http://clecardona.com/sda/profile/sangeetha/%20profile-sangeetha.jpg",
     "pictures": [
       {
         "id": 1,
-        "url": "http://dummyimage.com/219x201.png/5fa2dd/ffffff",
+        "url": "http://clecardona.com/sda/pictures/sangeetha/01.jpg",
         "likes": 97,
         "dislikes": 16,
         "timestamp": "2020-11-20T10:11:30Z"
       },
       {
         "id": 2,
-        "url": "http://dummyimage.com/152x210.png/dddddd/000000",
+        "url": "http://clecardona.com/sda/pictures/sangeetha/02.jpg",
         "likes": 99,
         "dislikes": 55,
         "timestamp": "2021-01-25T05:09:02Z"
       },
       {
         "id": 3,
-        "url": "http://dummyimage.com/218x145.png/dddddd/000000",
-        "likes": 40,
-        "dislikes": 23,
+        "url": "http://clecardona.com/sda/pictures/sangeetha/03.jpg",
+        "likes": 490,
+        "dislikes": 203,
         "timestamp": "2021-01-05T03:04:53Z"
-      },
-      {
-        "id": 4,
-        "url": "http://dummyimage.com/238x110.png/ff4444/ffffff",
-        "likes": 40,
-        "dislikes": 12,
-        "timestamp": "2021-01-03T01:07:02Z"
-      },
-      {
-        "id": 5,
-        "url": "http://dummyimage.com/185x208.png/5fa2dd/ffffff",
-        "likes": 47,
-        "dislikes": 17,
-        "timestamp": "2021-04-19T17:45:34Z"
       }
+
     ]
   },
   {

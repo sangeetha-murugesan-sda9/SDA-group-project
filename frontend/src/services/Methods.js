@@ -46,7 +46,7 @@ return item.email === userMail
 
 
 
-// get total dilLikes by user email//
+// get total disLikes by user email//
 
 getTotalDislikesByEmail(array, userMail ){
   var user = array.filter(function (item){
@@ -60,49 +60,88 @@ return sum
 
 // get all pictures JSON by user email//
 
-getPicturesByEmail(array, userMail ){
-  var user = array.filter(function (item){
-    return item.email === userMail
-       })  
-var pics = user.map(i => i.pictures);
-/* var urls = pics[0].map(i => i.url); */
+    getPicturesByEmail(array, userMail){
+        var user = array.filter(function (item){
+            return item.email === userMail
+        })
+        var pics = user.map(i => i.pictures);
+        /* var urls = pics[0].map(i => i.url); */
 
-return pics
-};
+        return pics
+    };
+
+// get the max value of likes of the all JSON
+    getMaxLikes(array){
+        const picsArray = array.map(i=> i.pictures)
+        const pics = picsArray.flat()
+        const likes = pics.map(i=> i.likes)
+        const maxValue = Math.max.apply(Math, likes);
+
+        return maxValue;
+
+    }
+
+// get the winner and the winner picture of the all JSON
+// -> return an array [ winningUserId , winningPictureId ]
+
+    getWinner(array){
+
+        var maxValue = this.getMaxLikes(array)
+        //console.log(maxValue);
+
+        let winnerId = -1;
+        let winnerImgId = -1;
+
+        for (let i = 0; i < array.length; i++) {
+
+            for (let j = 0; j < array[i].pictures.length; j++) {
+
+                if (array[i].pictures[j].likes === maxValue){
+
+                    //console.log("image ",j);
+                    winnerId = i;
+                    winnerImgId = j;
+                }
+            }
+        }
+
+        return [winnerId,winnerImgId]
+    }
 
 
-/*
-getDislikes (arrayOfPictures , pictureId);
-getTimestamp(arrayOfPictures , pictureId)  -> formated DD-MM HH:mm
+   /* // getUserByEmail (array , email) return an object representing the user
+
+    getUserByEmail (array ,  userMail){
+
+        var user = array.filter(function (item) {
+            return item.email === userMail
+        })
+        return user[0]
+    }
+
+    // getInstaByEmail (email); -> returns the instagram with an @ before
+    getInstaByEmail (array,userMail){
+        var user = array.filter(function (item) {
+            return item.email === userMail
+        })
+        const insta = '@ '+ user[0].instgram
+
+        return insta
+    }
 */
+    // getTimestamp(array ,email , pictureId) -> formatted DD-MM HH:mm
+    getTimestamp(array ,userMail , pictureId){
+        var user = array.filter(function (item){
+            return item.email === userMail
+        })
+
+        var TimeStamp =user[0].pictures.map(i => i.timestamp);
+
+        return TimeStamp
+
+    }
 
 
-
-
-  // TODO - implements methods here
-
-  /*
-    EASY:
- getPictures( arrayOfUsers , email) that returns only the pictures of a specific "user"
-to implement with json mockup provided .
-
-MODERATE:
-getLikes (arrayOfPictures , pictureId );
-getDislikes (arrayOfPictures , pictureId);
-getTimestamp(arrayOfPictures , pictureId)  -> formated DD-MM HH:mm
-
-EASY:
-getUser (arrayOfUsers , email);
-
-ADVANCED:
-getTotalOfLikes (email);
-getTotalOfDislikes (email);
-
-EASY:
-getUsername (email);
-getInsta (email);  -> returns the instagram with an @ before
-getAvatar (email);
-*/
 }
 
 export default new Methods();
