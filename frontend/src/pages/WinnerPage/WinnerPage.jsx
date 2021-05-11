@@ -66,7 +66,7 @@ export default function WinnerPage() {
             </div>
 
             <div className="under-img-container">
-              <a href= "http://www.instagram.com" target="blank" className="btn-blue">Follow Me </a>
+              <a href= {"http://www.instagram.com/" + winner.instagram} target="blank" className="btn-blue">Follow Me </a>
             </div>
           </div>
         </main>
