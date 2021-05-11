@@ -11,7 +11,7 @@ console.log(item)
 
 
     <div className="card-small">
-      {meta === true && <UserMeta users={item}/>}
+      {meta === true && <UserMeta user={item}/>}
 
       <img src={item.pictures[0].url} alt="items"/>
 

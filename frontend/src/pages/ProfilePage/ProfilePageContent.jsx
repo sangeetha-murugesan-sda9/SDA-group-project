@@ -10,66 +10,30 @@ import king from "../../assets/img/icons/crown.svg"
 import like from "../../assets/img/logo/flame.png";
 import dislike from "../../assets/img/logo/oops.png";
 
-export default function ProfilePageContent({userToDisplay}) {
+export default function ProfilePageContent({users , userToDisplay}) {
  
-  
-  //states
-  const [users, setUsers] = useState([]);
-
- // Constants
- const JSON_MOCKUP = require("../../api/api_users.json")
+ // Constants 
 
   const currentUserEmail = AuthApi.getCurrentUser()
-  let winnerId = -1
-  winnerId = Methods.getWinner(JSON_MOCKUP)[0]
+  const winnerId = Methods.getWinner(users)[0]
+  const likes = Methods.getTotalLikesByEmail(users,userToDisplay);
+  const dislikes = Methods.getTotalDislikesByEmail(users,userToDisplay);
+  const username = Methods.getUsernameByEmail(users,userToDisplay);
+  const avatar = Methods.getAvatarByEmail(users,userToDisplay); 
+  const pics = Methods.getPicturesByEmail(users,userToDisplay)
+
   
 
- if (Methods.getEmailById(JSON_MOCKUP,winnerId+1) === userToDisplay){
+ if (Methods.getEmailById(users,winnerId+1) === userToDisplay){
     console.log("winner")
   } else{
     console.log("not winner")
   }
 
   
- 
-
- 
-
-  // Methods
-  //fetch data distant API
-/*   function fetchdataURL() {
-    fetch(API_URL)
-      .then((response) => response.json())
-      .then((json) => setUsers(json));
-      } */
-
-  //fetch data distant API
-  function fetchdataMOCKUP() {
-    setUsers(JSON_MOCKUP);
-      }
-
-  //use Effect
-  useEffect(() => {
-    fetchdataMOCKUP();
-  }, []);
- 
-
-    // Constants afer fetch - to refactor
-  const likes = Methods.getTotalLikesByEmail(JSON_MOCKUP,userToDisplay);
-  const dislikes = Methods.getTotalDislikesByEmail(JSON_MOCKUP,userToDisplay);
-  const username = Methods.getUsernameByEmail(JSON_MOCKUP,userToDisplay);
-  const avatar = Methods.getAvatarByEmail(JSON_MOCKUP,userToDisplay); 
-  const pics = Methods.getPicturesByEmail(JSON_MOCKUP,userToDisplay)
-
- 
-  
   return (
     <div className="profilepage-content">
-      {users[1] === undefined && <p> Loading Data ...</p>}
-      {users[1] !== undefined && (
-        <div>
 
-          
             <div>
               <div className="profilepage-container">
                 <div className="profilepage-subcontainer">
@@ -77,15 +41,14 @@ export default function ProfilePageContent({userToDisplay}) {
 
                   <div className="profilepage-box-left-header">
                     
-                                        <h2>{username} </h2>
-                  {
-                      winnerId > 0 && 
+                  <h2>{username} </h2>
+                 
                       <div>
                     { userToDisplay === Methods.getEmailById(users,winnerId+1) && 
                     <img className="logo-winner img-30" src={king} />
                     }
                     </div>
-                    }
+                    
                     </div>
                    
                     <img src={avatar} className="img-profile-100" alt="img" />
@@ -124,12 +87,9 @@ export default function ProfilePageContent({userToDisplay}) {
                   </React.Fragment>
                 </div>
               </div>
-            </div>
-         
-
-         
-        </div>
-      )}
+            </div>      
+        
+      
     </div>
   );
 }
