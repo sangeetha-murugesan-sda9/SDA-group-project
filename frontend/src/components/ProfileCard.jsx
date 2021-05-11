@@ -3,6 +3,8 @@ import AuthApi from "../api/AuthApi";
 import dislike from "../assets/img/logo/oops.png";
 import VoteComponent from "./VoteComponent";
 import "../styles/_profilecard.css";
+import Moment from "react-moment";
+
 
 export default function ProfileCard({ item, userToDisplay }) {
 
@@ -26,17 +28,15 @@ export default function ProfileCard({ item, userToDisplay }) {
           <p className="score" >{item.dislikes} </p>
           <img src={dislike} alt="score-logo"/>
         </div>
-        
-        </div>
+      </div>
 
 
       <img className="profilecard-img"src={item.url} alt="items"/>
-      <p className="score-timestamp" >TimeStamp:{item.timestamp} </p>
+      <p className="score-timestamp" >TimeStamp:<Moment format="DD MMM YY">{item.timestamp}</Moment> </p>
 
 {userToDisplay !== currentUserEmail &&
   <VoteComponent />
 }
-
 
     </div>
   );
