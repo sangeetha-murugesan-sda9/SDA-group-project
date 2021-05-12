@@ -1,7 +1,10 @@
+import Moment from "react-moment";
+
 import like from "../assets/img/logo/flame.png";
 import AuthApi from "../api/AuthApi";
 import dislike from "../assets/img/logo/oops.png";
 import VoteComponent from "./VoteComponent";
+
 
 export default function ProfileCard({ item, userToDisplay }) {
 
@@ -27,6 +30,7 @@ export default function ProfileCard({ item, userToDisplay }) {
         
         </div>
       <img className="profilecard-img"src={item.url} alt="items"/>
+      <p className="score-timestamp">Posted - <Moment format="DD MMM YYYY">{item.timestamp}</Moment> </p>
 
 {userToDisplay !== currentUserEmail &&
   <VoteComponent />

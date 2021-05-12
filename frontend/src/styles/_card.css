@@ -23,12 +23,13 @@
      flex-direction: column;
     justify-content: flex-start;
 
-     background-color: black;    
+     background-color: #fafafa; 
      border-radius: 25px;
      height: auto;
 
      border: 1px solid  rgb(241, 241, 241);
      box-shadow: 2px 2px 2px 0px rgb(201, 195, 195);
+     z-index: 1;
  }
 
  .card-small .vote-container img {

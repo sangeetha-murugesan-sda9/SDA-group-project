@@ -2,7 +2,7 @@
 import VoteComponent from "./VoteComponent";
 import like from "../assets/img/logo/flame.png";
 import UserMeta from "./UserMeta";
-
+import Moment from "react-moment";
 
 export default function Card({ item, score, votes, meta}) {
 
@@ -14,6 +14,8 @@ const randomPictureId = Math.floor(Math.random() * item.pictures.length)
 
     <div className="card-small">
       {meta === true && <UserMeta user={item}/>}
+
+      <p className="score-timestamp">Posted - <Moment format="DD MMM YYYY">{item.timestamp}</Moment> </p>
 
       <img src={item.pictures[randomPictureId].url} alt="items"/>
 
