@@ -80,7 +80,7 @@ export default function App() {
           {status === 2 && <p className="error" >Please check your connection</p>}
           {status === 1 && 
       
-
+<div>
           <Switch>
             <Route path="/login">
               <LoginPage />
@@ -111,10 +111,14 @@ export default function App() {
               <TestMethods users = {users} /> {/* ok */}
             </Route>
           </Switch>
+          
+ <Footer users = {users} />      
+
+</div>
 
 }
 
-          <Footer />
+          
         </div>
       </BrowserRouter>
     );

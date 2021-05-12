@@ -18,13 +18,25 @@ return item.email === userMail
 
 }
 
-// getting avatar by email
-  getAvatarByEmail(array,userMail){
+
+// getting votes count  providing email
+getVotesByEmail(array,userMail){
+
+  var user = array.filter(function (item){
+return item.email === userMail
+  })      
+  return user[0].votes
+
+}
+
+
+// getting number of pics of the user by email
+  getNumberOfPicturesByEmail(array,userMail){
 
     var user = array.filter(function (item){
  return item.email === userMail
     })      
-    return user[0].avatar
+    return user[0].pictures.length
  
  }
 
