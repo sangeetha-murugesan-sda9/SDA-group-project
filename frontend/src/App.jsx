@@ -13,7 +13,6 @@ import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import WinnerPage from "./pages/WinnerPage/WinnerPage";
 import VotingPage from "./pages/VotingPage/VotingPage";
 import Footer from "./components/Footer";
-import AuthApi from "./api/AuthApi";
 
 //Test page
 import TestPage from "./pages/TestPage/TestPage";
@@ -26,10 +25,12 @@ export default function App() {
     // State
     const [loggedIn, setLoggedIn] = useState(Auth.isLoggedIn());
     const [status, setStatus] = useState(0); // 0 = loading data, 1 = data loaded, 2 = error;
-    const [users, setUsers] = useState([]);
+    const [xusers, setXusers] = useState([]);
    
     const MOCKUP_URL = "https://api.jsonbin.io/b/609a7407e0aabd6e191b79d7/1"
     const url = MOCKUP_URL
+    const json_mockup = require('./api/api_users.json')
+    const users = json_mockup
 
     // Constants
     Auth.bindLoggedInStateSetter(setLoggedIn);
@@ -51,11 +52,11 @@ export default function App() {
       }).then(response => onFetchSuccess(response.data))
       .catch((error) => onFetchFail(error));   
 
-    }, [setUsers, setStatus]);
+    }, [setXusers, setStatus]);
   
     
     function onFetchSuccess(res) {      
-      setUsers(res);
+      setXusers(res);
       setStatus(1);
     }
   
