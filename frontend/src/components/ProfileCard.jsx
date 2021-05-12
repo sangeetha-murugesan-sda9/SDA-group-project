@@ -15,14 +15,14 @@ export default function ProfileCard({ item, userToDisplay }) {
       <div className="profilecard-header">
 
         <div className="profilecard-left">
-          <p className="score" >{item.likes} </p>
           <img src={like} alt="score-logo"/>
+          <p className="score" >{item.likes} </p>
           
         </div>
 
         <div className="profilecard-right">
-          <p className="score" >{item.dislikes} </p>
           <img src={dislike} alt="score-logo"/>
+          <p className="score" >{item.dislikes} </p>
         </div>
         
         </div>

@@ -17,12 +17,13 @@
  }
 
  .card-small{
+     position: relative;
      display: flex;
      width:100%;
      flex-direction: column;
     justify-content: flex-start;
 
-     background-color: white;    
+     background-color: black;    
      border-radius: 25px;
      height: auto;
 
@@ -33,6 +34,7 @@
  .card-small .vote-container img {
     width: 30px;
     height: auto;
+    
 }
 
 #img-score{

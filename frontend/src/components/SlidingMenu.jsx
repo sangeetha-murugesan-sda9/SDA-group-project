@@ -1,15 +1,17 @@
-import { stack as Menu } from 'react-burger-menu'
+import { slide as Menu } from 'react-burger-menu'
 
 import Auth from '../services/Auth'
 
 import king from "../assets/img/icons/crown.svg"
+import git from "../assets/img/icons/git.svg"
+import signout from "../assets/img/icons/signout.svg"
 import discover from "../assets/img/icons/telescope.svg"
 import vote from "../assets/img/icons/vote.svg"
 import profile from "../assets/img/icons/woman.svg"
 
 import AuthApi from "../api/AuthApi";
 
-export default function SlidingMenu({ onLogout }) {
+export default function SlidingMenu() {
  
 const currentUserEmail = AuthApi.getCurrentUser();
 
@@ -19,7 +21,7 @@ const currentUserEmail = AuthApi.getCurrentUser();
   }
 
     return (
-      <div>
+      
   
       <Menu >
                
@@ -44,12 +46,28 @@ const currentUserEmail = AuthApi.getCurrentUser();
           <img className="img-30" src={vote} />
           <a id="contact" className="menu-item-text" href="/vote">Vote</a>
           </div>
+
+          <div className="menu-item">
+
+          <div className="burger-footer">
         
+          <div className="burger-footer-item"> 
+          <a id="github" 
+          href="https://github.com/clecardona/SDA-group-project" target= "blank"><img className="img-30" src={git} /></a>
+           
+          </div>
+
+
+          <div className="burger-footer-item"> 
+<button className="btn-borderless" onClick={onLogout}><img className="img-30" src={signout} /></button>
+          </div>
+</div> 
+
          
-          <button className="btn-lightgrey" onClick={onLogout}>Logout</button>
-      
-        </Menu>
+
         </div>
+        </Menu>
+        
 
         );
 }

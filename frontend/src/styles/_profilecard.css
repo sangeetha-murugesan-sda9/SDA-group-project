@@ -1,25 +1,35 @@
 .profilecard-header {
-  position: relative;
-  width: 30%;
-  height: 0;
 
-  top: 30px;
-  left: 30px;
+  background-color: rgba(0, 0, 0, 0.103);
+  
+
+  position: absolute;
+    
+  width: 100%;
+  height:fit-content;
+ 
+
+  top: 0;
+  left: 0;
 
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  /* flex-direction: column; */
+  justify-content: space-evenly;
   gap: 12px;
+
+  border-radius: 25px 25px 0 0;
 
   z-index: 2;
 }
 
 .profilecard-img {
   position: relative;
+  background-blend-mode:multiply;
+  opacity: 80%;
+
 }
 
 .score {
-  color: white;
   text-align: center;
   font-style: var(--font-classy);
   font-size: var(--font-L);
@@ -27,19 +37,23 @@
 
 .profilecard-left,
 .profilecard-right {
-  background-color: rgba(228, 228, 228, 0.247);
-
+  
+  color: white;
+  text-shadow: 1px 1px 8px rgba(255, 255, 255, 0.651);
   display: flex;
+  justify-content: left;
   align-items: center;
+  gap: 10px ;
 
   width: minmax(min-content, 50%);
 
-  display: flex;
-  justify-content: center;
+  margin: 0;
+  padding: 12px 0;
+  
 }
 
 .profilecard-left img,
 .profilecard-right img {
   width: 30px;
-  padding-left: 12px;
+  
 }

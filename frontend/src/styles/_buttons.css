@@ -149,3 +149,8 @@ opacity: 100%;
 
 }
 
+.btn-borderless{
+  border:0;
+  background-color: transparent;
+}
+
