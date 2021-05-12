@@ -17,9 +17,10 @@
 
 .profilepage-subcontainer{   
   
-    width: 100%;
+    width: 90%;
     display: grid;
-    grid-template-columns: 50% 1fr;      
+    grid-template-columns: 50% 1fr;     
+    max-width: 1000px ; 
     
 }
 
