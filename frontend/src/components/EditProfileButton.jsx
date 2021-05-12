@@ -1,18 +1,18 @@
 import { React, useState, useEffect, useRef } from "react";
 import axios from "axios";
+import { useTranslation } from "react-i18next";
 
 import Auth from "../services/Auth";
 import Overlay from "react-overlay-component";
 import edit from "../assets/img/icons/pen.svg";
 
-/**
- * Component to handle file upload.
- * Works for image uploads, but can be edited to work for any file.
- */
 
 export default function EditProfileButton() {
+
   //constants
-  const axios = require("axios");
+  //translation
+  const [t, i18n] = useTranslation('common');
+  
   //Manage the overlay
   const [isOpen, setOverlay] = useState(false);
   const closeOverlay = () => setOverlay(false);
@@ -87,13 +87,13 @@ export default function EditProfileButton() {
       </button>
 
       <Overlay configs={configs} isOpen={isOpen} closeOverlay={closeOverlay}>
-        <h3>Edit profile</h3>
+        <h3>{t("overlay.label-profile")}</h3>
 
         <div className="overlay-form-group">
-          <label>Change username</label>
+          <label>{t("overlay.label-username")}</label>
           <input
             type="text"
-            placeholder="Enter new username"
+            placeholder={t("overlay.placeholder")}
             className="form-control"
             onChange={editName}
             value={name}
@@ -109,13 +109,13 @@ export default function EditProfileButton() {
         </div>
 
         <div className="upload-box">
-          <label>Change profile picture :</label>
+          <label>{t("overlay.label-avatar")} :</label>
           {/*   <label htmlFor="file" className="btn-grey" >Select</label> */}
           {/*  <input type="file" onChange={handleFile} />*/}
           {/*<input type="file" accept="image/*" multiple = "false" onChange={onchange}/>*/}
 
           <button className="btn-grey" type="button" onClick={handleUpload}>
-            Upload
+          {t("overlay.upload")}
           </button>
         </div>
       </Overlay>

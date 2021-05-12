@@ -92,10 +92,17 @@
   text-align: left;
 }
 
+
+
+
 .btn-vote {
   background-color: inherit;
   border: 0px;
+  cursor: pointer;
 }
+
+
+
 
 .btn-submit-green {
 
@@ -147,5 +154,10 @@
 }.btn-edit:hover{
 opacity: 100%;
 
+}
+
+.btn-borderless{
+  border:0;
+  background-color: transparent;
 }
 

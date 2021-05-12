@@ -9,14 +9,12 @@ import SlidingMenu from "../../components/SlidingMenu";
 import Footer from "../../components/Footer"
 import AuthApi from "../../api/AuthApi";
 
-export default function ProfilePage({ match }) {
+export default function ProfilePage({ users, userToDisplay}) {
+
 const currentUserEmail = AuthApi.getCurrentUser();
-const {
-  params: { userEmail },
-} = match;
 
-
-
+//console.log(users)
+//console.log(userToDisplay)
 
   return (
     <div className="general-container">
@@ -29,7 +27,7 @@ const {
 
       <main>
      
-        <ProfilePageContent userToDisplay={userEmail} />
+        <ProfilePageContent users={users} userToDisplay={userToDisplay}   />
 
       </main>
 

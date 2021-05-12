@@ -41,7 +41,7 @@
 /* General sidebar styles */
 .bm-menu {
   background: #373a47;
-  padding: 2.5em 1.5em 0;
+  padding: 2.5em 1.5em 0 ;
   font-size: 1.15em;
 }
 
@@ -62,16 +62,50 @@
 
 /*   /* Menu item including icon */
 .menu-item {
-  align-self: flex-start;
-    display: grid;
-  grid-template-columns: 1fr 1fr;
-    gap: 20px;
+  align-self: flex-start; 
+  gap: 20px;
 }
 
 .menu-item-text{
     margin-left: 10px;
+    margin-bottom: 10px;
 }
 
 .menu-item-text :hover{
     color: white;
 }
+
+.bm-menu-wrap img {
+
+margin-bottom: -5px ;
+}
+
+
+
+
+
+.burger-footer{
+
+position: absolute;
+bottom: 3vh;
+left: 0;
+
+display: flex;
+justify-content: space-around;
+
+width: 100%;
+margin: 0;
+padding: 0;
+
+
+}
+.burger-footer img{
+  
+  margin: 0;
+ 
+  
+  
+  }
+
+
+

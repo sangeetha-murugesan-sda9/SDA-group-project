@@ -31,6 +31,7 @@ h1{
 h2{
     margin: 5px 8px;
     font-size: var(--font-S);
+    color: ;
 }
 
 h3{
@@ -66,6 +67,16 @@ width: 100%;
  }
  .img-50{
     height: 50px;
+     width:auto;    
+ }
+
+ .img-60{
+    height: 60px;
+     width:auto;    
+ }
+
+ .img-70{
+    height: 70px;
      width:auto;    
  }
  

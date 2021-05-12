@@ -1,6 +1,5 @@
 import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import "../../styles/base.css";
 import NavBar from "../../components/Navbar";
@@ -8,40 +7,18 @@ import Card from "../../components/Card";
 import Auth from "../../services/Auth";
 import AuthApi from "../../api/AuthApi";
 import SlidingMenu from "../../components/SlidingMenu";
+import Methods from '../../services/Methods'
 
 
+export default function DiscoverPage({users}) {
 
-export default function DiscoverPage() {
  // Constants
- 
- const currentUserEmail = AuthApi.getCurrentUser();
-
- const API_URL = "https://my.api.mockaroo.com/user.json?key=ae007e80";
- const JSON_MOCKUP = require("../../api/api_users.json");
- const JSON_MOCKUP_URL = "../../api/api_users.json";
-
-//states
- const [users,setUsers] = useState([]);
-
- // Methods
-   //fetch data distant API
-   function fetchdataURL() {
-    fetch(API_URL)
-      .then((response) => response.json())
-      .then((json) => setUsers(json));    
-  }
-
-  //fetch data distant API
-  function fetchdataMOCKUP() {
-    setUsers(JSON_MOCKUP);   
-  }
-
-  //use Effect
-  useEffect(() => {
-    fetchdataMOCKUP();
-  }, []);
-
+ const [t, i18n] = useTranslation('common');
+  const currentUserEmail = AuthApi.getCurrentUser();
+  const shuffledUsers= Methods.randomArrayShuffle(users)
   
+//console.log(shuffledUsers)
+
   return (
     <div className="general-container">
       <header>
@@ -51,18 +28,15 @@ export default function DiscoverPage() {
         </div>
       </header>
 
-      {users === [0] && <p>Loading Data ...</p>}
-      {users !== [0] && (
         <main>
           <div className="homepage-content">
             <div className="homepage-submit-container"></div>
             <div>
-              <h2>Discover more styles ...</h2>
+              <h2>{t("discover.title")} ...</h2>
 
               <div className="card-small-container">
                 <React.Fragment>
-                  {users
-                    .filter(function (item) {
+                  {shuffledUsers.filter(function (item) {
                       return item.email !== currentUserEmail;
                     })
                     .map((item) => (
@@ -80,7 +54,7 @@ export default function DiscoverPage() {
             </div>
           </div>
         </main>
-      )}
+      
     </div>
   );
 }

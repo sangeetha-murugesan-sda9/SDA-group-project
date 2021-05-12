@@ -1,0 +1,50 @@
+
+
+.btn {
+    border: 1px solid transparent ;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    background-color: rgba(121, 121, 121, 0.295);
+  
+    cursor: pointer; 
+    display: flex;
+  
+  
+    padding: 10px ;
+  
+  } 
+   
+  
+  .glow-orange,.glow-black {
+
+    border-radius: 50%;
+   
+    box-shadow: 0 0 70px 70px rgba(167, 167, 167, 0) inset, 0 0 0 0 #444444;
+    -webkit-transition: all 150ms ease-in;
+    transition: all 150ms ease-in-out;
+  }
+
+
+  .glow-orange:hover {
+    box-shadow: 0 0 0px 0 #3f3f3f3f inset, 0 0 30px 10px #e6d114;
+    border: 1px solid rgb(146, 146, 146) ;
+  }
+
+  .glow-orange:active {
+    box-shadow: 0 0 0px 0 #03030300 inset, 0 0 50px 10px #e66114;
+  }
+
+
+
+  .glow-black:hover {
+    box-shadow: 0 0 0px 0 #3f3f3f3f  inset, 0 0 30px 10px #a88eb9;
+    border: 1px solid rgb(146, 146, 146) ;
+  }
+
+  .glow-black:active {
+    box-shadow: 0 0 0px 0 #03030300 inset, 0 0 50px 10px #5f5f5f;
+  }
+  
+  
+  

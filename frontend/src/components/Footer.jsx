@@ -2,34 +2,39 @@ import React from "react";
 import "../styles/base.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
+import { faEnvelope, faUser } from "@fortawesome/free-regular-svg-icons";
 import { faChessKing, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 
 
 import UploadButton from "./UploadButton"
 import Auth from "../services/Auth";
 
-//const Footer = () => {
+import AuthApi from "../api/AuthApi";
 
-export default function Footer({ onLogout }) {
+
+export default function Footer({users}) {
 
 function onLogout(){
     Auth.logout();
 }
+const currentUserEmail = AuthApi.getCurrentUser();
+
+
+
     return (
         <div className="footer">
-            <UploadButton />
+ 
+
+<UploadButton users = {users} />
             <div className="footer-shape"> </div>
             <div className="footer-container">
 
                 
                 <a
-                    href="https://github.com/clecardona/SDA-group-project"
-                    target="_blank"
+                    href={"/profile/"+currentUserEmail}                 
                     className="item"
                 >
-                    <FontAwesomeIcon icon={faGithub} />
+                    <FontAwesomeIcon icon={faUser} />
                 </a>
 
 
@@ -57,8 +62,12 @@ function onLogout(){
                     <FontAwesomeIcon icon={faSignOutAlt}/>
                 </button>
                
+ </div>
+          
 
-            </div>
+ 
+
+            
         </div>
     );
 };

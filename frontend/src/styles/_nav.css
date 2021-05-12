@@ -1,66 +1,64 @@
-.nav-container{   
-    height: var(--header-height);
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
+.nav-container {
+   /*  background-color: red; */
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  
+
+  padding-top: 10px;
+  margin-left: 90px;
+  
+  z-index: 1;
 }
 
-nav{
-    
-    width:100%;
-    display: grid ;
-    grid-template-columns: 30px  1fr ;
-    align-content: center;
-   justify-items: center;
-   align-items: center;
-   align-content: center;
-     
+nav {
+  width: 100%;
+  display: grid;
+
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
 }
 
-
-.nav-menu{
-    color: white;
-    display: flex ;
-    justify-content: center;
-          
+.nav-menu {
+  color: white;
+  display: flex;
+  justify-content: center;
 }
 
-.nav-dropdown{
-    background-color: var(--color-background-menu);
-    color: var(--color-text-menu);
-    font-size: var(--font-dropdown-menu);
-    display: flex;
-    flex-direction: column;
+.nav-dropdown {
+  background-color: var(--color-background-menu);
+  color: var(--color-text-menu);
+  font-size: var(--font-dropdown-menu);
+  display: flex;
+  flex-direction: column;
 }
-.nav-link{
-    margin :0px 3px;
-    
-}
-
-.nav-item{
-    list-style-type: none;
-      margin: 0 2px;  
+.nav-link {
+  margin: 0px 3px;
 }
 
-#nav-main-title{
-    align-self: center;
-    text-align: left;
-    font-size:var(--font-XS) ;
-    font-family: var(--font-classy);
-    color: white;
-    
+.nav-item {
+  list-style-type: none;
+  margin: 0 2px;
 }
-#nav-main-title strong{
-       font-weight: 600;
-       font-size:var(--font-L) ;
-        
+
+#nav-main-title {
+
+  text-align: left;
+  font-size: var(--font-XS);
+  font-family: var(--font-classy);
+  color: white;
 }
- #nav-logo{
-     height: 60px;
-     padding: 10px;
-     width: auto;    
-     background-color: rgb(255, 234, 43);
-     box-shadow: 2px 2px 2px rgb(204, 202, 202);
-     border-radius: 50px;
- }
+#nav-main-title strong {
+  font-weight: 600;
+  font-size: var(--font-L);
+}
+#nav-logo {
+  height: 60px;
+  padding: 10px;
+  width: auto;
+  background-color: rgb(255, 234, 43);
+  box-shadow: 2px 2px 2px rgb(204, 202, 202);
+  border-radius: 50px;
+}

@@ -11,7 +11,7 @@ export default function Navbar() {
 
         <div id="nav-main-title">
           <h3><strong>[In]Style</strong></h3>
-                    <p> Be the one</p>
+                    {/* <p> Be the one</p> */}
         </div>
       </nav>
     </div>

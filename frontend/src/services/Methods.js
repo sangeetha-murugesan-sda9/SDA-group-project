@@ -17,14 +17,35 @@ return item.email === userMail
    return user[0].username
 
 }
+// getting avatar providing email
+getAvatarByEmail(array,userMail){
 
-// getting avatar by email
-  getAvatarByEmail(array,userMail){
+  var user = array.filter(function (item){
+return item.email === userMail
+  })      
+  return user[0].avatar
+}
+
+
+
+// getting votes count providing email
+getVotesByEmail(array,userMail){
+
+  var user = array.filter(function (item){
+return item.email === userMail
+  })      
+  return user[0].votes
+
+}
+
+
+// getting number of pics of the user by email
+  getNumberOfPicturesByEmail(array,userMail){
 
     var user = array.filter(function (item){
  return item.email === userMail
     })      
-    return user[0].avatar
+    return user[0].pictures.length
  
  }
 
@@ -104,12 +125,21 @@ getWinner(array){
     }
 
 
+// randomize order of an an array 
+  randomArrayShuffle(array) {
+      var currentIndex = array.length, temporaryValue, randomIndex;
+      while (0 !== currentIndex) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+      }
+      return array;
+    }
+
+
 }
-
-
-
-
-
 
 
 

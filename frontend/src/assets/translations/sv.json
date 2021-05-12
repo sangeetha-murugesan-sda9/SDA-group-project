@@ -1,0 +1,46 @@
+{
+    "winner": {
+        "title": "Vår idol",
+        "button": "Följ mig"
+    },
+
+
+    "profile": {
+        "title": "Stilar skickas",
+        "score": "Totala poängen"      
+        
+    },
+
+    "vote": {
+        "title": "Rösta på denna stil"
+             
+        
+    },
+
+    "discover": {
+        "title": "Upptäck fler stilar"
+    },
+
+    "overlay": {
+        "label-upload": "Ladda upp en bild",
+        "upload": "Ladda upp",
+
+        "label-profile": "Redigera profil",
+        "label-username": "Ändra namn",
+        "placeholder": "ange nytt namn",
+        
+        "label-avatar": "Byt profilbild"
+
+    },
+
+
+
+    "sidebar": {
+        "king": "Nuvarande kung",
+        "profile": "Min profil",
+        "discover": "Upptäck",
+        "vote": "Rösta"
+    }
+
+
+}
