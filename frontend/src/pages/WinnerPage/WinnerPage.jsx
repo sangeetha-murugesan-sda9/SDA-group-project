@@ -39,10 +39,15 @@ console.log(winnerPicId)
             <div>
             <div className="wrapper-img-square">
               <img id="main-img" src={winner.pictures[winnerPicId].url} alt="main-img" />
+           
+            <p className = "winner-score">
+              
+              <img className="img-70" src={like} alt="logo-like" />
+              <p className = "winner-score-text">{winner.pictures[winnerPicId].likes} </p>
+              
+              </p>
             </div>
-            <p className = "winner-score">{winner.pictures[winnerPicId].likes} <img className="img-30" src={like} alt="logo-like" /></p>
-            </div>
-
+ </div>
             <div className="under-img-container">
               <a href= {"http://www.instagram.com/" + winner.instagram} target="blank" className="btn-blue">{t("winner.button")} </a>
             </div>
