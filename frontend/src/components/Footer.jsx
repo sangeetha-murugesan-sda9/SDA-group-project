@@ -29,8 +29,7 @@ const currentUserEmail = AuthApi.getCurrentUser();
 
                 
                 <a
-                    href={"/profile/"+currentUserEmail}
-                    target="_blank"
+                    href={"/profile/"+currentUserEmail}                 
                     className="item"
                 >
                     <FontAwesomeIcon icon={faUser} />
