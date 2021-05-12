@@ -1,4 +1,4 @@
-import { bubble as Menu } from 'react-burger-menu'
+import { stack as Menu } from 'react-burger-menu'
 
 import Auth from '../services/Auth'
 
@@ -11,7 +11,7 @@ import AuthApi from "../api/AuthApi";
 
 export default function SlidingMenu({ onLogout }) {
  
-  const currentUserEmail = AuthApi.getCurrentUser();
+const currentUserEmail = AuthApi.getCurrentUser();
 
 
   function onLogout(){

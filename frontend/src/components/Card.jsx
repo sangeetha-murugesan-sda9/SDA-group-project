@@ -3,9 +3,11 @@ import VoteComponent from "./VoteComponent";
 import like from "../assets/img/logo/flame.png";
 import UserMeta from "./UserMeta";
 
+
 export default function Card({ item, score, votes, meta}) {
 
-console.log(item)
+const randomPictureId = Math.floor(Math.random() * item.pictures.length) 
+
 
   return (
 
@@ -13,7 +15,7 @@ console.log(item)
     <div className="card-small">
       {meta === true && <UserMeta user={item}/>}
 
-      <img src={item.pictures[0].url} alt="items"/>
+      <img src={item.pictures[randomPictureId].url} alt="items"/>
 
       {votes === true && <VoteComponent />}
 

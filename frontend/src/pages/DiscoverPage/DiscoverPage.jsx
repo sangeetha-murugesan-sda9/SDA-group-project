@@ -6,13 +6,17 @@ import Card from "../../components/Card";
 import Auth from "../../services/Auth";
 import AuthApi from "../../api/AuthApi";
 import SlidingMenu from "../../components/SlidingMenu";
+import Methods from '../../services/Methods'
 
 
 export default function DiscoverPage({users}) {
 
  // Constants
- const currentUserEmail = AuthApi.getCurrentUser();
+  const currentUserEmail = AuthApi.getCurrentUser();
+  const shuffledUsers= Methods.randomArrayShuffle(users)
   
+//console.log(shuffledUsers)
+
   return (
     <div className="general-container">
       <header>
@@ -30,7 +34,7 @@ export default function DiscoverPage({users}) {
 
               <div className="card-small-container">
                 <React.Fragment>
-                  {users.filter(function (item) {
+                  {shuffledUsers.filter(function (item) {
                       return item.email !== currentUserEmail;
                     })
                     .map((item) => (
