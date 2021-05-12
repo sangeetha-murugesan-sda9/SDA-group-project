@@ -92,10 +92,17 @@
   text-align: left;
 }
 
+
+
+
 .btn-vote {
   background-color: inherit;
   border: 0px;
+  cursor: pointer;
 }
+
+
+
 
 .btn-submit-green {
 

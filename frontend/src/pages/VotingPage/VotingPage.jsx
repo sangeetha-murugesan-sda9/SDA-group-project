@@ -42,7 +42,7 @@ export default function VotingPage({users}) {
             
             </div>
             <div className="under-img-container">
-              <VoteComponent />
+              <VoteComponent refresh ={true} />
             </div>
           </div>
         </main>
