@@ -23,10 +23,14 @@ export default function ProfileCard({ item, userToDisplay }) {
           
         </div>
 
+<div className="score-separator"></div>
+
         <div className="profilecard-right">
           <img src={dislike} alt="score-logo"/>
           <p className="score" >{item.dislikes} </p>
         </div>
+
+        
         
         </div>
       <img className="profilecard-img"src={item.url} alt="items"/>

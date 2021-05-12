@@ -34,6 +34,16 @@
   font-size: var(--font-L);
 }
 
+.score-separator{
+  position: absolute;
+  top:10px;
+  bottom:10px;
+  background-color: rgba(255, 255, 255, 0.568);
+
+  width:1px ;
+  
+} 
+
 .profilecard-left,
 .profilecard-right {
   
