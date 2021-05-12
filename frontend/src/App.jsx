@@ -112,7 +112,7 @@ export default function App() {
             </Route>
           </Switch>
           
- <Footer users = {users} />      
+      <Footer users = {users} />      
 
 </div>
 

@@ -11,18 +11,21 @@ import Auth from "../services/Auth";
 
 import AuthApi from "../api/AuthApi";
 
-//const Footer = () => {
 
-export default function Footer({ users}) {
+export default function Footer({users}) {
 
 function onLogout(){
     Auth.logout();
 }
 const currentUserEmail = AuthApi.getCurrentUser();
 
+
+
     return (
         <div className="footer">
-            <UploadButton users = {users} />
+ 
+
+<UploadButton users = {users} />
             <div className="footer-shape"> </div>
             <div className="footer-container">
 
@@ -59,8 +62,12 @@ const currentUserEmail = AuthApi.getCurrentUser();
                     <FontAwesomeIcon icon={faSignOutAlt}/>
                 </button>
                
+ </div>
+          
 
-            </div>
+ 
+
+            
         </div>
     );
 };

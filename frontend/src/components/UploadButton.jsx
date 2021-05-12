@@ -9,16 +9,9 @@ import AuthApi from "../api/AuthApi";
 
 
 
-
-
-/**
- * Component to handle file upload.
- * Works for image uploads, but can be edited to work for any file.
- */
-
-
  export default function UploadButton({users}) {
 
+  console.log("users",users)
 
   //constants
   const currentUserEmail = AuthApi.getCurrentUser();
@@ -26,14 +19,13 @@ import AuthApi from "../api/AuthApi";
   //translation
   const [t, i18n] = useTranslation('common');
 
+//vote logic
 
+const canUpload = true;
 
-
-  //vote logic
- //const [canUpload, setCanUpload] = useState(false);
+/* const [canUpload, setCanUpload] = useState(false);
 
 const numberOfvotes = Methods.getVotesByEmail(users,currentUserEmail)
-//console.log("user",currentUserEmail ,"votes",numberOfvotes)
 const numberOfPicturesOwned = Methods.getNumberOfPicturesByEmail(users,currentUserEmail)
 //console.log("user",currentUserEmail ,"pictures owned",numberOfPics)
 //console.log(numberOfvotes / numberOfPicturesOwned);
@@ -46,9 +38,9 @@ if(numberOfPicturesOwned === 0){
 }else if((numberOfvotes / numberOfPicturesOwned) > 10){
   canUpload = true
 }
-
-const votesNeeded = ( 10 - (numberOfvotes / numberOfPicturesOwned) +1 )
-
+*/
+const votesNeeded =  7//( 10 - (numberOfvotes / numberOfPicturesOwned) +1 )
+ 
   //Manage the overlay
   const [isOpen, setOverlay] = useState(false);
   const closeOverlay = () => setOverlay(false);

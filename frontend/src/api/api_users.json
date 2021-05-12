@@ -39,7 +39,7 @@
     "firstname": "Clement",
     "lastname": "Cardona",
     "instagram": "clekardo",
-    "votes": 51,
+    "votes": 56,
     "avatar": "http://clecardona.com/sda/profile/clement/clecardona.png",
     "pictures": [
       {
@@ -52,7 +52,7 @@
       {
         "id": 2,
         "url": "http://clecardona.com/sda/pictures/clement/02.JPG",
-        "likes": 52,
+        "likes": 46,
         "dislikes": 39,
         "timestamp": "2020-12-15T15:12:07Z"
       },
@@ -460,7 +460,7 @@
       {
         "id": 1,
         "url": "https://www.umusic.ca/wp-content/uploads/2017/11/Sam-Smith-Holiday-Style-Blog.jpg",
-        "likes": 14,
+        "likes": 5604,
         "dislikes": 93,
         "timestamp": "2020-12-07T00:27:19Z"
       },
