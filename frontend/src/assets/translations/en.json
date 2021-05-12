@@ -1,9 +1,51 @@
 {
     "winner": {
         "title": "Current king",
-        "button": "Follow Me"
-
-       
+        "button": "Follow Me"      
         
+    },
+
+    "profile": {
+        "title": "Styles submitted",
+        "score": "Overall score"      
+        
+    },
+
+    "vote": {
+        "title": "Vote for this Style"
+             
+        
+    },
+
+    "discover": {
+        "title": "Discover more styles"
+    },
+
+    "overlay": {
+        "label-upload": "Upload a picture",
+        "upload": "Upload",
+
+        "label-profile": "Edit profile",
+        "label-username": "Change username",
+        "placeholder": "Enter new username",
+        
+
+        "label-avatar": "Change profile picture"
+
+    },
+
+
+
+    "sidebar": {
+        "king": "Current King",
+        "profile": "My profile",
+        "discover": "Discover",
+        "vote": "Vote"
     }
+
+    
+
+
+
+
 }

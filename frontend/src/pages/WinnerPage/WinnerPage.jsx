@@ -15,11 +15,12 @@ import like from "../../assets/img/logo/flame.png";
 export default function WinnerPage({users}) {
   
   // Constants  
-  //const winnerObj = Methods.getWinner(users);
+const [t, i18n] = useTranslation('common');
+  //const winnerObj = Methods.getWinner(users); //[ userID, winningPictureID]
   const winner = users[Methods.getWinner(users)[0]]
   const winnerPicId = Methods.getWinner(users)[1]
 console.log(winnerPicId)
-const [t, i18n] = useTranslation('common');
+
 
   return (
     <div className="general-container">

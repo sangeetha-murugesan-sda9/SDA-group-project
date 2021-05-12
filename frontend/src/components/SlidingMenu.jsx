@@ -1,4 +1,5 @@
 import { slide as Menu } from 'react-burger-menu'
+import { useTranslation } from "react-i18next";
 
 import Auth from '../services/Auth'
 
@@ -12,7 +13,8 @@ import profile from "../assets/img/icons/woman.svg"
 import AuthApi from "../api/AuthApi";
 
 export default function SlidingMenu() {
- 
+
+ const [t, i18n] = useTranslation('common');  
 const currentUserEmail = AuthApi.getCurrentUser();
 
 
@@ -29,22 +31,22 @@ const currentUserEmail = AuthApi.getCurrentUser();
 
           <div className="menu-item">
             <img className="img-30" src={king} />
-            <a id="home" className="menu-item-text" href="/">Current King</a>
+            <a id="home" className="menu-item-text" href="/">{t("sidebar.king")}</a>
           </div>
 
           <div className="menu-item">
           <img className="img-30" src={profile} />
-          <a id="home" className="menu-item-text" href={"/profile/"+currentUserEmail}>My Profile</a>
+          <a id="home" className="menu-item-text" href={"/profile/"+currentUserEmail}>{t("sidebar.profile")}</a>
           </div>
           
           <div className="menu-item">
           <img className="img-30" src={discover} />
-          <a id="about" className="menu-item-text" href="/discover">Discover </a>
+          <a id="about" className="menu-item-text" href="/discover">{t("sidebar.discover")}</a>
           </div>
 
           <div className="menu-item">
           <img className="img-30" src={vote} />
-          <a id="contact" className="menu-item-text" href="/vote">Vote</a>
+          <a id="contact" className="menu-item-text" href="/vote">{t("sidebar.vote")}</a>
           </div>
 
           <div className="menu-item">

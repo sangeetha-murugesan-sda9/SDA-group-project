@@ -1,15 +1,20 @@
-import { React, useState, useEffect } from "react";
+import { React } from "react";
+import { useTranslation } from "react-i18next";
 
 import "../../styles/base.css";
 import NavBar from "../../components/Navbar";
 import UserMeta from "../../components/UserMeta";
 import VoteComponent from "../../components/VoteComponent";
 import Auth from "../../services/Auth";
-import AuthApi from "../../api/AuthApi";
 import SlidingMenu from "../../components/SlidingMenu";
 
 export default function VotingPage({users}) {
   // Constants
+  
+  //translation
+  const [t, i18n] = useTranslation('common');
+
+  //randomization of the display 
   const randomId = Math.floor(Math.random() * users.length);
   const randomUser = users[randomId];
   const randomPictureId = Math.floor(Math.random() * randomUser.pictures.length)  
@@ -26,7 +31,7 @@ export default function VotingPage({users}) {
            
         <main>
           <div className="winner-content">
-            <h1>Vote for this style ...</h1>
+            <h1>{t("vote.title")} ...</h1>
             <UserMeta user={randomUser} />
 
             <div className="wrapper-img-square">

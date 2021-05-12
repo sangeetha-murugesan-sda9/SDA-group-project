@@ -1,5 +1,7 @@
 import {React,useState,useEffect} from "react";
+import { useTranslation } from "react-i18next";
 import axios from "axios";
+
 import Auth from "../services/Auth";
 import Overlay from "react-overlay-component";
 
@@ -15,7 +17,9 @@ import Overlay from "react-overlay-component";
  export default function UploadButton() {
 
   //constants
-  
+  //translation
+  const [t, i18n] = useTranslation('common');
+
   //Manage the overlay
   const [isOpen, setOverlay] = useState(false);
   const closeOverlay = () => setOverlay(false);
@@ -42,7 +46,7 @@ import Overlay from "react-overlay-component";
   // Handle the upload to dB //
   function handleUpload() {
 
-    console.log(file,"state file");
+    //console.log(file,"state file");
              
     const formdata = new FormData()
     formdata.append('file',file);
@@ -102,12 +106,12 @@ function getPicOne(){
 
             <Overlay configs={configs} isOpen={isOpen} closeOverlay={closeOverlay}>
 
-                <h2>Upload a picture</h2>
+                <h2>{t("overlay.label-upload")}</h2>
                 <div className="upload-box">
                
                 <input type="file" onChange={handleFile} />                             
                 <button className="btn-grey" type="button" onClick={handleUpload}>
-                Upload
+                {t("overlay.upload")}
               </button>
               </div>
               

@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import "../../styles/base.css";
 import AuthApi from "../../api/AuthApi";
@@ -14,6 +14,7 @@ export default function ProfilePageContent({users , userToDisplay}) {
  
  // Constants 
 
+ const [t, i18n] = useTranslation('common');
   const currentUserEmail = AuthApi.getCurrentUser()
   const winnerId = Methods.getWinner(users)[0]
   const likes = Methods.getTotalLikesByEmail(users,userToDisplay);
@@ -58,7 +59,7 @@ export default function ProfilePageContent({users , userToDisplay}) {
                   </div>
 
                   <div className="profilepage-box-right">
-                    <p>Overall score :</p>
+                    <p>{t("profile.score")} :</p>
                     <p className="item-score">
                       {likes}
                       <img className="img-30" src={like} alt="logo-like" />
@@ -72,7 +73,7 @@ export default function ProfilePageContent({users , userToDisplay}) {
               </div>
 
               <div>
-                <h2>Styles submitted ...</h2>
+                <h2>{t("profile.title")} ...</h2>
                 <div className="card-small-container">
                 <React.Fragment  >
                     {pics[0].map(item => (

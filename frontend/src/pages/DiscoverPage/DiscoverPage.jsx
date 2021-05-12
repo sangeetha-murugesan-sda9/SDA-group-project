@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 import "../../styles/base.css";
 import NavBar from "../../components/Navbar";
@@ -12,6 +13,7 @@ import Methods from '../../services/Methods'
 export default function DiscoverPage({users}) {
 
  // Constants
+ const [t, i18n] = useTranslation('common');
   const currentUserEmail = AuthApi.getCurrentUser();
   const shuffledUsers= Methods.randomArrayShuffle(users)
   
@@ -30,7 +32,7 @@ export default function DiscoverPage({users}) {
           <div className="homepage-content">
             <div className="homepage-submit-container"></div>
             <div>
-              <h2>Discover more styles ...</h2>
+              <h2>{t("discover.title")} ...</h2>
 
               <div className="card-small-container">
                 <React.Fragment>
