@@ -75,8 +75,8 @@ export default function App() {
           
           <HeaderBackground />
           <ToggleLanguage />
-          {status === 0 && <p className="informative-box" >🕓 Loading...</p>}
-          {status === 2 && <p className="informative-box" >🚨 Please check your connection</p>}
+          {status === 0 && <p className="loader" ></p>}
+          {status === 2 && <p className="error" >Please check your connection</p>}
           {status === 1 && 
       
 
@@ -107,7 +107,7 @@ export default function App() {
             </Route>
 
             <Route path="/testmethods">
-              <TestMethods users = {users} /> {/* todo */}
+              <TestMethods users = {users} /> {/* ok */}
             </Route>
           </Switch>
 
