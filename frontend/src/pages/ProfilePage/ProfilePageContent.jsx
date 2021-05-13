@@ -10,7 +10,8 @@ import king from "../../assets/img/icons/crown.svg"
 import like from "../../assets/img/logo/flame.png";
 import dislike from "../../assets/img/logo/oops.png";
 
-export default function ProfilePageContent({users , userToDisplay}) {
+
+export default function ProfilePageContent({users , userToDisplay ,onDeleteClick}) {
  
  // Constants 
 
@@ -23,7 +24,19 @@ export default function ProfilePageContent({users , userToDisplay}) {
   const avatar = Methods.getAvatarByEmail(users,userToDisplay); 
   const pics = Methods.getPicturesByEmail(users,userToDisplay)
 
-  
+    // const [picture, setPicture] = useState([]);
+
+
+   /* async function deletePicture(picture) {
+        try {
+            await PictureApi.deletePicture(picture.id);
+            const newPicture = picture.filter((p) => p.id !== picture.id);
+
+            setPicture(newPicture);
+        } catch (e) {
+            console.error(e);
+        }
+    }*/
 
  if (Methods.getEmailById(users,winnerId+1) === userToDisplay){
     console.log("winner")
@@ -68,6 +81,7 @@ export default function ProfilePageContent({users , userToDisplay}) {
                       {dislikes}
                       <img className="img-30" src={dislike} alt="logo-like" />
                     </p>
+
                   </div>
                 </div>
               </div>
@@ -82,15 +96,16 @@ export default function ProfilePageContent({users , userToDisplay}) {
                         item = {item}
                         userToDisplay ={userToDisplay}
                         />
+                          <button className="btn btn-danger" onClick={onDeleteClick}>
+                              Delete
+                          </button>
                       
                       </React.Fragment>
                     ))}
                   </React.Fragment>
                 </div>
               </div>
-            </div>      
-        
-      
+            </div>
     </div>
   );
 }

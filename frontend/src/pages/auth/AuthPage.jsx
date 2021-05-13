@@ -1,5 +1,5 @@
 // NPM Packages
-import React from "react";
+import React, {useState} from "react";
 
 // Project files
 import "../../styles/base.css";
@@ -11,6 +11,13 @@ import Popup from "../../components/Popup";
 export default function LoginPage() {
     
     //constants
+    //Manage the overlay
+   /* const [isOpen, setOverlay] = useState(false);
+    const closeOverlay = () => setOverlay(false);
+
+    const configs = {
+        animate: true,
+    };*/
     
     // Methods
     async function login(loginData) {

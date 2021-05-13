@@ -5,11 +5,22 @@ export default function RegisterForm({ onSubmit }) {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    //Manage the overlay
+    const [isOpen, setOverlay] = useState(false);
+    const closeOverlay = () => setOverlay(false);
+
+    const configs = {
+        animate: true,
+    };
+
+    closeOverlay();
 
     return (
+
             <div className="card-body">
                 <h4 className="card-title">Sign up</h4>
                 <div>
+                    {/*<Overlay configs={configs} isOpen={isOpen} closeOverlay={closeOverlay}>*/}
                     <div className="form-group">
                         <label>Name:</label>
                         <input
@@ -47,11 +58,14 @@ export default function RegisterForm({ onSubmit }) {
                         <button
                             className="btn btn-success"
                             onClick={(e) => onSubmit({ name, email, password })}
+                            // onClick={(e) => onSubmit({ name, email, password },setOverlay(true))}
                         >
                             Create account
                         </button>
                     </div>
+                {/*</OverLay>*/}
                 </div>
+
             </div>
 
     );
