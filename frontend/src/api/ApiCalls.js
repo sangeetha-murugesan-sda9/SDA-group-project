@@ -19,7 +19,10 @@ class ApiCalls {
 
 // post picture ( backup ) to the current user
   addPictureToCurrentUser() {
-    axios.post("http://localhost:8080/picture-url","", {
+
+const picture = "https://photos.lci.fr/images/613/344/moundirw9-814829-0@1x.jpeg"
+
+    axios.post("http://localhost:8080/picture-url",picture, {
       headers: {
         Authorization: Auth.getAuthorizationHeader(),
       },

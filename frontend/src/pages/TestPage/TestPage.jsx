@@ -130,14 +130,19 @@ useEffect(() => {
   getCurrentUserData()  
   }, []);
 
+if(currentUser !== undefined){
+  console.log(currentUser.pictures)
+}
 //getCurrentUserData();
-console.log(currentUser.pictures[0].url)
+
 
 
 
   return (
-    
+
     <div className="general-container">
+
+
 
     <div className="test-wrapper">
         <ToggleLanguage />
@@ -146,12 +151,19 @@ console.log(currentUser.pictures[0].url)
       <div className="test-wrapper">
         <h2>TEST PAGE:</h2>
 
-        {/* Test get currentUser data */}
+        
+
         <div className="upload-box-test">
           <h3>Current user :</h3>
           <h4>name:</h4>
-          <h4>pictures : </h4><img src ={currentUser.pictures[0].url}/><img src ={currentUser.pictures[1].url}/>
+          {/* <h4>pictures : </h4><img src ={currentUser.pictures[0].url}/><img src ={currentUser.pictures[1].url}/> */}
         </div>
+
+        
+
+
+
+
 
         {/* Test upload a picture */}
         {/* <div className="upload-box-test">
@@ -190,8 +202,10 @@ console.log(currentUser.pictures[0].url)
       </div>
 
 
-      
+
     </div>
+      
+    
   );
   
 }

@@ -29,12 +29,12 @@ public class PictureController {
 
     // post a picture to the current user by just providing the url
     @PostMapping("/picture-url")
-    public ResponseEntity<Picture> addPicture() {
+    public ResponseEntity<Picture> addPicture(@RequestBody String url) {
 
         String email = authService.getLoggedInUserEmail(); // get current user email
         User user = userRepository.findByEmail(email); // find the user by email
 
-        Picture picture = new Picture("https://fr.web.img5.acsta.net/pictures/19/07/31/17/35/5396784.jpg"); // instantiate a new picture
+        Picture picture = new Picture(url); // instantiate a new picture
         Timestamp timestamp = new Timestamp(System.currentTimeMillis()); // get the timestamp
 
         picture.setTimestamp(timestamp); // set timestamp to the picture
