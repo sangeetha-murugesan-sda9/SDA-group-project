@@ -9,6 +9,7 @@ import Auth from "../../services/Auth";
 import Methods from "../../services/Methods";
 import SlidingMenu from "../../components/SlidingMenu";
 import like from "../../assets/img/logo/flame.png";
+import CountdownComponent from "../../components/CountdownComponent";
 
 
 
@@ -49,9 +50,14 @@ const [t, i18n] = useTranslation('common');
               <img className="img-70" src={like} alt="logo-like" />
               <p className = "winner-score-text">{winner.pictures[winnerPicId].likes} </p>
               
+              
               </div>
+              <CountdownComponent/>
             </div>
  </div>
+
+
+
             <div className="under-img-container">
               <a href= {"http://www.instagram.com/" + winner.instagram} target="blank" className="btn-blue">{t("winner.button")} </a>
             </div>
