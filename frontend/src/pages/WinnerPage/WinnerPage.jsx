@@ -36,16 +36,17 @@ console.log(winnerPicId)
           <div className="winner-content">
             <h1> <img className="img-title img-30 " src={king} /> {t("winner.title")}</h1>
             <UserMeta user={winner} />
+            
             <div>
             <div className="wrapper-img-square">
               <img id="main-img" src={winner.pictures[winnerPicId].url} alt="main-img" />
            
-            <p className = "winner-score">
+            <div className = "winner-score">
               
               <img className="img-70" src={like} alt="logo-like" />
               <p className = "winner-score-text">{winner.pictures[winnerPicId].likes} </p>
               
-              </p>
+              </div>
             </div>
  </div>
             <div className="under-img-container">

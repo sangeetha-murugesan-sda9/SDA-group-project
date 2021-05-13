@@ -13,6 +13,7 @@ import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import WinnerPage from "./pages/WinnerPage/WinnerPage";
 import VotingPage from "./pages/VotingPage/VotingPage";
 import Footer from "./components/Footer";
+import UploadButton from "./components/UploadButton"
 
 //Test page
 import TestPage from "./pages/TestPage/TestPage";
@@ -111,8 +112,9 @@ export default function App() {
               <TestMethods users = {users} /> {/* ok */}
             </Route>
           </Switch>
-          
-      <Footer users = {users} />      
+
+      <Footer  />      
+        <UploadButton users = {users} />   
 
 </div>
 
