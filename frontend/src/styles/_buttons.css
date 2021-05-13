@@ -163,3 +163,15 @@ opacity: 100%;
   background-color: transparent;
 }
 
+.btn-delete{
+  background-color: #dfdfdf;
+
+  border: 0;
+  border-radius: 7px;
+  padding: 1px 12px;
+
+  position: absolute;
+  bottom: 5px;
+  left: 24px;
+}
+

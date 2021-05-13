@@ -34,7 +34,10 @@ const [t, i18n] = useTranslation('common');
 
         <main>
           <div className="winner-content">
+          <div className="page-title">
             <h1> <img className="img-title img-30 " src={king} /> {t("winner.title")}</h1>
+          </div>
+
             <UserMeta user={winner} />
             
             <div>

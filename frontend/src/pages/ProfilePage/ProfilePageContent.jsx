@@ -42,9 +42,9 @@ export default function ProfilePageContent({users , userToDisplay}) {
 
                   <div className="profilepage-box-left-header">
                     
-                  <h2>{username} </h2>
                  
-                      <div>
+                    <div>
+                   <h2>{username} </h2>     
                     { userToDisplay === Methods.getEmailById(users,winnerId+1) && 
                     <img className="logo-winner img-30" src={king} />
                     }
@@ -73,8 +73,8 @@ export default function ProfilePageContent({users , userToDisplay}) {
               </div>
 
               <div>
-                <h2>{t("profile.title")} ...</h2>
                 <div className="card-small-container">
+                <div className="page-title"><h2>{t("profile.title")} ...</h2></div>
                 <React.Fragment  >
                     {pics[0].map(item => (
                       <React.Fragment key={item.id} >

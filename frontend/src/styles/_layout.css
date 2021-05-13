@@ -31,8 +31,13 @@ h1{
 h2{
     margin: 5px 8px;
     font-size: var(--font-S);
-    color: ;
+   
 }
+
+.page-title{
+ margin: 18px 0 12px 0; 
+}
+
 
 h3{
       margin: 0 0 10px 0;
@@ -63,7 +68,8 @@ width: 100%;
  }
  .img-40{
     height: 40px;
-     width:auto;    
+     width:40px; 
+     overflow: hidden;
  }
  .img-50{
     height: 50px;
