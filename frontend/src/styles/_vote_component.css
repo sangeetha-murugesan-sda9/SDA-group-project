@@ -18,3 +18,10 @@
   width: 1px;
   height: 40px;
 }
+
+.vote-container-item{
+  display: flex;
+  flex-direction: column;
+  gap:6px;
+  color: rgb(177, 174, 174);
+}

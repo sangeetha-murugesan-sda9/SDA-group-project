@@ -27,7 +27,8 @@ function handleDislike(){
 
   return (
     <div className="vote-container">
-      <div>
+      
+      <div className="vote-container-item" >
 
       <button className="btn glow-orange" onClick ={handleLike} >
                   <img src={like} alt="logo-like"/>
@@ -38,7 +39,7 @@ function handleDislike(){
 
       <div id="vote-separator"></div>
         
-      <div>
+      <div className="vote-container-item" >
 
        <button className="btn glow-black"  onClick ={handleDislike} >
                   <img src={dislike} alt="logo-dislike"/>

@@ -44,6 +44,10 @@ display: grid;
 
  }
 
+ .card-small .vote-container {
+    margin: 12px 0;
+    
+}
  .card-small .vote-container img {
     width: 30px;
     height: auto;
