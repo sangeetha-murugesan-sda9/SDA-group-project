@@ -15,6 +15,20 @@ class ApiCalls {
   }
 
 
+
+
+// post picture ( backup ) to the current user
+  addPictureToCurrentUser() {
+    axios.post("http://localhost:8080/picture-url","", {
+      headers: {
+        Authorization: Auth.getAuthorizationHeader(),
+      },
+    });
+  }
+
+
+
+
   // POST //
   addLike(pictureId) {
     return axios.post("http://localhost:8080/likes/" + pictureId, "", {
@@ -32,6 +46,23 @@ class ApiCalls {
   }
 
 // GET  //
+getCurrentUser() {
+  return axios.get("http://localhost:8080/current-user", {
+    headers: {
+      Authorization: Auth.getAuthorizationHeader(),
+    },
+  });
+}
+
+  getAllUsers() {
+    return axios.get("http://localhost:8080/users", {
+      headers: {
+        Authorization: Auth.getAuthorizationHeader(),
+      },
+    });
+  }
+
+
   getLikes(pictureId) {
     return axios.get("http://localhost:8080/likes/" + pictureId, {
       headers: {
@@ -39,6 +70,8 @@ class ApiCalls {
       },
     });
   }
+
+
   getDislikes(pictureId) {
     return axios.get("http://localhost:8080/dislikes/" + pictureId, {
       headers: {
@@ -46,6 +79,12 @@ class ApiCalls {
       },
     });
   }
+
+
+
+
+
+
 
 }
 

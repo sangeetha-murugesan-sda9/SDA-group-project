@@ -6,6 +6,7 @@ import Auth from "../services/Auth";
 import Overlay from "react-overlay-component";
 import Methods from '../services/Methods'
 import AuthApi from "../api/AuthApi";
+import ApiCalls from "../api/ApiCalls";
 
 
 
@@ -63,7 +64,11 @@ const votesNeeded = Math.floor(( 10 - (numberOfvotes / numberOfPicturesOwned) +1
     setFile(event.target.files[0]);   
    }
 
+   function addPic() {
+     ApiCalls.addPictureToCurrentUser();
+     alert("picture send to db")
 
+   }
 
   // Handle the upload to dB //
   function handleUpload() {
@@ -89,29 +94,6 @@ const votesNeeded = Math.floor(( 10 - (numberOfvotes / numberOfPicturesOwned) +1
   }
 
 
-/// return image at id 1 - from db
-
-/* function getPicOne(){
-  axios.get(
-    "http://localhost:8080/files/1",   
-    {
-      headers: { 
-        "Authorization": Auth.getAuthorizationHeader() },
-    }
-  )
-  .then((res) => {
-    console.log(res.data)          
-  })
-  .catch((error) => {
-    console.error(error)
-  });
-} */
-
-
-/* useEffect(() => {
-  getPicOne();  
-  //console.log(pic);
-},[]); */
 
   return (
     <div>
@@ -145,6 +127,8 @@ const votesNeeded = Math.floor(( 10 - (numberOfvotes / numberOfPicturesOwned) +1
         )
         }
 
+
+      <button className="btn-blue" type="button" onClick={addPic}>upload(backup)</button>
 
       </Overlay>
     </div>
