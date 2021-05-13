@@ -1,11 +1,13 @@
 package backend.user;
 
 import backend.file.FileDB;
+import backend.picture.Picture;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import java.util.List;
 
 @Entity
 @Table(name="account")
@@ -25,21 +27,37 @@ public class User {
     private String password;
 
     @Length(min = 3, max=100, message = "Name must be between 3-100 characters")
-    @Column(name = "name")
-    private String name;
+    @Column(name = "username")
+    private String username;
 
-    @OneToOne(mappedBy = "fileOwner",targetEntity= FileDB.class)
-    private FileDB fileDB;
+
+    @Column(name = "instagram")
+    private String instagram;
+
+    @Column(name = "votes")
+    private Integer votes;
+
+    @Column(name = "avatar")
+    private String avatar;
+
+
+ /*   @OneToOne(mappedBy = "fileOwner",targetEntity= FileDB.class)
+    private FileDB fileDB;*/
+
+    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
+    List<Picture> pictures;
 
     // Hibernate needs a default constructor to function
     public User() {}
 
-    public User(@Email(message = "Invalid email address! Please provide a valid email address") @NotEmpty(message = "Please provide an email address") String email, @Length(min = 5, max = 100, message = "Password length most be between 5-100 characters") String password, @Length(min = 3, max = 100, message = "Name must be between 3-100 characters") String name) {
+    public User(@Email(message = "Invalid email address! Please provide a valid email address") @NotEmpty(message = "Please provide an email address") String email, @Length(min = 5, max = 100, message = "Password length most be between 5-100 characters") String password, @Length(min = 3, max = 100, message = "Name must be between 3-100 characters") String username) {
         this.email = email;
         this.password = password;
-        this.name = name;
+        this.username = username;
+
     }
 
+    //GS
 
     public Long getId() {
         return id;
@@ -65,20 +83,43 @@ public class User {
         this.password = password;
     }
 
-
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-   public FileDB getFileDB() {
-        return fileDB;
+    public List<Picture> getPictures() {
+        return pictures;
     }
 
-    public void setFileDB(FileDB fileDB) {
-        this.fileDB = fileDB;
+    public void setPictures(List<Picture> pictures) {
+        this.pictures = pictures;
+    }
+
+    public String getInstagram() {
+        return instagram;
+    }
+
+    public void setInstagram(String instagram) {
+        this.instagram = instagram;
+    }
+
+    public Integer getVotes() {
+        return votes;
+    }
+
+    public void setVotes(Integer votes) {
+        this.votes = votes;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
     }
 }

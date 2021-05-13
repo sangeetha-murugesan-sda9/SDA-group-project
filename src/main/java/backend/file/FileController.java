@@ -77,61 +77,8 @@ public class FileController {
     }
 
 
-    /**
-     * Add a like to a picture providing the file/picture id
-     * @param fileId: the id of the file
-     * @return - status of process
-     */
-    @PostMapping("/likes/{fileId}")
-    public ResponseEntity<FileDB> addLike(@PathVariable Long fileId) {
-
-        FileDB fileDB = fileDBRepository.findById(fileId).orElseThrow(ResourceNotFoundException::new);
-        int count = Integer.parseInt(fileDB.getLikes()) + 1;
-        fileDB.setLikes(Integer.toString(count));
-        fileDBRepository.save(fileDB);
-        return ResponseEntity.ok(fileDB);
-    }
-
-    /**
-     * Add a dislike to a picture providing the file/picture id
-     * @param fileId: the id of the file
-     * @return - status of process
-     */
-    @PostMapping("/dislikes/{fileId}")
-    public ResponseEntity<FileDB> addDisLike(@PathVariable Long fileId) {
-
-        FileDB fileDB = fileDBRepository.findById(fileId).orElseThrow(ResourceNotFoundException::new);
-        int count = Integer.parseInt(fileDB.getDislikes()) + 1;
-        fileDB.setDislikes(Integer.toString(count));
-        fileDBRepository.save(fileDB);
-        return ResponseEntity.ok(fileDB);
-    }
 
 
-    /**
-     * Return likes from a specific file/picture
-     * @param fileId: the id of the file
-     * @return an int - number of likes
-     */
-    @GetMapping("/likes/{fileId}")
-    public ResponseEntity<Integer> getLike(@PathVariable Long fileId) {
 
-        FileDB fileDB = fileDBRepository.findById(fileId).orElseThrow(ResourceNotFoundException::new);
-        int count = Integer.parseInt(fileDB.getLikes());
-        return ResponseEntity.ok(count);
-    }
-
-    /**
-     * Return Dislikes from a specific file/picture
-     * @param fileId: the id of the file
-     * @return an int - number of Dislikes
-     */
-    @GetMapping("/dislikes/{fileId}")
-    public ResponseEntity<Integer> getDisLike(@PathVariable Long fileId) {
-
-        FileDB fileDB = fileDBRepository.findById(fileId).orElseThrow(ResourceNotFoundException::new);
-        int count = Integer.parseInt(fileDB.getDislikes());
-        return ResponseEntity.ok(count);
-    }
 
 }

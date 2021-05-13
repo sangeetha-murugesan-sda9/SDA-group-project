@@ -18,6 +18,11 @@ public class AuthController {
 
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody User user) {
+
+        user.setAvatar("avatar");
+        user.setInstagram("instagram");
+        user.setVotes(0);
+
         userService.register(user);
 
         String token = authService.createAuthToken(user.getEmail());
