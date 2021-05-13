@@ -19,7 +19,7 @@ const [t, i18n] = useTranslation('common');
   //const winnerObj = Methods.getWinner(users); //[ userID, winningPictureID]
   const winner = users[Methods.getWinner(users)[0]]
   const winnerPicId = Methods.getWinner(users)[1]
-console.log(winnerPicId)
+//console.log(winnerPicId)
 
 
   return (

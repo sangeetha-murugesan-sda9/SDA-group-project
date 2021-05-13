@@ -11,7 +11,7 @@ import AuthApi from "../api/AuthApi";
 
  export default function UploadButton({users}) {
 
-  console.log("users",users)
+  //console.log("users",users)
 
   //constants
   const currentUserEmail = AuthApi.getCurrentUser();
