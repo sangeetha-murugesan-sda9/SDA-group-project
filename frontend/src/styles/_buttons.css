@@ -148,15 +148,15 @@
   border-radius: 50%;
   cursor: pointer; 
 
-  height: 50px;
-  width: 50px;
+  height: 45px;
+  width: 45px;
+
+  box-shadow: 2px 2px 4px rgb(209, 209, 209);
 
   z-index: 10;
 
-}.btn-edit:hover{
-opacity: 100%;
-
 }
+
 
 .btn-borderless{
   border:0;
@@ -164,8 +164,8 @@ opacity: 100%;
 }
 
 .btn-delete{
-  background-color: #dfdfdf;
-
+  background-color: #b66767a6;
+  color: white;
   border: 0;
   border-radius: 7px;
   padding: 1px 12px;
@@ -173,5 +173,7 @@ opacity: 100%;
   position: absolute;
   bottom: 5px;
   left: 24px;
+
+  box-shadow:  1px 1px 2px grey;
 }
 

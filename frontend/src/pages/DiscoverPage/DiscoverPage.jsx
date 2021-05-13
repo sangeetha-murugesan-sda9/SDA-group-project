@@ -34,12 +34,12 @@ export default function DiscoverPage({users}) {
             <div>
 
               
-
-              <div className="card-small-container">
-              <div className="page-title">
+<div className="page-title">
             <h2>{t("discover.title")} ...</h2>
 
               </div>
+              <div className="card-small-container">
+              
 
 
                 <React.Fragment>

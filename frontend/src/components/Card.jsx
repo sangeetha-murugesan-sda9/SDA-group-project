@@ -17,7 +17,7 @@ const randomPictureId = Math.floor(Math.random() * item.pictures.length)
 
       <p className="score-timestamp">Posted - <Moment format="DD MMM YYYY">{item.timestamp}</Moment> </p>
 
-      <img src={item.pictures[randomPictureId].url} alt="items"/>
+      <img className="card-img" src={item.pictures[randomPictureId].url} alt="items"/>
 
       {votes === true && <VoteComponent />}
 

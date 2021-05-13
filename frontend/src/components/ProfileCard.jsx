@@ -32,7 +32,7 @@ export default function ProfileCard({ item, userToDisplay }) {
           <p className="score">{item.dislikes} </p>
         </div>
       </div>
-      <img className="profilecard-img" src={item.url} alt="items" />
+      <img className="card-img" src={item.url} alt="items" />
      
       {userToDisplay === currentUserEmail && (
         <button className="btn-delete" onClick={onDeleteClick}>
