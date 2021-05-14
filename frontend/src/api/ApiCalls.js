@@ -15,6 +15,23 @@ class ApiCalls {
   }
 
 
+
+
+// post picture ( backup ) to the current user
+  addPictureToCurrentUser(url) {
+
+//const picture = "https://photos.lci.fr/images/613/344/moundirw9-814829-0@1x.jpeg"
+
+    axios.post("http://localhost:8080/picture-url",url, {
+      headers: {
+        Authorization: Auth.getAuthorizationHeader(),
+      },
+    });
+  }
+
+
+
+
   // POST //
   addLike(pictureId) {
     return axios.post("http://localhost:8080/likes/" + pictureId, "", {
@@ -32,6 +49,23 @@ class ApiCalls {
   }
 
 // GET  //
+getCurrentUser() {
+  return axios.get("http://localhost:8080/current-user", {
+    headers: {
+      Authorization: Auth.getAuthorizationHeader(),
+    },
+  });
+}
+
+  getAllUsers() {
+    return axios.get("http://localhost:8080/users", {
+      headers: {
+        Authorization: Auth.getAuthorizationHeader(),
+      },
+    });
+  }
+
+
   getLikes(pictureId) {
     return axios.get("http://localhost:8080/likes/" + pictureId, {
       headers: {
@@ -39,6 +73,8 @@ class ApiCalls {
       },
     });
   }
+
+
   getDislikes(pictureId) {
     return axios.get("http://localhost:8080/dislikes/" + pictureId, {
       headers: {
@@ -46,6 +82,12 @@ class ApiCalls {
       },
     });
   }
+
+
+
+
+
+
 
 }
 

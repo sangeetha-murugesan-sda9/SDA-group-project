@@ -6,6 +6,7 @@ import Auth from "../services/Auth";
 import Overlay from "react-overlay-component";
 import Methods from '../services/Methods'
 import AuthApi from "../api/AuthApi";
+import ApiCalls from "../api/ApiCalls";
 
 
 
@@ -21,15 +22,8 @@ import AuthApi from "../api/AuthApi";
 
 //vote logic
 
-//const canUpload = true;
-//const [canUpload, setCanUpload] = useState(false);
-
-
 const numberOfvotes = Methods.getVotesByEmail(users,currentUserEmail)
 const numberOfPicturesOwned = Methods.getNumberOfPicturesByEmail(users,currentUserEmail)
-//console.log("user",currentUserEmail ,"pictures owned",numberOfPics)
-//console.log(numberOfvotes / numberOfPicturesOwned);
-//console.log(numberOfvotes % numberOfPicturesOwned);
 
 var canUpload = false;
 
@@ -41,6 +35,7 @@ if(numberOfPicturesOwned === 0){
 
 const votesNeeded = Math.floor(( 10 - (numberOfvotes / numberOfPicturesOwned) +1 )) 
  
+
   //Manage the overlay
   const [isOpen, setOverlay] = useState(false);
   const closeOverlay = () => setOverlay(false);
@@ -63,13 +58,23 @@ const votesNeeded = Math.floor(( 10 - (numberOfvotes / numberOfPicturesOwned) +1
     setFile(event.target.files[0]);   
    }
 
+   //console.log(Methods.getRandompictureUrl);
+
+// upload random pic to current user on db
+ function addPic() {
+
+     ApiCalls.addPictureToCurrentUser(Methods.getRandompictureUrl());
+     alert("picture send to db")
+     closeOverlay()
+   }
+
+
+
 
 
   // Handle the upload to dB //
   function handleUpload() {
 
-    //console.log(file,"state file");
-             
     const formdata = new FormData()
     formdata.append('file',file);
     formdata.append('user',file);      
@@ -89,29 +94,6 @@ const votesNeeded = Math.floor(( 10 - (numberOfvotes / numberOfPicturesOwned) +1
   }
 
 
-/// return image at id 1 - from db
-
-/* function getPicOne(){
-  axios.get(
-    "http://localhost:8080/files/1",   
-    {
-      headers: { 
-        "Authorization": Auth.getAuthorizationHeader() },
-    }
-  )
-  .then((res) => {
-    console.log(res.data)          
-  })
-  .catch((error) => {
-    console.error(error)
-  });
-} */
-
-
-/* useEffect(() => {
-  getPicOne();  
-  //console.log(pic);
-},[]); */
 
   return (
     <div>
@@ -130,12 +112,18 @@ const votesNeeded = Math.floor(( 10 - (numberOfvotes / numberOfPicturesOwned) +1
           <div>
             <h2>{t("overlay.label-upload")}</h2>
             <div className="upload-box">
-              <input type="file" onChange={handleFile} />
-              <button className="btn-grey" type="button" onClick={handleUpload}>
-                {t("overlay.upload")}
-              </button>
+              {/* <input type="file" onChange={handleFile} /> */}
+
+              {/* <input type="text" onChange={handleFile} /> */}
+
+              {/* <button className="btn-grey" type="button" onClick={handleUpload}>{t("overlay.upload")}
+              </button> */}
+
+              <button className="btn-grey" type="button" onClick={addPic}>upload random pic</button>
+                
             </div>
           </div>
+
         ) : (
 
           <div>
@@ -145,6 +133,8 @@ const votesNeeded = Math.floor(( 10 - (numberOfvotes / numberOfPicturesOwned) +1
         )
         }
 
+
+      
 
       </Overlay>
     </div>
