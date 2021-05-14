@@ -1,4 +1,4 @@
-![Logo](ScreenShot/logo.png)
+![Logo](ScreenShot/Logo.png)
 
 ## Introduction
 This application is a Social Media Application for Stylists built with gradle.
