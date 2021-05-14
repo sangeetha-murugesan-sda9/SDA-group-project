@@ -76,9 +76,4 @@ public class FileController {
         return ResponseEntity.ok(fileDB);
     }
 
-
-
-
-
-
 }
