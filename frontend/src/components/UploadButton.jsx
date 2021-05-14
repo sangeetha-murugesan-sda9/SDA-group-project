@@ -64,7 +64,7 @@ const votesNeeded = Math.floor(( 10 - (numberOfvotes / numberOfPicturesOwned) +1
  function addPic() {
 
      ApiCalls.addPictureToCurrentUser(Methods.getRandompictureUrl());
-     alert("picture send to db")
+     alert("Picture succesfully send 🙌")
      closeOverlay()
    }
 
@@ -119,7 +119,7 @@ const votesNeeded = Math.floor(( 10 - (numberOfvotes / numberOfPicturesOwned) +1
               {/* <button className="btn-grey" type="button" onClick={handleUpload}>{t("overlay.upload")}
               </button> */}
 
-              <button className="btn-grey" type="button" onClick={addPic}>upload random pic</button>
+              <button className="btn-grey" type="button" onClick={addPic}>Click</button>
                 
             </div>
           </div>

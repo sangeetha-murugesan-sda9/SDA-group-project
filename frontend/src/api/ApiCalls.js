@@ -25,6 +25,7 @@ class ApiCalls {
     axios.post("http://localhost:8080/picture-url",url, {
       headers: {
         Authorization: Auth.getAuthorizationHeader(),
+        "Content-Type": "text/plain"
       },
     });
   }

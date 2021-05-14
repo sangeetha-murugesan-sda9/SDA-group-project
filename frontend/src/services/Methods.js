@@ -112,8 +112,12 @@ return maxValue;
   
 getWinner(array){
   
-    var maxValue = this.getMaxLikes(array)
-    //console.log(maxValue);
+if (array.length <0){
+
+  return [-1,-1]
+}
+
+    var maxValue = this.getMaxLikes(array)    
     
     let winnerId = -1;
     let winnerImgId = -1;
@@ -122,9 +126,8 @@ getWinner(array){
   
       for (let j = 0; j < array[i].pictures.length; j++) {
       
-        if (array[i].pictures[j].likes === maxValue){
-          
-          //console.log("image ",j);
+        if (array[i].pictures[j].likes === maxValue){         
+         
           winnerId = i;
           winnerImgId = j;
         }
@@ -167,7 +170,7 @@ const urls = [
    , 
    {
     "id":3,
-    "url":"https://static.wikia.nocookie.net/nvsc/images/2/20/1012484-800wtommt.jpg/revision/latest?cb=20200227171259"
+    "url":"https://i.imgur.com/8ID6mVu.jpg"
   }
    , 
   {
@@ -178,8 +181,30 @@ const urls = [
    {
     "id": 5,
     "url":"https://photos.bandsintown.com/thumb/9618572.jpeg"
+  }, 
+  {
+   "id": 6,
+   "url":"https://images.sk-static.com/images/media/profile_images/artists/9946864/huge_avatar"
+ }
+ , 
+ {
+  "id": 7,
+  "url":"https://lastfm.freetls.fastly.net/i/u/770x0/47898ecb10f2f9048f6406b9de31d4fa.jpg"
+}
+, 
+{
+ "id": 8,
+ "url":"https://ballzy.eu/pub/media/mageplaza/blog/post/h/8/h8p_twlw.jpeg"
+}
+, 
+   {
+    "id": 9,
+    "url":"https://images.squarespace-cdn.com/content/v1/5e4c3329fd8eab01426e960c/1611318911249-5O4IG27IPTWIPF3QYBJA/ke17ZwdGBToddI8pDm48kLIj3bb_uLOihttx7hjsPSV7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0lqfkVpRp1g_2L-WsTQRP4IUeQvxhQLxDj0GQzUQT21mzi2feheXFTkax-QWHoTYtA/20200923-IMG_7473.jpg"
   }
    
+   
+
+
      
 
 ]

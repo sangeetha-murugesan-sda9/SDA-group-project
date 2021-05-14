@@ -15,6 +15,7 @@ export default function ProfilePageContent({ users, userToDisplay }) {
 
   const [t, i18n] = useTranslation("common");
   const currentUserEmail = AuthApi.getCurrentUser();
+  
   const winnerId = Methods.getWinner(users)[0];
   const likes = Methods.getTotalLikesByEmail(users, userToDisplay);
   const dislikes = Methods.getTotalDislikesByEmail(users, userToDisplay);
@@ -22,11 +23,12 @@ export default function ProfilePageContent({ users, userToDisplay }) {
   const avatar = Methods.getAvatarByEmail(users, userToDisplay);
   const pics = Methods.getPicturesByEmail(users, userToDisplay);
 
-  if (Methods.getEmailById(users, winnerId + 1) === userToDisplay) {
+  /* if (Methods.getEmailById(users, winnerId + 1) === userToDisplay) {
     console.log("winner");
   } else {
     console.log("not winner");
   }
+ */
 
   return (
     <div className="profilepage-content">
@@ -38,10 +40,12 @@ export default function ProfilePageContent({ users, userToDisplay }) {
 
                 
 
-                  {userToDisplay ===
+                  {/* {userToDisplay ===
                     Methods.getEmailById(users, winnerId + 1) && (
                       <img className="crown img-40" src={king} />
-                      )}
+                      )} */}
+
+
                  <img src={avatar} className="img-profile-100" alt="img" />
               </div>
                       <h2>{username} </h2>
