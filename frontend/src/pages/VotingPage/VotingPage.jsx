@@ -31,7 +31,9 @@ export default function VotingPage({users}) {
            
         <main>
           <div className="winner-content">
-            <h1>{t("vote.title")} ...</h1>
+          <div className="page-title">
+            <h1>{t("vote.title")}</h1>
+            </div>
             <UserMeta user={randomUser} />
 
             <div className="wrapper-img-square">

@@ -25,8 +25,9 @@ const currentUserEmail = AuthApi.getCurrentUser();
         <div className="footer">
  
 
-<UploadButton users = {users} />
+{/* <UploadButton users = {users} /> */}
             <div className="footer-shape"> </div>
+            
             <div className="footer-container">
 
                 

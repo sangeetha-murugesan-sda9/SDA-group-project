@@ -9,6 +9,7 @@ import Auth from "../../services/Auth";
 import Methods from "../../services/Methods";
 import SlidingMenu from "../../components/SlidingMenu";
 import like from "../../assets/img/logo/flame.png";
+import CountdownComponent from "../../components/CountdownComponent";
 
 
 
@@ -19,7 +20,7 @@ const [t, i18n] = useTranslation('common');
   //const winnerObj = Methods.getWinner(users); //[ userID, winningPictureID]
   const winner = users[Methods.getWinner(users)[0]]
   const winnerPicId = Methods.getWinner(users)[1]
-console.log(winnerPicId)
+//console.log(winnerPicId)
 
 
   return (
@@ -34,20 +35,29 @@ console.log(winnerPicId)
 
         <main>
           <div className="winner-content">
+          <div className="page-title">
             <h1> <img className="img-title img-30 " src={king} /> {t("winner.title")}</h1>
+          </div>
+
             <UserMeta user={winner} />
+            
             <div>
             <div className="wrapper-img-square">
               <img id="main-img" src={winner.pictures[winnerPicId].url} alt="main-img" />
            
-            <p className = "winner-score">
+            <div className = "winner-score">
               
               <img className="img-70" src={like} alt="logo-like" />
               <p className = "winner-score-text">{winner.pictures[winnerPicId].likes} </p>
               
-              </p>
+              
+              </div>
+              <CountdownComponent/>
             </div>
  </div>
+
+
+
             <div className="under-img-container">
               <a href= {"http://www.instagram.com/" + winner.instagram} target="blank" className="btn-blue">{t("winner.button")} </a>
             </div>

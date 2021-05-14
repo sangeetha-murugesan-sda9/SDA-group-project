@@ -29,3 +29,9 @@ input{
     border:0px;
     border-radius: 7px;
 }
+
+.overlay-form button{
+    margin-top: 9px;
+    align-self: center;
+    width: 100%;
+}

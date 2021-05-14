@@ -13,8 +13,6 @@ export default function ProfilePage({ users, userToDisplay}) {
 
 const currentUserEmail = AuthApi.getCurrentUser();
 
-//console.log(users)
-//console.log(userToDisplay)
 
   return (
     <div className="general-container">

@@ -31,8 +31,15 @@ h1{
 h2{
     margin: 5px 8px;
     font-size: var(--font-S);
-    color: ;
+   
 }
+
+.page-title{
+    
+    text-align: center;
+ margin: 18px 0 12px 0; 
+}
+
 
 h3{
       margin: 0 0 10px 0;
@@ -55,38 +62,45 @@ width: 100%;
 
 .img-20{
    height: 20px;
-    width:auto;    
+    width:auto;  
+    object-fit: cover; 
 }
 .img-30{
     height: 30px;
-     width:auto;    
+     width:auto;   
+     object-fit: cover;
  }
  .img-40{
     height: 40px;
-     width:auto;    
+     width:40px; 
+     object-fit: cover;
  }
  .img-50{
     height: 50px;
-     width:auto;    
+     width:50px;   
+     object-fit: cover;
  }
 
  .img-60{
     height: 60px;
-     width:auto;    
+     width:60px;    
+     object-fit: cover;
  }
 
  .img-70{
     height: 70px;
-     width:auto;    
+     width:70px;   
+     object-fit: cover;
  }
  
 .img-profile-100{
    
-    height: 100px;
-    background-color: yellow;
+    height: 100px;  
+    width: 100px;  
     border-radius: 50%;
     border: 1px solid rgb(216, 215, 215);
-    width:auto;    
+     
+    object-fit: cover;
 }
 
 

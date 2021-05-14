@@ -11,7 +11,7 @@ import AuthApi from "../api/AuthApi";
 
  export default function UploadButton({users}) {
 
-  console.log("users",users)
+  //console.log("users",users)
 
   //constants
   const currentUserEmail = AuthApi.getCurrentUser();
@@ -21,9 +21,9 @@ import AuthApi from "../api/AuthApi";
 
 //vote logic
 
-const canUpload = true;
+//const canUpload = true;
+//const [canUpload, setCanUpload] = useState(false);
 
-/* const [canUpload, setCanUpload] = useState(false);
 
 const numberOfvotes = Methods.getVotesByEmail(users,currentUserEmail)
 const numberOfPicturesOwned = Methods.getNumberOfPicturesByEmail(users,currentUserEmail)
@@ -38,8 +38,8 @@ if(numberOfPicturesOwned === 0){
 }else if((numberOfvotes / numberOfPicturesOwned) > 10){
   canUpload = true
 }
-*/
-const votesNeeded =  7//( 10 - (numberOfvotes / numberOfPicturesOwned) +1 )
+
+const votesNeeded = Math.floor(( 10 - (numberOfvotes / numberOfPicturesOwned) +1 )) 
  
   //Manage the overlay
   const [isOpen, setOverlay] = useState(false);
@@ -140,7 +140,7 @@ const votesNeeded =  7//( 10 - (numberOfvotes / numberOfPicturesOwned) +1 )
 
           <div>
           <h2> Please vote more to be able to submit new picture </h2>
-          <h2> Votes needed: {votesNeeded} </h2>
+          <h2> Number of votes needed : {votesNeeded} </h2>
           </div>
         )
         }
