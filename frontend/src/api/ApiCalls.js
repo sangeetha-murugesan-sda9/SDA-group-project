@@ -41,6 +41,7 @@ class ApiCalls {
       },
     });
   }
+
   addDislike(pictureId) {
     return axios.post("http://localhost:8080/dislikes/" + pictureId, "", {
       headers: {
@@ -48,6 +49,7 @@ class ApiCalls {
       },
     });
   }
+
 
 // GET  //
 getCurrentUser() {
@@ -85,6 +87,16 @@ getCurrentUser() {
   }
 
 
+
+  // PUT //
+  updateUsername(string) {
+    return axios.put("http://localhost:8080/current-user", string , {
+      headers: {
+        Authorization: Auth.getAuthorizationHeader(),
+        "Content-Type": "text/plain"
+      },
+    });
+  }
 
 
 

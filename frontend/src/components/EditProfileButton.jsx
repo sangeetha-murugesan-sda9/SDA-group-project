@@ -5,30 +5,38 @@ import { useTranslation } from "react-i18next";
 import Auth from "../services/Auth";
 import Overlay from "react-overlay-component";
 import edit from "../assets/img/icons/pen.svg";
-
+import ApiCalls from "../api/ApiCalls";
 
 export default function EditProfileButton() {
-
   //constants
   //translation
-  const [t, i18n] = useTranslation('common');
-  
+  const [t, i18n] = useTranslation("common");
+
   //Manage the overlay
   const [isOpen, setOverlay] = useState(false);
   const closeOverlay = () => setOverlay(false);
+
+  const configs = {
+    animate: true,
+  };
 
   // State to store uploaded file
 
   const [file, setFile] = useState();
   const [pic, setPic] = useState("");
-  const [name, setName] = useState("");
-  const configs = {
-    animate: true,
-  };
+  const [username, setUsername] = useState("");
 
-  function editName(event) {
-    setName(event.target.value);
+  function updateUsername() {
+    if (username.length < 5) {
+      alert("Please enter 5 characters minimum ");
+    } else {
+      ApiCalls.updateUsername(username);
+      alert("Username succesfully updated ");
+      closeOverlay();
+      window.location.reload()
+    }
   }
+
   //HandleFile
   function handleFile(event) {
     setFile(event.target.files[0]);
@@ -68,13 +76,6 @@ export default function EditProfileButton() {
     closeOverlay();
   }
 
-  /// return image at id 1 - from db
-
-  /* useEffect(() => {
-  getPicOne();  
-  //console.log(pic);
-},[]); */
-
   return (
     <div>
       <button
@@ -95,15 +96,10 @@ export default function EditProfileButton() {
             type="text"
             placeholder={t("overlay.placeholder")}
             className="form-control"
-            onChange={editName}
-            value={name}
-            /* value={password} */
-            /* onChange={() => ()} */
+            onChange={(e) => setUsername(e.target.value)}
+            value={username}
           />
-          <button
-            className="btn-grey"
-            // onClick={(e) => onSubmit({ name, email, password })}
-          >
+          <button className="btn-grey" onClick={updateUsername}>
             OK
           </button>
         </div>
@@ -115,7 +111,7 @@ export default function EditProfileButton() {
           {/*<input type="file" accept="image/*" multiple = "false" onChange={onchange}/>*/}
 
           <button className="btn-grey" type="button" onClick={handleUpload}>
-          {t("overlay.upload")}
+            {t("overlay.upload")}
           </button>
         </div>
       </Overlay>
