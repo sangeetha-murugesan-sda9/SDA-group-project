@@ -23,8 +23,7 @@ Getting started is simple. The User have to register and login.
 4.You can upload images to your InStyle profile right away.
 5.You can like other users’ photos by tapping the FIRE icon and dislike
 the styles by tapping NAAAH icon.
-6.You can vote other users’ styles by tapping the FIRE icon and dislike
-the styles by tapping NAAAH icon.
+6.You can vote other users’ styles by tapping the FIRE icon.
 That’s it, you’re all set to start posting some great images and ready for Style
 competition.
 
@@ -139,39 +138,72 @@ volumes:
 ```
 
 ## Docker Commands
-1.Start container
-```
+
+```bash
 docker-compose up
-```
-2.Stop container
-```
-docker-compose down
-```
-3.List all Running Containers
-```
 docker ps
-```
-4.Enter the Running Container
-```
 docker-compose exec database /bin/sh
-```
-5.(psql Commands) While inside a postgres container, enter the postgres database.
-```
 psql skeleton skeleton_user
-```
-6.psql Commands (when inside the database)
-Connect to DataBase:
-```bash
 \c
-```
-7.Show the tables in the database
-```bash
 \dt
-```
-8.Show all rows in particular table
-```
 SELECT * FROM account;
 ```
+## Usage
+After logging in, the User can view the Current King (Winner) of the day and the user can follow
+the Current King by clicking  the follow option in Current King page and The User can navigate from one page to another
+by clicking the appropriate Page link in the side bar.The User can also view the winner's profile by clicking Current 
+King link in CurrentKing Page. The User can also view CurrentKing's instagram profile by clicking his/her profile name 
+with @Symbol.The User can also translate the application fron English to Swedish and vice versa.
+
+The user can fill their profile information with uploading profile picture and submit a new style from the profile page.
+The Users can view other user's styles in Discover page and like by clicking the FIRE
+icon and dislike by clicking the NAAAH icon.The User can also vote for the styles
+in vote page by clicking FIRE icon.Every user can decide the best styles and vote for it.The style with
+highest number of votes (likes) is the selected as a Winner by the end of the day and Winner's photo will
+be displayed in Current King page.
+
+The User can view the total Likes and DisLikes as OverAllScore in ProfilePage.
+
+The User can also upload pictures by clicking (+) icon in the footer and contact the InStyle by clicking Envelope icon.
+The User can view CurrentKing by clicking ChessKing icon and View his/her own profile by clicking the User icon.
+The User can also logout by clicking the SignOut icon in footer.
+
+### Auth API EndPoints
+The User's are able to create new account ,Sign In new account.
+| HTTP Method | HTTP Path | Action |
+| `POST`    |  `/register`     | Create new account. |
+| `POST`    | `/authenticate` | Authenticate User. |
+
+### User API EndPoints
+| HTTP Method | HTTP Path | Action |
+| ------------|-----------|--------|
+| `PUT`    | `/current-user` | Update current username. |
+| `GET`    | `/current-user` | Get the current user. |
+| `GET`    |  `/users`     | Get all users. |
+
+### Picture API EndPoints
+| HTTP Method | HTTP Path | Action |
+| ------------|-----------|--------|
+| `Post`    | `/picture-url` | Post a picture to the current user by just providing the url. |
+| `Post`    | `/picture` | Post a picture to the current user. |
+| `Post`    |  `/picture-url/{userId}`     | Post a picture by userId by just providing url. |
+| `Post`    | `/picture/{userId}` | Post a picture by userId |
+| `Post`    | `/likes/{pictureId}` | Add a like to a picture. |
+| `Post`    |  `/dislikes/{pictureId}`     | add a dislike to a picture |
+
+| HTTP Method | HTTP Path | Action |
+| ------------|-----------|--------|
+| `GET`    | `/files/{id}` | Get picture by ID. |
+| `GET`    | `/files` | Get all pictures. |
+| `POST`    |  `/upload`     | Upload a picture. |
+| `DELETE` | `/files/{id}` | delete the picture by ID. |
+
+
+
+
+
+
+
 
 
 

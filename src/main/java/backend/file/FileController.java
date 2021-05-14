@@ -26,7 +26,6 @@ public class FileController {
         this.fileDBRepository = fileDBRepository;
     }
 
-    // TODO - upload a file by a specific user (the file should have a owner)
     @PostMapping("/upload")
     public ResponseEntity<ResponseMessage> uploadFile(@RequestParam("file") MultipartFile file) {
         String message = "";

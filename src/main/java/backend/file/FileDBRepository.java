@@ -10,11 +10,6 @@ import java.util.Optional;
 @Repository
     public interface FileDBRepository extends JpaRepository<FileDB, Long> {
 
-
-/*
-    static Optional<FileDB> findById(Long id) {
-        return null;
-    }*/
 }
 
 
