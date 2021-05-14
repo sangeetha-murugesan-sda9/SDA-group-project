@@ -14,7 +14,15 @@ class Methods {
   }
 
 
+  getIdByEmail(array, userMail) {
 
+    var user = array.filter(function (item){
+
+      return item.email === userMail
+         })
+         
+         return  user[0].id
+  }
 
 
   getEmailById(array, userId) {
