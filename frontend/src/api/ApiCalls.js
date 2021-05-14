@@ -107,7 +107,14 @@ getCurrentUser() {
     });
   }
 
-
+// DELETE //
+deletePictureById(pictureId) {
+  return axios.delete("http://localhost:8080/picture/" + pictureId,  {
+    headers: {
+      Authorization: Auth.getAuthorizationHeader()      
+    },
+  });
+}
 
 
 

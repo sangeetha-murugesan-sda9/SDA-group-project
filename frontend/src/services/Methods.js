@@ -74,6 +74,25 @@ if(user[0] === undefined){
  
  }
 
+// getting number of votes of the user by email
+getVotesByEmail(array,userMail){
+
+  var user = array.filter(function (item){
+  return item.email === userMail
+  })      
+
+  if(user[0] === undefined){
+    return 0
+  }
+  
+ return user[0].votes;
+
+}
+
+
+
+
+
 
 // get total Likes by user email//
 

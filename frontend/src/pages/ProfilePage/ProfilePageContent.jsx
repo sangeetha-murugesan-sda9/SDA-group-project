@@ -22,13 +22,16 @@ export default function ProfilePageContent({ users, userToDisplay }) {
   const username = Methods.getUsernameByEmail(users, userToDisplay);
   const avatar = Methods.getAvatarByEmail(users, userToDisplay);
   const pics = Methods.getPicturesByEmail(users, userToDisplay);
+  const votes = Methods.getVotesByEmail(users, currentUserEmail);
 
-  /* if (Methods.getEmailById(users, winnerId + 1) === userToDisplay) {
-    console.log("winner");
+  //console.log(votes)
+
+  if (Methods.getEmailById(users, winnerId + 1) === userToDisplay) {
+    //console.log("winner");
   } else {
-    console.log("not winner");
+   // console.log("not winner");
   }
- */
+
 
   return (
     <div className="profilepage-content">
@@ -40,15 +43,17 @@ export default function ProfilePageContent({ users, userToDisplay }) {
 
                 
 
-                  {/* {userToDisplay ===
+                  {userToDisplay ===
                     Methods.getEmailById(users, winnerId + 1) && (
                       <img className="crown img-40" src={king} />
-                      )} */}
+                      )}
 
 
                  <img src={avatar} className="img-profile-100" alt="img" />
               </div>
                       <h2>{username} </h2>
+                      {userToDisplay === currentUserEmail &&
+                      <p>Votes: {votes} </p>}
 
              
 
@@ -65,6 +70,7 @@ export default function ProfilePageContent({ users, userToDisplay }) {
                 {dislikes}
                 <img className="img-30" src={dislike} alt="logo-like" />
               </p>
+              
             </div>
           </div>
         </div>
