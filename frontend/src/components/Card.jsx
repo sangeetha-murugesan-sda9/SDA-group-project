@@ -8,12 +8,21 @@ export default function Card({ item, score, votes, meta}) {
 
 const randomPictureId = Math.floor(Math.random() * item.pictures.length) 
 
+//console.log(item.pictures[randomPictureId])
 
-  return (
-
-
+  return (    
+    
     <div className="card-small">
-      {meta === true && <UserMeta user={item}/>}
+
+{ item.pictures !== [] &&
+<div>
+
+{ item.pictures[randomPictureId] !== undefined &&
+<div>
+
+
+
+    {meta === true && <UserMeta user={item}/>}
 
       <p className="score-timestamp">Posted - <Moment format="DD MMM YYYY">{item.timestamp}</Moment> </p>
 
@@ -29,6 +38,15 @@ const randomPictureId = Math.floor(Math.random() * item.pictures.length)
           <img src={like} alt="score-logo"/>
         </div>
       )}
+
+  </div>
+  }
+
+    </div>
+  }
+
+
+      
     </div>
   );
 }

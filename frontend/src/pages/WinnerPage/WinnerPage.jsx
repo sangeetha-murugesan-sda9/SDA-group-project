@@ -17,15 +17,16 @@ export default function WinnerPage({users}) {
   
   // Constants  
 const [t, i18n] = useTranslation('common');
-  //const winnerObj = Methods.getWinner(users); //[ userID, winningPictureID]
   
-  var winner = "No users found"
-  var winnerPicId = "https://fashionunited.uk/msStbYA8kor_XKOM0EvK9sg6TTdV-n8DinP9o4U0X6s/gravity:sm/quality:70/aHR0cHM6Ly9mYXNoaW9udW5pdGVkLmNvbS9pbWcvbWFzdGVyLzIwMjEvMDIvMTAvc2NyZWVuLXNob3QtMjAyMS0wMi0xMC1hdC0zLTE4LTM1LXBtLWJmaDVieXVpLTIwMjEtMDItMTAuanBlZw" 
 
-  if(users.length > 0){
+  //console.log(users)
+  
+  //var winner = "No users found"
+  //var winnerPicId = "https://fashionunited.uk/msStbYA8kor_XKOM0EvK9sg6TTdV-n8DinP9o4U0X6s/gravity:sm/quality:70/aHR0cHM6Ly9mYXNoaW9udW5pdGVkLmNvbS9pbWcvbWFzdGVyLzIwMjEvMDIvMTAvc2NyZWVuLXNob3QtMjAyMS0wMi0xMC1hdC0zLTE4LTM1LXBtLWJmaDVieXVpLTIwMjEtMDItMTAuanBlZw" 
+ 
   const winner = users[Methods.getWinner(users)[0]]
   const winnerPicId = Methods.getWinner(users)[1]  
-  }
+  
   
 //console.log(winnerPicId)
 
