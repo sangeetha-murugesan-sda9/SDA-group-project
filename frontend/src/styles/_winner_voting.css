@@ -3,7 +3,7 @@
   z-index: 1;
 
   display: grid;
-  grid-template-rows: 30px min-content min-content 1fr;
+  grid-template-rows: min-content min-content min-content min-content;
   gap: 4px;
   justify-content: center;
 
