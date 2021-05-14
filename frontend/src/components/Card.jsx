@@ -3,6 +3,7 @@ import VoteComponent from "./VoteComponent";
 import like from "../assets/img/logo/flame.png";
 import UserMeta from "./UserMeta";
 import Moment from "react-moment";
+import CardDrawer from "./CardDrawer";
 
 export default function Card({ item, score, votes, meta}) {
 
@@ -25,8 +26,9 @@ const randomPictureId = pics[randomPictureIndex].id
       <p className="score-timestamp">Posted - <Moment format="DD MMM YYYY">{item.timestamp}</Moment> </p>
 
       <img className="card-img" src={randomPicture.url} alt="items"/>
-
+<CardDrawer/>
       {votes === true && <VoteComponent refresh ={false} pictureId ={randomPictureId} />}
+      
 
       {score === true && (
         <div className="card-footer">
@@ -36,6 +38,10 @@ const randomPictureId = pics[randomPictureIndex].id
           <img src={like} alt="score-logo"/>
         </div>
       )}
+
+      
+
+
   
 
 

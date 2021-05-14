@@ -8,6 +8,7 @@ import Auth from "../../services/Auth";
 import AuthApi from "../../api/AuthApi";
 import SlidingMenu from "../../components/SlidingMenu";
 import Methods from '../../services/Methods'
+import CardDrawer from "../../components/CardDrawer";
 
 
 export default function DiscoverPage({users}) {
@@ -64,6 +65,9 @@ export default function DiscoverPage({users}) {
                       </React.Fragment>
                     ))}
                 </React.Fragment>
+
+                
+                
 
               </div>
             </div>

@@ -166,13 +166,11 @@
 .btn-delete{
   background-color: #b66767a6;
   color: white;
+  
   border: 0;
   border-radius: 7px;
-  padding: 1px 12px;
 
-  position: absolute;
-  bottom: 5px;
-  left: 24px;
+  height: 30px; 
 
   box-shadow:  1px 1px 2px grey;
 }

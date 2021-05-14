@@ -5,6 +5,7 @@ import AuthApi from "../api/AuthApi";
 import dislike from "../assets/img/logo/oops.png";
 import VoteComponent from "./VoteComponent";
 import ApiCalls from "../api/ApiCalls";
+import CardDrawer from "./CardDrawer";
 
 
 export default function ProfileCard({ item, userToDisplay }) {
@@ -53,6 +54,7 @@ export default function ProfileCard({ item, userToDisplay }) {
       </div>
       <img className="card-img" src={item.url} alt="items" />
      
+     <div className="profilecard-footer">
       {userToDisplay === currentUserEmail && (
         <button className="btn-delete" onClick={onDeleteClick}>
           Delete picture
@@ -62,6 +64,9 @@ export default function ProfileCard({ item, userToDisplay }) {
       <p className="score-timestamp">
         Posted - <Moment format="DD MMM YYYY">{item.timestamp}</Moment>
       </p>
+
+      </div>
+      <CardDrawer/>
 
       {userToDisplay !== currentUserEmail && <VoteComponent />}
     </div>

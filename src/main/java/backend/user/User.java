@@ -40,7 +40,6 @@ public class User {
     @Column(name = "avatar")
     private String avatar;
 
-
  /*   @OneToOne(mappedBy = "fileOwner",targetEntity= FileDB.class)
     private FileDB fileDB;*/
 

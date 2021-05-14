@@ -1,7 +1,6 @@
 package backend.picture;
 
 import backend.auth.AuthService;
-import backend.file.FileDB;
 import backend.user.ResourceNotFoundException;
 import backend.user.User;
 import backend.user.UserRepository;
@@ -9,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.sql.Timestamp;
 
@@ -174,6 +174,17 @@ public class PictureController {
     public void deletePicture(@PathVariable Long pictureId) {
         Picture picture = pictureRepository.findById(pictureId).orElseThrow(ResourceNotFoundException::new);;
         pictureRepository.delete(picture);
+    }
+
+
+    //upload a picture by userId
+
+    @PostMapping("/upload/{userId}")
+    public java.lang.String uploadPictureByUserId(@RequestParam("imageFile")MultipartFile imageFile, @PathVariable String userId){
+    //specimenService.saveImage(imageFile);
+
+        return "";
+
     }
 
 

@@ -5,6 +5,7 @@ import Auth from "../../services/Auth";
 import AuthApi from "../../api/AuthApi";
 import ApiCalls from "../../api/ApiCalls";
 import ToggleLanguage from "../../components/ToggleLanguage";
+import CardDrawer from "../../components/CardDrawer";
 
 export default function TestPage() {
   // Constants
@@ -68,51 +69,6 @@ export default function TestPage() {
     })    
     ;
    }
-
-
-   // request to post likes for picture at id 1 - WORKING ON REFRESH //
-/*   function addDislike(pictureId){
-
-    ApiCalls.addDislike(1)
-    .then((response) => {
-      console.log(response);
-    }, (error) => {
-      console.log(error);
-    })    
-    ;
-   } */
-
-
-// request to get likes for picture at id 1 //
-/*  
-function getLikes(pictureId){
-
-     ApiCalls.getLikes(pictureId)
-    .then((res) => {
-      console.log("likes :" ,res.data);
-      setLikes(res.data);
-    }
-    );   
-  }    */
-
-
-
-// request to get dislikes for picture at id 1 //
- /*  function getDislikes(pictureId){
-    ApiCalls.getDislikes(pictureId)
-    .then((res) => {
-      console.log("dislikes" ,res.data);
-      setDislikes(res.data);
-    }
-    );   
-  } */
-
-  //use Effect triggered when components mounts ( page refresh) //
- /*  useEffect(() => {
-    getLikes(1);
-    getDislikes(1);
-    }, []); */
-
 // request to get current user//
 
 function getCurrentUserData(){
@@ -138,6 +94,10 @@ if(currentUser !== undefined){
 
 
 
+
+
+
+
   return (
 
     <div className="general-container">
@@ -151,7 +111,7 @@ if(currentUser !== undefined){
       <div className="test-wrapper">
         <h2>TEST PAGE:</h2>
 
-        
+        <CardDrawer/>
 
         <div className="upload-box-test">
           <h3>Current user :</h3>
