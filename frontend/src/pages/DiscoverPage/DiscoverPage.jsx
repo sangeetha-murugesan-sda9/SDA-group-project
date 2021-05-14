@@ -32,7 +32,7 @@ export default function DiscoverPage({users}) {
         <main>
           <div className="homepage-content">
             <div className="homepage-submit-container"></div>
-            <div>
+            <div className="title-wrapper">
 
               
 <div className="page-title">
