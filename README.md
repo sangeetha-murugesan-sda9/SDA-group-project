@@ -170,8 +170,10 @@ The User can also logout by clicking the SignOut icon in footer.
 
 ### Auth API EndPoints
 The User's are able to create new account ,Sign In new account.
+
 | HTTP Method | HTTP Path | Action |
-| `POST`    |  `/register`     | Create new account. |
+| ------------|-----------|--------|
+| `POST`    | `/register` | Create new account. |
 | `POST`    | `/authenticate` | Authenticate User. |
 
 ### User API EndPoints
