@@ -1,11 +1,26 @@
 
 class Methods {
 
+
+  getUserById(array, userId) {
+
+    var user = array.filter(function (item){
+
+      return item.id === userId
+         })
+         
+         return  user[0]
+
+  }
+
+
+
+
+
   getEmailById(array, userId) {
     const data = array[userId-1].email;    
     return data;
 
-    //return array[userId].email;
   }
 
 // getting a username providing email

@@ -1,11 +1,20 @@
 import React from "react";
+import ApiCalls from "../api/ApiCalls";
 import like from "../assets/img/logo/flame.png";
 import dislike from "../assets/img/logo/oops.png";
 
-export default function VoteComponent({refresh}) {
+export default function VoteComponent({refresh, pictureId}) {
+
+console.log(pictureId)
 
 function handleLike(){
+
+
 // todo - increment likes  
+
+  // get the picture id 
+  ApiCalls.addLike(pictureId);
+
 // todo - increment votes
 console.log("liked")
 if(refresh === true){
@@ -16,6 +25,10 @@ if(refresh === true){
 
 function handleDislike(){
   // todo - increment dislikes  
+
+   // get the picture id   
+   ApiCalls.addDislike(pictureId);
+
   // todo - increment votes
   console.log("disliked")
   if(refresh === true){

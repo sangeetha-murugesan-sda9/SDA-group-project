@@ -66,6 +66,7 @@ const votesNeeded = Math.floor(( 10 - (numberOfvotes / numberOfPicturesOwned) +1
      ApiCalls.addPictureToCurrentUser(Methods.getRandompictureUrl());
      alert("Picture succesfully send 🙌")
      closeOverlay()
+     window.location.reload();
    }
 
 
@@ -91,6 +92,7 @@ const votesNeeded = Math.floor(( 10 - (numberOfvotes / numberOfPicturesOwned) +1
       }
     );
     closeOverlay();
+    
   }
 
 

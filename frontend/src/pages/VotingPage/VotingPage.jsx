@@ -7,6 +7,7 @@ import UserMeta from "../../components/UserMeta";
 import VoteComponent from "../../components/VoteComponent";
 import Auth from "../../services/Auth";
 import SlidingMenu from "../../components/SlidingMenu";
+import Methods from "../../services/Methods";
 
 export default function VotingPage({users}) {
   // Constants
@@ -15,9 +16,29 @@ export default function VotingPage({users}) {
   const [t, i18n] = useTranslation('common');
 
   //randomization of the display 
-  const randomId = Math.floor(Math.random() * users.length);
-  const randomUser = users[randomId];
-  const randomPictureId = Math.floor(Math.random() * randomUser.pictures.length)  
+  const pics = users.map(i => i.pictures).flat()
+  const picsIds = pics.map(i => i.id)      
+  const randomPictureIndex  = Math.floor(Math.random() * picsIds.length)
+  const randomPictureId = picsIds[randomPictureIndex]
+
+  //console.log(pics)
+  //console.log(randomPictureId)
+
+  const randomPicture = pics.filter(function (item){
+    return item.id === randomPictureId
+  })  
+
+//get the user associated
+  const userIdAssociated = randomPicture[0].owner
+  const userAssociated = Methods.getUserById(users,userIdAssociated)
+
+  //console.log(randomPictureId)
+  //console.log(userAssociated)
+ 
+  
+ 
+
+  
 
   return (
     <div className="general-container">
@@ -34,12 +55,12 @@ export default function VotingPage({users}) {
           <div className="page-title">
             <h1>{t("vote.title")}</h1>
             </div>
-            <UserMeta user={randomUser} />
+            <UserMeta user={userAssociated} />
 
             <div className="wrapper-img-square">
               <img
                 id="main-img"
-                src={randomUser.pictures[randomPictureId].url }
+                src={randomPicture[0].url}
                 alt="main-logo"
               />
               
@@ -49,7 +70,7 @@ export default function VotingPage({users}) {
             
             </div>
             <div className="under-img-container">
-              <VoteComponent refresh ={true} />
+              <VoteComponent refresh ={true} pictureId ={randomPicture[0].id} />
             </div>
           </div>
         </main>
