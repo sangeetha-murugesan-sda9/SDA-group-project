@@ -26,9 +26,11 @@ margin-top: 9px;
 }
 
 .upper {
-  height: 15px;
-  width: 100%;
-  padding: 12px;
+  display: flex;
+  justify-content: flex-end;
+
+  height: 15px; 
+  padding: 8px 25px 18px 8px  ;
   background: linear-gradient(to right bottom, #eef5ff, #ccd0df);
   
 }
