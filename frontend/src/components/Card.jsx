@@ -14,19 +14,11 @@ const randomPicture = pics[randomPictureIndex]
 const randomPictureId = pics[randomPictureIndex].id
 
 
-console.log(randomPictureId , item.id)
+//console.log(item.pictures.length)
 
   return (    
     
     <div className="card-small">
-
-{ item.pictures !== [] &&
-<div>
-
-{ /* item.pictures[randomPictureId] !== undefined && */
-<div>
-
-
 
     {meta === true && <UserMeta user={item}/>}
 
@@ -44,12 +36,7 @@ console.log(randomPictureId , item.id)
           <img src={like} alt="score-logo"/>
         </div>
       )}
-
-  </div>
-  }
-
-    </div>
-  }
+  
 
 
       

@@ -5,7 +5,7 @@ import dislike from "../assets/img/logo/oops.png";
 
 export default function VoteComponent({refresh, pictureId}) {
 
-console.log(pictureId)
+//console.log(pictureId)
 
 function handleLike(){
 
