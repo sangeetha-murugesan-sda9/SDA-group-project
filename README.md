@@ -1,4 +1,4 @@
-## ![Logo](ScreenShot/logo.png)
+![Logo](ScreenShot/logo.png)
 
 ## Introduction
 This application is a Social Media Application for Stylists built with gradle.
@@ -199,6 +199,29 @@ The User's are able to create new account ,Sign In new account.
 | `GET`    | `/files` | Get all pictures. |
 | `POST`    |  `/upload`     | Upload a picture. |
 | `DELETE` | `/files/{id}` | delete the picture by ID. |
+
+## ScreenShots
+## Login Page
+
+![Login](ScreenShot/Login.png)
+
+##  Current King Page
+
+![CurrentKing](ScreenShot/CurrentKing.png)
+
+## Profile Page
+
+![Profile](ScreenShot/Profile.png)
+
+## Discover Page
+
+![Discover](ScreenShot/Discover.png)
+
+## Vote Page
+
+![Vote](ScreenShot/Vote.png)
+
+
 
 
 
