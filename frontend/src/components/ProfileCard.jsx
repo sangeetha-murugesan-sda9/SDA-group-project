@@ -60,7 +60,7 @@ export default function ProfileCard({ item, userToDisplay }) {
       )}
       
       <p className="score-timestamp">
-        Posted - <Moment format="DD MMM YYYY">{item.timestamp}</Moment>{" "}
+        Posted - <Moment format="DD MMM YYYY">{item.timestamp}</Moment>
       </p>
 
       {userToDisplay !== currentUserEmail && <VoteComponent />}
