@@ -108,7 +108,7 @@ ApiCalls.updateAvatar(Methods.getRandomAvatarUrl())
       <Overlay configs={configs} isOpen={isOpen} closeOverlay={closeOverlay}>
         <h3>{t("overlay.label-profile")}</h3>
 
-        <div className="overlay-form-group">
+        <div className="overlay-form">
           <label>{t("overlay.label-username")}</label>
           <input
             type="text"

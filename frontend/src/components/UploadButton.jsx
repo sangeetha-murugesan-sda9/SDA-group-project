@@ -111,7 +111,7 @@ const votesNeeded = Math.floor(( 10 - (numberOfvotes / numberOfPicturesOwned) +1
       <Overlay configs={configs} isOpen={isOpen} closeOverlay={closeOverlay}>
         
         {canUpload === true ? (
-          <div>
+          <div className="overlay-form" >
             <h2>{t("overlay.label-upload")}</h2>
             <div className="upload-box">
               {/* <input type="file" onChange={handleFile} /> */}
