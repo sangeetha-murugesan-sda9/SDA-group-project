@@ -6,6 +6,7 @@ import Auth from "../services/Auth";
 import Overlay from "react-overlay-component";
 import edit from "../assets/img/icons/pen.svg";
 import ApiCalls from "../api/ApiCalls";
+import Methods from "../services/Methods"
 
 export default function EditProfileButton() {
   //constants
@@ -76,6 +77,23 @@ export default function EditProfileButton() {
     closeOverlay();
   }
 
+// updaterandom avatar to current user
+function updateAvatar() {
+
+ApiCalls.updateAvatar(Methods.getRandomAvatarUrl())
+  
+  alert("Avatar succesfully changed 🙌")
+  closeOverlay()
+  window.location.reload();
+}
+
+
+
+
+
+
+
+
   return (
     <div>
       <button
@@ -110,10 +128,17 @@ export default function EditProfileButton() {
           {/*  <input type="file" onChange={handleFile} />*/}
           {/*<input type="file" accept="image/*" multiple = "false" onChange={onchange}/>*/}
 
-          <button className="btn-grey" type="button" onClick={handleUpload}>
+          {/* <button className="btn-grey" type="button" onClick={handleUpload}>
             {t("overlay.upload")}
-          </button>
+          </button> */}
+
+        <button className="btn-grey" type="button" onClick={updateAvatar}>Click</button>
+
+
+
         </div>
+
+
       </Overlay>
     </div>
   );

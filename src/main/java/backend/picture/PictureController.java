@@ -146,5 +146,20 @@ public class PictureController {
     }*/
 
 
+    // update current user Avatar
+    @PutMapping("/avatar-url")
+    public ResponseEntity<User> updateAvatar(@RequestBody String url) {
+
+        String email = authService.getLoggedInUserEmail(); // get current user email
+        User user = userRepository.findByEmail(email); // find the user by email
+
+       user.setAvatar(url); // setting the new URL
+
+        userRepository.save(user);
+
+        return ResponseEntity.ok(user);
+
+    }
+
 
 }

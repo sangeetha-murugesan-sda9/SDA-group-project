@@ -74,7 +74,7 @@ const votesNeeded = Math.floor(( 10 - (numberOfvotes / numberOfPicturesOwned) +1
 
 
   // Handle the upload to dB //
-  function handleUpload() {
+  /* function handleUpload() {
 
     const formdata = new FormData()
     formdata.append('file',file);
@@ -94,7 +94,7 @@ const votesNeeded = Math.floor(( 10 - (numberOfvotes / numberOfPicturesOwned) +1
     closeOverlay();
     
   }
-
+ */
 
 
   return (

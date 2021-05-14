@@ -98,6 +98,16 @@ getCurrentUser() {
     });
   }
 
+  updateAvatar(string) {
+    return axios.put("http://localhost:8080/avatar-url", string , {
+      headers: {
+        Authorization: Auth.getAuthorizationHeader(),
+        "Content-Type": "text/plain"
+      },
+    });
+  }
+
+
 
 
 
