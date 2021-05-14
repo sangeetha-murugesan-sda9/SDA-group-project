@@ -32,9 +32,16 @@ export default function DiscoverPage({users}) {
           <div className="homepage-content">
             <div className="homepage-submit-container"></div>
             <div>
-              <h2>{t("discover.title")} ...</h2>
 
+              
+<div className="page-title">
+            <h2>{t("discover.title")} ...</h2>
+
+              </div>
               <div className="card-small-container">
+              
+
+
                 <React.Fragment>
                   {shuffledUsers.filter(function (item) {
                       return item.email !== currentUserEmail;

@@ -34,4 +34,23 @@
     margin-bottom: 30px;
 }
 
+.auth-buttons-container{
+    position: absolute;
+    bottom: 27%;
+
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+     
+}
+
+.auth-buttons-wrapper{
+
+   
+    width:max-content;
+   
+    
+
+}
 

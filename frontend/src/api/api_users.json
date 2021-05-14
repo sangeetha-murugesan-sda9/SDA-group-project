@@ -39,7 +39,7 @@
     "firstname": "Clement",
     "lastname": "Cardona",
     "instagram": "clekardo",
-    "votes": 56,
+    "votes": 60,
     "avatar": "http://clecardona.com/sda/profile/clement/clecardona.png",
     "pictures": [
       {
@@ -411,13 +411,6 @@
         "likes": 4,
         "dislikes": 82,
         "timestamp": "2020-09-09T11:06:45Z"
-      },
-      {
-        "id": 2,
-        "url": "https://static.wikia.nocookie.net/powerrangers/images/b/b8/ZSK-Chaos.png/revision/latest/scale-to-width-down/360?cb=20140208230941",
-        "likes": 60,
-        "dislikes": 10,
-        "timestamp": "2020-07-13T10:33:54Z"
       }
     ]
   },

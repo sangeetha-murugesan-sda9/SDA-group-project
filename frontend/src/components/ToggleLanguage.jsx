@@ -3,22 +3,22 @@ import { useTranslation } from "react-i18next";
 
 export default function ToggleLanguage() {
 
-const [check, setCheck] = useState(false);
-const [t, i18n] = useTranslation('common');
+const [check, setCheck] = useState(false); // toggle
+const [t, i18n] = useTranslation('common'); // language
+
 
   // Methods
   const handleToggle = () => {
 
     setCheck(value => !value);
 
-    if(check === true){
-      console.log("english")
-      i18n.changeLanguage("en")
-    }else{
-      console.log("swedish")
-      i18n.changeLanguage("sv")
-    }
+    if(check === false){ // english selected
+        i18n.changeLanguage("sv") 
 
+    }else { // svenska selected
+        i18n.changeLanguage("en") 
+ 
+    }
 
   }
 
