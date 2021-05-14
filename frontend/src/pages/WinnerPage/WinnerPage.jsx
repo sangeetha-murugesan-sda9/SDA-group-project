@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import Moment from "react-moment";
 
 import "../../styles/base.css";
 import NavBar from "../../components/Navbar";
@@ -17,18 +18,19 @@ export default function WinnerPage({users}) {
   
   // Constants  
 const [t, i18n] = useTranslation('common');
-  
 
-  //console.log(users)
-  
-  //var winner = "No users found"
-  //var winnerPicId = "https://fashionunited.uk/msStbYA8kor_XKOM0EvK9sg6TTdV-n8DinP9o4U0X6s/gravity:sm/quality:70/aHR0cHM6Ly9mYXNoaW9udW5pdGVkLmNvbS9pbWcvbWFzdGVyLzIwMjEvMDIvMTAvc2NyZWVuLXNob3QtMjAyMS0wMi0xMC1hdC0zLTE4LTM1LXBtLWJmaDVieXVpLTIwMjEtMDItMTAuanBlZw" 
- 
-  const winner = users[Methods.getWinner(users)[0]]
-  const winnerPicId = Methods.getWinner(users)[1]  
-  
-  
-//console.log(winnerPicId)
+    
+
+
+ const winnerId = Methods.getWinner(users)[0];
+ const winnerPicId = Methods.getWinner(users)[1] 
+  const winner = Methods.getUserById(users,winnerId)
+
+ const winnerPic = winner.pictures.filter(function (item) {
+  return item.id === winnerPicId ;
+}); 
+
+console.log(winnerPic)
 
 
   return (
@@ -51,12 +53,12 @@ const [t, i18n] = useTranslation('common');
             
             <div>
             <div className="wrapper-img-square">
-              <img id="main-img" src={winner.pictures[winnerPicId].url} alt="main-img" />
+              <img id="main-img" src={winnerPic[0].url} alt="main-img" />
            
             <div className = "winner-score">
               
               <img className="img-70" src={like} alt="logo-like" />
-              <p className = "winner-score-text">{winner.pictures[winnerPicId].likes} </p>
+              <p className = "winner-score-text">{winnerPic[0].likes} </p>
               
               
               </div>
@@ -64,7 +66,9 @@ const [t, i18n] = useTranslation('common');
             </div>
  </div>
 
-
+ <div className="score-timestamp">
+            Posted - <Moment fromNow>{winnerPic[0].timestamp}</Moment>
+          </div>
 
             <div className="under-img-container">
               <a href= {"http://www.instagram.com/" + winner.instagram} target="blank" className="btn-blue">{t("winner.button")} </a>

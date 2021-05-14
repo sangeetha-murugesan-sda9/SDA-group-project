@@ -131,9 +131,10 @@ return pics
 };
 
 // get the max value of likes of the all JSON 
-getMaxLikes(array){
-const picsArray = array.map(i=> i.pictures)
-const pics = picsArray.flat()
+getMaxLikes(pics){
+/* const picsArray = array.map(i=> i.pictures)
+const pics = picsArray.flat() */
+
 const likes = pics.map(i=> i.likes)
 const maxValue = Math.max.apply(Math, likes);
 
@@ -141,34 +142,54 @@ return maxValue;
 
 }
 
-// get the winner and the winner picture of the all JSON
-// -> return an array [ winningUserId , winningPictureId ]
+// get the winner and the winner picture of the eligible pics 
+// -> the winnerId
   
 getWinner(array){
+  var moment = require("moment");
   
 if (array.length <0){
 
   return [-1,-1]
-}
+}     
+       
+    const allPics = array.map((i) => i.pictures).flat();
 
-    var maxValue = this.getMaxLikes(array)    
+    // select only pics between today midnight and yesterday midnight
+      const pics = allPics.filter((i) => {
     
-    let winnerId = -1;
-    let winnerImgId = -1;
+      const todayMidnight = new Date();
+      todayMidnight.setHours(0, 0, 0, 0); // ok today 00:00
+      const yesterdayMidnight = new Date();
+      yesterdayMidnight.setDate(yesterdayMidnight.getDate() - 1)
+      yesterdayMidnight.setHours(0, 0, 0, 0); // ok yesterday 00:00
+    
+    
+      const canBeKing = moment(i.timestamp).isBetween(yesterdayMidnight, todayMidnight);
+      return canBeKing;
+    });
+    
+    //console.log(pics)
 
-    for (let i = 0; i < array.length; i++) {
-  
-      for (let j = 0; j < array[i].pictures.length; j++) {
-      
-        if (array[i].pictures[j].likes === maxValue){         
-         
-          winnerId = i;
-          winnerImgId = j;
+    var maxValue = this.getMaxLikes(pics)  
+  //console.log(maxValue)
+
+  let winnerId = -1;
+  let winningPicId = -1;
+
+  for (let i = 0; i < pics.length; i++) {        
+    
+        if (pics[i].likes === maxValue){         
+                   winnerId = pics[i].owner;
+                   winningPicId = pics[i].id;
+          //console.log("hit max")
         }
-      }
-    }
+      
+    } 
+//console.log("winnerId",winnerId)
+//console.log("picId",winningPicId)
 
-    return [winnerId,winnerImgId]
+   return [winnerId,winningPicId]
     }
 
 
