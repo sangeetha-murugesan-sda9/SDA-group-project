@@ -26,7 +26,9 @@ const randomPictureId = pics[randomPictureIndex].id
       <p className="score-timestamp">Posted - <Moment format="DD MMM YYYY">{item.timestamp}</Moment> </p>
 
       <img className="card-img" src={randomPicture.url} alt="items"/>
-<CardDrawer/>
+    
+    <CardDrawer id={item.id} pictureId ={randomPictureId}/>
+
       {votes === true && <VoteComponent refresh ={false} pictureId ={randomPictureId} />}
       
 

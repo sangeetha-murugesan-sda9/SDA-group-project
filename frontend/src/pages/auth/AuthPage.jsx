@@ -11,8 +11,7 @@ import LandingOverlay from "../../components/LandingOverlay";
 
 export default function LoginPage() {
   //constants
-  //let history = useHistory();
-
+  
   // Methods
   async function login(loginData) {
     const loginSuccess = await Auth.login(loginData);

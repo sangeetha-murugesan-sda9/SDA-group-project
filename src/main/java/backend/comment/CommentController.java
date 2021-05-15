@@ -56,11 +56,19 @@ import java.util.List;
 
         //get comments of a picture by Id
         @GetMapping("/picture/{pictureId}/comments")
-        public ResponseEntity<List<Comment>> getAllComments(@PathVariable Long pictureId) {
+        public ResponseEntity<List<Comment>> getCommentsByPictureId(@PathVariable Long pictureId) {
 
             Picture picture  = pictureRepository.findById(pictureId).orElseThrow(ResourceNotFoundException::new); // find the picture
             List<Comment> comments = picture.getComments(); // get the list of comments
 
+            return ResponseEntity.ok(comments );
+        }
+
+
+        //get all comments
+        @GetMapping("/comments")
+        public ResponseEntity<List<Comment>> getAllComments() {
+            List<Comment> comments = commentRepository.findAll();
             return ResponseEntity.ok(comments );
         }
 

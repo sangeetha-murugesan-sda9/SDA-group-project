@@ -2,8 +2,9 @@ import Api from "./Api";
 import axios from "axios";
 import Auth from "../services/Auth";
 
-class ApiCalls {
-  //TODO - REFACTOR AXIOS CALLS HERE:
+class ApiCalls { 
+
+// POST ENDPOINTS //
 
   // upload a picture to dB - works
   uploadPicture(item) {
@@ -13,9 +14,6 @@ class ApiCalls {
       },
     });
   }
-
-
-
 
 // post picture ( backup ) to the current user
   addPictureToCurrentUser(url) {
@@ -30,10 +28,7 @@ class ApiCalls {
     });
   }
 
-
-
-
-  // POST //
+  
   addLike(pictureId) {
     return axios.post("http://localhost:8080/likes/" + pictureId, "", {
       headers: {
@@ -51,7 +46,23 @@ class ApiCalls {
   }
 
 
-// GET  //
+   // add a comment to picture by pictureId
+    addComment(pictureId, body ) {
+      var url = "http://localhost:8080/picture/"+ pictureId +"/comment"
+    axios.post(url, body, {
+      headers: {
+        Authorization: Auth.getAuthorizationHeader(),
+        "Content-Type": "text/plain"
+      },
+    });
+  }
+
+
+
+
+
+// GET ENDPOINTS //
+
 getCurrentUser() {
   return axios.get("http://localhost:8080/current-user", {
     headers: {
@@ -67,6 +78,8 @@ getCurrentUser() {
       },
     });
   }
+
+
 
 
   getLikes(pictureId) {
@@ -86,9 +99,20 @@ getCurrentUser() {
     });
   }
 
+    // get all comments by pictureId
+    getCommentsById(pictureId) {
+
+      axios.get("http://localhost:8080/picture/14/comments", {
+        headers: {
+          Authorization: Auth.getAuthorizationHeader(),
+          
+        },
+      });
+    }
 
 
-  // PUT //
+
+  // PUT ENDPOINTS //
   updateUsername(string) {
     return axios.put("http://localhost:8080/current-user", string , {
       headers: {
@@ -107,7 +131,10 @@ getCurrentUser() {
     });
   }
 
-// DELETE //
+
+
+// DELETE ENDPOINTS //
+
 deletePictureById(pictureId) {
   return axios.delete("http://localhost:8080/picture/" + pictureId,  {
     headers: {
@@ -116,6 +143,16 @@ deletePictureById(pictureId) {
   });
 }
 
+ // delete all comments by his id
+
+ deleteComment(commentId) {
+
+  axios.delete("http://localhost:8080/comments/" + commentId, {
+    headers: {
+      Authorization: Auth.getAuthorizationHeader()      
+    },
+  });
+}
 
 
 

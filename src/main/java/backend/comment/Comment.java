@@ -30,7 +30,6 @@ public class Comment {
     @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
     @JsonIdentityReference(alwaysAsId = true)
     @JoinColumn(nullable = false)
-    @JsonIgnore
     private Picture picture;
 
 

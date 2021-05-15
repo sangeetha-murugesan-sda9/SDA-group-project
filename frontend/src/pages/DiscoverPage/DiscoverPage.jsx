@@ -16,7 +16,7 @@ export default function DiscoverPage({ users }) {
   const currentUserEmail = AuthApi.getCurrentUser();
   const shuffledUsers = Methods.randomArrayShuffle(users);
 
-  console.log(shuffledUsers)
+  //console.log(shuffledUsers)
 
   return (
     <div className="general-container">

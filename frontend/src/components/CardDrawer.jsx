@@ -1,11 +1,9 @@
 // NPM packages
 import { useState } from "react";
-import VoteComponent from "./VoteComponent";
-import like from "../assets/img/logo/flame.png";
-import UserMeta from "./UserMeta";
-import Moment from "react-moment";
+import Comments from './Comments'
+import ApiCalls from "../api/ApiCalls";
 
-export default function CardDrawer() {
+export default function CardDrawer({id,pictureId}) {
   
   //const state = { open: false };
   const [open,setOpen] = useState(false);
@@ -18,6 +16,10 @@ export default function CardDrawer() {
       setOpen(true)
     }
   };
+
+  function addComment(pictureId, body) {
+    ApiCalls.addComment(pictureId, body)// ok
+  }
 
   return (
     
@@ -36,8 +38,13 @@ export default function CardDrawer() {
 
         </div>
         <div className="lower">
+
           <h3>User</h3>
-          <p>I really like your style. You look amazing</p>          
+          <p>Some comments come here </p>
+
+
+        {/* <button onClick ={addComment(pictureId,"yolo")}>send yolo comment</button> */}
+
         </div>
       </div>
    

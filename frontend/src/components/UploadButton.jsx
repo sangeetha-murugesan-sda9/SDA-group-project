@@ -62,7 +62,7 @@ const votesNeeded = Math.floor(( 10 - (numberOfvotes / numberOfPicturesOwned) +1
 
 // upload random pic to current user on db
  const randomPicUrl = Methods.getRandompictureUrl()
-console.log(randomPicUrl)
+//console.log(randomPicUrl)
 
 function addPic() {
 
