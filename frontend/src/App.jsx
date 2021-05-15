@@ -44,11 +44,14 @@ export default function App() {
      }, []);
 
 
+
   //Fetching data
-     useEffect(() => {
+
+       useEffect(() => {
+         if(loggedIn){
     ApiCalls.getAllUsers()
     .then(response => onFetchSuccess(response.data))
-    .catch((error) => onFetchFail(error));   
+    .catch((error) => onFetchFail(error)); }  
 
     }, [setUsers, setStatus]);
   
@@ -61,8 +64,7 @@ export default function App() {
   
     function onFetchFail(error) {
       console.log("Error", error);
-      setStatus(2);
-      //window.location.reload()
+      setStatus(2);   
     }
   
   //console.log("users",users,status)

@@ -44,10 +44,11 @@ console.log(winnerPic)
       </header>
 
         <main>
-          <div className="winner-content">
-          <div className="page-title">
+          <div className="page-title-vote">  
             <h1> <img className="img-title img-30 " src={king} /> {t("winner.title")}</h1>
           </div>
+          
+          <div className="winner-content">
 
             <UserMeta user={winner} />
             

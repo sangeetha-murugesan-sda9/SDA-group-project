@@ -12,13 +12,13 @@ import Methods from "../../services/Methods";
 
 
 export default function VotingPage({users}) {
-
+  
   // Constants
   var moment = require("moment");
   //translation
   const [t, i18n] = useTranslation("common");
 
-  
+  //randomization of the display
   const allPics = users.map((i) => i.pictures).flat();
 
   // select only recent pics
@@ -30,9 +30,8 @@ export default function VotingPage({users}) {
     return isVotable;
   });
 
- // console.log(pics);
+  console.log(pics);
 
-//randomization of the display
   const picsIds = pics.map((i) => i.id);
   const randomPictureIndex = Math.floor(Math.random() * picsIds.length);
   const randomPictureId = picsIds[randomPictureIndex];
@@ -63,10 +62,11 @@ export default function VotingPage({users}) {
       </header>
 
       <main>
-        <div className="winner-content">
-          <div className="page-title">
+          <div className="page-title-vote">
             <h1>{t("vote.title")}</h1>
           </div>
+          
+        <div className="winner-content">
           <UserMeta user={userAssociated} />
 
           <div className="wrapper-img-square">

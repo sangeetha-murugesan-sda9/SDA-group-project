@@ -55,6 +55,7 @@ h2{
 }
 
 /* background of the card container */ 
+
 .title-wrapper{
 
     /* max-width: 100%; */
@@ -148,4 +149,36 @@ width: 100%;
     object-fit: cover;
     object-position: top;
 }
+
+.page-title-vote{
+   
+   display: flex;
+   justify-content: flex-start;
+  
+}
+
+
+.page-title-vote h1{
+    background-color: white;
+    width: fit-content;
+    position: relative;
+    top:3px;
+
+    border : 2px solid #c9c9c9;
+    border-bottom: 2px solid white ;
+
+    border-radius: 15px 15px 0 0 ;
+
+    padding: 5px 15px  ;
+
+    z-index: 10;
+}
+
+.winner-content{
+    background-color: white;
+    border : 2px solid #c9c9c9;
+    padding: 5px 5px 20px 5px  ;
+    border-radius:0 15px 15px 15px ;
+}
+
 

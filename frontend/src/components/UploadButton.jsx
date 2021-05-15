@@ -61,15 +61,16 @@ const votesNeeded = Math.floor(( 10 - (numberOfvotes / numberOfPicturesOwned) +1
    //console.log(Methods.getRandompictureUrl);
 
 // upload random pic to current user on db
- function addPic() {
+ const randomPicUrl = Methods.getRandompictureUrl()
+console.log(randomPicUrl)
 
-     ApiCalls.addPictureToCurrentUser(Methods.getRandompictureUrl());
+function addPic() {
+
+     ApiCalls.addPictureToCurrentUser(randomPicUrl);
      alert("Picture succesfully send 🙌")
      closeOverlay()
      window.location.reload();
    }
-
-
 
 
 
@@ -115,9 +116,7 @@ const votesNeeded = Math.floor(( 10 - (numberOfvotes / numberOfPicturesOwned) +1
             <h2>{t("overlay.label-upload")}</h2>
             <div className="upload-box">
               {/* <input type="file" onChange={handleFile} /> */}
-
               {/* <input type="text" onChange={handleFile} /> */}
-
               {/* <button className="btn-grey" type="button" onClick={handleUpload}>{t("overlay.upload")}
               </button> */}
 
