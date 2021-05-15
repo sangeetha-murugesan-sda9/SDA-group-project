@@ -166,7 +166,7 @@
 .btn-delete{
   background-color: #b66767a6;
   color: white;
-  
+  cursor: pointer;
   border: 0;
   border-radius: 7px;
 
@@ -174,4 +174,6 @@
 
   box-shadow:  1px 1px 2px grey;
 }
-
+.btn-delete:hover{
+  background-color: #9b2222a6;;
+}

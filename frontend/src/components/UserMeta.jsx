@@ -13,10 +13,12 @@ export default function UserMeta({user}) {
          <p className="user-username">{user.username}</p>
         </a>
 
-          <a href= {"http://www.instagram.com/" + user.instagram} target="blank" >
+        { user.instagram !== "instagram" &&
+        <a href= {"http://www.instagram.com/" + user.instagram} target="blank" >
           <p className="user-instagram">@{user.instagram}</p>
 
            </a>
+        }         
 
         </div>
 
