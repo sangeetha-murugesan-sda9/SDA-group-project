@@ -132,7 +132,7 @@ ApiCalls.updateAvatar(Methods.getRandomAvatarUrl())
             {t("overlay.upload")}
           </button> */}
 
-        <button className="btn-grey" type="button" onClick={updateAvatar}>Click</button>
+        <button className="btn-grey" type="button" onClick={updateAvatar}>Switch Avatar</button>
 
 
 

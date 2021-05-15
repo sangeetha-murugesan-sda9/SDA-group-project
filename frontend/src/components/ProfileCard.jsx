@@ -66,7 +66,7 @@ export default function ProfileCard({ item, userToDisplay }) {
       </p>
 
       </div>
-      <CardDrawer/>
+      <CardDrawer pictureId ={pictureId}/>
 
       {userToDisplay !== currentUserEmail && <VoteComponent />}
     </div>
