@@ -45,18 +45,26 @@ export default function DiscoverPage({users}) {
                 <React.Fragment>
                   {shuffledUsers.filter(function (item) {
                       return item.email !== currentUserEmail;
-                    })
+                    }).filter(function (item){
+                      return item.pictures.length >0
+                         }) 
                     .map((item) => (
-                      <React.Fragment key={item.id}>
+                      <React.Fragment key={item.id}>                       
+
+
                         <Card
                           item={item}
                           score={false}
                           votes={true}
                           meta={true}
                         />
+
+
+
                       </React.Fragment>
                     ))}
                 </React.Fragment>
+
               </div>
             </div>
           </div>

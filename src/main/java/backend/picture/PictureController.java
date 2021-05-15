@@ -105,45 +105,77 @@ public class PictureController {
     }
 
 
-    //add a like to a picture
+
+
+
+
+
+    //add a like to a picture and increment vote for the current user
     @PostMapping("/likes/{pictureId}")
     public ResponseEntity<Picture> addLike(@PathVariable Long pictureId) {
 
         Picture picture  = pictureRepository.findById(pictureId).orElseThrow(ResourceNotFoundException::new); // find the picture
         int count = picture.getLikes() + 1;
         picture.setLikes(count);
+
+        String email = authService.getLoggedInUserEmail(); // get current user email
+        User user = userRepository.findByEmail(email); // find the user by email
+
+        int voteCount = user.getVotes() +1 ;
+        user.setVotes(voteCount);
+
         pictureRepository.save(picture);
+        userRepository.save(user);
+
         return ResponseEntity.ok(picture);
     }
 
-    //add a dislike to a picture
+    //add a dislike to a picture and increment vote for the current user
     @PostMapping("/dislikes/{pictureId}")
     public ResponseEntity<Picture> addDislike(@PathVariable Long pictureId) {
 
         Picture picture  = pictureRepository.findById(pictureId).orElseThrow(ResourceNotFoundException::new); // find the picture
         int count = picture.getDislikes() + 1;
         picture.setDislikes(count);
+
+        String email = authService.getLoggedInUserEmail(); // get current user email
+        User user = userRepository.findByEmail(email); // find the user by email
+
+        int voteCount = user.getVotes() +1 ;
+        user.setVotes(voteCount);
+
+
         pictureRepository.save(picture);
         return ResponseEntity.ok(picture);
     }
 
-/*
-    @GetMapping("/likes/{fileId}")
-    public ResponseEntity<Integer> getLike(@PathVariable Long fileId) {
 
-        FileDB fileDB = fileDBRepository.findById(fileId).orElseThrow(ResourceNotFoundException::new);
-        int count = Integer.parseInt(fileDB.getLikes());
-        return ResponseEntity.ok(count);
+    // update current user Avatar
+    @PutMapping("/avatar-url")
+    public ResponseEntity<User> updateAvatar(@RequestBody String url) {
+
+        String email = authService.getLoggedInUserEmail(); // get current user email
+        User user = userRepository.findByEmail(email); // find the user by email
+
+        user.setAvatar(url); // setting the new URL
+
+        userRepository.save(user);
+
+        return ResponseEntity.ok(user);
+
     }
 
 
-    @GetMapping("/dislikes/{fileId}")
-    public ResponseEntity<Integer> getDisLike(@PathVariable Long fileId) {
 
-        FileDB fileDB = fileDBRepository.findById(fileId).orElseThrow(ResourceNotFoundException::new);
-        int count = Integer.parseInt(fileDB.getDislikes());
-        return ResponseEntity.ok(count);
-    }*/
+    // delete Picture by Id
+
+    @DeleteMapping("/picture/{pictureId}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deletePicture(@PathVariable Long pictureId) {
+        Picture picture = pictureRepository.findById(pictureId).orElseThrow(ResourceNotFoundException::new);;
+        pictureRepository.delete(picture);
+    }
+
 
 
 

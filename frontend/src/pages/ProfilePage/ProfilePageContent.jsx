@@ -15,18 +15,19 @@ export default function ProfilePageContent({ users, userToDisplay }) {
 
   const [t, i18n] = useTranslation("common");
   const currentUserEmail = AuthApi.getCurrentUser();
+  
   const winnerId = Methods.getWinner(users)[0];
+  const userToDisplayId =  Methods.getIdByEmail(users,userToDisplay)
+
+  //console.log(userToDisplay)
+
   const likes = Methods.getTotalLikesByEmail(users, userToDisplay);
   const dislikes = Methods.getTotalDislikesByEmail(users, userToDisplay);
   const username = Methods.getUsernameByEmail(users, userToDisplay);
   const avatar = Methods.getAvatarByEmail(users, userToDisplay);
   const pics = Methods.getPicturesByEmail(users, userToDisplay);
+  const votes = Methods.getVotesByEmail(users, currentUserEmail);
 
-  if (Methods.getEmailById(users, winnerId + 1) === userToDisplay) {
-    console.log("winner");
-  } else {
-    console.log("not winner");
-  }
 
   return (
     <div className="profilepage-content">
@@ -38,13 +39,16 @@ export default function ProfilePageContent({ users, userToDisplay }) {
 
                 
 
-                  {userToDisplay ===
-                    Methods.getEmailById(users, winnerId + 1) && (
+                  {userToDisplayId === winnerId && (
                       <img className="crown img-40" src={king} />
                       )}
+
+
                  <img src={avatar} className="img-profile-100" alt="img" />
               </div>
                       <h2>{username} </h2>
+                      {userToDisplay === currentUserEmail &&
+                      <p>Votes: {votes} </p>}
 
              
 
@@ -61,6 +65,7 @@ export default function ProfilePageContent({ users, userToDisplay }) {
                 {dislikes}
                 <img className="img-30" src={dislike} alt="logo-like" />
               </p>
+              
             </div>
           </div>
         </div>

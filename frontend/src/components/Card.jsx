@@ -6,20 +6,27 @@ import Moment from "react-moment";
 
 export default function Card({ item, score, votes, meta}) {
 
-const randomPictureId = Math.floor(Math.random() * item.pictures.length) 
+ //randomization of the display  and connection to the vote
+const pics = item.pictures.flat()
+
+const randomPictureIndex  = Math.floor(Math.random() * pics.length)
+const randomPicture = pics[randomPictureIndex]
+const randomPictureId = pics[randomPictureIndex].id
 
 
-  return (
+//console.log(item.pictures.length)
 
-
+  return (    
+    
     <div className="card-small">
-      {meta === true && <UserMeta user={item}/>}
+
+    {meta === true && <UserMeta user={item}/>}
 
       <p className="score-timestamp">Posted - <Moment format="DD MMM YYYY">{item.timestamp}</Moment> </p>
 
-      <img className="card-img" src={item.pictures[randomPictureId].url} alt="items"/>
+      <img className="card-img" src={randomPicture.url} alt="items"/>
 
-      {votes === true && <VoteComponent />}
+      {votes === true && <VoteComponent refresh ={false} pictureId ={randomPictureId} />}
 
       {score === true && (
         <div className="card-footer">
@@ -29,6 +36,10 @@ const randomPictureId = Math.floor(Math.random() * item.pictures.length)
           <img src={like} alt="score-logo"/>
         </div>
       )}
+  
+
+
+      
     </div>
   );
 }

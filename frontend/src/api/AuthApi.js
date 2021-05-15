@@ -8,16 +8,18 @@ class AuthApi {
     return Api.post("/authenticate", { email, password });
       }
 
-  register({ name, email, password }) {
+  register({ username, email, password }) {
     sessionStorage.setItem("loggedUser", email);
     sessionStorage.setItem("language", "english");   
-    return Api.post("/register", { name, email, password });
+    return Api.post("/register", { username, email, password });
   }
 
-  getCurrentUser() {
+    getCurrentUser() {
     return sessionStorage.getItem("loggedUser");
   } 
 
+
+  // Languages 
   setLanguageToEng(){
     sessionStorage.setItem("language", "english");  
   }

@@ -10,7 +10,7 @@ import edit from "../assets/img/icons/pen.svg";
 export default function LandingOverlay({ onSubmit, signIn }) {
 
    //constants
-   const [name, setName] = useState("");
+   const [username, setUsername] = useState("");
    const [email, setEmail] = useState("");
    const [password, setPassword] = useState("");
 
@@ -91,12 +91,12 @@ export default function LandingOverlay({ onSubmit, signIn }) {
             <h4 className="card-title">Register</h4>
             <div>
                 <div className="form-group">
-                    <label>Name:</label>
+                    <label>Username:</label>
                     <input
                         type="text"
                         className="form-control"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
                         placeholder="Name"
                     />
                 </div>
@@ -126,7 +126,7 @@ export default function LandingOverlay({ onSubmit, signIn }) {
                 <div className="form-group">
                     <button
                         className="btn-grey"
-                        onClick={(e) => onSubmit({ name, email, password })}
+                        onClick={(e) => onSubmit({username, email, password })}
                     >
                         Create account
                     </button>

@@ -25,6 +25,7 @@ class ApiCalls {
     axios.post("http://localhost:8080/picture-url",url, {
       headers: {
         Authorization: Auth.getAuthorizationHeader(),
+        "Content-Type": "text/plain"
       },
     });
   }
@@ -40,6 +41,7 @@ class ApiCalls {
       },
     });
   }
+
   addDislike(pictureId) {
     return axios.post("http://localhost:8080/dislikes/" + pictureId, "", {
       headers: {
@@ -47,6 +49,7 @@ class ApiCalls {
       },
     });
   }
+
 
 // GET  //
 getCurrentUser() {
@@ -85,6 +88,33 @@ getCurrentUser() {
 
 
 
+  // PUT //
+  updateUsername(string) {
+    return axios.put("http://localhost:8080/current-user", string , {
+      headers: {
+        Authorization: Auth.getAuthorizationHeader(),
+        "Content-Type": "text/plain"
+      },
+    });
+  }
+
+  updateAvatar(string) {
+    return axios.put("http://localhost:8080/avatar-url", string , {
+      headers: {
+        Authorization: Auth.getAuthorizationHeader(),
+        "Content-Type": "text/plain"
+      },
+    });
+  }
+
+// DELETE //
+deletePictureById(pictureId) {
+  return axios.delete("http://localhost:8080/picture/" + pictureId,  {
+    headers: {
+      Authorization: Auth.getAuthorizationHeader()      
+    },
+  });
+}
 
 
 

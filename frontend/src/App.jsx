@@ -20,18 +20,19 @@ import TestPage from "./pages/TestPage/TestPage";
 import TestMethods from "./services/TestMethods";
 import HeaderBackground from "./components/HeaderBackground";
 import ToggleLanguage from "./components/ToggleLanguage";
+import ApiCalls from "./api/ApiCalls";
 
 
 export default function App() {
     // State
     const [loggedIn, setLoggedIn] = useState(Auth.isLoggedIn());
     const [status, setStatus] = useState(0); // 0 = loading data, 1 = data loaded, 2 = error;
-    const [xusers, setXusers] = useState([]);
+    const [users, setUsers] = useState([]);
    
     const MOCKUP_URL = "https://api.jsonbin.io/b/609a7407e0aabd6e191b79d7/1"
     const url = MOCKUP_URL
     const json_mockup = require('./api/api_users.json')
-    const users = json_mockup
+    const musers = json_mockup
 
     // Constants
     Auth.bindLoggedInStateSetter(setLoggedIn);
@@ -45,19 +46,16 @@ export default function App() {
 
   //Fetching data
      useEffect(() => {
+    ApiCalls.getAllUsers()
+    .then(response => onFetchSuccess(response.data))
+    .catch((error) => onFetchFail(error));   
 
-      axios.get(url, {
-        headers: {
-          "secret-key": "$2b$10$1FTntP8VlEu/VMahO9bDIOwOkDJl76xIEMRL1m5UqOUGR00Ic5Ez.",
-        },
-      }).then(response => onFetchSuccess(response.data))
-      .catch((error) => onFetchFail(error));   
-
-    }, [setXusers, setStatus]);
+    }, [setUsers, setStatus]);
   
     
+
     function onFetchSuccess(res) {      
-      setXusers(res);
+      setUsers(res);
       setStatus(1);
     }
   
@@ -80,6 +78,8 @@ export default function App() {
           {status === 0 && <p className="loader" ></p>}
           {status === 2 && <p className="error" >Please check your connection</p>}
           {status === 1 && 
+
+          
       
 <div>
           <Switch>

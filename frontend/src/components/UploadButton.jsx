@@ -64,8 +64,9 @@ const votesNeeded = Math.floor(( 10 - (numberOfvotes / numberOfPicturesOwned) +1
  function addPic() {
 
      ApiCalls.addPictureToCurrentUser(Methods.getRandompictureUrl());
-     alert("picture send to db")
+     alert("Picture succesfully send 🙌")
      closeOverlay()
+     window.location.reload();
    }
 
 
@@ -73,7 +74,7 @@ const votesNeeded = Math.floor(( 10 - (numberOfvotes / numberOfPicturesOwned) +1
 
 
   // Handle the upload to dB //
-  function handleUpload() {
+  /* function handleUpload() {
 
     const formdata = new FormData()
     formdata.append('file',file);
@@ -91,8 +92,9 @@ const votesNeeded = Math.floor(( 10 - (numberOfvotes / numberOfPicturesOwned) +1
       }
     );
     closeOverlay();
+    
   }
-
+ */
 
 
   return (
@@ -109,7 +111,7 @@ const votesNeeded = Math.floor(( 10 - (numberOfvotes / numberOfPicturesOwned) +1
       <Overlay configs={configs} isOpen={isOpen} closeOverlay={closeOverlay}>
         
         {canUpload === true ? (
-          <div>
+          <div className="overlay-form" >
             <h2>{t("overlay.label-upload")}</h2>
             <div className="upload-box">
               {/* <input type="file" onChange={handleFile} /> */}
@@ -119,7 +121,7 @@ const votesNeeded = Math.floor(( 10 - (numberOfvotes / numberOfPicturesOwned) +1
               {/* <button className="btn-grey" type="button" onClick={handleUpload}>{t("overlay.upload")}
               </button> */}
 
-              <button className="btn-grey" type="button" onClick={addPic}>upload random pic</button>
+              <button className="btn-grey" type="button" onClick={addPic}>Click</button>
                 
             </div>
           </div>

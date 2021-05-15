@@ -25,6 +25,7 @@ export default function LoginPage() {
     if (!registerSuccess) {
       alert("Couldn't register check credentials and try again");
     }
+    
   }
   return (
     <div className="wrapper">
