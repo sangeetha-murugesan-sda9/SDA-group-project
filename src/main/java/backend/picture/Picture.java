@@ -1,6 +1,7 @@
 
 package backend.picture;
 
+import backend.comment.Comment;
 import backend.user.User;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIdentityReference;
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Value;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.List;
 
 
 @Entity
@@ -41,6 +43,9 @@ public class Picture {
     @JoinColumn(nullable = false)
     private User owner;
 
+    @OneToMany(mappedBy = "picture", cascade = CascadeType.ALL)
+    List<Comment> comments;
+
     //constructor
     public Picture() {
 
@@ -51,8 +56,8 @@ public class Picture {
         this.likes = 0;
         this.dislikes = 0;
     }
-//getters and setters
 
+//getters and setters
 
     public long getId() {
         return id;
@@ -100,5 +105,13 @@ public class Picture {
 
     public void setOwner(User owner) {
         this.owner = owner;
+    }
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
     }
 }
