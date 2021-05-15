@@ -7,6 +7,7 @@ import NavBar from "../../components/Navbar";
 import UserMeta from "../../components/UserMeta";
 import VoteComponent from "../../components/VoteComponent";
 import Auth from "../../services/Auth";
+import AuthApi from "../../api/AuthApi";
 import SlidingMenu from "../../components/SlidingMenu";
 import Methods from "../../services/Methods";
 
@@ -18,8 +19,17 @@ export default function VotingPage({users}) {
   //translation
   const [t, i18n] = useTranslation("common");
 
+  const currentUserEmail = AuthApi.getCurrentUser();
+ 
+
+//not returning current user pics
+const otherUsers = users.filter(
+  i => {return i.email !== currentUserEmail})
+console.log(otherUsers)
+
   //randomization of the display
-  const allPics = users.map((i) => i.pictures).flat();
+  const allPics = otherUsers
+    .map((i) => i.pictures).flat();
 
   // select only recent pics
   const pics = allPics.filter((i) => {
@@ -30,7 +40,7 @@ export default function VotingPage({users}) {
     return isVotable;
   });
 
-  console.log(pics);
+  console.log(users);
 
   const picsIds = pics.map((i) => i.id);
   const randomPictureIndex = Math.floor(Math.random() * picsIds.length);
