@@ -20,7 +20,7 @@ class ApiCalls {
 
 //const picture = "https://photos.lci.fr/images/613/344/moundirw9-814829-0@1x.jpeg"
 
-    axios.post("http://localhost:8080/picture-url",url, {
+return  axios.post("http://localhost:8080/picture-url",url, {
       headers: {
         Authorization: Auth.getAuthorizationHeader(),
         "Content-Type": "text/plain"
@@ -49,7 +49,7 @@ class ApiCalls {
    // add a comment to picture by pictureId
     addComment(pictureId, body ) {
       var url = "http://localhost:8080/picture/"+ pictureId +"/comment"
-    axios.post(url, body, {
+      return axios.post(url, body, {
       headers: {
         Authorization: Auth.getAuthorizationHeader(),
         "Content-Type": "text/plain"
@@ -102,7 +102,7 @@ getCurrentUser() {
     // get all comments by pictureId
     getCommentsById(pictureId) {
 
-      axios.get("http://localhost:8080/picture/14/comments", {
+      return axios.get("http://localhost:8080/comments/" + pictureId , {
         headers: {
           Authorization: Auth.getAuthorizationHeader(),
           
@@ -147,7 +147,7 @@ deletePictureById(pictureId) {
 
  deleteComment(commentId) {
 
-  axios.delete("http://localhost:8080/comments/" + commentId, {
+  return axios.delete("http://localhost:8080/comments/" + commentId, {
     headers: {
       Authorization: Auth.getAuthorizationHeader()      
     },

@@ -16,6 +16,7 @@ a{
     color: inherit;
     font-style: unset;
     text-decoration: unset;
+    cursor: pointer;
 }
 
 ul{

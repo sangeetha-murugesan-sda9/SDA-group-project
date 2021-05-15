@@ -55,13 +55,13 @@ import java.util.List;
 
 
         //get comments of a picture by Id
-        @GetMapping("/picture/{pictureId}/comments")
+        @GetMapping("/comments/{pictureId}")
         public ResponseEntity<List<Comment>> getCommentsByPictureId(@PathVariable Long pictureId) {
 
             Picture picture  = pictureRepository.findById(pictureId).orElseThrow(ResourceNotFoundException::new); // find the picture
             List<Comment> comments = picture.getComments(); // get the list of comments
 
-            return ResponseEntity.ok(comments );
+            return ResponseEntity.ok(comments);
         }
 
 
