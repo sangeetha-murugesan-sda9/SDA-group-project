@@ -1,26 +1,26 @@
 // NPM Packages
 import React, { useState,useEffect } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route ,Redirect} from "react-router-dom";
 import axios from "axios";
 
 // Project files
 import Auth from "./services/Auth";
 import AuthPage from "./pages/auth/AuthPage";
-import "./styles/App.css";
-import LoginPage from "./pages/auth/AuthPage";
+import "./styles/base.css";
 import DiscoverPage from "./pages/DiscoverPage/DiscoverPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import WinnerPage from "./pages/WinnerPage/WinnerPage";
 import VotingPage from "./pages/VotingPage/VotingPage";
 import Footer from "./components/Footer";
 import UploadButton from "./components/UploadButton"
-
-//Test page
-import TestPage from "./pages/TestPage/TestPage";
-import TestMethods from "./services/TestMethods";
 import HeaderBackground from "./components/HeaderBackground";
 import ToggleLanguage from "./components/ToggleLanguage";
 import ApiCalls from "./api/ApiCalls";
+
+//Test pages
+import TestPage from "./pages/TestPage/TestPage";
+import TestMethods from "./services/TestMethods";
+
 
 
 export default function App() {
@@ -62,6 +62,7 @@ export default function App() {
     function onFetchFail(error) {
       console.log("Error", error);
       setStatus(2);
+      //window.location.reload()
     }
   
   //console.log("users",users,status)
@@ -77,16 +78,11 @@ export default function App() {
           <ToggleLanguage />
           {status === 0 && <p className="loader" ></p>}
           {status === 2 && <p className="error" >Please check your connection</p>}
-          {status === 1 && 
-
-          
+          {status === 1 &&         
       
 <div>
           <Switch>
-            <Route path="/login">
-              <LoginPage />
-            </Route>
-
+            
             <Route path="/profile/:userEmail"  component=  {(props) => 
               (<ProfilePage users={users} userToDisplay={props.match.params.userEmail} />)} /> {/* ok */}
 
@@ -99,8 +95,14 @@ export default function App() {
             </Route>
 
             <Route exact path="/">
-              <WinnerPage users = {users} /> {/* ok */}
+            {loggedIn ? <Redirect to="/winner" /> : <AuthPage />}              
             </Route>
+
+            <Route path="/">
+            <WinnerPage users = {users} /> {/* ok */}
+            </Route>
+
+
 
             {/* TESTING ROUTES */}
 

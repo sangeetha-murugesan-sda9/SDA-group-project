@@ -36,32 +36,53 @@ h2{
     margin: 5px 8px;
     font-size: var(--font-S);
    
-}
-
-.title-wrapper{
-    /* background: linear-gradient(to right bottom, #ffffffa2, #bebebe52); */
-  
-    display: flex;  
-    flex-direction: column;
-    justify-content: center;
-
-    border-radius: 15px;
-
-    margin: 0 12px;
-    
 
 }
 
 .page-title{
     
-    text-align: center;    
-    padding: 15px;
-    /* background: linear-gradient(to right bottom, #ffffffa2, #ffd04e52); */
-   width: 100%;
+    width: fit-content ;
+   
+    text-align: left;    
+    padding: 8px 20px;
+    background: #f1f1f1;
+    
+    border-radius:15px 15px 0 0;
+    box-shadow: 2px 2px 2px rgb(199, 199, 199);  
+    /* z-index: 15; */
    
     
 }
 
+/* background of the card container */ 
+.title-wrapper{
+
+    /* max-width: 100%; */
+    
+    background: #f1f1f1;
+    display: flex;  
+
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 22px 15px;
+    margin-bottom: 70px;
+   
+
+    border-radius:0 15px 15px 15px;
+    box-shadow: 2px 2px 2px rgb(199, 199, 199);  
+  
+
+}
+
+/** media queries tablets  */
+@media screen and (min-width: 800px) {
+}
+
+/** media queries laptops  */
+@media screen and (min-width: 1200px) {   
+
+}
 
 h3{
 

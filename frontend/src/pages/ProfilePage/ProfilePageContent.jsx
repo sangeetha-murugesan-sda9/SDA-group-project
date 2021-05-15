@@ -69,11 +69,12 @@ export default function ProfilePageContent({ users, userToDisplay }) {
             </div>
           </div>
         </div>
-
-        <div className="title-wrapper">
           <div className="page-title">
             <h2>{t("profile.title")} ...</h2>
           </div>
+
+        <div className="title-wrapper">
+          
           
 
           <div className="card-small-container">

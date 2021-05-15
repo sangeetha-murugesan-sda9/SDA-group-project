@@ -1,5 +1,6 @@
 // NPM Packages
-import React from "react";
+import {React} from "react";
+import { BrowserRouter, Switch, Route, useHistory } from "react-router-dom";
 
 // Project files
 import "../../styles/base.css";
@@ -10,14 +11,16 @@ import LandingOverlay from "../../components/LandingOverlay";
 
 export default function LoginPage() {
   //constants
+  //let history = useHistory();
 
   // Methods
   async function login(loginData) {
     const loginSuccess = await Auth.login(loginData);
-
+    
     if (!loginSuccess) {
       alert("Invalid credentials");
     }
+    
   }
 
   async function register(registrationData) {
