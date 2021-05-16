@@ -38,7 +38,7 @@ export default function  UploadWidget() {
 
 <div>
 
-<button type="button" className="btn widget-btn" onClick={openWidget}>Upload Via Widget</button>
+<button type="button" className="btn-grey" onClick={openWidget}>Upload Via Widget</button>
 
 </div>
 
