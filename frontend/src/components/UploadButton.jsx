@@ -7,6 +7,7 @@ import Overlay from "react-overlay-component";
 import Methods from '../services/Methods'
 import AuthApi from "../api/AuthApi";
 import ApiCalls from "../api/ApiCalls";
+import UploadWidget from "../components/UploadWidget"
 
 
 
@@ -120,8 +121,8 @@ function addPic() {
               {/* <button className="btn-grey" type="button" onClick={handleUpload}>{t("overlay.upload")}
               </button> */}
 
-              <button className="btn-grey" type="button" onClick={addPic}>Click</button>
-                
+              <button className="btn-grey" type="button" onClick={addPic}>Add Random Picture</button>
+                <UploadWidget/>
             </div>
           </div>
 
