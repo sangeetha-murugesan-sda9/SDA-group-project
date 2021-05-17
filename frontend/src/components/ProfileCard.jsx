@@ -18,12 +18,12 @@ export default function ProfileCard({ item, userToDisplay }) {
 
 
 
-  function onDeleteClick(){
+  async function onDeleteClick(){
     //alert("picture deleted")
 
     if (window.confirm('Are you sure you want delete that picture ?')) {
       // Delete it!
-      ApiCalls.deletePictureById(pictureId)  
+      await ApiCalls.deletePictureById(pictureId)  
       alert("picture deleted")  
       window.location.reload()
 
