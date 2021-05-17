@@ -126,11 +126,7 @@ const picsIds = pics.map((i) => i.id);
 
           <div className="wrapper-img-square">
             <img id="main-img" src={randomPicture[0].url} alt="main-logo" />
-
-            {/*  for testing, retrieve a random id and picture id of that user
-              <p> userId :{randomUser.id}</p>
-              <p> pictureId :{randomUser.pictures[Math.floor(Math.random() * randomUser.pictures.length)].id}</p> */}
-          
+                      
           </div>
 
           <div className="score-timestamp">

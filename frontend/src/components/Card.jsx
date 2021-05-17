@@ -1,4 +1,5 @@
 // NPM packages
+import React from "react"
 import VoteComponent from "./VoteComponent";
 import like from "../assets/img/logo/flame.png";
 import UserMeta from "./UserMeta";
@@ -13,6 +14,8 @@ const pics = item.pictures.flat()
 const randomPictureIndex  = Math.floor(Math.random() * pics.length)
 const randomPicture = pics[randomPictureIndex]
 const randomPictureId = pics[randomPictureIndex].id
+
+
 
 
 //console.log(item.pictures.length)

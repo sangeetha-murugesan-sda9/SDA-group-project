@@ -31,7 +31,7 @@ export default function VoteComponent({hide, refresh, pictureId }) {
   }
 
   return (
-    <div>
+    <div className="v-container" >
       {visibility === 0 ? (
 
         <div className="vote-container">

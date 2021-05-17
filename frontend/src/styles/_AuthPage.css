@@ -39,15 +39,29 @@
     position: absolute;
     left:0;
     width: 100%;
-
-    bottom: 27%;
-
+    bottom: 18%;
     width: 100vw;
-
     display: flex;
     justify-content: center; 
-     
+    
 }
+/** media queries tablets  */
+@media screen and (min-width: 800px) {
+    .auth-buttons-container{
+        bottom: 27%;
+
+    }
+
+
+}
+
+/** media queries laptops  */
+@media screen and (min-width: 1200px) {
+ 
+
+}
+
+
 
 .auth-buttons-wrapper{
        width:max-content;

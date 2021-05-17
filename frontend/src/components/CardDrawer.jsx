@@ -5,11 +5,15 @@ import ApiCalls from "../api/ApiCalls";
 import AuthApi from "../api/AuthApi";
 
 export default function CardDrawer({ pictureId }) {
+
+  
  
   const currentUserEmail = AuthApi.getCurrentUser();
 
   const [open, setOpen] = useState(false);
   const [comments, setComments] = useState([]);
+  const [refresh,setRefresh]= useState(false);
+
   const [status, setStatus] = useState(1); // 0 = loading data, 1 = data loaded, 2 = error;
   const [comment, setComment] = useState("");
 
@@ -23,13 +27,16 @@ export default function CardDrawer({ pictureId }) {
     }
   };
 
+  //const [, updateState] = React.useState();
+  //const forceUpdate = React.useCallback(() => updateState({}), []);
+  
   //Fetching data
 
   useEffect(() => {
     ApiCalls.getCommentsById(pictureId)
       .then((response) => onFetchSuccess(response.data))
       .catch((error) => onFetchFail(error));
-  }, [setComment]);
+  }, [refresh]);
 
   function onFetchSuccess(res) {
     setComments(res);
@@ -43,13 +50,16 @@ export default function CardDrawer({ pictureId }) {
 
   async function addComment(pictureId, commentBody) {
     await ApiCalls.addComment(pictureId, commentBody);
+    setRefresh(!refresh)   
+    
   }
 
   async function deleteComment(commentId) {
     await ApiCalls.deleteComment(commentId);
+   setRefresh(!refresh)
   }
   
-  console.log( comments)
+  //console.log( comments)
 
   return (
     <div
