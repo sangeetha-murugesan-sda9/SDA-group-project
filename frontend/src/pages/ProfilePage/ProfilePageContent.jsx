@@ -85,7 +85,7 @@ export default function ProfilePageContent({ users, userToDisplay }) {
             <React.Fragment>
               {pics[0].map((item) => (
                 <React.Fragment key={item.id}>
-                  <ProfileCard item={item} userToDisplay={userToDisplay} />
+                  <ProfileCard item={item} userToDisplay={userToDisplay} users={users}/>
                 </React.Fragment>
               ))}
             </React.Fragment>

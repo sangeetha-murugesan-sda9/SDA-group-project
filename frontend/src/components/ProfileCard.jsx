@@ -8,7 +8,7 @@ import ApiCalls from "../api/ApiCalls";
 import CardDrawer from "./CardDrawer";
 
 
-export default function ProfileCard({ item, userToDisplay }) {
+export default function ProfileCard({ users,item, userToDisplay }) {
 
   const currentUserEmail = AuthApi.getCurrentUser();
   const pictureId = item.id
@@ -66,7 +66,7 @@ export default function ProfileCard({ item, userToDisplay }) {
       </p>
 
       </div>
-      <CardDrawer pictureId ={pictureId} />
+      <CardDrawer pictureId ={pictureId} users={users}/>
 
       {userToDisplay !== currentUserEmail && <VoteComponent hide ={true} refresh={false} pictureId ={pictureId}/>}
     </div>
