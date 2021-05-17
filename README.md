@@ -171,24 +171,27 @@ The User can view CurrentKing by clicking ChessKing icon and View his/her own pr
 The User can also logout by clicking the SignOut icon in footer.
 
 ## List of FrontEnd Components
-1.Card
-2.CardDrawer
-3.Comments
-4.CountDownComponent
-5.EditProfileButton
-6.Footer
-7.HeaderBackground
-8.LandingOverlay
-9.Navbar
-10.Popup
-11.ProfileCard
-12.SlidingMenu
-13.ToggleLanguage
-14.UploadButton
-15.UploadForm
-16.UploadWidget
-17.UserMeta
-18.VoteComponent
+
+| FrontEnd Components |
+| ------------|
+| `1.Card`    | 
+| `2.CardDrawer`    | 
+| `3.Comments`    | 
+| `4.CountDownComponent`    | 
+| `5.EditProfileButton`    | 
+| `6.Footer`    | 
+| `7.HeaderBackground`    | 
+| `8.LandingOverlay`    | 
+| `9.Navbar`    | 
+| `10.Popup`    | 
+| `11.ProfileCard`    | 
+| `12.SlidingMenu`    | 
+| `13.ToggleLanguage`    | 
+| `14.UploadButton`    | 
+| `15.UploadForm`    | 
+| `16.UploadWidget`    | 
+| `17.UserMeta`    | 
+| `18.VoteComponent`    | 
 
 ### Auth API EndPoints
 The User's are able to create new account ,Sign In new account.
