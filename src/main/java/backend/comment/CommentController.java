@@ -85,8 +85,8 @@ import java.util.List;
 /*
         //update a comment to a specific comment by his ID
         @PutMapping("/comments/{commentId}")
-        public ResponseEntity<Comment> updateComment(@PathVariable Long commentId, @RequestBody Comment updatedComment) {
-            Comment comment = commentService.updateComment(commentId, updatedComment);
+        public ResponseEntity<VotedPicture> updateComment(@PathVariable Long commentId, @RequestBody VotedPicture updatedComment) {
+            VotedPicture comment = commentService.updateComment(commentId, updatedComment);
             return ResponseEntity.ok(comment);
         }
 

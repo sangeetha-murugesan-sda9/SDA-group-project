@@ -8,20 +8,13 @@ export default function VoteComponent({hide, refresh, pictureId }) {
   
   const [visibility, setVisibility] = useState(0);
 
-  function handleLike() {
-    ApiCalls.addLike(pictureId);
-
-    if(refresh){
-      window.location.reload()
-    }
-    if(hide){
-      setVisibility(1);
-    }
+   
+  async function handleLike() {
     
-  }
-
-  function handleDislike() {
-    ApiCalls.addDislike(pictureId);
+     await Promise.all([
+      ApiCalls.addLike(pictureId), 
+      ApiCalls.addVotedPictureToCurrentUser(pictureId)
+    ])
     if(refresh){
       window.location.reload()
     }
@@ -29,6 +22,26 @@ export default function VoteComponent({hide, refresh, pictureId }) {
       setVisibility(1);
     }
   }
+
+  async function handleDislike() {
+    
+    await Promise.all([
+     ApiCalls.addDislike(pictureId), 
+     ApiCalls.addVotedPictureToCurrentUser(pictureId)
+   ])
+   if(refresh){
+     window.location.reload()
+   }
+   if(hide){
+     setVisibility(1);
+   }
+ }
+  
+
+
+
+
+
 
   return (
     <div className="v-container" >

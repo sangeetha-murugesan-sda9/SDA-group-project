@@ -6,6 +6,18 @@ class ApiCalls {
 
 // POST ENDPOINTS //
 
+addVotedPictureToCurrentUser(pictureId) {
+  return axios.post("http://localhost:8080/voted/" + pictureId, "", {
+    headers: {
+      Authorization: Auth.getAuthorizationHeader(),
+    },
+  });
+}
+
+
+
+
+
   // upload a picture to dB - works
   uploadPicture(item) {
     axios.post("http://localhost:8080/upload", item, {
@@ -110,6 +122,15 @@ getCurrentUser() {
       });
     }
 
+      // get all voted pictures of the current user
+      getVotedPictures() {
+
+        return axios.get("http://localhost:8080/voted", {
+          headers: {
+            Authorization: Auth.getAuthorizationHeader(),            
+          },
+        });
+      }
 
 
   // PUT ENDPOINTS //

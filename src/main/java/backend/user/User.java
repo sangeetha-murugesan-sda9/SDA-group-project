@@ -1,7 +1,7 @@
 package backend.user;
 
-import backend.file.FileDB;
 import backend.picture.Picture;
+import backend.votedPicture.VotedPicture;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
@@ -40,11 +40,14 @@ public class User {
     @Column(name = "avatar")
     private String avatar;
 
- /*   @OneToOne(mappedBy = "fileOwner",targetEntity= FileDB.class)
-    private FileDB fileDB;*/
 
     @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
     List<Picture> pictures;
+
+
+    @OneToMany(mappedBy = "voter", cascade = CascadeType.ALL)
+    List<VotedPicture> votedPictures;
+
 
     // Hibernate needs a default constructor to function
     public User() {}
@@ -120,5 +123,13 @@ public class User {
 
     public void setAvatar(String avatar) {
         this.avatar = avatar;
+    }
+
+    public List<VotedPicture> getVotedPictures() {
+        return votedPictures;
+    }
+
+    public void setVotedPictures(List<VotedPicture> votedPictures) {
+        this.votedPictures = votedPictures;
     }
 }
