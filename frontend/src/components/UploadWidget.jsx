@@ -10,7 +10,7 @@ export default function  UploadWidget({avatar}) {
 
  const [url, setUrl] = useState("url")
 
- console.log(avatar)
+ //console.log(avatar)
 
  function openWidget(){
 

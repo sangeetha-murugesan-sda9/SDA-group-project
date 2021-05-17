@@ -1,64 +1,67 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import ApiCalls from "../api/ApiCalls";
 import like from "../assets/img/logo/flame.png";
 import dislike from "../assets/img/logo/oops.png";
 
-export default function VoteComponent({refresh, pictureId}) {
-
-//console.log(pictureId)
-
-function handleLike(){
-
-
-// todo - increment likes  
-
-  // get the picture id 
-  ApiCalls.addLike(pictureId);
-
-// todo - increment votes
-console.log("liked")
-if(refresh === true){
-  window.location.reload();
-}
+export default function VoteComponent({hide, refresh, pictureId }) {
   
-}
+  const [visibility, setVisibility] = useState(0);
 
-function handleDislike(){
-  // todo - increment dislikes  
+  function handleLike() {
+    ApiCalls.addLike(pictureId);
 
-   // get the picture id   
-   ApiCalls.addDislike(pictureId);
-
-  // todo - increment votes
-  console.log("disliked")
-  if(refresh === true){
-    window.location.reload();
+    if(refresh){
+      window.location.reload()
+    }
+    if(hide){
+      setVisibility(1);
+    }
+    
   }
+
+  function handleDislike() {
+    ApiCalls.addDislike(pictureId);
+    if(refresh){
+      window.location.reload()
+    }
+    if(hide){
+      setVisibility(1);
+    }
   }
-
-
 
   return (
-    <div className="vote-container">
-      
-      <div className="vote-container-item" >
+    <div>
+      {visibility === 0 ? (
 
-      <button className="btn glow-orange" onClick ={handleLike} >
-                  <img src={like} alt="logo-like"/>
-                </button>
+        <div className="vote-container">
 
-        <p>Fire</p>
-      </div>
+          <div className="vote-container-item">
+            <button className="btn glow-orange" onClick={handleLike}>
+              <img src={like} alt="logo-like" />
+            </button>
 
-      <div id="vote-separator"></div>
-        
-      <div className="vote-container-item" >
+            <p>Fire</p>
+          </div>
 
-       <button className="btn glow-black"  onClick ={handleDislike} >
-                  <img src={dislike} alt="logo-dislike"/>
-                </button>
-        <p>Naaah</p>
-      </div>
+          <div id="vote-separator"></div>
+
+          <div className="vote-container-item">
+            <button className="btn glow-black" onClick={handleDislike}>
+              <img src={dislike} alt="logo-dislike" />
+            </button>
+            <p>Naaah</p>
+          </div>
+          
+        </div>
+
+      ) : (
+        <div className="vote-container">
+        <h5>Vote send</h5>
+        </div>
+
+
+      )}
     </div>
   );
 }

@@ -29,7 +29,7 @@ const randomPictureId = pics[randomPictureIndex].id
     
       <CardDrawer pictureId ={randomPictureId}/>
 
-      {votes === true && <VoteComponent refresh ={false} pictureId ={randomPictureId} />}
+      {votes === true && <VoteComponent hide ={true} refresh ={false} pictureId ={randomPictureId} />}
       
 
       {score === true && (

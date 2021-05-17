@@ -137,7 +137,7 @@ const picsIds = pics.map((i) => i.id);
             Posted - <Moment fromNow>{randomPicture[0].timestamp}</Moment>
           </div>
           <div className="under-img-container">
-            <VoteComponent refresh={true} pictureId={randomPicture[0].id} />
+            <VoteComponent hide={false} refresh={true} pictureId={randomPicture[0].id} />
           </div>
         </div>
 

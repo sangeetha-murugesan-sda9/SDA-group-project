@@ -39,6 +39,11 @@ h2{
    
 
 }
+h5{
+    color:rgb(145, 202, 159);
+    font-size:var(--font-S);
+    font-style: var(--font-classy);
+}
 
 .page-title{
 
@@ -69,7 +74,7 @@ h2{
     justify-content: center;
 
     padding: 22px 15px;
-    margin-bottom: 70px;
+    margin-bottom: 80px;
    
 
     border-radius:0 15px 15px 15px;

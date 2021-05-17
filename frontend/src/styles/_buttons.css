@@ -109,7 +109,7 @@
 
   position: fixed;
   cursor: pointer;
-  bottom:9px ;
+  bottom: 8px ;
   left: 50%;
   transform: translateX(-50%);
   
@@ -120,8 +120,8 @@
   border: 10px solid #dedede;
   font-size: 25px; 
 
-  width: 70px;
-  height: 70px;
+  width: 65px;
+  height: 65px;
     
   background-color:rgb(103, 180, 133);
   color: white;

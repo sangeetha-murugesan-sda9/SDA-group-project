@@ -89,13 +89,15 @@
 
 .empty {
 
-  width: 50vw;
+ margin: auto;
+ width: 84vw;
 
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  align-items: center;
 
-  padding: 15px;
+  padding: 210px 0px;
  
 }
 
