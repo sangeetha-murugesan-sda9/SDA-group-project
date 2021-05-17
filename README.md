@@ -24,6 +24,7 @@ Getting started is simple. The User have to register and login.
 5.You can like other users’ photos by tapping the FIRE icon and dislike
 the styles by tapping NAAAH icon.
 6.You can vote other users’ styles by tapping the FIRE icon.
+7.You can comment other users’ styles.
 That’s it, you’re all set to start posting some great images and ready for Style
 competition.
 
@@ -168,6 +169,26 @@ The User can view the total Likes and DisLikes as OverAllScore in ProfilePage.
 The User can also upload pictures by clicking (+) icon in the footer and contact the InStyle by clicking Envelope icon.
 The User can view CurrentKing by clicking ChessKing icon and View his/her own profile by clicking the User icon.
 The User can also logout by clicking the SignOut icon in footer.
+
+## List of FrontEnd Components
+1.Card
+2.CardDrawer
+3.Comments
+4.CountDownComponent
+5.EditProfileButton
+6.Footer
+7.HeaderBackground
+8.LandingOverlay
+9.Navbar
+10.Popup
+11.ProfileCard
+12.SlidingMenu
+13.ToggleLanguage
+14.UploadButton
+15.UploadForm
+16.UploadWidget
+17.UserMeta
+18.VoteComponent
 
 ### Auth API EndPoints
 The User's are able to create new account ,Sign In new account.
