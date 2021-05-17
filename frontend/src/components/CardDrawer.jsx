@@ -29,7 +29,7 @@ export default function CardDrawer({ pictureId }) {
     ApiCalls.getCommentsById(pictureId)
       .then((response) => onFetchSuccess(response.data))
       .catch((error) => onFetchFail(error));
-  }, [addComment]);
+  }, [setComment]);
 
   function onFetchSuccess(res) {
     setComments(res);
@@ -49,7 +49,7 @@ export default function CardDrawer({ pictureId }) {
     await ApiCalls.deleteComment(commentId);
   }
   
-  console.log(currentUserEmail , comments)
+  console.log( comments)
 
   return (
     <div
@@ -80,7 +80,7 @@ export default function CardDrawer({ pictureId }) {
                       <h3>{item.ownerEmail}</h3>
                       <div className="comment-sub-bloc">
                       <p> {item.body} </p>
-                      
+                      {item.ownerEmail === currentUserEmail &&
                       <button
                         className="btn-delete"
                         onClick={() => {
@@ -89,6 +89,8 @@ export default function CardDrawer({ pictureId }) {
                       >
                         Delete
                       </button>
+}
+
                       
                       </div>
                     </div>
