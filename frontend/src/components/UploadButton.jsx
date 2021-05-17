@@ -44,8 +44,7 @@ const votesNeeded = Math.floor(( 10 - (numberOfvotes / numberOfPicturesOwned) +1
   
 
   // State to store uploaded file
-  
-  const [file, setFile] = useState();  
+    const [file, setFile] = useState();  
   const configs = {
     animate: true,
     // clickDismiss: false,
@@ -65,9 +64,9 @@ const votesNeeded = Math.floor(( 10 - (numberOfvotes / numberOfPicturesOwned) +1
  const randomPicUrl = Methods.getRandompictureUrl()
 //console.log(randomPicUrl)
 
-function addPic() {
+async function addPic() {
 
-     ApiCalls.addPictureToCurrentUser(randomPicUrl);
+     await ApiCalls.addPictureToCurrentUser(randomPicUrl);
      alert("Picture succesfully send 🙌")
      closeOverlay()
      window.location.reload();
@@ -122,7 +121,9 @@ function addPic() {
               </button> */}
 
               <button className="btn-grey" type="button" onClick={addPic}>Add Random Picture</button>
-                <UploadWidget/>
+              
+              <UploadWidget/>
+              
             </div>
           </div>
 
