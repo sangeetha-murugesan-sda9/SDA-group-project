@@ -182,3 +182,19 @@
 .btn-delete:hover{
   background-color: #9b2222a6;;
 }
+
+.btn-comment{
+  background-color: #3b43b1a6;
+  color: white;
+  cursor: pointer;
+  border: 0;
+  border-radius: 7px;
+
+  height: 30px; 
+
+  box-shadow:  1px 1px 2px grey;
+}
+.btn-comment:hover{
+  background-color: #485fc4a6;;
+}
+

@@ -69,3 +69,22 @@ font-size: 15px;
 div.expand {
   height: max-content;
 }
+
+
+.comment-form-group{
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin: 7px ;
+  
+
+}
+
+.comment-form-group input{
+
+ width: 100%;
+padding:8px 0 8px 5px ;
+}
+.comment-textarea{
+  box-shadow: inset 1px 1px 4px  rgba(128, 128, 128, 0.384);
+}

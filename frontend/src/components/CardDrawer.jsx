@@ -9,6 +9,7 @@ export default function CardDrawer({ pictureId }) {
   const [open, setOpen] = useState(false);
   const [comments, setComments] = useState([]);
   const [status, setStatus] = useState(1); // 0 = loading data, 1 = data loaded, 2 = error;
+  const [comment, setComment] = useState("");
 
   const nbOfComments = comments.length;
 
@@ -89,8 +90,24 @@ async function addComment(pictureId,commentBody){
 
           </div>
         )}
-  <button onClick ={() => {addComment(pictureId,"super")}
-          }>Comment</button>
+ 
+
+ <div className="comment-form-group">
+
+<input
+              type="text"
+              placeholder="your opinion here"
+              className="comment-textarea"
+              onChange={(e) => setComment(e.target.value)}
+              value={comment}
+            />
+
+            <button className="btn-comment" 
+            onClick={() => {addComment(pictureId,comment)}} 
+            >
+            Comment
+            </button>
+            </div>
         
       </div>
     </div>
