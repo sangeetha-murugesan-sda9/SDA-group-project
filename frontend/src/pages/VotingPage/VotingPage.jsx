@@ -25,7 +25,7 @@ export default function VotingPage({users}) {
 //not returning current user pics
 const otherUsers = users.filter(
   i => {return i.email !== currentUserEmail})
-console.log(otherUsers)
+//console.log(otherUsers)
 
   //randomization of the display
   const allPics = otherUsers
@@ -40,14 +40,54 @@ console.log(otherUsers)
     return isVotable;
   });
 
-  console.log(users);
+  console.log(pics.length);
 
-  const picsIds = pics.map((i) => i.id);
+
+ //handle the no picture to be displayed
+ if(pics.length === 0){
+
+console.log("no users")
+  return (
+    <div className="general-container">
+    <header>
+      <SlidingMenu />
+      <div className="nav-container">
+        <NavBar onLogout={() => Auth.logout()} />
+      </div>
+    </header>
+
+    <main>       
+        
+        
+     
+
+<div className="winner-content">
+        
+
+        <div className="wrapper-img-square-nodata">
+          
+            <p> No pictures submitted today</p>
+            <p> Please come back later ...</p>
+        
+        </div>
+
+      </div>
+
+        
+
+    </main>
+  </div>
+  )
+
+ }
+
+
+ else{
+
+
+const picsIds = pics.map((i) => i.id);
   const randomPictureIndex = Math.floor(Math.random() * picsIds.length);
   const randomPictureId = picsIds[randomPictureIndex];
-
-  //console.log(pics)
-  //console.log(randomPictureId)
 
   const randomPicture = pics.filter(function (item) {
     return item.id === randomPictureId;
@@ -56,6 +96,7 @@ console.log(otherUsers)
   //get the user associated
   const userIdAssociated = randomPicture[0].owner;
   const userAssociated = Methods.getUserById(users, userIdAssociated);
+
 
   //console.log(randomPictureId)
   //console.log(userAssociated)
@@ -75,8 +116,12 @@ console.log(otherUsers)
           <div className="page-title-vote">
             <h1>{t("vote.title")}</h1>
           </div>
+
           
-        <div className="winner-content">
+          
+        <div>
+
+  <div className="winner-content">
           <UserMeta user={userAssociated} />
 
           <div className="wrapper-img-square">
@@ -85,6 +130,7 @@ console.log(otherUsers)
             {/*  for testing, retrieve a random id and picture id of that user
               <p> userId :{randomUser.id}</p>
               <p> pictureId :{randomUser.pictures[Math.floor(Math.random() * randomUser.pictures.length)].id}</p> */}
+          
           </div>
 
           <div className="score-timestamp">
@@ -94,7 +140,20 @@ console.log(otherUsers)
             <VoteComponent refresh={true} pictureId={randomPicture[0].id} />
           </div>
         </div>
+
+        </div>  
+
       </main>
     </div>
   );
 }
+
+
+
+
+
+ }
+
+
+
+  

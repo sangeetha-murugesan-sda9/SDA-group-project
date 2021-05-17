@@ -122,8 +122,8 @@ async function addPic() {
 
               <button className="btn-grey" type="button" onClick={addPic}>Add Random Picture</button>
               
-              <UploadWidget/>
-              
+              <UploadWidget avatar ={false} />
+
             </div>
           </div>
 

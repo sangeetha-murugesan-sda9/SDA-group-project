@@ -7,6 +7,7 @@ import Overlay from "react-overlay-component";
 import edit from "../assets/img/icons/pen.svg";
 import ApiCalls from "../api/ApiCalls";
 import Methods from "../services/Methods"
+import UploadWidget from "../components/UploadWidget"
 
 export default function EditProfileButton() {
   //constants
@@ -106,10 +107,12 @@ ApiCalls.updateAvatar(Methods.getRandomAvatarUrl())
       </button>
 
       <Overlay configs={configs} isOpen={isOpen} closeOverlay={closeOverlay}>
-        <h3>{t("overlay.label-profile")}</h3>
+        <h2>{t("overlay.label-profile")}</h2>
 
-        <div className="overlay-form">
-          <label>{t("overlay.label-username")}</label>
+        <div className="upload-box">
+
+        <div className="overlay-form-group">
+          <label>{t("overlay.label-username")} :</label>
           <input
             type="text"
             placeholder={t("overlay.placeholder")}
@@ -117,9 +120,11 @@ ApiCalls.updateAvatar(Methods.getRandomAvatarUrl())
             onChange={(e) => setUsername(e.target.value)}
             value={username}
           />
+
           <button className="btn-grey" onClick={updateUsername}>
             OK
           </button>
+        </div>
         </div>
 
         <div className="upload-box">
@@ -132,7 +137,8 @@ ApiCalls.updateAvatar(Methods.getRandomAvatarUrl())
             {t("overlay.upload")}
           </button> */}
 
-        <button className="btn-grey" type="button" onClick={updateAvatar}>Switch Avatar</button>
+        {/* <button className="btn-grey" type="button" onClick={updateAvatar}>Switch Avatar</button> */}
+        <UploadWidget avatar = {true} />
 
 
 

@@ -40,7 +40,7 @@ export default function CardDrawer({ pictureId }) {
     setStatus(2);
   }
 
-  console.log(comments);
+  //console.log(comments);
 
   //console.log(pictureId)
 

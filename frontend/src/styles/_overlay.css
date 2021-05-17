@@ -1,33 +1,48 @@
+.upload-box{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    width: 100%;
+
+    margin: 20px 0;
+}
+
+
+
 .overlay-form-group{
     
-    width: 100%;
+    width: 300px;
     margin: 20px 0px;
     display: flex;
     flex-direction: column;
     align-items:center;
-    gap: 3px;
+    gap: 12px;
 }
 
-label,.form-control{
+label,.form-control{    
     width: 100%;
+    
 }
 
-.form-control{
+.form-control{    
     
     border:0px;
     border-radius: 7px;
 }
 
-::placeholder{
-   
-    padding:7px 10px;    
+::placeholder{  
+    padding:7px 10px;  
 }
 
 input{
+    
     cursor: pointer;
     background-color: rgb(238, 238, 238);
     border:0px;
     border-radius: 7px;
+    width: 90%;
+    padding: 10px 0 10px 10px;
+    
 }
 
 .overlay-form button{

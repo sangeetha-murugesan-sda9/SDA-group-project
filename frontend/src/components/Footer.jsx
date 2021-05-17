@@ -18,7 +18,7 @@ export default function Footer({ users }) {
 
   return (
     <div className="footer">
-      <div className="footer-shape"> </div>
+      {/* <div className="footer-shape"> </div> */}
 
       <div className="footer-container">
         <a href={"/profile/" + currentUserEmail} className="item">

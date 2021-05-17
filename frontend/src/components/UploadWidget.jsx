@@ -6,9 +6,11 @@ import ApiCalls from "../api/ApiCalls";
 
 
 
-export default function  UploadWidget() {
+export default function  UploadWidget({avatar}) {
 
  const [url, setUrl] = useState("url")
+
+ console.log(avatar)
 
  function openWidget(){
 
@@ -22,7 +24,13 @@ export default function  UploadWidget() {
 
       console.log(result.info.secure_url) 
       setUrl(result.info.secure_url)
+      
+      if (avatar === true){
+        ApiCalls.updateAvatar(result.info.secure_url);  
+
+      }else{
       ApiCalls.addPictureToCurrentUser(result.info.secure_url);
+    }
       alert("Picture succesfully send 🙌")
       window.location.reload();
     }
@@ -38,7 +46,15 @@ export default function  UploadWidget() {
 
 <div>
 
-<button type="button" className="btn-grey" onClick={openWidget}>Upload Via Widget</button>
+
+<button type="button" className="btn-grey" onClick={openWidget}>
+  
+{ avatar ? 
+<div>Upload Avatar</div>
+:
+<div>Upload Picture</div>
+
+}</button>
 
 </div>
 
