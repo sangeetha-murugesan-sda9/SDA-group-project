@@ -3,9 +3,10 @@ import React from "react";
 import { useState, useEffect } from "react";
 import ApiCalls from "../api/ApiCalls";
 import AuthApi from "../api/AuthApi";
+import ReactAwesomePopover from "react-awesome-popover"
 
 export default function CardDrawer({ pictureId }) {
-
+  const Popover = ReactAwesomePopover;
   
  
   const currentUserEmail = AuthApi.getCurrentUser();
@@ -62,11 +63,24 @@ export default function CardDrawer({ pictureId }) {
   //console.log( comments)
 
   return (
+    <div>
+     <Popover 
+         placement="bottom-start"
+         overlayColor="none"
+         arrow = {false}
+        >
+    <button className ="btn-delete">Comment(s) </button>
+    <div className ="backpop"><p>comment</p><p>comment</p><p>comment</p></div>
+  </Popover>
+    
     <div
-      /* className="container "  */
-      className={"container " + (open ? "expand" : "")}
+      className="container "  
+      className={"container "  + (open ? "expand" : "") }
       onClick={handleClick}
     >
+     
+   
+
       <div className="upper">
         <p>
           {nbOfComments} Comment(s)
@@ -103,7 +117,12 @@ export default function CardDrawer({ pictureId }) {
 
                       
                       </div>
+                      
                     </div>
+
+                    
+
+
                   </React.Fragment>
                 ))}
               </React.Fragment>
@@ -129,6 +148,7 @@ export default function CardDrawer({ pictureId }) {
             Comment
           </button>
         </div>
+      </div>
       </div>
     </div>
   );

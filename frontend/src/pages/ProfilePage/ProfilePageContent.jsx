@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import ReactAwesomePopover from "react-awesome-popover"
 
 import "../../styles/base.css";
 import AuthApi from "../../api/AuthApi";
@@ -12,7 +13,7 @@ import dislike from "../../assets/img/logo/oops.png";
 
 export default function ProfilePageContent({ users, userToDisplay }) {
   // Constants
-
+  const Popover = ReactAwesomePopover;
   const [t, i18n] = useTranslation("common");
   const currentUserEmail = AuthApi.getCurrentUser();
 
@@ -67,6 +68,14 @@ export default function ProfilePageContent({ users, userToDisplay }) {
             </div>
           </div>
         </div>
+
+        
+        
+       
+
+      
+
+
         <div className="page-title">
           <h2>{t("profile.title")} ...</h2>
         </div>

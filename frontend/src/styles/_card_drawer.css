@@ -16,6 +16,15 @@ margin-top: 9px;
   
 }
 
+div.expand { 
+  display:block;
+  height: max-content;
+}
+
+
+
+
+
 
 
 .upper {
@@ -74,9 +83,6 @@ font-size: 15px;
 }
 
 
-div.expand {
-  height: max-content;
-}
 
 
 .comment-form-group{
@@ -85,7 +91,6 @@ div.expand {
   gap: 7px;
   margin: 7px ;
   
-
 }
 
 .comment-form-group input{
