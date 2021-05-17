@@ -31,7 +31,7 @@ const currentUserEmail = AuthApi.getCurrentUser();
 
           <div className="menu-item">
             <img className="img-30" src={king} />
-            <a id="home" className="menu-item-text" href="/">{t("sidebar.king")}</a>
+            <a id="home" className="menu-item-text" href="/winner">{t("sidebar.king")}</a>
           </div>
 
           <div className="menu-item">

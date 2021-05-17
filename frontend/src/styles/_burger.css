@@ -2,10 +2,31 @@
   position: absolute;
   width: 25px;
   height: 20px;
-  left: 30px;
+  left: 8%;
   top: 50px;
 
 }
+ /** media queries tablets  */
+ @media screen and (min-width: 800px) {
+  .bm-burger-button{
+      
+     
+  }
+
+
+}
+
+/** media queries laptops  */
+@media screen and (min-width: 1200px) {
+  .bm-burger-button{
+      
+      
+  }
+}
+
+
+
+
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {

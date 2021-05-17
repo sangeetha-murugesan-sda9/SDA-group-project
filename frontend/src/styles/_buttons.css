@@ -1,5 +1,5 @@
 .btn-blue{
-  width: 300px;
+  width: 200px;
  
   margin: 5px;
   padding: 20px;
@@ -27,7 +27,7 @@
 }
 
 .btn-white {
-  width: 300px;
+  width: 200px;
   flex: 1 1 auto;
   margin: 5px;
   padding: 20px;
@@ -54,6 +54,7 @@
   border-radius: 8px;
   font-size: 20px;
   font-weight: bold;
+  width: 100%;
 }
 
 .btn-lightgrey{
@@ -108,7 +109,7 @@
 
   position: fixed;
   cursor: pointer;
-  bottom:8px ;
+  bottom: 8px ;
   left: 50%;
   transform: translateX(-50%);
   
@@ -116,22 +117,26 @@
   display: grid;  
   align-items: center;
 
-  border: 0px;
+  border: 10px solid #dedede;
   font-size: 25px; 
 
-  width: 60px;
-  height: 60px;
+  width: 65px;
+  height: 65px;
     
-  background-color: #0c9;
+  background-color:rgb(103, 180, 133);
   color: white;
   border-radius: 50px;
   cursor: pointer;
 
   text-align: center;
-  box-shadow: 2px 2px 3px #999;
+  box-shadow: 0px 2px 4px rgba(153, 153, 153, 0.288);
 
   z-index: 50;
   
+}
+
+.btn-submit-green:hover{
+  background-color: rgb(20, 172, 88);
 }
 
 .invisible {
@@ -166,14 +171,30 @@
 .btn-delete{
   background-color: #b66767a6;
   color: white;
+  cursor: pointer;
   border: 0;
   border-radius: 7px;
-  padding: 1px 12px;
 
-  position: absolute;
-  bottom: 5px;
-  left: 24px;
+  height: 30px; 
 
   box-shadow:  1px 1px 2px grey;
+}
+.btn-delete:hover{
+  background-color: #9b2222a6;;
+}
+
+.btn-comment{
+  background-color: #3b43b1a6;
+  color: white;
+  cursor: pointer;
+  border: 0;
+  border-radius: 7px;
+
+  height: 30px; 
+
+  box-shadow:  1px 1px 2px grey;
+}
+.btn-comment:hover{
+  background-color: #485fc4a6;;
 }
 

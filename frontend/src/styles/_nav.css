@@ -21,6 +21,14 @@ nav {
   align-content: center;
 }
 
+nav h3 strong{
+   
+  position: absolute;
+  top:35px;
+  left: 50%;
+ transform: translateX(-50%);
+}
+
 .nav-menu {
   color: white;
   display: flex;

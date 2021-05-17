@@ -12,18 +12,40 @@
 }
 
 
+
+
+
 .wrapper-img-square {
   position: relative;
 
   width: 70vw;
   height: 70vw;
-  max-height: 450px;
+  max-height: 45vh;
   max-width: 500px;
   overflow: hidden;
 
   background-color: black;
   border-radius: 30px;
 }
+
+.wrapper-img-square-nodata {
+  position: relative;
+
+  width: 70vw;
+  height: 70vw;
+  max-height: 45vh;
+  max-width: 500px;
+  overflow: hidden;
+
+  background-color: #fafafa;
+  border-radius: 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 
 .winner-score{
   position: absolute;
@@ -72,6 +94,7 @@
 }
 
 .under-img-container{
+ 
         display: flex;
         justify-content: center;
         align-items: center;

@@ -7,6 +7,7 @@ import Overlay from "react-overlay-component";
 import Methods from '../services/Methods'
 import AuthApi from "../api/AuthApi";
 import ApiCalls from "../api/ApiCalls";
+import UploadWidget from "../components/UploadWidget"
 
 
 
@@ -43,8 +44,7 @@ const votesNeeded = Math.floor(( 10 - (numberOfvotes / numberOfPicturesOwned) +1
   
 
   // State to store uploaded file
-  
-  const [file, setFile] = useState();  
+    const [file, setFile] = useState();  
   const configs = {
     animate: true,
     // clickDismiss: false,
@@ -61,15 +61,16 @@ const votesNeeded = Math.floor(( 10 - (numberOfvotes / numberOfPicturesOwned) +1
    //console.log(Methods.getRandompictureUrl);
 
 // upload random pic to current user on db
- function addPic() {
+ const randomPicUrl = Methods.getRandompictureUrl()
+//console.log(randomPicUrl)
 
-     ApiCalls.addPictureToCurrentUser(Methods.getRandompictureUrl());
+async function addPic() {
+
+     await ApiCalls.addPictureToCurrentUser(randomPicUrl);
      alert("Picture succesfully send 🙌")
      closeOverlay()
      window.location.reload();
    }
-
-
 
 
 
@@ -115,14 +116,14 @@ const votesNeeded = Math.floor(( 10 - (numberOfvotes / numberOfPicturesOwned) +1
             <h2>{t("overlay.label-upload")}</h2>
             <div className="upload-box">
               {/* <input type="file" onChange={handleFile} /> */}
-
               {/* <input type="text" onChange={handleFile} /> */}
-
               {/* <button className="btn-grey" type="button" onClick={handleUpload}>{t("overlay.upload")}
               </button> */}
 
-              <button className="btn-grey" type="button" onClick={addPic}>Click</button>
-                
+              <button className="btn-grey" type="button" onClick={addPic}>Add Random Picture</button>
+              
+              <UploadWidget avatar ={false} />
+
             </div>
           </div>
 

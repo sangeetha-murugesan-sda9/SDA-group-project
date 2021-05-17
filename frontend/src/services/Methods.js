@@ -50,6 +50,13 @@ return item.email === userMail
 }
 
 
+getInstagramByEmail(array,userMail){
+
+  var user = array.filter(function (item){
+return item.email === userMail
+  })      
+  return user[0].instagram
+}
 
 // getting votes count providing email
 getVotesByEmail(array,userMail){
@@ -265,10 +272,62 @@ const urls = [
     "url":"https://images.squarespace-cdn.com/content/v1/5e4c3329fd8eab01426e960c/1611318911249-5O4IG27IPTWIPF3QYBJA/ke17ZwdGBToddI8pDm48kLIj3bb_uLOihttx7hjsPSV7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0lqfkVpRp1g_2L-WsTQRP4IUeQvxhQLxDj0GQzUQT21mzi2feheXFTkax-QWHoTYtA/20200923-IMG_7473.jpg"
   }
    
-   
+  , 
+   {
+    "id": 10,
+    "url":"https://ae01.alicdn.com/kf/HTB19E7jmpOWBuNjy0Fiq6xFxVXas/Not-Your-Baby-t-shirt-cool-girl-New-arrival-yellow-90s-Women-Fashion-Cotton-tees-goth.jpg"
+  } 
+  , 
+  {
+   "id": 11,
+   "url":"https://cdn.cliqueinc.com/posts/90985/cool-outfits-for-women-in-30s-90985-1521504612344-square.700x0c.jpg"
+ }
+ , 
+ {
+  "id": 12,
+  "url":"https://i.pinimg.com/originals/60/b8/4a/60b84a5b7955a6a76fb0671b581f42cd.png"
+}
+, 
+{
+ "id": 13,
+ "url":"https://www.telerama.fr/sites/tr_master/files/styles/simplecrop1000/public/eddy_de_pretto_hd_0.jpg?itok=0LLtt5jT"
+}    
+, 
+   {
+    "id": 14,
+    "url":"https://lh3.googleusercontent.com/proxy/lkG0KF7EJ56xWG9bHBPVzpqVDIBmVoGLJlouxrkKyvJ-hbBUoUoesev8KCAPJrdDKDRMACD0FQFLkmnthyUnTHUMLjoNoPNEerlg6pmrx6Hm4ZwizKAjmxDS6UI"
+  }
+  , 
+  {
+   "id": 15,
+   "url":"https://cdn.cliqueinc.com/posts/275783/anna-wintour-fashion-trends-275783-1546896595365-main.700x0c.jpg"
+ }, 
+ {
+  "id": 16,
+  "url":"https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-1206186051.jpg"
+}, 
+{
+ "id": 17,
+ "url":"https://cdn.cliqueinc.com/posts/215507/best-style-older-women-215507-1599702585786-image.700x0c.jpg"
+}, 
+{
+ "id": 18,
+ "url":"https://thelocals.dk/wp-content/uploads/2020/05/Web__DSC1219_LowRes.jpg"
+}, 
+{
+ "id": 19,
+ "url":"https://www.theenglishshavingcompany.com/wp/wp-content/uploads/2019/09/Hipster-style.jpeg"
+}, 
+{
+ "id": 20,
+ "url":"http://static1.squarespace.com/static/5a6ba105f14aa1d81bd5b971/t/5aa24c31ec212d3b14bfe57b/1520585803312/180309_SHUDU.jpg?format=1500w"
+ 
+}
 
 
-     
+
+
+
 
 ]
 
@@ -325,8 +384,40 @@ getRandomAvatarUrl(){
   , 
      {
       "id": 9,
-      "url":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSFDBPktzJnM3jRsLpvCOGspS7mwvSCpyvmJ2lxZKIV902mkdtPjX-mNvsxJCa0O0QaCI&usqp=CAU"
-    }   
+      "url":"https://cdn3.vectorstock.com/i/1000x1000/95/72/hipster-avatar-image-vector-19639572.jpg"
+    }   , 
+    {
+     "id": 10,
+     "url":"https://image.flaticon.com/icons/png/512/147/147144.png"
+   }  , 
+   {
+    "id": 11,
+    "url":"https://cdn.iconscout.com/icon/free/png-256/avatar-366-456318.png"
+  }  , 
+  {
+   "id": 12,
+   "url":"https://audit-controle-interne.com/wp-content/uploads/2019/03/avatar-user-teacher-312a499a08079a12-512x512.png"
+ }  , 
+ {
+  "id": 13,
+  "url":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJCu4AP4JPaFkOfmmeHnU5B1uuWAIg84YvUMKSX1iUS3kdb8ncGRegucK9fmiaKm3gPDA&usqp=CAU"
+}  , 
+{
+ "id": 14,
+ "url":"https://image.flaticon.com/icons/png/512/219/219986.png"
+}  , 
+{
+ "id": 15,
+ "url":"https://businesshoteltunis.com/wp-content/uploads/2017/08/businessman.png"
+}  , 
+{
+ "id": 16,
+ "url":"https://www.bpoconseils.be/wp-content/uploads/2019/08/testi2.png"
+}  , 
+{
+ "id": 17,
+ "url":"https://image.freepik.com/vecteurs-libre/avatar-vecteur-souriant-expression-faciale-homme_102172-203.jpg"
+}  
 
   ]
   

@@ -6,7 +6,8 @@ import Auth from "../services/Auth";
 import Overlay from "react-overlay-component";
 import edit from "../assets/img/icons/pen.svg";
 import ApiCalls from "../api/ApiCalls";
-import Methods from "../services/Methods"
+import Methods from "../services/Methods";
+import UploadWidget from "../components/UploadWidget";
 
 export default function EditProfileButton() {
   //constants
@@ -21,77 +22,46 @@ export default function EditProfileButton() {
     animate: true,
   };
 
-  // State to store uploaded file
-
+  // State to store uploaded informations
   const [file, setFile] = useState();
-  const [pic, setPic] = useState("");
+  const [instagram, setInstagram] = useState("");
   const [username, setUsername] = useState("");
 
-  function updateUsername() {
+  async function updateUsername() {
     if (username.length < 5) {
       alert("Please enter 5 characters minimum ");
     } else {
-      ApiCalls.updateUsername(username);
-      alert("Username succesfully updated ");
+      await ApiCalls.updateUsername(username);
+      //alert("Username succesfully updated ");
       closeOverlay();
-      window.location.reload()
+      window.location.reload();
     }
   }
 
+
+  async function updateInstagram() {
+   
+      await ApiCalls.updateInstagram(instagram);
+      //alert("Instagram succesfully updated ");
+      closeOverlay();
+      window.location.reload();
+    
+  }
+
   //HandleFile
-  function handleFile(event) {
+/*   function handleFile(event) {
     setFile(event.target.files[0]);
-  }
+  } */
 
-  // Handle the upload to dB //
-  function handleUpload() {
-    console.log(file, "state file");
 
-    const formdata = new FormData();
-    formdata.append("file", file);
-    formdata.append("user", file);
+  // updaterandom avatar to current user
+/*   function updateAvatar() {
+    ApiCalls.updateAvatar(Methods.getRandomAvatarUrl());
 
-    console.log(formdata, "formdata");
-
-    console.log("token", Auth.getAuthorizationHeader());
-
-    axios.post("http://localhost:8080/upload", formdata, {
-      headers: {
-        Authorization: Auth.getAuthorizationHeader(),
-      },
-      /*   const config = {
-           headers: {
-               'content-type': 'multipart/form-data'
-           }
-       };
-         axios.post("http://localhost:8080/upload",formdata,config)
-             .then((response) => {
-                 alert("The file is successfully uploaded");
-             }).catch((error) => {*/
-    });
-    // onChange(e)
-    // {
-    //     setState({file:e.target.files[0]});
-    // }
-
+    alert("Avatar succesfully changed 🙌");
     closeOverlay();
-  }
-
-// updaterandom avatar to current user
-function updateAvatar() {
-
-ApiCalls.updateAvatar(Methods.getRandomAvatarUrl())
-  
-  alert("Avatar succesfully changed 🙌")
-  closeOverlay()
-  window.location.reload();
-}
-
-
-
-
-
-
+    window.location.reload();
+  } */
 
 
   return (
@@ -106,39 +76,49 @@ ApiCalls.updateAvatar(Methods.getRandomAvatarUrl())
       </button>
 
       <Overlay configs={configs} isOpen={isOpen} closeOverlay={closeOverlay}>
-        <h3>{t("overlay.label-profile")}</h3>
+        <h2>{t("overlay.label-profile")}</h2>
 
-        <div className="overlay-form">
-          <label>{t("overlay.label-username")}</label>
-          <input
-            type="text"
-            placeholder={t("overlay.placeholder")}
-            className="form-control"
-            onChange={(e) => setUsername(e.target.value)}
-            value={username}
-          />
-          <button className="btn-grey" onClick={updateUsername}>
-            OK
-          </button>
+        <div className="upload-box">
+          <div className="overlay-form-group">
+            <label>{t("overlay.label-username")} :</label>
+            <input
+              type="text"
+              placeholder={t("overlay.placeholder")}
+              className="form-control"
+              onChange={(e) => setUsername(e.target.value)}
+              value={username}
+            />
+
+            <button className="btn-grey" onClick={updateUsername}>
+              OK
+            </button>
+          </div>
+        </div>
+
+
+        <div className="upload-box">
+          <div className="overlay-form-group">
+            <label>Add/Update instagram account :</label>
+            <input
+              type="text"
+              placeholder="instagram"
+              className="form-control"
+              onChange={(e) => setInstagram(e.target.value)}
+              value={instagram}
+            />
+
+            <button className="btn-grey" onClick={updateInstagram}>
+              OK
+            </button>
+          </div>
         </div>
 
         <div className="upload-box">
           <label>{t("overlay.label-avatar")} :</label>
-          {/*   <label htmlFor="file" className="btn-grey" >Select</label> */}
-          {/*  <input type="file" onChange={handleFile} />*/}
-          {/*<input type="file" accept="image/*" multiple = "false" onChange={onchange}/>*/}
-
-          {/* <button className="btn-grey" type="button" onClick={handleUpload}>
-            {t("overlay.upload")}
-          </button> */}
-
-        <button className="btn-grey" type="button" onClick={updateAvatar}>Click</button>
-
-
-
+      
+          {/* <button className="btn-grey" type="button" onClick={updateAvatar}>Switch Avatar</button> */}
+          <UploadWidget avatar={true} />
         </div>
-
-
       </Overlay>
     </div>
   );

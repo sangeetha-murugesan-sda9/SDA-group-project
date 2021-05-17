@@ -35,22 +35,37 @@
 }
 
 .auth-buttons-container{
+    
     position: absolute;
-    bottom: 27%;
-
+    left:0;
+    width: 100%;
+    bottom: 18%;
     width: 100vw;
-
     display: flex;
-    justify-content: center;
-     
+    justify-content: center; 
+    
+}
+/** media queries tablets  */
+@media screen and (min-width: 800px) {
+    .auth-buttons-container{
+        bottom: 27%;
+
+    }
+
+
 }
 
-.auth-buttons-wrapper{
+/** media queries laptops  */
+@media screen and (min-width: 1200px) {
+ 
 
-   
-    width:max-content;
-   
-    
+}
+
+
+
+.auth-buttons-wrapper{
+       width:max-content;
+
 
 }
 

@@ -1,11 +1,23 @@
+.v-container{
+  width: 100%;
+  margin-top: 18px;
+}
+
 .vote-container {
+  
+
   font-family: var(--font-funny);
   width: 100%;
-  height: auto;
+  height: 60px;
 
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
   align-items: center;
+
+ 
+
+
 }
 
 .vote-container p {
@@ -20,6 +32,7 @@
 }
 
 .vote-container-item{
+ 
   display: flex;
   flex-direction: column;
   gap:6px;

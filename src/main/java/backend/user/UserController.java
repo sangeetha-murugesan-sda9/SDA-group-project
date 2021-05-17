@@ -34,6 +34,21 @@ public class UserController {
         return ResponseEntity.ok(user);
     }
 
+    //change current user instagram
+    @PutMapping("/current-instagram")
+    public ResponseEntity<User> updateInstagram(@RequestBody String newInstagram) {
+        String email = authService.getLoggedInUserEmail(); // get current user email
+        User user = userRepository.findByEmail(email); // find the user by email
+
+        user.setInstagram(newInstagram);
+        userRepository.save(user);
+
+        return ResponseEntity.ok(user);
+    }
+
+
+
+
 
     // get current user
     @GetMapping("/current-user")
