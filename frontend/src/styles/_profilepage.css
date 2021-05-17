@@ -88,7 +88,10 @@
 }
 
 .item-score {
+  position:relative;
   
+  left: 15px;
+
   width: 150px;
   text-align: center;
 
@@ -150,6 +153,7 @@
 
   .item-score {
        width: 380px;
+       left:0;
   }
 
 

@@ -78,9 +78,20 @@
   background-color: rgba(255, 255, 255, 0.658);
   position: absolute;
   border-radius: 0 0 25px 25px ;
-  top:260px;
+  top:210px;
   width:100%;
 }
 .votecomponent-onpicture p {
   color: rgb(88, 88, 88);
+}
+
+@media screen and (min-width: 800px) {
+
+  .votecomponent-onpicture{
+
+    top:290px;
+
+  }
+
+
 }
