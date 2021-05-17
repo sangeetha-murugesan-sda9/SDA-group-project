@@ -50,6 +50,13 @@ return item.email === userMail
 }
 
 
+getInstagramByEmail(array,userMail){
+
+  var user = array.filter(function (item){
+return item.email === userMail
+  })      
+  return user[0].instagram
+}
 
 // getting votes count providing email
 getVotesByEmail(array,userMail){

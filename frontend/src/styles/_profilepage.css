@@ -77,16 +77,43 @@
 
   background-color: #f1f1f1;
   font-family: var(--font-classy);
-  font-size: var(--font-M);
-
- /*  border: 1px solid rgb(192, 192, 192); */
+  font-size: var(--font-M); 
+  
   border-radius: 15px;
   
-  box-shadow: 3px 3px 6px rgba(41, 40, 40, 0.164);
+  box-shadow: 2px 2px 2px rgb(199 199 199);
 }
 .item-score img {
   margin-left: 15px;
 }
+
+.empty {
+
+  width: 50vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  padding: 15px;
+ 
+}
+
+.empty svg {
+  position: relative;
+  top:5px;
+
+  height: 20px;
+  width: 20px;
+
+  fill: green;
+  
+  margin-left: 12px;  
+  transform: rotate(90deg);
+}
+
+
+
 
 /** media queries tablets  */
 @media screen and (min-width: 800px) {
