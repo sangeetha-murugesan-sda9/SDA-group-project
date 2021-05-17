@@ -10,13 +10,14 @@ export default function Comments({item}) {
   //console.log(username);
 
   return (
-
+   
     <div className ="comment-bloc">
 
      <h3>{item.ownerEmail}</h3>
      <p> {item.body} </p>
      
-    </div>
     
+    </div>
   );
 }
+

@@ -92,7 +92,9 @@ if(currentUser !== undefined){
 //getCurrentUserData();
 
 
-
+async function addComment(id,body){
+await ApiCalls.addComment(id,body);
+}
 
 
 
@@ -118,6 +120,9 @@ if(currentUser !== undefined){
           <h4>name:</h4>
           {/* <h4>pictures : </h4><img src ={currentUser.pictures[0].url}/><img src ={currentUser.pictures[1].url}/> */}
         </div>
+
+        <button onClick ={() => {addComment(12,"hello")}
+          }>send yolo comment</button>
 
         
 
