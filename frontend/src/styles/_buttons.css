@@ -1,5 +1,5 @@
 .btn-blue{
-  width: 300px;
+  width: 200px;
  
   margin: 5px;
   padding: 20px;
@@ -27,7 +27,7 @@
 }
 
 .btn-white {
-  width: 300px;
+  width: 200px;
   flex: 1 1 auto;
   margin: 5px;
   padding: 20px;
