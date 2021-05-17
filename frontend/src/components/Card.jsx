@@ -6,7 +6,7 @@ import UserMeta from "./UserMeta";
 import Moment from "react-moment";
 import CardDrawer from "./CardDrawer";
 
-export default function Card({ item, score, votes, meta}) {
+export default function Card({ users,item, score, votes, meta}) {
 
  //randomization of the display  and connection to the vote
 const pics = item.pictures.flat()
@@ -30,7 +30,7 @@ const randomPictureId = pics[randomPictureIndex].id
 
       <img className="card-img" src={randomPicture.url} alt="items"/>
     
-      <CardDrawer pictureId ={randomPictureId}/>
+      <CardDrawer pictureId ={randomPictureId} users={users}/>
 
       {votes === true && <VoteComponent hide ={true} refresh ={false} pictureId ={randomPictureId} />}
       

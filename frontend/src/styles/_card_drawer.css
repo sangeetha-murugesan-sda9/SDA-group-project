@@ -16,13 +16,16 @@ margin-top: 9px;
   
 }
 
-div.expand { 
+.container:checked { 
   display:block;
   height: max-content;
 }
 
 
-
+ div.expand { 
+  display:block;
+  height: max-content;
+}
 
 
 
@@ -51,54 +54,4 @@ div.expand {
   padding: 12px;
 }
 
-
-.comment-bloc{
-  background-color: #f1f1f1;
-  display: flex;  
-  flex-direction: column;
-  justify-content: center;
-  margin: 7px ;
-  padding: 5px 8px;
-
-}
-
-.comment-sub-bloc{
-  display: grid;
-  grid-template-columns: 1fr 80px;
-}
-
-
-
-
-.lower h3 {
- font-weight: 600;
-font-size: 15px;
-
-}
-
-.lower p {
-  opacity: 0.6;
-  margin-top: 0px;
-  font-size: 14px;
-}
-
-
-
-
-.comment-form-group{
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-  margin: 7px ;
-  
-}
-
-.comment-form-group input{
-
- width: 100%;
-padding:8px 0 8px 5px ;
-}
-.comment-textarea{
-  box-shadow: inset 1px 1px 4px  rgba(128, 128, 128, 0.384);
-}
 

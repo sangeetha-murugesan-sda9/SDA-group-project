@@ -44,6 +44,7 @@ export default function DiscoverPage({ users }) {
                   .map((item) => (
                     <React.Fragment key={item.id}>
                       <Card
+                        users={users}
                         item={item}
                         score={false}
                         votes={true}
