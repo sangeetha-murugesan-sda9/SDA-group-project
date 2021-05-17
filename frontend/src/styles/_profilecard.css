@@ -1,14 +1,11 @@
 .profilecard-header {
 
   background-color: rgba(0, 0, 0, 0.103);
-  
-
   position: absolute;
     
   width: 100%;
   height:fit-content;
  
-
   top: 0;
   left: 0;
 
@@ -19,13 +16,6 @@
   border-radius: 25px 25px 0 0;
 
   z-index: 2;
-}
-
-.profilecard-img {
-  position: relative;
-  background-blend-mode:multiply;
-  opacity: 80%;
-
 }
 
 .score {
@@ -67,9 +57,19 @@
   
 }
 
+.profilecard-footer{
+ 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 8px 8px 0 8px;
+}
+
+
 .score-timestamp{
   color: grey;
   text-align: right;
   margin-right: 25px ;
-  padding: 5px 12px
+  
 }

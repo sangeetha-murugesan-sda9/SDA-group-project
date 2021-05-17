@@ -7,54 +7,55 @@ import Card from "../../components/Card";
 import Auth from "../../services/Auth";
 import AuthApi from "../../api/AuthApi";
 import SlidingMenu from "../../components/SlidingMenu";
-import Methods from '../../services/Methods'
+import Methods from "../../services/Methods";
 
 
-export default function DiscoverPage({users}) {
-
- // Constants
- const [t, i18n] = useTranslation('common');
+export default function DiscoverPage({ users }) {
+  // Constants
+  const [t, i18n] = useTranslation("common");
   const currentUserEmail = AuthApi.getCurrentUser();
-  const shuffledUsers= Methods.randomArrayShuffle(users)
-  
-//console.log(shuffledUsers)
+  const shuffledUsers = Methods.randomArrayShuffle(users);
+
+  //console.log(shuffledUsers)
 
   return (
     <div className="general-container">
       <header>
         <SlidingMenu />
-        <div className="nav-container">
-          <NavBar onLogout={() => Auth.logout()} />
-        </div>
+        <NavBar onLogout={() => Auth.logout()} />
       </header>
 
-        <main>
-          <div className="homepage-content">
-            <div className="homepage-submit-container"></div>
-            <div>
-              <h2>{t("discover.title")} ...</h2>
+      <main>
+        <div className="homepage-content">
+          <div className="page-title">
+            <h2>{t("discover.title")} ...</h2>
+          </div>
 
-              <div className="card-small-container">
-                <React.Fragment>
-                  {shuffledUsers.filter(function (item) {
-                      return item.email !== currentUserEmail;
-                    })
-                    .map((item) => (
-                      <React.Fragment key={item.id}>
-                        <Card
-                          item={item}
-                          score={false}
-                          votes={true}
-                          meta={true}
-                        />
-                      </React.Fragment>
-                    ))}
-                </React.Fragment>
-              </div>
+          <div className="title-wrapper">
+            <div className="card-small-container">
+              <React.Fragment>
+                {shuffledUsers
+                  .filter(function (item) {
+                    return item.email !== currentUserEmail;
+                  })
+                  .filter(function (item) {
+                    return item.pictures.length > 0;
+                  })
+                  .map((item) => (
+                    <React.Fragment key={item.id}>
+                      <Card
+                        item={item}
+                        score={false}
+                        votes={true}
+                        meta={true}
+                      />
+                    </React.Fragment>
+                  ))}
+              </React.Fragment>
             </div>
           </div>
-        </main>
-      
+        </div>
+      </main>
     </div>
   );
 }

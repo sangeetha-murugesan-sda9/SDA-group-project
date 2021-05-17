@@ -1,17 +1,22 @@
 
 
+
 html{
     font-family: var(--font-classy);
+   
 }
 
 body{
     margin: 0;
+   
+      
 }
 
 a{
     color: inherit;
     font-style: unset;
     text-decoration: unset;
+    cursor: pointer;
 }
 
 ul{
@@ -31,10 +36,59 @@ h1{
 h2{
     margin: 5px 8px;
     font-size: var(--font-S);
-    color: ;
+   
+
+}
+
+.page-title{
+
+    
+    width: fit-content ;
+   
+    text-align: left;    
+    padding: 8px 20px;
+    background: #f1f1f1;
+    
+    border-radius:15px 15px 0 0;
+    box-shadow: 2px 2px 2px rgb(199, 199, 199);  
+    /* z-index: 15; */
+   
+    
+}
+
+/* background of the card container */ 
+
+.title-wrapper{
+
+    /* max-width: 100%; */
+    
+    background: #f1f1f1;
+    display: flex;  
+
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 22px 15px;
+    margin-bottom: 70px;
+   
+
+    border-radius:0 15px 15px 15px;
+    box-shadow: 2px 2px 2px rgb(199, 199, 199);  
+  
+
+}
+
+/** media queries tablets  */
+@media screen and (min-width: 800px) {
+}
+
+/** media queries laptops  */
+@media screen and (min-width: 1200px) {   
+
 }
 
 h3{
+
       margin: 0 0 10px 0;
       padding: 0;
       font-weight: 300;
@@ -55,40 +109,78 @@ width: 100%;
 
 .img-20{
    height: 20px;
-    width:auto;    
+    width:auto;  
+    object-fit: cover; 
 }
 .img-30{
     height: 30px;
-     width:auto;    
+     width:auto;   
+     object-fit: cover;
  }
  .img-40{
     height: 40px;
-     width:auto;    
+     width:40px; 
+     object-fit: cover;
  }
  .img-50{
     height: 50px;
-     width:auto;    
+     width:50px;   
+     object-fit: cover;
  }
 
  .img-60{
     height: 60px;
-     width:auto;    
+     width:60px;    
+     object-fit: cover;
  }
 
  .img-70{
     height: 70px;
-     width:auto;    
+     width:70px;   
+     object-fit: cover;
  }
  
 .img-profile-100{
    
-    height: 100px;
-    background-color: yellow;
+    height: 100px;  
+    width: 100px;  
     border-radius: 50%;
     border: 1px solid rgb(216, 215, 215);
-    width:auto;    
+     
+    background-color: rgb(255, 255, 139);
+    object-fit: cover;
+    object-position: top;
+}
+
+.page-title-vote{
+   
+   display: flex;
+   justify-content: flex-start;
+  
 }
 
 
+.page-title-vote h1{
+    background-color: white;
+    width: fit-content;
+    position: relative;
+    top:3px;
+
+    border : 2px solid #c9c9c9;
+    border-bottom: 2px solid white ;
+
+    border-radius: 15px 15px 0 0 ;
+
+    padding: 5px 15px  ;
+
+    z-index: 10;
+}
+
+.winner-content{
+    background-color: white;
+    border : 2px solid #c9c9c9;
+    padding: 5px 5px 20px 5px  ;
+    border-radius:0 15px 15px 15px ;
+}
 
 

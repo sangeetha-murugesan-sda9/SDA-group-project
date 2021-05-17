@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import Moment from "react-moment";
 
 import "../../styles/base.css";
 import NavBar from "../../components/Navbar";
@@ -9,6 +10,7 @@ import Auth from "../../services/Auth";
 import Methods from "../../services/Methods";
 import SlidingMenu from "../../components/SlidingMenu";
 import like from "../../assets/img/logo/flame.png";
+import CountdownComponent from "../../components/CountdownComponent";
 
 
 
@@ -16,10 +18,19 @@ export default function WinnerPage({users}) {
   
   // Constants  
 const [t, i18n] = useTranslation('common');
-  //const winnerObj = Methods.getWinner(users); //[ userID, winningPictureID]
-  const winner = users[Methods.getWinner(users)[0]]
-  const winnerPicId = Methods.getWinner(users)[1]
-console.log(winnerPicId)
+
+    
+
+
+ const winnerId = Methods.getWinner(users)[0];
+ const winnerPicId = Methods.getWinner(users)[1] 
+  const winner = Methods.getUserById(users,winnerId)
+
+ const winnerPic = winner.pictures.filter(function (item) {
+  return item.id === winnerPicId ;
+}); 
+
+console.log(winnerPic)
 
 
   return (
@@ -33,21 +44,33 @@ console.log(winnerPicId)
       </header>
 
         <main>
-          <div className="winner-content">
+          <div className="page-title-vote">  
             <h1> <img className="img-title img-30 " src={king} /> {t("winner.title")}</h1>
+          </div>
+          
+          <div className="winner-content">
+
             <UserMeta user={winner} />
+            
             <div>
             <div className="wrapper-img-square">
-              <img id="main-img" src={winner.pictures[winnerPicId].url} alt="main-img" />
+              <img id="main-img" src={winnerPic[0].url} alt="main-img" />
            
-            <p className = "winner-score">
+            <div className = "winner-score">
               
               <img className="img-70" src={like} alt="logo-like" />
-              <p className = "winner-score-text">{winner.pictures[winnerPicId].likes} </p>
+              <p className = "winner-score-text">{winnerPic[0].likes} </p>
               
-              </p>
+              
+              </div>
+              <CountdownComponent/>
             </div>
  </div>
+
+ <div className="score-timestamp">
+            Posted - <Moment fromNow>{winnerPic[0].timestamp}</Moment>
+          </div>
+
             <div className="under-img-container">
               <a href= {"http://www.instagram.com/" + winner.instagram} target="blank" className="btn-blue">{t("winner.button")} </a>
             </div>

@@ -21,6 +21,14 @@ nav {
   align-content: center;
 }
 
+nav h3 strong{
+   
+  position: absolute;
+  top:35px;
+  left: 50%;
+ transform: translateX(-50%);
+}
+
 .nav-menu {
   color: white;
   display: flex;
@@ -61,4 +69,17 @@ nav {
   background-color: rgb(255, 234, 43);
   box-shadow: 2px 2px 2px rgb(204, 202, 202);
   border-radius: 50px;
+}
+
+/** media queries tablets  */
+@media screen and (min-width: 800px) {
+  
+
+
+}
+
+/** media queries laptops  */
+@media screen and (min-width: 1200px) {
+ 
+
 }

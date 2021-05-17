@@ -18,6 +18,11 @@ public class AuthController {
 
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody User user) {
+
+        user.setAvatar("https://images.clipartlogo.com/files/istock/previews/9730/97305655-avatar-icon-of-girl-in-a-wide-brim-felt-hat.jpg");
+        user.setInstagram("instagram");
+        user.setVotes(0);
+
         userService.register(user);
 
         String token = authService.createAuthToken(user.getEmail());

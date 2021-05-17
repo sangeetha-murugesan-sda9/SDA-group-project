@@ -6,12 +6,14 @@ import Auth from "../services/Auth";
 import Overlay from "react-overlay-component";
 import Methods from '../services/Methods'
 import AuthApi from "../api/AuthApi";
+import ApiCalls from "../api/ApiCalls";
+import UploadWidget from "../components/UploadWidget"
 
 
 
  export default function UploadButton({users}) {
 
-  console.log("users",users)
+  //console.log("users",users)
 
   //constants
   const currentUserEmail = AuthApi.getCurrentUser();
@@ -21,15 +23,8 @@ import AuthApi from "../api/AuthApi";
 
 //vote logic
 
-const canUpload = true;
-
-/* const [canUpload, setCanUpload] = useState(false);
-
 const numberOfvotes = Methods.getVotesByEmail(users,currentUserEmail)
 const numberOfPicturesOwned = Methods.getNumberOfPicturesByEmail(users,currentUserEmail)
-//console.log("user",currentUserEmail ,"pictures owned",numberOfPics)
-//console.log(numberOfvotes / numberOfPicturesOwned);
-//console.log(numberOfvotes % numberOfPicturesOwned);
 
 var canUpload = false;
 
@@ -38,9 +33,10 @@ if(numberOfPicturesOwned === 0){
 }else if((numberOfvotes / numberOfPicturesOwned) > 10){
   canUpload = true
 }
-*/
-const votesNeeded =  7//( 10 - (numberOfvotes / numberOfPicturesOwned) +1 )
+
+const votesNeeded = Math.floor(( 10 - (numberOfvotes / numberOfPicturesOwned) +1 )) 
  
+
   //Manage the overlay
   const [isOpen, setOverlay] = useState(false);
   const closeOverlay = () => setOverlay(false);
@@ -63,13 +59,25 @@ const votesNeeded =  7//( 10 - (numberOfvotes / numberOfPicturesOwned) +1 )
     setFile(event.target.files[0]);   
    }
 
+   //console.log(Methods.getRandompictureUrl);
+
+// upload random pic to current user on db
+ const randomPicUrl = Methods.getRandompictureUrl()
+//console.log(randomPicUrl)
+
+function addPic() {
+
+     ApiCalls.addPictureToCurrentUser(randomPicUrl);
+     alert("Picture succesfully send 🙌")
+     closeOverlay()
+     window.location.reload();
+   }
+
 
 
   // Handle the upload to dB //
-  function handleUpload() {
+  /* function handleUpload() {
 
-    //console.log(file,"state file");
-             
     const formdata = new FormData()
     formdata.append('file',file);
     formdata.append('user',file);      
@@ -86,32 +94,10 @@ const votesNeeded =  7//( 10 - (numberOfvotes / numberOfPicturesOwned) +1 )
       }
     );
     closeOverlay();
+    
   }
+ */
 
-
-/// return image at id 1 - from db
-
-/* function getPicOne(){
-  axios.get(
-    "http://localhost:8080/files/1",   
-    {
-      headers: { 
-        "Authorization": Auth.getAuthorizationHeader() },
-    }
-  )
-  .then((res) => {
-    console.log(res.data)          
-  })
-  .catch((error) => {
-    console.error(error)
-  });
-} */
-
-
-/* useEffect(() => {
-  getPicOne();  
-  //console.log(pic);
-},[]); */
 
   return (
     <div>
@@ -127,24 +113,30 @@ const votesNeeded =  7//( 10 - (numberOfvotes / numberOfPicturesOwned) +1 )
       <Overlay configs={configs} isOpen={isOpen} closeOverlay={closeOverlay}>
         
         {canUpload === true ? (
-          <div>
+          <div className="overlay-form" >
             <h2>{t("overlay.label-upload")}</h2>
             <div className="upload-box">
-              <input type="file" onChange={handleFile} />
-              <button className="btn-grey" type="button" onClick={handleUpload}>
-                {t("overlay.upload")}
-              </button>
+              {/* <input type="file" onChange={handleFile} /> */}
+              {/* <input type="text" onChange={handleFile} /> */}
+              {/* <button className="btn-grey" type="button" onClick={handleUpload}>{t("overlay.upload")}
+              </button> */}
+
+              <button className="btn-grey" type="button" onClick={addPic}>Add Random Picture</button>
+                <UploadWidget/>
             </div>
           </div>
+
         ) : (
 
           <div>
           <h2> Please vote more to be able to submit new picture </h2>
-          <h2> Votes needed: {votesNeeded} </h2>
+          <h2> Number of votes needed : {votesNeeded} </h2>
           </div>
         )
         }
 
+
+      
 
       </Overlay>
     </div>
