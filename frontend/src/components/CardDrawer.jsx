@@ -1,19 +1,19 @@
 // NPM packages
-import React from 'react'
-import {useState, useEffect } from "react";
-import Comments from "./Comments";
+import React from "react";
+import { useState, useEffect } from "react";
 import ApiCalls from "../api/ApiCalls";
+import AuthApi from "../api/AuthApi";
 
 export default function CardDrawer({ pictureId }) {
-  //const state = { open: false };
+ 
+  const currentUserEmail = AuthApi.getCurrentUser();
+
   const [open, setOpen] = useState(false);
   const [comments, setComments] = useState([]);
   const [status, setStatus] = useState(1); // 0 = loading data, 1 = data loaded, 2 = error;
   const [comment, setComment] = useState("");
 
   const nbOfComments = comments.length;
-
-
 
   const handleClick = () => {
     if (open) {
@@ -41,11 +41,15 @@ export default function CardDrawer({ pictureId }) {
     setStatus(2);
   }
 
-async function addComment(pictureId,commentBody){
-  await ApiCalls.addComment(pictureId,commentBody)
-}
+  async function addComment(pictureId, commentBody) {
+    await ApiCalls.addComment(pictureId, commentBody);
+  }
 
- console.log(comments)
+  async function deleteComment(commentId) {
+    await ApiCalls.deleteComment(commentId);
+  }
+  
+  console.log(currentUserEmail , comments)
 
   return (
     <div
@@ -66,49 +70,53 @@ async function addComment(pictureId,commentBody){
         {status === 2 && <p className="error">Please check your connection</p>}
         {status === 1 && (
           <div>
-
-          { comments[0] === undefined ?  
-          
-          <p>No comments</p>
-          
-          :       
-
-        
-        <React.Fragment>
-                {comments              
-                  .map((item) => (
-                    <React.Fragment key={item.id}>
-                      <Comments
-                        item={item}
-                      />
-                    </React.Fragment>
-                  ))}
+            {comments[0] === undefined ? (
+              <p>No comments</p>
+            ) : (
+              <React.Fragment>
+                {comments.map((item) => (
+                  <React.Fragment key={item.id}>
+                    <div className="comment-bloc">
+                      <h3>{item.ownerEmail}</h3>
+                      <div className="comment-sub-bloc">
+                      <p> {item.body} </p>
+                      
+                      <button
+                        className="btn-delete"
+                        onClick={() => {
+                          deleteComment(item.id);
+                        }}
+                      >
+                        Delete
+                      </button>
+                      
+                      </div>
+                    </div>
+                  </React.Fragment>
+                ))}
               </React.Fragment>
-       
-        }
-
-
+            )}
           </div>
         )}
- 
 
- <div className="comment-form-group">
+        <div className="comment-form-group">
+          <input
+            type="text"
+            placeholder="your opinion here"
+            className="comment-textarea"
+            onChange={(e) => setComment(e.target.value)}
+            value={comment}
+          />
 
-<input
-              type="text"
-              placeholder="your opinion here"
-              className="comment-textarea"
-              onChange={(e) => setComment(e.target.value)}
-              value={comment}
-            />
-
-            <button className="btn-comment" 
-            onClick={() => {addComment(pictureId,comment)}} 
-            >
+          <button
+            className="btn-comment"
+            onClick={() => {
+              addComment(pictureId, comment);
+            }}
+          >
             Comment
-            </button>
-            </div>
-        
+          </button>
+        </div>
       </div>
     </div>
   );

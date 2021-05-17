@@ -53,6 +53,14 @@ margin-top: 9px;
 
 }
 
+.comment-sub-bloc{
+  display: grid;
+  grid-template-columns: 1fr 80px;
+}
+
+
+
+
 .lower h3 {
  font-weight: 600;
 font-size: 15px;
@@ -88,3 +96,4 @@ padding:8px 0 8px 5px ;
 .comment-textarea{
   box-shadow: inset 1px 1px 4px  rgba(128, 128, 128, 0.384);
 }
+
