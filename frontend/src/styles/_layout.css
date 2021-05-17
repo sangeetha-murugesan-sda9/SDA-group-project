@@ -59,10 +59,10 @@ h5{
    
     text-align: left;    
     padding: 6px 20px;
-    background: #f1f1f1;
+    background: #f1f1f100;
     
     border-radius:15px 15px 0 0;
-    box-shadow: 2px 2px 2px rgb(199, 199, 199);  
+     
     
    
     
@@ -72,31 +72,70 @@ h5{
 
 .title-wrapper{
     
-    
-    background: #f1f1f1;
+       
     display: flex;  
 
     flex-direction: column;
     justify-content: center;
 
-    padding:  12px;
+    padding:  10px;
     margin-bottom: 80px;
    
 
     border-radius:0 15px 15px 15px;
-    box-shadow: 2px 2px 2px rgb(199, 199, 199);  
+    
   
 
 }
 
+.page-title-vote h1{
+    background-color: rgba(255, 255, 255, 0);
+    width: fit-content;
+    
+
+    
+    
+    padding: 5px 15px  ;
+
+    z-index: 10;
+}
+
+
+
+
 /** media queries tablets  */
 @media screen and (min-width: 800px) {
+.page-title{
+    background: #f1f1f1;
+    box-shadow: 2px 2px 2px rgb(199, 199, 199);  
 }
 
-/** media queries laptops  */
-@media screen and (min-width: 1200px) {   
+    .title-wrapper{
+    background: #f1f1f1;
+    box-shadow: 2px 2px 2px rgb(199, 199, 199);  
+    }
+
+.winner-content{
+    background-color: white;
+    border : 2px solid #c9c9c9;
+    padding: 5px 5px 20px 5px  ;
+    border-radius:0 15px 15px 15px ;
+}
+.page-title-vote h1{
+    position: relative;
+    top:2px;
+    border : 2px solid #c9c9c9;
+    border-bottom: 2px solid white ;
+    border-radius: 15px 15px 0 0 ;
+
+    background-color: white;
+   
+}
+  
+
 
 }
+
 
 
 strong{
@@ -165,27 +204,5 @@ width: 100%;
 }
 
 
-.page-title-vote h1{
-    background-color: white;
-    width: fit-content;
-    position: relative;
-    top:3px;
-
-    border : 2px solid #c9c9c9;
-    border-bottom: 2px solid white ;
-
-    border-radius: 15px 15px 0 0 ;
-
-    padding: 5px 15px  ;
-
-    z-index: 10;
-}
-
-.winner-content{
-    background-color: white;
-    border : 2px solid #c9c9c9;
-    padding: 5px 5px 20px 5px  ;
-    border-radius:0 15px 15px 15px ;
-}
 
 

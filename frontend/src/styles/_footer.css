@@ -5,6 +5,9 @@ a {
 
 .footer{
     position:fixed;
+
+   
+    
     bottom:-2px;
  
     width: 100vw;    
@@ -13,10 +16,8 @@ a {
     align-items: center;
  
     z-index: 2;
-
-   
+       
     
-    margin:0;
     padding:0;
  }
 
@@ -27,15 +28,16 @@ a {
 
 
 .footer-container {
-
-    margin: auto;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
     
     text-align: center;
     background-image: var(--color-footer-structure);
     
     font-size: 15px;    
     height: var(--footer-height) ;
-    width: 100vw;
+    width: 90%;
     
     display: grid;
     grid-template-columns: repeat(5,1fr);

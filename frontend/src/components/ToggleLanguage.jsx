@@ -29,7 +29,8 @@ const [t, i18n] = useTranslation('common'); // language
     <label className="toggle-label">
 
       {/* <p>{t("main.title")}</p> */}
-
+      <p className="label-text-mobile">ENG/SWE</p>
+      
       <p className="label-text">ENG</p>
       <div className="toggle">
         <input
