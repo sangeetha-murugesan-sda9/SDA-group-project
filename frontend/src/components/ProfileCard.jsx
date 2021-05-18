@@ -64,7 +64,7 @@ export default function ProfileCard({ users,item, userToDisplay }) {
       </p>
 
       </div>
-      <CardDrawer pictureId ={pictureId} users={users}/>
+      <CardDrawer pictureId ={pictureId} />
 
       {userToDisplay !== currentUserEmail && 
 

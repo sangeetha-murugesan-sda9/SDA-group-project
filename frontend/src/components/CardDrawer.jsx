@@ -5,10 +5,11 @@ import ApiCalls from "../api/ApiCalls";
 import AuthApi from "../api/AuthApi";
 import Methods from "../services/Methods"
 
-export default function CardDrawer({ users , pictureId }) {
+export default function CardDrawer({pictureId }) {
  
 
   const currentUserEmail = AuthApi.getCurrentUser();
+  
 
   const [open, setOpen] = useState(false);
   const [comments, setComments] = useState([]);
@@ -28,7 +29,7 @@ export default function CardDrawer({ users , pictureId }) {
   };
 
 
-  //Fetching data
+  //Fetching commments
 
   useEffect( async () => {
     try {
@@ -41,9 +42,9 @@ export default function CardDrawer({ users , pictureId }) {
     setStatus(2);
     }  
       
-  }, [setRefresh]);
+  }, [refresh]);
 
-  console.log(users)
+
   
 
   async function addComment(pictureId, commentBody) {
@@ -56,20 +57,7 @@ export default function CardDrawer({ users , pictureId }) {
     setRefresh(!refresh);
   }
 
- if (users.length === 0){
 
-  return (
-<div>
-<p className="loader"></p>
-</div>
-
-  )
-
- }else{
-
- 
-
- 
 
   return (
     <div>
@@ -94,10 +82,10 @@ export default function CardDrawer({ users , pictureId }) {
                 <p>No comments</p>
               ) : (
                 <React.Fragment>
-                  {comments.map((item) => (
+                  {comments.map((item) => (                    
                     <React.Fragment key={item.id}>
                       <div className="comment-bloc">
-                        <h3>{Methods.getUsernameByEmail(users,item.ownerEmail)}</h3>                        
+                        <h3>{item.ownerName}</h3>                        
                         <div className="comment-sub-bloc">
                           <p> {item.body} </p>
                           {item.ownerEmail === currentUserEmail && (
@@ -142,6 +130,6 @@ export default function CardDrawer({ users , pictureId }) {
     </div>
   );
 
-}
+
   
 }

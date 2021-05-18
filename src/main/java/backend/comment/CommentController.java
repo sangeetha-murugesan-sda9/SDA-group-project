@@ -4,6 +4,7 @@ import backend.auth.AuthService;
 import backend.picture.Picture;
 import backend.picture.PictureRepository;
 import backend.user.ResourceNotFoundException;
+import backend.user.User;
 import backend.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -38,11 +39,16 @@ import java.util.List;
 
             Picture picture  = pictureRepository.findById(pictureId).orElseThrow(ResourceNotFoundException::new); // find the picture
             String email = authService.getLoggedInUserEmail(); // find the current user email
+            User user = userRepository.findByEmail(email); // find the user by email
+
+            String username = user.getUsername();
+
 
             Comment comment = new Comment(); // create a comment
             comment.setOwnerEmail(email);// setting email of the current user
             comment.setPicture(picture);// setting the picture associated to the comment
             comment.setBody(body);// setting the body (text)  to the comment
+            comment.setOwnerName(username);
 
             picture.getComments().add(comment); // adding the comment to the list of comments
 
