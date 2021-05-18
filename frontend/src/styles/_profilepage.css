@@ -31,16 +31,18 @@
 
 
 .profilepage-box-left .btn-edit {
+  
   position: absolute;
   top: 30px;
-  left: 95%;
+  left: 50%;
   transform: translateX(-50%);  
+  margin-left: 60px;
 }
 
 /** media queries tablets  */
 @media screen and (min-width: 800px) {
   .profilepage-box-left .btn-edit {
-      left: 95%;
+      right: 90%;
      
   }
 

@@ -47,9 +47,15 @@ export default function ProfilePageContent({ users, userToDisplay }) {
                 <img src={avatar} className="img-profile-100" alt="img" />
               </div>
               <h2>{username}</h2>
+
               {instagram !== "instagram" && (
+                <a href={"http://www.instagram.com/" + instagram} target="blank">
                 <p className="user-instagram">@{instagram}</p>
+                </a>
               )}
+
+
+
 
               {userToDisplay === currentUserEmail && <p className="user-instagram" >Votes - {votes} </p>}
 
