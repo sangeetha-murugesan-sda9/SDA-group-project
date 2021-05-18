@@ -51,7 +51,7 @@ export default function ProfilePageContent({ users, userToDisplay }) {
                 <p className="user-instagram">@{instagram}</p>
               )}
 
-              {userToDisplay === currentUserEmail && <p>Votes - {votes} </p>}
+              {userToDisplay === currentUserEmail && <p className="user-instagram" >Votes - {votes} </p>}
 
             </div>
 
