@@ -5,7 +5,7 @@ InStyle is a Social Media application for clothing fashion stylists.
 The social media era is well and truly underway and photo sharing apps are among the hottest social platform topics. This application is for Style Competition. Every user in this app is a stylist. Every user can have his/her own profile, submit their style pictures, and vote (like) for other user's styles. The user with the most voted style in the day is the winner and is awarded the title of Current King. Everyday there is a Current King. The user can follow the current king. He/She can choose to set the application language to English or Swedish and vice versa. He/She can also comment on styles.
 
 ## Video
-[https://www.youtube.com/watch?v=ha3cBd3r8Rs](Demo video)
+[https://www.youtube.com/watch?v=ha3cBd3r8Rs](Demo video(Youtube Link))
 
 ## Getting Started
 The web application is made up of three parts: database(PostgreSQL), backend (Spring Boot) and frontend (React.js).
