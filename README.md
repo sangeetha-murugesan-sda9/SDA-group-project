@@ -1,55 +1,59 @@
-## InStyle
+![Logo](ScreenShot/Logo.png)
 
 ## Introduction
-This application is a Social Media Application for Stylists built with gradle.
+InStyle is a Social Media application for clothing fashion stylists.
+The social media era is well and truly underway and photo sharing apps are among the hottest social platform topics. This application is for Style Competition. Every user in this app is a stylist. Every user can have his/her own profile, submit their style pictures, and vote (like) for other user's styles. The user with the most voted style in the day is the winner and is awarded the title of Current King. Everyday there is a Current King. The user can follow the current king. He/She can choose to set the application language to English or Swedish and vice versa. He/She can also comment on styles.
 
-The social media era is well and truly underway and photo sharing app is one
-of the biggest hot topic social platforms.This application is for Style Competition.Every user in our app is a stylist.
-Every user can submit their styles (photo) and they can vote for other user's styles.Everyday we have a
-winner who has the highest number of (likes) votes.
-He/She can decide best styles and vote for it.
+## Video
+[https://www.youtube.com/watch?v=ha3cBd3r8Rs](https://www.youtube.com/watch?v=ha3cBd3r8Rs)
 
 ## Getting Started
-The web application is made up of three parts: database, backend  (Spring)
-and frontend (React).The application can run directly via Gradle. The code for this
-application uses the Gradle build tool (https://gradle.org.).Instructions for
-installing Gradle are available in the official documentation(https://gradle.org/install)
-which describes several options.
+The web application is made up of three parts: database(PostgreSQL), backend (Spring Boot) and frontend (React.js).
 
-Getting started is simple. The User have to register and login.
+### Prerequisites
+* Docker/Docker Compose
+* Java Runtime (tested with version 15)
 
-1.Create a username and password.
-2.Fill in your profile information.
-3.You can upload images to your Instyle profile right away.
-4.You can like other users’ photos by tapping the fire icon.
-That’s it, you’re all set to start posting some great images and ready for Style
-competition.
+## Front-end React.JS
 
-## Front-end React
-Front-end for this application is built with Create React App.
-
-```sh
-npx create-react-app my-app
-cd frontend
-npm install 
-npm start 
+The front-end for this application is built with
 
 ```
+npx create-react-app InStyle
+cd frontend
+npm install 
+```
+It runs with
 
-_If you've previously installed `create-react-app` globally via `npm install -g create-react-app`, its recommended to uninstall the package using `npm uninstall -g create-react-app` or `yarn global remove create-react-app` to ensure that npx always uses the latest version._
+```
+npm start 
+```
+Once the application starts, it can be accessed at http://localhost:3080.
 
-_[npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) comes with npm 5.2+ and higher._
+## PostgreSQL database
 
-_Then open [http://localhost:3000/](http://localhost:3000/) to see the application.<br>_
+Connection to the database is made with
+```
+docker-compose up
+```
 
+## Back-end Spring Boot
 
-## How to Run the Application
-The application can also be run via terminal with the Gradle.
+Spring boot was initialize with
+
+```
+gradle init
+```
+
+and Groovy was selected as the build script DSL.
+
+It runs with
 
 ```
 ./gradlew bootRun
 ```
-To Stop Running the Application:
+
+The application can be stopped with
 
 ```
 Crtl + C
@@ -89,6 +93,11 @@ dependencies {
     implementation group: 'commons-io', name:'commons-io', version:'2.6'
     runtimeOnly 'org.postgresql:postgresql'
 }
+
+
+test {
+    useJUnitPlatform()
+}
 ```
 
 `src/main/resources/application.properties` should be configured:
@@ -107,14 +116,14 @@ spring.servlet.multipart.max-request-size=300MB
 
 spring.jpa.properties.hibernate.dialect= org.hibernate.dialect.PostgreSQLDialect
 ```
-## DataBase Setup
-A Dockerized PostgreSQL database:
+## DataBase PostgreSQL Setup
+Dockerized PostgreSQL database:
 
-The docker-compose.yaml is manually created.
-To create docker-compose from the terminal ,we need to use the command
-```touch docker-compose.yaml ```
+The docker-compose.yaml is manually created with
 
-and docker-compose.yaml should contain the following.
+```touch docker-compose.yaml
+```
+and the following specifications added to the file
 ```docker-compose.yaml
 version: "3"
 services:
@@ -134,28 +143,28 @@ volumes:
 ```
 
 ## Docker Commands
-1.Start container
+
+1. Start container
 ```
 docker-compose up
 ```
-2.Stop container
+2. Stop container
 ```
 docker-compose down
 ```
-3.List all Running Containers
+3. List all Running Containers
 ```
 docker ps
 ```
-4.Enter the Running Container
+4. Enter the Running Container
 ```
 docker-compose exec database /bin/sh
 ```
-5.(psql Commands) While inside a postgres container, enter the postgres database.
+5. Enter the PostgreSQL database
 ```
 psql skeleton skeleton_user
 ```
-6.psql Commands (when inside the database)
-Connect to DataBase:
+6. Connect to the database:
 ```bash
 \c
 ```
@@ -163,99 +172,117 @@ Connect to DataBase:
 ```bash
 \dt
 ```
-8.Show all rows in particular table
+8.Show all rows in particular table such us the "account" table
 ```
 SELECT * FROM account;
 ```
-
 ## Usage
-After logging in,the User can view the winner of the day and the user can follow
-the winner by clicking  the follow option in Winner page and the user can fill their profile
-information with uploading profile picture and submit a new style from the profile page.
-The Users can view other user's styles in Discover page and like by clicking the FIRE
-icon and dislike by clicking the NAAAH icon.The User can also vote for the styles
-in vote page by clicking FIRE icon.Every user can decide the best styles and vote for it.The style with
-highest number of votes (likes) is the selected as a winner by the end of the day and winner's photo will
-be displayed in winner page.
 
-### User API EndPoints
-The User's are able to create new account ,Sign In new account.
+Once the application runs, The user:
+
+1. registers a username and password, and adds an avatar to his/her profile, if he/she has not already done so, otherwise, he/she logs in.
+2. chooses, if he/she so wishes, the app's language between English and Swedish and vice versa.
+3. can proceed to upload and post pictures showing their styles for the competition.
+4. can start voting by clicking either FIRE (like) icon or NAAAH (dislike) on other users' style pictures but only once per picture.
+5. can start commenting on others styles or delete comments.
+6. can follow the winner or other users.
+7. can navigate to other users' pages can comment on styles and also user's can delete the comment.
+8. can log out once done.
+
+## List of Front-End Components
+
+| FrontEnd Components |
+| ------------|
+| `1.Card`    | 
+| `2.CardDrawer`    | 
+| `3.Comments`    | 
+| `4.CountDownComponent`    | 
+| `5.EditProfileButton`    | 
+| `6.Footer`    | 
+| `7.HeaderBackground`    | 
+| `8.LandingOverlay`    | 
+| `9.Navbar`    | 
+| `10.Popup`    | 
+| `11.ProfileCard`    | 
+| `12.SlidingMenu`    | 
+| `13.ToggleLanguage`    | 
+| `14.UploadButton`    | 
+| `15.UploadForm`    | 
+| `16.UploadWidget`    | 
+| `17.UserMeta`    | 
+| `18.VoteComponent`    | 
+
+### Auth API Endpoints
 
 | HTTP Method | HTTP Path | Action |
 | ------------|-----------|--------|
-| `POST`    |  `/register`     | Create new account. |
+| `POST`    | `/register` | Create new account. |
 | `POST`    | `/authenticate` | Authenticate User. |
 
+### User API EndPoints
 
-### File (Picture API)
-The Users are Upload a File (Picture) ,View all pictures,Delete a picture.
+| HTTP Method | HTTP Path | Action |
+| ------------|-----------|--------|
+| `PUT`    | `/current-user` | Update current username. |
+| `GET`    | `/current-user` | Get the current user. |
+| `GET`    |  `/users`     | Get all users. |
 
-Below are the End-points:
+### Picture API EndPoints
+
+| HTTP Method | HTTP Path | Action |
+| ------------|-----------|--------|
+| `Post`    | `/picture-url` | Post a picture to the current user by just providing the url. |
+| `Post`    | `/picture` | Post a picture to the current user. |
+| `Post`    |  `/picture-url/{userId}`     | Post a picture by userId by just providing url. |
+| `Post`    | `/picture/{userId}` | Post a picture by userId |
+| `Post`    | `/likes/{pictureId}` | Add a like to a picture. |
+| `Post`    |  `/dislikes/{pictureId}`     | add a dislike to a picture |
 
 | HTTP Method | HTTP Path | Action |
 | ------------|-----------|--------|
 | `GET`    | `/files/{id}` | Get picture by ID. |
-| `GET`    | `/picture/{userId}` | Get all pictures for specific user. |
+| `GET`    | `/files` | Get all pictures. |
 | `POST`    |  `/upload`     | Upload a picture. |
-| `POST`    |  `/upload{userId}`     | Upload a picture for specific user. |
-| `DELETE` | `/files/{id}` | delete the picture by ID. |
+| `DELETE` | `/files/{id}` | Delete the picture by ID. |
 
-### Profile Picture
-
-The Users are Upload a Profile Picture,View profile picture.
+### Comment API EndPoints
 
 | HTTP Method | HTTP Path | Action |
 | ------------|-----------|--------|
-| `GET`    | `/profile-picture/{userId}` | Get profile picture by user ID . |
-| `POST`    | `upload-profile-picture/{userId}` | Adding profile picture by user ID. |
+| `POST`    | `/picture/{pictureId}/comment` | Add comment to picture by Id. |
+| `GET`    | `/comments/{pictureId}` | Get comments of a picture by Id. |
+| `GET`    |  `/comments`     | Get all comments. |
+| `DELETE` | `/comments/{commentId}` | Delete a comment by his ID. |
 
-### Like API
+## ScreenShots
+## Login Page
 
-The Users are able to like the pictures,disLike the picture,View number of likes for specfic picture,
-View number of disLikes for specfic picture.
+![Login](ScreenShot/Login.png)
 
+##  Current King Page
 
-| HTTP Method | HTTP Path | Action |
-| ------------|-----------|--------|
-| `GET` | `/likes/{fileId}` |  Get likes of a specific picture |
-| `GET` | `/dislikes/{fileId}` |  Add a dislike to a picture |
-| `POST`    |  `/likes/{fileId}`     | Add a like to a picture |
-| `POST`    |  `/dislikes/{fileId}`     | Add a dislike to a picture |
-
-
-## FrontEnd ScreenShots
-
-## Winner Page
-
-![Winner](ScreenShots/Winner.png)
+![CurrentKing](ScreenShot/CurrentKing.png)
 
 ## Profile Page
 
-![Profile](ScreenShots/Profile.png)
+![Profile](ScreenShot/Profile.png)
 
 ## Discover Page
 
-![Discover1](ScreenShots/Discover1.png)
+![Discover](ScreenShot/Discover.png)
 
-![Discover2](ScreenShots/Discover2.png)
+## Vote Page
 
-## Landing Page
+![Vote](ScreenShot/Vote.png)
 
-![LandingPage](ScreenShots/PostPage.png)
 
-## Voting Page
 
-![Vote](ScreenShots/Vote.png)
 
-## DataBase ScreenShots
 
-## Running the Containers,Entering the Postgres DataBase and Connecting to DB to view the DB tables.
 
-![DataBase1](ScreenShots/DataBase1.png)
 
-## To view all the rows in the particular table (account,filedb)
 
-![DataBase2](ScreenShots/DataBase2.png)
+
 
 
 
