@@ -5,7 +5,7 @@ import ApiCalls from "../api/ApiCalls";
 import AuthApi from "../api/AuthApi";
 import Methods from "../services/Methods"
 
-export default function CardDrawer({ users,pictureId }) {
+export default function CardDrawer({ users , pictureId }) {
  
 
   const currentUserEmail = AuthApi.getCurrentUser();
@@ -60,7 +60,7 @@ export default function CardDrawer({ users,pictureId }) {
     setRefresh(!refresh);
   }
 
-  //console.log( comments)
+  console.log(users)
 
   return (
     <div>
@@ -81,7 +81,7 @@ export default function CardDrawer({ users,pictureId }) {
           )}
           {status === 1 && (
             <div>
-              {comments[0] === undefined ? (
+              {comments === undefined ? (
                 <p>No comments</p>
               ) : (
                 <React.Fragment>

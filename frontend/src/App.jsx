@@ -65,13 +65,6 @@ try {
     [loggedIn]
   );
 
-
-async function fetchData(){
-  await ApiCalls.getAllUsers()
-
-}
-
-
   //console.log("users",users,status)
   ///////////////
 
