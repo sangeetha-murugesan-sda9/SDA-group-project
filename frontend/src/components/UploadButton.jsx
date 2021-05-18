@@ -1,14 +1,11 @@
 import {React,useState,useEffect} from "react";
 import { useTranslation } from "react-i18next";
-import axios from "axios";
 
-import Auth from "../services/Auth";
 import Overlay from "react-overlay-component";
 import Methods from '../services/Methods'
 import AuthApi from "../api/AuthApi";
 import ApiCalls from "../api/ApiCalls";
 import UploadWidget from "../components/UploadWidget"
-
 
 
  export default function UploadButton({users}) {
@@ -34,7 +31,7 @@ if(numberOfPicturesOwned === 0){
   canUpload = true
 }
 
-const votesNeeded = Math.floor(( 10 - (numberOfvotes / numberOfPicturesOwned) +1 )) 
+const votesNeeded = Math.floor(( 10 - (numberOfvotes / numberOfPicturesOwned) -1 )) 
  
 
   //Manage the overlay
@@ -73,31 +70,6 @@ async function addPic() {
    }
 
 
-
-  // Handle the upload to dB //
-  /* function handleUpload() {
-
-    const formdata = new FormData()
-    formdata.append('file',file);
-    formdata.append('user',file);      
-
-    console.log(formdata,"formdata");
-    console.log("token" ,Auth.getAuthorizationHeader() );
-
-    axios.post(
-      "http://localhost:8080/upload",
-      formdata,
-      {
-        headers: { 
-          "Authorization": Auth.getAuthorizationHeader() }
-      }
-    );
-    closeOverlay();
-    
-  }
- */
-
-
   return (
     <div>
       <button
@@ -120,7 +92,7 @@ async function addPic() {
               {/* <button className="btn-grey" type="button" onClick={handleUpload}>{t("overlay.upload")}
               </button> */}
 
-              <button className="btn-grey" type="button" onClick={addPic}>Add Random Picture</button>
+              {/* <button className="btn-grey" type="button" onClick={addPic}>Add Random Picture</button> */}
               
               <UploadWidget avatar ={false} />
 

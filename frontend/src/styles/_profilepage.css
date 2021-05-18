@@ -22,15 +22,30 @@
 
 
 .profilepage-box-left {
-  position: relative;
+  position: relative;   
   text-align: left;
 }
 
+
 .profilepage-box-left .btn-edit {
   position: absolute;
-  bottom: 45px;
-  left: 75px;
+  top: 30px;
+
+  left: 95%;
+  transform: translateX(-50%);  
 }
+
+/** media queries tablets  */
+@media screen and (min-width: 800px) {
+  .profilepage-box-left .btn-edit {
+      left: 80%;
+     
+  }
+
+
+}
+
+
 .crown{
   position: absolute;
   top:-35px;
