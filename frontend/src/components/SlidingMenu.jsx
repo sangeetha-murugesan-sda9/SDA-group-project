@@ -1,5 +1,6 @@
 import { slide as Menu } from 'react-burger-menu'
 import { useTranslation } from "react-i18next";
+import { Link  } from "react-router-dom";
 
 import Auth from '../services/Auth'
 
@@ -61,7 +62,11 @@ const currentUserEmail = AuthApi.getCurrentUser();
 
 
           <div className="burger-footer-item"> 
-<button className="btn-borderless" onClick={onLogout}><img className="img-30" src={signout} /></button>
+<button className="btn-borderless" onClick={onLogout}>
+<Link to="/">
+  <img className="img-30" src={signout} />
+  </Link>
+  </button>
           </div>
 </div> 
 

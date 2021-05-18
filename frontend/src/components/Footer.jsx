@@ -1,4 +1,7 @@
-import React from "react";
+import {React, useState} from "react";
+import { Link  } from "react-router-dom";
+
+
 import "../styles/base.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,16 +13,20 @@ import Auth from "../services/Auth";
 
 import AuthApi from "../api/AuthApi";
 
-export default function Footer({ users }) {
+export default function Footer() {
+
+
   function onLogout() {
-    Auth.logout();
+    Auth.logout();  
+
   }
+
   const currentUserEmail = AuthApi.getCurrentUser();
 
-  return (
-    <div className="footer">
-      {/* <div className="footer-shape"> </div> */}
 
+
+return (
+    <div className="footer">
       <div className="footer-container">
         <a href={"/profile/" + currentUserEmail} className="item">
           <FontAwesomeIcon icon={faUser} />
@@ -35,9 +42,17 @@ export default function Footer({ users }) {
         </a>
 
         <button className="item" onClick={onLogout}>
+          <Link to="/">
           <FontAwesomeIcon icon={faSignOutAlt} />
+          </Link>
+
         </button>
       </div>
     </div>
   );
+
+
+
+
+  
 }
