@@ -16,8 +16,7 @@ and frontend (React).The application can run directly via Gradle. The code for t
 application uses the Gradle build tool (https://gradle.org.).
 
 Getting started is simple. The User have to register and login.
-
-1.Create a username and password.
+1.Create a username and password   
 2.Fill in your profile information.
 3.You can translate the application from English to Swedish and vice versa.
 4.You can upload images to your InStyle profile right away.
