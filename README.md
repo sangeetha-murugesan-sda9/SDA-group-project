@@ -139,13 +139,37 @@ volumes:
 
 ## Docker Commands
 
-```bash
+1.Start container
+```
 docker-compose up
+```
+2.Stop container
+```
+docker-compose down
+```
+3.List all Running Containers
+```
 docker ps
+```
+4.Enter the Running Container
+```
 docker-compose exec database /bin/sh
+```
+5.(psql Commands) While inside a postgres container, enter the postgres database.
+```
 psql skeleton skeleton_user
+```
+6.psql Commands (when inside the database)
+Connect to DataBase:
+```bash
 \c
+```
+7.Show the tables in the database
+```bash
 \dt
+```
+8.Show all rows in particular table
+```
 SELECT * FROM account;
 ```
 ## Usage
@@ -163,7 +187,8 @@ The Every user can decide the best styles and vote for it.The style with
 highest number of votes (likes) is the selected as a Winner by the end of the day and Winner's photo will
 be displayed in Current King page.The user's can comment on styles and also user's can delete the comment.
 
-The User can view the total Likes and DisLikes as OverAllScore in ProfilePage.
+The User can view the total Likes and DisLikes as OverAllScore in ProfilePage.The User's cannot be able to vote
+multiple times for same style.
 
 The User can also upload pictures by clicking (+) icon in the footer and contact the InStyle by clicking Envelope icon.
 The User can view CurrentKing by clicking ChessKing icon and View his/her own profile by clicking the User icon.
