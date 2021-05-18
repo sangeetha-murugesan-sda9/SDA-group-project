@@ -3,7 +3,7 @@ import React from "react";
 import king from "../assets/img/icons/crown.svg";
 
 export default function UserMeta({ winnerId, user }) {
-  console.log(user);
+  
   return (
     <div className="user-meta">
 

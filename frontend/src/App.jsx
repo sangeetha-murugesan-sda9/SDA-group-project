@@ -41,10 +41,8 @@ export default function App() {
     document.title = "[in]Style ";
   }, []);
 
-  //console.log(loggedIn,status);
 
   //Fetching data
-
   useEffect(
     async () => {
 

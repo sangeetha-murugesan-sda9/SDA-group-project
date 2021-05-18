@@ -37,6 +37,7 @@
 
   .toggle-label{
     right: 5%;
+    top:52px;
     flex-direction: row;
   }
   .label-text{

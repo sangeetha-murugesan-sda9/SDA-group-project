@@ -19,15 +19,12 @@
     gap: 12px;
 }
 
-label,.form-control{    
-    width: 100%;
-    
-}
+
 
 .form-control{    
-    
     border:0px;
     border-radius: 7px;
+    width: 290px;
 }
 
 ::placeholder{  

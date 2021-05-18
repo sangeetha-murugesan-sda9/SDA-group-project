@@ -56,7 +56,7 @@ export default function ProfilePageContent({ users, userToDisplay }) {
             </div>
 
             <div className="profilepage-box-right">
-              <p>{t("profile.score")} </p>
+              <p className="title-score" >{t("profile.score")} </p>
               <p className="item-score">
                 {likes}
                 <img className="img-30" src={like} alt="logo-like" />
