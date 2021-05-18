@@ -12,16 +12,12 @@ export default function CardDrawer({ users , pictureId }) {
 
   const [open, setOpen] = useState(false);
   const [comments, setComments] = useState([]);
-  const [refresh, setRefresh] = useState(false);
+  const [refresh, setRefresh] = useState(true);
 
   const [status, setStatus] = useState(1); // 0 = loading data, 1 = data loaded, 2 = error;
   const [comment, setComment] = useState("");
 
   const nbOfComments = comments.length;
-
-
-
-
 
   const handleClick = () => {
     if (open) {
@@ -38,7 +34,7 @@ export default function CardDrawer({ users , pictureId }) {
     ApiCalls.getCommentsById(pictureId)
       .then((response) => onFetchSuccess(response.data))
       .catch((error) => onFetchFail(error));
-  }, [refresh]);
+  }, [setRefresh]);
 
   function onFetchSuccess(res) {
     setComments(res);
