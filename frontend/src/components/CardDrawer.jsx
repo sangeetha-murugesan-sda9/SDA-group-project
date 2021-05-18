@@ -30,21 +30,21 @@ export default function CardDrawer({ users , pictureId }) {
 
   //Fetching data
 
-  useEffect(() => {
-    ApiCalls.getCommentsById(pictureId)
-      .then((response) => onFetchSuccess(response.data))
-      .catch((error) => onFetchFail(error));
-  }, [setRefresh]);
-
-  function onFetchSuccess(res) {
-    setComments(res);
+  useEffect( async () => {
+    try {
+    const res = await ApiCalls.getCommentsById(pictureId)
+    setComments(res.data);
     setStatus(1);
-  }
 
-  function onFetchFail(error) {
+    }catch(error){
     console.log("Error", error);
     setStatus(2);
-  }
+    }  
+      
+  }, [setRefresh]);
+
+  console.log(users)
+  
 
   async function addComment(pictureId, commentBody) {
     await ApiCalls.addComment(pictureId, commentBody);
@@ -56,7 +56,20 @@ export default function CardDrawer({ users , pictureId }) {
     setRefresh(!refresh);
   }
 
-  console.log(users)
+ if (users.length === 0){
+
+  return (
+<div>
+<p className="loader"></p>
+</div>
+
+  )
+
+ }else{
+
+ 
+
+ 
 
   return (
     <div>
@@ -128,4 +141,7 @@ export default function CardDrawer({ users , pictureId }) {
       </div>
     </div>
   );
+
+}
+  
 }
