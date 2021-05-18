@@ -86,11 +86,7 @@ async function addPic() {
         {canUpload === true ? (
           <div className="overlay-form" >
             <h2>{t("overlay.label-upload")}</h2>
-            <div className="upload-box">
-              {/* <input type="file" onChange={handleFile} /> */}
-              {/* <input type="text" onChange={handleFile} /> */}
-              {/* <button className="btn-grey" type="button" onClick={handleUpload}>{t("overlay.upload")}
-              </button> */}
+            <div className="upload-box">             
 
               {/* <button className="btn-grey" type="button" onClick={addPic}>Add Random Picture</button> */}
               

@@ -4,14 +4,15 @@
     display: flex;
     flex-direction: column;
 
-    bottom:30px;
-    right:30px;
+    bottom:10px;
+    right:10px;
 
     text-align: center;
     color: white;
     font-weight: 300;    
- text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.466);
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.466);
 }
+
 .countdown strong{
 
     margin-top: 7px;
@@ -20,6 +21,16 @@
 
    
     box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.466);
-
     font-weight: 600;
+}
+
+
+@media screen and (min-width: 800px) {
+    .countdown{
+    bottom:20px;
+    right:20px;
+    }
+
+    
+
 }

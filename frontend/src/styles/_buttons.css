@@ -26,6 +26,10 @@
   background-position: right center;
 }
 
+
+
+
+
 .btn-white {
   width: 200px;
   flex: 1 1 auto;
@@ -44,6 +48,18 @@
   border: 2px solid white;
 }
 
+@media screen and (min-width: 800px) {
+  .btn-blue{
+  width: 300px;
+  }
+  
+ .btn-white{
+  width: 300px;
+
+ }
+ 
+}
+
 
 .btn-grey{
  
@@ -55,6 +71,8 @@
   font-size: 20px;
   font-weight: bold;
   width: 100%;
+
+  margin-top: 10px;
 }
 
 .btn-lightgrey{
@@ -67,6 +85,7 @@
   border-radius: 8px;
   font-size: 20px;
   font-weight: bold;
+  
 }
 
 .btn-white:hover {

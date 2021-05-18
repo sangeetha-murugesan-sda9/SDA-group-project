@@ -22,7 +22,7 @@
     },
 
     "overlay": {
-        "label-upload": "Upload a picture",
+        "label-upload": "Add new picture",
         "upload": "Upload",
 
         "label-profile": "Edit profile",

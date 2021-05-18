@@ -10,21 +10,25 @@
 
 
 .overlay-form-group{
+    display: flex;
+    flex-direction: ;
     
-    width: 300px;
+    width: 310px;
     margin: 20px 0px;
     display: flex;
     flex-direction: column;
     align-items:center;
-    gap: 12px;
+    
 }
 
-
+.form-group{
+    margin: 5px 0;
+}
 
 .form-control{    
     border:0px;
     border-radius: 7px;
-    width: 290px;
+    width: 300px;
 }
 
 ::placeholder{  
@@ -47,4 +51,8 @@ input{
     margin-top: 9px;
     align-self: center;
     width: 100%;
+}
+
+label{
+    margin: 3px;
 }
