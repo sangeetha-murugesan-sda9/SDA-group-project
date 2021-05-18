@@ -1,15 +1,15 @@
 .user-meta {
+  
   z-index: 1;
   width: 100%;
   display: grid;
-  grid-template-columns: 50px 1fr;
-  margin: 5px 0 0 5px; 
+  grid-template-columns: 50px 1fr 50px 10px;
+  margin: 10px 0 0 10px; 
 }
 
 .user-meta img {
   width: 40px;
-  background-color: yellow;
-  border-radius: 50%;
+   border-radius: 50%;
   
 }
 .user-meta-legend {
@@ -24,4 +24,8 @@
 .user-instagram {
   font-size: 0.8em;
   font-weight: 300;
+}
+
+.user-meta .crown-meta{
+  margin-right: 10px;
 }

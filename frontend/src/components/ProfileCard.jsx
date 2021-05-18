@@ -24,10 +24,8 @@ export default function ProfileCard({ users,item, userToDisplay }) {
     if (window.confirm('Are you sure you want delete that picture ?')) {
       // Delete it!
       await ApiCalls.deletePictureById(pictureId)  
-      alert("picture deleted")  
+      //alert("picture deleted")  
       window.location.reload()
-
-
     } else {
       // Do nothing!
       console.log('Picture was not deleted.');
@@ -68,7 +66,13 @@ export default function ProfileCard({ users,item, userToDisplay }) {
       </div>
       <CardDrawer pictureId ={pictureId} users={users}/>
 
-      {userToDisplay !== currentUserEmail && <VoteComponent hide ={true} refresh={false} pictureId ={pictureId}/>}
+      {userToDisplay !== currentUserEmail && 
+
+      <div className="votecomponent-onpicture">
+      <VoteComponent hide ={true} refresh={false} pictureId ={pictureId}/>
+    </div>
+
+      }
     </div>
   );
 }

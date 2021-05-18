@@ -14,15 +14,15 @@
 }
 
 .card-small-container img {
-  border-radius: 25px;
+  /* border-radius: 25px; */
 }
 
 .card-small {
   position: relative;
   display: flex;
 
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: min-content;
 
   overflow: hidden;
 
@@ -34,26 +34,42 @@
   height: auto;
 
   border: 1px solid rgb(241, 241, 241);
-  box-shadow: 2px 2px 2px 0px rgb(201, 195, 195);
+  box-shadow: 2px 2px 5px 0px rgba(201, 195, 195, 0.171);
   z-index: 1;
 }
+
 
 .card-img {
     position: relative;
     background-blend-mode:multiply;
     opacity: 80%;
   
-    width: 400px ;
-    height: 400px;
+    width: 300px ;
+    height: 300px;
     overflow: hidden;
     object-fit: cover;
     object-position: top;
   
   
   }
+/** media queries tablets  */
+@media screen and (min-width: 800px) {
+  .card-small {    
+      width: 380px;
+      }
+      .card-img {
+        width: 380px;
+        height: 380px;
+      }
+
+}
+
+
+
+
 
 .card-small .vote-container {
-  margin: 12px 0;
+  margin: 0px 0 18px 0;
 }
 .card-small .vote-container img {
   width: 30px;

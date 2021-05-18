@@ -76,7 +76,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 20px;
+  /* gap: 20px; */
 
   color: grey;
 }
@@ -84,7 +84,8 @@
 /*   /* Menu item including icon */
 .menu-item {
   align-self: flex-start; 
-  gap: 20px;
+  margin:15px 0;
+  /* gap: 20px; */
 }
 
 .menu-item-text{
@@ -92,12 +93,11 @@
     margin-bottom: 10px;
 }
 
-.menu-item-text :hover{
-    color: white;
+.menu-item-text:hover{
+    color: rgb(211, 210, 210);
 }
 
 .bm-menu-wrap img {
-
 margin-bottom: -5px ;
 }
 

@@ -12,67 +12,115 @@
 }
 
 .profilepage-subcontainer {
+  
   width: 100%;   
 
   display: flex;
   justify-content: space-between;
+  
 }
 
 
 
 .profilepage-box-left {
-  position: relative;
-  text-align: left;
+  
+  overflow-wrap: break-word;
+    position: relative;   
+  text-align: center;
 }
+
 
 .profilepage-box-left .btn-edit {
   position: absolute;
-  bottom: 45px;
-  left: 75px;
+  top: 30px;
+  left: 95%;
+  transform: translateX(-50%);  
 }
+
+/** media queries tablets  */
+@media screen and (min-width: 800px) {
+  .profilepage-box-left .btn-edit {
+      left: 80%;
+     
+  }
+
+
+}
+
+
 .crown{
   position: absolute;
-  top:-35px;
-  left: 31px;
+  top:-24px;
+  z-index: -10;
+  
 }
 
 .profilepage-box-left-header {
  
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  text-align: center;
-  gap: 10px;
+  justify-content: center;
+  text-align: center;  
 }
+
+/** media queries tablets  */
+@media screen and (min-width: 800px) {
+  
+  .profilepage-box-left-header {  
+     align-items: flex-start;   
+    }
+
+}
+
+
+
 
 .profilepage-box-left h2,
 .profilepage-box-left a {
   margin: 0;
   border: 0;
-  padding: 2px 12px 2px 0px;
+  
   font-size: var(--font-S);
   text-shadow: 2px 2px 7px rgba(41, 40, 40, 0.082);
 }
 
 .profilepage-box-right {
   
-  
+ 
   display: flex;  
   flex-direction: column;
-  align-items: flex-end;
-  
-  gap: 10px;
- 
+   align-items: center;   
 
   width: 100%;
   max-width: 220px;
 }
 
-.item-score {
+/** media queries tablets  */
+@media screen and (min-width: 800px) {
   
-  width: 180px;
+  .profilepage-box-right {  
+     align-items: flex-end;   
+    }
+
+}
+
+.title-score{
+  position:relative;
+  
   text-align: center;
 
+  left: 15px;
+  width: 150px;
+}
+
+.item-score {
+  position:relative;
+  
+  left: 15px;
+
+  width: 150px;
+  text-align: center;
+
+  margin: 5px 0;
   padding: 6px 0 ;
 
   background-color: #f1f1f1;
@@ -81,10 +129,12 @@
   
   border-radius: 15px;
   
-  box-shadow: 2px 2px 2px rgb(199 199 199);
+  box-shadow: 2px 2px 5px rgba(197, 197, 197, 0.308);
 }
-.item-score img {
-  margin-left: 15px;
+.item-score .img-30 {
+  position: relative;
+  margin-left: 15px; 
+  top:4px;
 }
 
 .empty {
@@ -123,8 +173,9 @@
     width: 800px;
   }
 
-  .item-score {
+  .item-score,.title-score {
        width: 380px;
+       left:0;
   }
 
 

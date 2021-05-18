@@ -12,9 +12,6 @@
 }
 
 
-
-
-
 .wrapper-img-square {
   position: relative;
 
@@ -29,13 +26,15 @@
 }
 
 .wrapper-img-square-nodata {
-  position: relative;
+  position: absolute;
 
-  width: 70vw;
-  height: 70vw;
-  max-height: 45vh;
-  max-width: 500px;
-  overflow: hidden;
+  width: 330px;
+  height: 200px;
+  
+  top:20vh;
+  left: 50%;
+  transform: translate(-50%, 0);
+  
 
   background-color: #fafafa;
   border-radius: 30px;
@@ -51,22 +50,21 @@
   position: absolute;
   border:0;
 
-  top :25px;
-  right: 25px; 
+  top :10px;
+  right: 10px; 
 
-  width: 90px;
-  height: 90px;
+  width: 60px;
+  height: 60px;
  text-align: center;
   
- 
+ z-index: 10;
 }
-
 
 .winner-score-text{
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom:-17px; 
+  bottom:-10px; 
 
   color: rgb(201, 27, 27);
   background-color: #fafafa;
@@ -76,9 +74,36 @@
   border: 2px red solid;
   
     font-family: var(--font-classy);
-    font-size:var(--font-M) ;
-  /* text-shadow: inset 1px 1px ; */
-    box-shadow: 2px 2px 5px rgba(46, 46, 46, 0.822);
+    font-size:var(--font-S) ;  
+    box-shadow: 2px 2px 5px rgba(73, 73, 73, 0.671);
+}
+
+.winner-score img{ 
+  height:50px;
+  width:50px;
+}
+
+/** media queries tablets  */
+@media screen and (min-width: 800px) {
+
+  .winner-score{
+    width: 90px;
+    height: 90px;
+
+  }
+
+  .winner-score-text{
+    bottom:-3px; 
+    font-family: var(--font-classy);
+    font-size:var(--font-M) ;  
+    box-shadow: 2px 2px 5px rgba(73, 73, 73, 0.671);
+  }
+  .winner-score img{ 
+  height:70px;
+  width:70px;
+}
+ 
+
 }
 
 

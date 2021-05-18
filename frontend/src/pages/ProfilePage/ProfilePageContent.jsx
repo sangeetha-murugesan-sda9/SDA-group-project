@@ -43,6 +43,7 @@ export default function ProfilePageContent({ users, userToDisplay }) {
                   <img className="crown img-40" src={king} />
                 )}
 
+              {userToDisplay === currentUserEmail && <EditProfileButton />}
                 <img src={avatar} className="img-profile-100" alt="img" />
               </div>
               <h2>{username}</h2>
@@ -50,13 +51,12 @@ export default function ProfilePageContent({ users, userToDisplay }) {
                 <p className="user-instagram">@{instagram}</p>
               )}
 
-              {userToDisplay === currentUserEmail && <p>Votes - {votes} </p>}
+              {userToDisplay === currentUserEmail && <p className="user-instagram" >Votes - {votes} </p>}
 
-              {userToDisplay === currentUserEmail && <EditProfileButton />}
             </div>
 
             <div className="profilepage-box-right">
-              <p>{t("profile.score")} :</p>
+              <p className="title-score" >{t("profile.score")} </p>
               <p className="item-score">
                 {likes}
                 <img className="img-30" src={like} alt="logo-like" />
@@ -85,7 +85,7 @@ export default function ProfilePageContent({ users, userToDisplay }) {
             <React.Fragment>
               {pics[0].map((item) => (
                 <React.Fragment key={item.id}>
-                  <ProfileCard item={item} userToDisplay={userToDisplay} users={users}/>
+                  <ProfileCard item={item} userToDisplay={userToDisplay} />
                 </React.Fragment>
               ))}
             </React.Fragment>

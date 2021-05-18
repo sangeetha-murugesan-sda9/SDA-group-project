@@ -16,7 +16,11 @@ export default function DiscoverPage({ users }) {
   const currentUserEmail = AuthApi.getCurrentUser();
   const shuffledUsers = Methods.randomArrayShuffle(users);
 
-  //console.log(shuffledUsers)
+  const winnerId = Methods.getWinner(users)[0];
+  //const userToDisplayId = Methods.getIdByEmail(users, userToDisplay);
+
+  //const isWinner = winnerId === userToDisplayId
+
 
   return (
     <div className="general-container">
@@ -49,6 +53,7 @@ export default function DiscoverPage({ users }) {
                         score={false}
                         votes={true}
                         meta={true}
+                        winnerId ={winnerId}
                       />
                     </React.Fragment>
                   ))}

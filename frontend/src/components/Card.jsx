@@ -6,7 +6,7 @@ import UserMeta from "./UserMeta";
 import Moment from "react-moment";
 import CardDrawer from "./CardDrawer";
 
-export default function Card({ users,item, score, votes, meta}) {
+export default function Card({ users,item, score, votes, meta,winnerId}) {
 
  //randomization of the display  and connection to the vote
 const pics = item.pictures.flat()
@@ -24,7 +24,7 @@ const randomPictureId = pics[randomPictureIndex].id
     
     <div className="card-small">
 
-    {meta === true && <UserMeta user={item}/>}
+    {meta === true && <UserMeta user={item} winnerId ={winnerId}/>}
 
       <p className="score-timestamp">Posted - <Moment format="DD MMM YYYY">{item.timestamp}</Moment> </p>
 

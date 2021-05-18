@@ -44,7 +44,7 @@ export default function LandingOverlay({ onSubmit, signIn }) {
       > Sign in </button>
 
       <Overlay configs={configs} isOpen={isOpen} closeOverlay={closeOverlay}>
-      <div className="overlay-form ">
+      <div className="overlay-form-group ">
             <div className="form-group">
               <label>Email:</label>
               <input
@@ -87,7 +87,7 @@ export default function LandingOverlay({ onSubmit, signIn }) {
       > Register </button>
 
       <Overlay configs={configs} isOpen={isOpen} closeOverlay={closeOverlay}>
-      <div className="overlay-form ">
+      <div className="overlay-form-group ">
             <h4 className="card-title">Register</h4>
             <div>
                 <div className="form-group">
