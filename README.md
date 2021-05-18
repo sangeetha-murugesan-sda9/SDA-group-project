@@ -28,7 +28,7 @@ It runs with
 ```
 npm start 
 ```
-Once the application starts, it can be accessed at http://localhost:3080.
+Once the application starts, it can be accessed at http://localhost:3000.
 
 ## PostgreSQL database
 
