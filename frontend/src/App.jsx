@@ -1,7 +1,6 @@
 // NPM Packages
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
-import axios from "axios";
 
 // Project files
 import Auth from "./services/Auth";
@@ -65,13 +64,6 @@ try {
     [loggedIn]
   );
 
-
-async function fetchData(){
-  await ApiCalls.getAllUsers()
-
-}
-
-
   //console.log("users",users,status)
   ///////////////
 
@@ -115,9 +107,14 @@ async function fetchData(){
               <Route path="/testmethods">
                 <TestMethods users={users} /> {/* ok */}
               </Route>
+
+              <Route path="/login">
+              <AuthPage />
+              </Route>
+
             </Switch>
 
-            <Footer />
+            <Footer loggedIn={loggedIn}/>
             <UploadButton users={users} />
           </div>
         )}

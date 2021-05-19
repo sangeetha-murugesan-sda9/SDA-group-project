@@ -37,6 +37,10 @@ public class Comment {
     @NotBlank
     private String ownerEmail;
 
+    @Column(nullable = false)
+    @NotBlank
+    private String ownerName;
+
     //constructor
 
     public Comment() {
@@ -77,5 +81,13 @@ public class Comment {
 
     public void setOwnerEmail(String ownerEmail) {
         this.ownerEmail = ownerEmail;
+    }
+
+    public String getOwnerName() {
+        return ownerName;
+    }
+
+    public void setOwnerName(String ownerName) {
+        this.ownerName = ownerName;
     }
 }
