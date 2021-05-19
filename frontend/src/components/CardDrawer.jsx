@@ -5,23 +5,20 @@ import ApiCalls from "../api/ApiCalls";
 import AuthApi from "../api/AuthApi";
 import Methods from "../services/Methods"
 
-export default function CardDrawer({ users,pictureId }) {
+export default function CardDrawer({pictureId }) {
  
 
   const currentUserEmail = AuthApi.getCurrentUser();
+  
 
   const [open, setOpen] = useState(false);
   const [comments, setComments] = useState([]);
-  const [refresh, setRefresh] = useState(false);
+  const [refresh, setRefresh] = useState(true);
 
   const [status, setStatus] = useState(1); // 0 = loading data, 1 = data loaded, 2 = error;
   const [comment, setComment] = useState("");
 
   const nbOfComments = comments.length;
-
-
-
-
 
   const handleClick = () => {
     if (open) {
@@ -32,23 +29,23 @@ export default function CardDrawer({ users,pictureId }) {
   };
 
 
-  //Fetching data
+  //Fetching commments
 
-  useEffect(() => {
-    ApiCalls.getCommentsById(pictureId)
-      .then((response) => onFetchSuccess(response.data))
-      .catch((error) => onFetchFail(error));
-  }, [refresh]);
-
-  function onFetchSuccess(res) {
-    setComments(res);
+  useEffect( async () => {
+    try {
+    const res = await ApiCalls.getCommentsById(pictureId)
+    setComments(res.data);
     setStatus(1);
-  }
 
-  function onFetchFail(error) {
+    }catch(error){
     console.log("Error", error);
     setStatus(2);
-  }
+    }  
+      
+  }, [refresh]);
+
+
+  
 
   async function addComment(pictureId, commentBody) {
     await ApiCalls.addComment(pictureId, commentBody);
@@ -60,7 +57,7 @@ export default function CardDrawer({ users,pictureId }) {
     setRefresh(!refresh);
   }
 
-  //console.log( comments)
+
 
   return (
     <div>
@@ -81,14 +78,14 @@ export default function CardDrawer({ users,pictureId }) {
           )}
           {status === 1 && (
             <div>
-              {comments[0] === undefined ? (
+              {comments === undefined ? (
                 <p>No comments</p>
               ) : (
                 <React.Fragment>
-                  {comments.map((item) => (
+                  {comments.map((item) => (                    
                     <React.Fragment key={item.id}>
                       <div className="comment-bloc">
-                        <h3>{Methods.getUsernameByEmail(users,item.ownerEmail)}</h3>                        
+                        <h3>{item.ownerName}</h3>                        
                         <div className="comment-sub-bloc">
                           <p> {item.body} </p>
                           {item.ownerEmail === currentUserEmail && (
@@ -132,4 +129,7 @@ export default function CardDrawer({ users,pictureId }) {
       </div>
     </div>
   );
+
+
+  
 }

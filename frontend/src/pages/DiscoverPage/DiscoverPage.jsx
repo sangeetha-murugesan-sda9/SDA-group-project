@@ -17,10 +17,7 @@ export default function DiscoverPage({ users }) {
   const shuffledUsers = Methods.randomArrayShuffle(users);
 
   const winnerId = Methods.getWinner(users)[0];
-  //const userToDisplayId = Methods.getIdByEmail(users, userToDisplay);
-
-  //const isWinner = winnerId === userToDisplayId
-
+  
 
   return (
     <div className="general-container">

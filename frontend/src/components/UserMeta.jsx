@@ -15,9 +15,7 @@ export default function UserMeta({ winnerId, user }) {
 
         {user.instagram !== "instagram" && (
           <a href={"http://www.instagram.com/" + user.instagram} target="blank">
-            <p className="user-instagram">@{user.instagram}</p>
-
-           
+            <p className="user-instagram">@{user.instagram}</p>           
           </a>
         )}
       </div>

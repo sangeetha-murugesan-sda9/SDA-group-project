@@ -30,7 +30,7 @@ const randomPictureId = pics[randomPictureIndex].id
 
       <img className="card-img" src={randomPicture.url} alt="items"/>
     
-      <CardDrawer pictureId ={randomPictureId} users={users}/>
+      <CardDrawer pictureId ={randomPictureId} />
 
       {votes === true && <VoteComponent hide ={true} refresh ={false} pictureId ={randomPictureId} />}
       
